@@ -1,5 +1,30 @@
 ---
-title: "About"
+title: "Mehmet Fatih Kara"
+about:
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - icon: linkedin
+      href: www.linkedin.com/in/m-f-kara
+    - icon: bluesky
+      href: https://bsky.app/profile/mfkara.bsky.social
+    - icon: github
+      href: https://github.com/karamehmetfatih
+    - text: "{{< iconify simple-icons:goodreads >}}"
+      href: https://www.goodreads.com/user/show/186549008-mehmet-fatih-kara
+    - text: "{{< fa envelope >}}"
+      href: mailto:im.mfk@outlook.com
+    - text: "{{< ai orcid >}}"
+      url: https://orcid.org/0000-0002-0318-228X
+    - text: "{{< ai clarivate >}}"
+      url: https://www.webofscience.com/wos/author/record/IUP-3471-2023
+    - text: "{{< ai google-scholar >}}"
+      url: https://scholar.google.com/citations?&user=56zv2gQAAAAJ
+    - text: "{{< ai researchgate >}}"
+      url: https://www.researchgate.net/profile/Mehmet-Fatih-Kara
+image: img/profile.jpg
+comments: false
 ---
 
 About this site
@@ -7,3 +32,27 @@ About this site
 ```{r}
 1 + 1
 ```
+
+### This content appears above the formatted about page content.
+
+:::{#ppc}
+
+<!-- Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana. -->
+
+## Education
+
+<!-- University of California, San Diego | San Diego, CA -->
+<!-- PhD in Mathematics | Sept 2011 - June 2015 -->
+
+<!-- Macalester College | St. Paul, MN -->
+<!-- B.A in Economics | Sept 2007 - June 2011 -->
+
+## Experience
+
+<!-- Wengo Analytics | Head Data Scientist | April 2018 - present -->
+
+<!-- GeoScynce | Chief Analyst | Sept 2012 - April 2018 -->
+
+:::
+
+### This content appears below the formatted about page content.

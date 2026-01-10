@@ -4,14 +4,18 @@ project:
 
 website:
   title: "Mehmet Fatih Kara"
+  site-url: https://karamehmetfatih.github.io/
+  description: "A sample blog"
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - href: blog.qmd
+        text: Blog
       - href: papers
         text: Papers
-      - about.qmd
-      - favorites.qmd
+      - href: about.qmd
+        text: About
       
     right:
       - icon: rss
