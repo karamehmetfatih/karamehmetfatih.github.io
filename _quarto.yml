@@ -8,15 +8,24 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: papers
+        text: Papers
       - about.qmd
       - favorites.qmd
-
+      
     right:
       - icon: rss
         href: index.xml
   search: 
     location: navbar
     type: textbox
+  page-footer: 
+    background: "#F6F5F3"
+    center: © 2026  &middot; Made with {{< fa brands r-project >}} and 
+      [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)
+    right:
+      - icon: github
+        href: https://github.com/karamehmetfatih/karamehmetfatih.github.io
 listing:
   categories: true
 
@@ -24,9 +33,6 @@ format:
   html:
     theme: sandstone
     mainfont: arial
-    fontsize: 1.5rem
-    fontcolor: "#0013d5"
-    linkcolor: "#ff33f0"
     monofont: courier new 
     css: styles.css
     toc: true

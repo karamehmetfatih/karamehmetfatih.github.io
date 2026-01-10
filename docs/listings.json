@@ -1,23 +1,30 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/papers/index.html",
+    "items": []
+  },
+  {
+    "listing": "/favorites.html",
     "items": [
       "/about.html",
-      "/favorites.html"
+      "/index.html",
+      "/papers/index.html"
     ]
   },
   {
     "listing": "/about.html",
     "items": [
       "/favorites.html",
-      "/index.html"
+      "/index.html",
+      "/papers/index.html"
     ]
   },
   {
-    "listing": "/favorites.html",
+    "listing": "/index.html",
     "items": [
       "/about.html",
-      "/index.html"
+      "/favorites.html",
+      "/papers/index.html"
     ]
   }
 ]

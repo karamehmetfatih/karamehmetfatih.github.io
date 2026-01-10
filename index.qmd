@@ -1,20 +1,33 @@
 ---
-title: "M.F. Kara"
-image: profile.jpg
+title: "Mehmet Fatih Kara"
 about:
   template: trestles
   image-shape: round
   image-width: 15em
   links:
-    - icon: envelope
-      href: mailto:im.mfk@outlook.com
-    - icon: bluesky
-      href: https://bsky.app/profile/mfkara.bsky.social
     - icon: linkedin
+      text: LinkedIn
       href: www.linkedin.com/in/m-f-kara
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/mfkara.bsky.social
     - icon: github
+      text: GitHub
       href: https://github.com/karamehmetfatih
-  id: ppc
+    - text: "{{< iconify simple-icons:goodreads >}} Goodreads"
+      href: https://www.goodreads.com/user/show/186549008-mehmet-fatih-kara
+    - text: "{{< fa envelope >}} Email"
+      href: mailto:im.mfk@outlook.com
+    - text: "{{< ai orcid >}} ORCID 0000-0002-0318-228X"
+      url: https://orcid.org/0000-0002-0318-228X
+    - text: "{{< ai clarivate >}} RID IUP-3471-2023"
+      url: https://www.webofscience.com/wos/author/record/IUP-3471-2023
+    - text: "{{< ai google-scholar >}} Google Scholar"
+      url: https://scholar.google.com/citations?&user=56zv2gQAAAAJ
+    - text: "{{< ai researchgate >}} ResearchGate"
+      url: https://www.researchgate.net/profile/Mehmet-Fatih-Kara
+image: img/profile.jpg
+comments: false
 ---
 
 ### This content appears above the formatted about page content.

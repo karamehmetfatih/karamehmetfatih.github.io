@@ -1,31 +1,31 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "M.F. Kara",
+    "objectID": "papers/index.html",
+    "href": "papers/index.html",
+    "title": "Papers",
     "section": "",
-    "text": "Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.\n\n\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul, MN B.A in Economics | Sept 2007 - June 2011\n\n\n\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
+    "text": "Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419."
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "M.F. Kara",
+    "objectID": "papers/index.html#section",
+    "href": "papers/index.html#section",
+    "title": "Papers",
     "section": "",
-    "text": "University of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul, MN B.A in Economics | Sept 2007 - June 2011"
+    "text": "Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419."
   },
   {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "M.F. Kara",
-    "section": "",
-    "text": "Wengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
+    "objectID": "papers/index.html#section-1",
+    "href": "papers/index.html#section-1",
+    "title": "Papers",
+    "section": "2016",
+    "text": "2016\n\nErmiş, S., Kara, F., Özden, E. and Demir, İ., 2016. Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality. Journal of Agricultural Sciences, 22(4), pp.588-595. DOI: 10.1501/tarimbil_0000001417\nDemir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K., 2016. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (Lactuca sativa). American Journal of Experimental Agriculture, 12(3), pp.1-5. DOI: 10.9734/ajea/2016/25526"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFavorites\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nM.F. Kara\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "objectID": "papers/index.html#section-2",
+    "href": "papers/index.html#section-2",
+    "title": "Papers",
+    "section": "2015",
+    "text": "2015\n\nDemir, I., Kara, F., Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In VII International Symposium on Edible Alliaceae 1143 (pp. 341-344). DOI: 10.17660/ActaHortic.2016.1143.48"
   },
   {
     "objectID": "favorites.html",
@@ -40,5 +40,33 @@
     "title": "Favorites",
     "section": "",
     "text": "lorem ipsum"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFavorites\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMehmet Fatih Kara\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPapers\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mehmet Fatih Kara",
+    "section": "",
+    "text": "Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.\n\n\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul, MN B.A in Economics | Sept 2007 - June 2011\n\n\n\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Mehmet Fatih Kara",
+    "section": "",
+    "text": "University of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul, MN B.A in Economics | Sept 2007 - June 2011"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Mehmet Fatih Kara",
+    "section": "",
+    "text": "Wengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
   }
 ]
