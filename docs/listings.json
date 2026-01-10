@@ -1,0 +1,23 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/about.html",
+      "/favorites.html"
+    ]
+  },
+  {
+    "listing": "/about.html",
+    "items": [
+      "/favorites.html",
+      "/index.html"
+    ]
+  },
+  {
+    "listing": "/favorites.html",
+    "items": [
+      "/about.html",
+      "/index.html"
+    ]
+  }
+]

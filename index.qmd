@@ -1,11 +1,42 @@
 ---
-title: "karamehmetfatih.github.io"
+title: "M.F. Kara"
+image: profile.jpg
+about:
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - icon: envelope
+      href: mailto:im.mfk@outlook.com
+    - icon: bluesky
+      href: https://bsky.app/profile/mfkara.bsky.social
+    - icon: linkedin
+      href: www.linkedin.com/in/m-f-kara
+    - icon: github
+      href: https://github.com/karamehmetfatih
+  id: ppc
 ---
 
-This is a Quarto website.
+### This content appears above the formatted about page content.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+:::{#ppc}
 
-```{r}
-1 + 1
-```
+Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana.
+
+## Education
+
+University of California, San Diego | San Diego, CA
+PhD in Mathematics | Sept 2011 - June 2015
+
+Macalester College | St. Paul, MN
+B.A in Economics | Sept 2007 - June 2011
+
+## Experience
+
+Wengo Analytics | Head Data Scientist | April 2018 - present
+
+GeoScynce | Chief Analyst | Sept 2012 - April 2018
+
+:::
+
+### This content appears below the formatted about page content.
