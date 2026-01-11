@@ -8,4 +8,13 @@ categories:
   - news
   - code
   - analysis
+format:
+  html:
+    toc: true
+    toc-location: left
 ---
+
+## Deneme 2
+
+
+### Deneme 3

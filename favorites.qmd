@@ -1,7 +1,0 @@
----
-title: "Favorites"
----
-
-## Deneme
-
-lorem ipsum

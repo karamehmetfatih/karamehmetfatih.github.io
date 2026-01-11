@@ -1,24 +1,10 @@
 [
   {
-    "objectID": "posts/deneme.html",
-    "href": "posts/deneme.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "No matching items"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Mehmet Fatih Kara",
     "section": "",
-    "text": "Blog\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFavorites\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMehmet Fatih Kara\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPapers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
+    "text": "Blog\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMehmet Fatih Kara\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPapers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -42,18 +28,11 @@
     "text": "Experience"
   },
   {
-    "objectID": "favorites.html",
-    "href": "favorites.html",
-    "title": "Favorites",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "lorem ipsum"
-  },
-  {
-    "objectID": "favorites.html#deneme",
-    "href": "favorites.html#deneme",
-    "title": "Favorites",
-    "section": "",
-    "text": "lorem ipsum"
+    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "papers/index.html",

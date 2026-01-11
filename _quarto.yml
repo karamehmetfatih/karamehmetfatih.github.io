@@ -1,11 +1,18 @@
 project:
   type: website
   output-dir: docs
+  preview:
+    port: 4200
 
 website:
   title: "Mehmet Fatih Kara"
-  site-url: https://karamehmetfatih.github.io/
+  site-url: "https://www.mfkara.net/"
+  repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
+  favicon: img/favicon.png
   description: "A sample blog"
+  comments:
+    giscus:
+      repo: karamehmetfatih/karamehmetfatih.github.io
   navbar:
     left:
       - href: index.qmd

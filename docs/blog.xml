@@ -6,24 +6,30 @@
       version="2.0">
 <channel>
 <title>Mehmet Fatih Kara</title>
-<link>https://karamehmetfatih.github.io/blog.html</link>
-<atom:link href="https://karamehmetfatih.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://www.mfkara.net/blog.html</link>
+<atom:link href="https://www.mfkara.net/blog.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Fri, 21 May 2021 21:00:00 GMT</lastBuildDate>
 <item>
   <title>Post With Code</title>
   <dc:creator>Fizz McPhee</dc:creator>
-  <link>https://karamehmetfatih.github.io/posts/deneme.html</link>
+  <link>https://www.mfkara.net/posts/deneme.html</link>
   <description><![CDATA[ 
 
 
 
 
 
+<section id="deneme-2" class="level2">
+
+<section id="deneme-3" class="level3">
 
 
 
+
+</section>
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
@@ -34,7 +40,7 @@
   <category>news</category>
   <category>code</category>
   <category>analysis</category>
-  <guid>https://karamehmetfatih.github.io/posts/deneme.html</guid>
+  <guid>https://www.mfkara.net/posts/deneme.html</guid>
   <pubDate>Fri, 21 May 2021 21:00:00 GMT</pubDate>
 </item>
 </channel>
