@@ -18,12 +18,12 @@ website:
       - href: index.qmd
         text: Home
       - href: blog/index.qmd
-        text: Blog
+        text: "Blog"
       - href: papers
         text: Papers
       - href: about.qmd
         text: About
-      
+
     right:
       - icon: rss
         href: index.xml
