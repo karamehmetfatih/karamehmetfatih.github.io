@@ -1,40 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mehmet Fatih Kara",
-    "section": "",
-    "text": "Blog\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMehmet Fatih Kara\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPapers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Mehmet Fatih Kara",
-    "section": "",
-    "text": "About this site\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Mehmet Fatih Kara",
-    "section": "Education",
-    "text": "Education"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "Mehmet Fatih Kara",
-    "section": "Experience",
-    "text": "Experience"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "papers/index.html",
     "href": "papers/index.html",
     "title": "Papers",
@@ -61,5 +26,33 @@
     "title": "Papers",
     "section": "2015",
     "text": "2015\n\nDemir, I., Kara, F., Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In VII International Symposium on Edible Alliaceae 1143 (pp. 341-344). DOI: 10.17660/ActaHortic.2016.1143.48"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Mehmet Fatih Kara",
+    "section": "",
+    "text": "About this site\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Mehmet Fatih Kara",
+    "section": "Education",
+    "text": "Education"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "Mehmet Fatih Kara",
+    "section": "Experience",
+    "text": "Experience"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mehmet Fatih Kara",
+    "section": "",
+    "text": "Blog\n\n\nNews, tips, and commentary about all things Quarto\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMehmet Fatih Kara\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPapers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nFizz McPhee\n\n\n\n\n\nNo matching items"
   }
 ]

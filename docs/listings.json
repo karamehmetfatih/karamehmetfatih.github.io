@@ -1,34 +1,34 @@
 [
   {
-    "listing": "/posts/deneme.html",
+    "listing": "/papers/index.html",
     "items": []
   },
   {
-    "listing": "/index.html",
-    "items": [
-      "/blog.html",
-      "/about.html",
-      "/papers/index.html",
-      "/posts/deneme.html"
-    ]
+    "listing": "/blog/posts/deneme/index.html",
+    "items": []
   },
   {
     "listing": "/about.html",
     "items": [
-      "/blog.html",
+      "/blog/index.html",
       "/index.html",
       "/papers/index.html",
-      "/posts/deneme.html"
+      "/blog/posts/deneme/index.html"
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/blog/index.html",
     "items": [
-      "/posts/deneme.html"
+      "/blog/posts/deneme/index.html"
     ]
   },
   {
-    "listing": "/papers/index.html",
-    "items": []
+    "listing": "/index.html",
+    "items": [
+      "/blog/index.html",
+      "/about.html",
+      "/papers/index.html",
+      "/blog/posts/deneme/index.html"
+    ]
   }
 ]

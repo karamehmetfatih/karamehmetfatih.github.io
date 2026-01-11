@@ -17,7 +17,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: blog.qmd
+      - href: blog/index.qmd
         text: Blog
       - href: papers
         text: Papers
