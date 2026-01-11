@@ -10,9 +10,6 @@ website:
   repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
   favicon: img/favicon.png
   description: "A sample blog"
-  comments:
-    giscus:
-      repo: karamehmetfatih/karamehmetfatih.github.io
   navbar:
     left:
       - href: index.qmd
