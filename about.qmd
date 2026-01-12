@@ -1,5 +1,5 @@
 ---
-title: "Mehmet Fatih Kara"
+title: "About"
 about:
   template: trestles
   image-shape: round
@@ -8,7 +8,7 @@ about:
     - icon: linkedin
       href: www.linkedin.com/in/m-f-kara
     - icon: bluesky
-      href: https://bsky.app/profile/mfkara.bsky.social
+      href: https://bsky.app/profile/mfkara.net
     - icon: github
       href: https://github.com/karamehmetfatih
     - text: "{{< iconify simple-icons:goodreads >}}"
@@ -27,11 +27,9 @@ image: img/profile.jpg
 comments: false
 ---
 
-About this site
+## About this blog
 
-```{r}
-1 + 1
-```
+This is the contents of the about page for my blog.
 
 ### This content appears above the formatted about page content.
 

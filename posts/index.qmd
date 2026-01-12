@@ -1,8 +1,8 @@
 ---
 title: "Blog"
-subtitle: News, tips, and commentary about all things Quarto
+subtitle: News, tips, and commentary
 listing:
-  contents: "posts/*/index.qmd"
+  contents: "/*/index.qmd"
   sort: "date desc"
   type: default
   categories: true

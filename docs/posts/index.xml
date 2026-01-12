@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Mehmet Fatih Kara</title>
-<link>https://www.mfkara.net/blog/</link>
-<atom:link href="https://www.mfkara.net/blog/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://www.mfkara.net/posts/</link>
+<atom:link href="https://www.mfkara.net/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>A sample blog</description>
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Fri, 21 May 2021 21:00:00 GMT</lastBuildDate>
 <item>
   <title>Post With Code</title>
   <dc:creator>MFK </dc:creator>
-  <link>https://www.mfkara.net/blog/posts/deneme/</link>
+  <link>https://www.mfkara.net/posts/deneme/</link>
   <description><![CDATA[ 
 
 
@@ -27,20 +27,14 @@
 
 
 
-
 </section>
 </section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div> ]]></description>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <category>news</category>
   <category>code</category>
   <category>analysis</category>
-  <guid>https://www.mfkara.net/blog/posts/deneme/</guid>
+  <guid>https://www.mfkara.net/posts/deneme/</guid>
   <pubDate>Fri, 21 May 2021 21:00:00 GMT</pubDate>
 </item>
 </channel>

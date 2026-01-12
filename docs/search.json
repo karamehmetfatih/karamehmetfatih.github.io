@@ -30,29 +30,15 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "Mehmet Fatih Kara",
+    "title": "About",
     "section": "",
-    "text": "About this site\n1 + 1\n\n[1] 2"
+    "text": "This is the contents of the about page for my blog."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Mehmet Fatih Kara",
-    "section": "Education",
-    "text": "Education"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "Mehmet Fatih Kara",
-    "section": "Experience",
-    "text": "Experience"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mehmet Fatih Kara",
+    "objectID": "about.html#about-this-blog",
+    "href": "about.html#about-this-blog",
+    "title": "About",
     "section": "",
-    "text": "Blog\n\n\nNews, tips, and commentary about all things Quarto\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMehmet Fatih Kara\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPapers\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\nPost description\n\n\n\n\n\nMay 22, 2021\n\n\nMFK\n\n\n\n\n\nNo matching items"
+    "text": "This is the contents of the about page for my blog."
   }
 ]
