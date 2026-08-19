@@ -1,27 +1,30 @@
 /*-- scss:defaults --*/
 
 // =============================================================================
-// al-folio look, ported to Quarto.
+// al-folio look, ported to Quarto — LIGHT mode + shared rules.
 //
 // This is NOT the al-folio theme — Jekyll themes cannot be installed into
 // Quarto. It reproduces al-folio's visual language (palette, flat chrome,
-// generous whitespace, dark footer) as a Bootstrap SCSS theme.
+// generous whitespace) as a Bootstrap SCSS theme.
 //
 // Colour values are taken from the upstream theme's own sources:
 //   _sass/_variables.scss  and  _sass/_themes.scss
 //   https://github.com/alshedivat/al-folio
+//
+// Every themeable colour is emitted as a --af-* custom property below, and all
+// rules consume those. al-folio-dark.scss redefines only those properties, so
+// the rules here serve both modes and are not duplicated.
 //
 // Typography is deliberately NOT set here: the site uses Atkinson Hyperlegible
 // Next / Mono, which is a separate, intentional choice. al-folio's own face
 // (Roboto) is not imposed.
 // =============================================================================
 
-// --- upstream palette --------------------------------------------------------
+// --- upstream palette (light) -------------------------------------------------
 $af-purple: #b509ac; // --global-theme-color
-$af-red-dark: #b71c1c; // --global-highlight-color
-$af-grey: #828282; // --global-text-color-light
-$af-grey-dark: #1c1c1d; // --global-footer-bg-color
-$af-grey-light: #d0d0d0; // grey lightened 40%, the footer text colour
+$af-grey: #828282; // --global-text-color-light  ($grey-color)
+$af-grey-dark: #1c1c1d; // --global-footer-bg-color   ($grey-color-dark)
+$af-grey-light: #e8e8e8; // $grey-color lightened 40% (L 51% -> 91%)
 $af-white: #ffffff;
 $af-black: #000000;
 $af-divider: rgba(0, 0, 0, 0.1); // --global-divider-color
@@ -57,34 +60,108 @@ $box-shadow-lg: none;
 $card-border-width: 0;
 $card-bg: transparent;
 
-// --- code ---------------------------------------------------------------------
 $code-color: $af-purple;
-$code-bg: rgba($af-purple, 0.05);
-
-// --- navbar: quiet and light ---------------------------------------------------
-$navbar-light-color: rgba(0, 0, 0, 0.65);
-$navbar-light-hover-color: $af-purple;
-$navbar-light-active-color: $af-purple;
-$navbar-light-brand-color: $af-black;
-$navbar-light-brand-hover-color: $af-purple;
-$navbar-padding-y: 0.6rem;
 
 /*-- scss:rules --*/
 
-// Navbar: white with a hairline rule, not a filled colour bar.
+// -----------------------------------------------------------------------------
+// Light-mode tokens. al-folio-dark.scss overrides this same block.
+// -----------------------------------------------------------------------------
+:root {
+  --af-bg: #{$af-white};
+  --af-fg: #{$af-black};
+  --af-accent: #{$af-purple};
+  --af-muted: #{$af-grey};
+  --af-divider: #{$af-divider};
+  --af-code-bg: #{rgba($af-purple, 0.05)};
+  --af-navbar-bg: #{$af-white};
+  --af-footer-bg: #{$af-grey-dark};
+  --af-footer-fg: #{$af-grey-light};
+  --af-footer-link: #{$af-white};
+}
+
+// Colours are applied through the tokens rather than relying on Bootstrap's
+// compiled variables, so light and dark stay in lockstep.
+body {
+  background-color: var(--af-bg);
+  color: var(--af-fg);
+}
+
+main a,
+.quarto-title-block a {
+  color: var(--af-accent);
+  text-decoration: none;
+}
+
+main a:hover,
+.quarto-title-block a:hover {
+  color: var(--af-accent);
+  text-decoration: underline;
+}
+
+// Navbar: a hairline rule, not a filled colour bar.
 .navbar {
-  background-color: $af-white !important;
-  border-bottom: 1px solid $af-divider;
+  background-color: var(--af-navbar-bg) !important;
+  border-bottom: 1px solid var(--af-divider);
 }
 
 .navbar .navbar-brand {
   font-weight: 600;
   letter-spacing: 0.02em;
+  color: var(--af-fg);
 }
 
-// al-folio underlines links only on hover; keep nav items clean.
+.navbar .nav-link {
+  color: var(--af-fg);
+}
+
 .navbar .nav-link:hover {
+  color: var(--af-accent);
   text-decoration: none;
+}
+
+// -----------------------------------------------------------------------------
+// Colour-scheme toggle icon.
+//
+// Quarto draws this control as a toggle SWITCH, painted as a background-image
+// SVG data URI (bi-toggle-off / bi-toggle-on) on the ::before of an otherwise
+// empty <i class="bi">. Those rules are:
+//   .navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before
+//   .navbar .quarto-color-scheme-toggle.alternate       .bi::before
+// Both are specificity (0,4,1), so they must be matched exactly to suppress.
+//
+// We replace the switch with a plain light/dark icon: a moon in light mode
+// (click -> dark) and a sun in dark mode (see al-folio-dark.scss). Codepoints
+// are bi-moon-stars-fill / bi-sun-fill, read from the bundled
+// bootstrap-icons.css rather than guessed.
+// -----------------------------------------------------------------------------
+
+// Kill the switch graphic in both of its states.
+.navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before,
+.navbar .quarto-color-scheme-toggle.alternate .bi::before {
+  background-image: none;
+}
+
+// Render a font glyph instead of a 1rem background-image box.
+.navbar .quarto-color-scheme-toggle .bi::before {
+  content: "\f495"; // bi-moon-stars-fill
+  font-family: "bootstrap-icons";
+  font-size: 1rem;
+  line-height: 1;
+  vertical-align: -0.125em;
+  background-image: none;
+  width: auto;
+  height: auto;
+}
+
+.navbar .quarto-color-scheme-toggle {
+  color: var(--af-fg);
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar .quarto-color-scheme-toggle:hover {
+  color: var(--af-accent);
 }
 
 // Page title: large and light, with a divider beneath.
@@ -98,21 +175,21 @@ $navbar-padding-y: 0.6rem;
 
 #title-block-header .description,
 .quarto-title .description {
-  color: $af-grey;
+  color: var(--af-muted);
   font-size: 1.05rem;
 }
 
 #title-block-header {
   padding-bottom: 1rem;
   margin-bottom: 1.75rem;
-  border-bottom: 1px solid $af-divider;
+  border-bottom: 1px solid var(--af-divider);
 }
 
 // Section headings sit on generous space, with a hairline under h2.
 main h2 {
   margin-top: 2.25rem;
   padding-bottom: 0.35rem;
-  border-bottom: 1px solid $af-divider;
+  border-bottom: 1px solid var(--af-divider);
   font-size: 1.45rem;
 }
 
@@ -121,32 +198,36 @@ main h3 {
   font-size: 1.2rem;
 }
 
-// Muted secondary text, as al-folio uses for dates and captions.
+hr {
+  border-top: 1px solid var(--af-divider);
+  opacity: 1;
+}
+
 .text-muted,
 figcaption,
 .quarto-title-meta {
-  color: $af-grey !important;
+  color: var(--af-muted) !important;
 }
 
-// Flat code blocks tinted with the accent, per --global-code-bg-color.
+// Flat code blocks tinted per --global-code-bg-color.
 pre,
 div.sourceCode {
-  background-color: rgba($af-purple, 0.05) !important;
+  background-color: var(--af-code-bg) !important;
   border: none;
   border-radius: 0;
   padding: 0.85rem 1rem;
 }
 
 code:not(pre code) {
-  background-color: rgba($af-purple, 0.05);
-  color: $af-purple;
+  background-color: var(--af-code-bg);
+  color: var(--af-accent);
   padding: 0.1em 0.35em;
 }
 
-// Dark footer, matching --global-footer-bg-color.
+// Footer. al-folio inverts this in dark mode, hence the tokens.
 .nav-footer {
-  background-color: $af-grey-dark !important;
-  color: $af-grey-light;
+  background-color: var(--af-footer-bg) !important;
+  color: var(--af-footer-fg);
   border-top: none;
   font-size: 0.8rem;
   padding-top: 1.25rem;
@@ -155,11 +236,11 @@ code:not(pre code) {
 
 .nav-footer a,
 .nav-footer .nav-link {
-  color: $af-white !important;
+  color: var(--af-footer-link) !important;
 }
 
 .nav-footer a:hover {
-  color: $af-white !important;
+  color: var(--af-footer-link) !important;
   text-decoration: underline;
 }
 
@@ -170,9 +251,9 @@ code:not(pre code) {
 }
 
 blockquote {
-  border-left: 3px solid $af-divider;
+  border-left: 3px solid var(--af-divider);
   padding-left: 1rem;
-  color: $af-grey;
+  color: var(--af-muted);
 }
 
 // Publication list: keep the hanging indent, add al-folio's quiet separator.
@@ -181,7 +262,7 @@ blockquote {
 // heading is not, since that h2 already carries its own rule.
 .publication {
   padding-bottom: 0.9rem;
-  border-bottom: 1px solid $af-divider;
+  border-bottom: 1px solid var(--af-divider);
 }
 
 .publication:last-of-type {

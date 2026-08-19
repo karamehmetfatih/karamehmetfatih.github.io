@@ -55,7 +55,9 @@ website:
 
 format:
   html:
-    theme: [litera, al-folio.scss]
+    theme:
+      light: [litera, al-folio.scss]
+      dark: [darkly, al-folio.scss, al-folio-dark.scss]
     mainfont: "Atkinson Hyperlegible Next"
     monofont: "Atkinson Hyperlegible Mono"
     css: styles.css

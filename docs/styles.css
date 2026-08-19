@@ -76,12 +76,16 @@ h2 {
   }
 }
 
+/* Colours come from the --af-* theme tokens (al-folio.scss / al-folio-dark.scss)
+   so the card follows the light/dark toggle. Bootstrap's own --bs-* variables
+   are NOT used here: the light bundle's :root wins for those even in dark mode,
+   which left this card white on a dark page. */
 .gravatar-hovercard__inner {
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--bs-border-color, #dee2e6);
+  border: 1px solid var(--af-divider, #dee2e6);
   border-radius: var(--gh-radius);
-  background: var(--bs-body-bg, #fff);
+  background: var(--af-bg, #fff);
   box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
 }
 
@@ -122,8 +126,8 @@ h2 {
   width: var(--gh-avatar-size);
   height: var(--gh-avatar-size);
   border-radius: 50%;
-  border: 3px solid var(--bs-body-bg, #fff);
-  background: var(--bs-body-bg, #fff);
+  border: 3px solid var(--af-bg, #fff);
+  background: var(--af-bg, #fff);
   display: block;
 }
 
@@ -147,7 +151,7 @@ h2 {
 .gravatar-hovercard__location {
   margin: 0;
   font-size: 0.85rem;
-  color: var(--bs-secondary-color, #6c757d);
+  color: var(--af-muted, #6c757d);
 }
 
 .gravatar-hovercard__body {
@@ -159,7 +163,7 @@ h2 {
   font-size: 0.875rem;
   line-height: 1.5;
   text-align: center;
-  color: var(--bs-body-color, #212529);
+  color: var(--af-fg, #212529);
 }
 
 .gravatar-hovercard__social-links {
@@ -189,12 +193,12 @@ h2 {
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.7rem 1.15rem;
-  border-top: 1px solid var(--bs-border-color, #dee2e6);
+  border-top: 1px solid var(--af-divider, #dee2e6);
   font-size: 0.8rem;
 }
 
 .gravatar-hovercard__profile-url {
-  color: var(--bs-secondary-color, #6c757d);
+  color: var(--af-muted, #6c757d);
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;

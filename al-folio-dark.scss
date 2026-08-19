@@ -1,0 +1,79 @@
+/*-- scss:defaults --*/
+
+// =============================================================================
+// al-folio look — DARK mode.
+//
+// Layered on top of al-folio.scss, which carries all the shared rules. This
+// file only redefines the --af-* tokens (plus the Bootstrap variables that
+// generate component chrome).
+//
+// Values from al-folio's html[data-theme="dark"] block in _sass/_themes.scss.
+// Note two deliberate inversions from upstream:
+//   * the accent changes from purple to cyan in dark mode
+//   * the footer inverts — light panel on the dark page
+// =============================================================================
+
+$af-cyan: #2698ba; // --global-theme-color (dark)
+$af-grey: #828282; // --global-text-color-light
+$af-grey-dark: #1c1c1d; // --global-bg-color (dark)
+$af-grey-light: #e8e8e8; // --global-text-color (dark)
+$af-code-bg-dark: #2c3237; // --global-code-bg-color (dark)
+$af-divider-dark: #424246; // --global-divider-color (dark)
+$af-black: #000000;
+
+$body-bg: $af-grey-dark;
+$body-color: $af-grey-light;
+$secondary: $af-grey;
+
+$link-color: $af-cyan;
+$link-hover-color: $af-cyan;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+$border-color: $af-divider-dark;
+$hr-border-color: $af-divider-dark;
+
+$code-color: $af-cyan;
+
+/*-- scss:rules --*/
+
+:root {
+  --af-bg: #{$af-grey-dark};
+  --af-fg: #{$af-grey-light};
+  --af-accent: #{$af-cyan};
+  --af-muted: #{$af-grey};
+  --af-divider: #{$af-divider-dark};
+  --af-code-bg: #{$af-code-bg-dark};
+  --af-navbar-bg: #{$af-grey-dark};
+  --af-footer-bg: #{$af-grey-light};
+  --af-footer-fg: #{$af-grey-dark};
+  --af-footer-link: #{$af-black};
+}
+
+// Dark mode shows a sun: clicking returns to light. The switch graphic is
+// suppressed in al-folio.scss, which this bundle also loads.
+.navbar .quarto-color-scheme-toggle .bi::before {
+  content: "\f5a1"; // bi-sun-fill
+}
+
+// Accessibility: WCAG 1.4.1 requires >=3:1 between a link and the text around
+// it when colour alone marks the link. Upstream's dark accent (#2698ba) against
+// the dark-mode body text (#e8e8e8) measures only 2.73:1, so colour alone is
+// not sufficient here — body links carry a persistent underline in dark mode.
+// Light mode passes at 3.60:1 and keeps al-folio's underline-on-hover.
+// To match upstream exactly instead, delete this block.
+main a,
+.quarto-title-block a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+// The Gravatar card's own colours are driven by the --af-* tokens in
+// styles.css, so it follows the toggle without further help here.
+//
+// Gravatar's social icons are dark monochrome SVGs; lift them off the dark
+// background so they stay legible.
+.gravatar-hovercard__social-icon {
+  filter: invert(1);
+  opacity: 0.85;
+}
