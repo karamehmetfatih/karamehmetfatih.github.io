@@ -29,7 +29,7 @@ website:
             href: https://github.com/karamehmetfatih/karamehmetfatih.github.io
           - text: Report an Issue
             href: https://github.com/karamehmetfatih/karamehmetfatih.github.io/issues
-    background: primary
+    background: light
     search: true
     left:
       - href: index.qmd
@@ -41,8 +41,8 @@ website:
   search: 
     location: navbar
     type: textbox
-  page-footer: 
-    background: light
+  page-footer:
+    background: dark
     center: © 2026  &middot; Made with {{< fa brands r-project >}} and 
       [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)
     right: 
@@ -55,7 +55,7 @@ website:
 
 format:
   html:
-    theme: sandstone
+    theme: [litera, al-folio.scss]
     mainfont: "Atkinson Hyperlegible Next"
     monofont: "Atkinson Hyperlegible Mono"
     css: styles.css

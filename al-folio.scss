@@ -1,0 +1,190 @@
+/*-- scss:defaults --*/
+
+// =============================================================================
+// al-folio look, ported to Quarto.
+//
+// This is NOT the al-folio theme — Jekyll themes cannot be installed into
+// Quarto. It reproduces al-folio's visual language (palette, flat chrome,
+// generous whitespace, dark footer) as a Bootstrap SCSS theme.
+//
+// Colour values are taken from the upstream theme's own sources:
+//   _sass/_variables.scss  and  _sass/_themes.scss
+//   https://github.com/alshedivat/al-folio
+//
+// Typography is deliberately NOT set here: the site uses Atkinson Hyperlegible
+// Next / Mono, which is a separate, intentional choice. al-folio's own face
+// (Roboto) is not imposed.
+// =============================================================================
+
+// --- upstream palette --------------------------------------------------------
+$af-purple: #b509ac; // --global-theme-color
+$af-red-dark: #b71c1c; // --global-highlight-color
+$af-grey: #828282; // --global-text-color-light
+$af-grey-dark: #1c1c1d; // --global-footer-bg-color
+$af-grey-light: #d0d0d0; // grey lightened 40%, the footer text colour
+$af-white: #ffffff;
+$af-black: #000000;
+$af-divider: rgba(0, 0, 0, 0.1); // --global-divider-color
+
+// --- core ---------------------------------------------------------------------
+$body-bg: $af-white;
+$body-color: $af-black;
+$secondary: $af-grey;
+
+$link-color: $af-purple;
+$link-hover-color: $af-purple;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+$border-color: $af-divider;
+$hr-border-color: $af-divider;
+$hr-opacity: 1;
+
+// --- rhythm: al-folio is airy --------------------------------------------------
+$line-height-base: 1.6;
+$paragraph-margin-bottom: 1.1rem;
+$headings-margin-bottom: 0.75rem;
+$headings-font-weight: 500;
+$headings-line-height: 1.25;
+
+// --- flat: no rounded boxes, no shadows ---------------------------------------
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$box-shadow: none;
+$box-shadow-sm: none;
+$box-shadow-lg: none;
+$card-border-width: 0;
+$card-bg: transparent;
+
+// --- code ---------------------------------------------------------------------
+$code-color: $af-purple;
+$code-bg: rgba($af-purple, 0.05);
+
+// --- navbar: quiet and light ---------------------------------------------------
+$navbar-light-color: rgba(0, 0, 0, 0.65);
+$navbar-light-hover-color: $af-purple;
+$navbar-light-active-color: $af-purple;
+$navbar-light-brand-color: $af-black;
+$navbar-light-brand-hover-color: $af-purple;
+$navbar-padding-y: 0.6rem;
+
+/*-- scss:rules --*/
+
+// Navbar: white with a hairline rule, not a filled colour bar.
+.navbar {
+  background-color: $af-white !important;
+  border-bottom: 1px solid $af-divider;
+}
+
+.navbar .navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+// al-folio underlines links only on hover; keep nav items clean.
+.navbar .nav-link:hover {
+  text-decoration: none;
+}
+
+// Page title: large and light, with a divider beneath.
+#title-block-header .title,
+.quarto-title .title {
+  font-weight: 400;
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+
+#title-block-header .description,
+.quarto-title .description {
+  color: $af-grey;
+  font-size: 1.05rem;
+}
+
+#title-block-header {
+  padding-bottom: 1rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid $af-divider;
+}
+
+// Section headings sit on generous space, with a hairline under h2.
+main h2 {
+  margin-top: 2.25rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid $af-divider;
+  font-size: 1.45rem;
+}
+
+main h3 {
+  margin-top: 1.6rem;
+  font-size: 1.2rem;
+}
+
+// Muted secondary text, as al-folio uses for dates and captions.
+.text-muted,
+figcaption,
+.quarto-title-meta {
+  color: $af-grey !important;
+}
+
+// Flat code blocks tinted with the accent, per --global-code-bg-color.
+pre,
+div.sourceCode {
+  background-color: rgba($af-purple, 0.05) !important;
+  border: none;
+  border-radius: 0;
+  padding: 0.85rem 1rem;
+}
+
+code:not(pre code) {
+  background-color: rgba($af-purple, 0.05);
+  color: $af-purple;
+  padding: 0.1em 0.35em;
+}
+
+// Dark footer, matching --global-footer-bg-color.
+.nav-footer {
+  background-color: $af-grey-dark !important;
+  color: $af-grey-light;
+  border-top: none;
+  font-size: 0.8rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.nav-footer a,
+.nav-footer .nav-link {
+  color: $af-white !important;
+}
+
+.nav-footer a:hover {
+  color: $af-white !important;
+  text-decoration: underline;
+}
+
+// Strip Bootstrap chrome that al-folio does without.
+.card,
+.callout {
+  box-shadow: none;
+}
+
+blockquote {
+  border-left: 3px solid $af-divider;
+  padding-left: 1rem;
+  color: $af-grey;
+}
+
+// Publication list: keep the hanging indent, add al-folio's quiet separator.
+// :last-of-type scopes per year <section>, which is what we want — entries
+// within a year are separated, but the last entry before the next year's
+// heading is not, since that h2 already carries its own rule.
+.publication {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid $af-divider;
+}
+
+.publication:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0.2rem;
+}
