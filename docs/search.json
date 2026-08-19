@@ -1,29 +1,29 @@
 [
   {
-    "objectID": "papers/index.html",
-    "href": "papers/index.html",
-    "title": "Papers",
+    "objectID": "research/index.html",
+    "href": "research/index.html",
+    "title": "Publications",
     "section": "",
-    "text": "Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419."
+    "text": "Also listed on ORCID · Google Scholar · Web of Science · ResearchGate"
   },
   {
-    "objectID": "papers/index.html#section",
-    "href": "papers/index.html#section",
-    "title": "Papers",
-    "section": "",
-    "text": "Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419."
+    "objectID": "research/index.html#year-2024",
+    "href": "research/index.html#year-2024",
+    "title": "Publications",
+    "section": "2024",
+    "text": "2024\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419."
   },
   {
-    "objectID": "papers/index.html#section-1",
-    "href": "papers/index.html#section-1",
-    "title": "Papers",
+    "objectID": "research/index.html#year-2016",
+    "href": "research/index.html#year-2016",
+    "title": "Publications",
     "section": "2016",
-    "text": "2016\n\nErmiş, S., Kara, F., Özden, E. and Demir, İ., 2016. Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality. Journal of Agricultural Sciences, 22(4), pp.588-595. DOI: 10.1501/tarimbil_0000001417\nDemir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K., 2016. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (Lactuca sativa). American Journal of Experimental Agriculture, 12(3), pp.1-5. DOI: 10.9734/ajea/2016/25526"
+    "text": "2016\n\nErmiş, S., Kara, F., Özden, E. and Demir, İ., 2016. Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality. Journal of Agricultural Sciences, 22(4), pp.588-595. DOI: 10.1501/tarimbil_0000001417\n\n\nDemir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K., 2016. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (Lactuca sativa). American Journal of Experimental Agriculture, 12(3), pp.1-5. DOI: 10.9734/ajea/2016/25526"
   },
   {
-    "objectID": "papers/index.html#section-2",
-    "href": "papers/index.html#section-2",
-    "title": "Papers",
+    "objectID": "research/index.html#year-2015",
+    "href": "research/index.html#year-2015",
+    "title": "Publications",
     "section": "2015",
     "text": "2015\n\nDemir, I., Kara, F., Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In VII International Symposium on Edible Alliaceae 1143 (pp. 341-344). DOI: 10.17660/ActaHortic.2016.1143.48"
   },
@@ -32,13 +32,55 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This is the contents of the about page for my blog."
+    "text": "I work on the genetics of disease resistance in lettuce — in particular how the crop responds to necrotrophic fungal pathogens, and how that response can be read at the level of individual transcripts rather than whole genes.\nMy current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed."
   },
   {
-    "objectID": "about.html#about-this-blog",
-    "href": "about.html#about-this-blog",
+    "objectID": "about.html#research-interests",
+    "href": "about.html#research-interests",
     "title": "About",
+    "section": "Research interests",
+    "text": "Research interests\n\nPlant immunity and resistance to necrotrophic fungal pathogens\nTranscript-level expression analysis and alternative splicing\nReference transcriptome construction\nCRISPR-Cas9 genome editing in crops\nSeed longevity, storage and priming"
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About",
+    "section": "Contact",
+    "text": "Contact\nThe best way to reach me is by email at info@mfkara.net."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mehmet Fatih Kara",
     "section": "",
-    "text": "This is the contents of the about page for my blog."
+    "text": "M. Fatih Kara\n                Ankara, Türkiye\n            \n        \n        \n            Plant scientist 🌱 | Plant immunity & MPMI | Necrotrophic fungi: Botrytis & Sclerotinia | Genome editing | Lettuce omics & disease resistance PhD @ UoY\n        \n        \n            \n                \n            \n            \n                \n            \n            \n                \n            \n            \n                \n            \n        \n        \n            gravatar.com/mfkara\n            View profile →\nI am a plant scientist working on disease resistance in lettuce, with a focus on how the crop responds to necrotrophic fungal pathogens at the transcriptional level. I am a PhD researcher at the University of York.\nMy current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance — reading that response at the level of individual transcripts rather than whole genes. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed."
+  },
+  {
+    "objectID": "index.html#research",
+    "href": "index.html#research",
+    "title": "Mehmet Fatih Kara",
+    "section": "Research",
+    "text": "Research\nPlant–pathogen interactions. How lettuce (Lactuca sativa) defends itself against necrotrophic fungi such as Botrytis cinerea and Sclerotinia sclerotiorum, and which regulators of that response could be useful in breeding for resistance.\nTranscriptomics. Building transcript-level resources for lettuce, including LsRTDv1, a reference transcript dataset that makes accurate transcript-specific expression analysis possible in this crop.\nGenome editing. Applying CRISPR-Cas9 approaches to functionally test candidate resistance genes in lettuce.\nSeed science. Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage."
+  },
+  {
+    "objectID": "index.html#selected-publication",
+    "href": "index.html#selected-publication",
+    "title": "Mehmet Fatih Kara",
+    "section": "Selected publication",
+    "text": "Selected publication\nKara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978\nSee all publications →"
+  },
+  {
+    "objectID": "index.html#elsewhere",
+    "href": "index.html#elsewhere",
+    "title": "Mehmet Fatih Kara",
+    "section": "Elsewhere",
+    "text": "Elsewhere\nAcademic profiles — ORCID · Google Scholar · Web of Science · ResearchGate\nSocial — GitHub · LinkedIn · Bluesky · Goodreads"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Mehmet Fatih Kara",
+    "section": "Contact",
+    "text": "Contact\nThe best way to reach me is by email at info@mfkara.net."
   }
 ]

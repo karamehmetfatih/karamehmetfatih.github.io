@@ -1,20 +1,21 @@
 ---
 title: "About"
+description: "Background, education and research experience of Mehmet Fatih Kara."
 about:
   template: trestles
   image-shape: round
   image-width: 15em
   links:
     - icon: linkedin
-      href: www.linkedin.com/in/m-f-kara
+      href: https://www.linkedin.com/in/m-f-kara
     - icon: bluesky
       href: https://bsky.app/profile/mfkara.net
     - icon: github
       href: https://github.com/karamehmetfatih
     - text: "{{< iconify simple-icons:goodreads >}}"
-      href: https://www.goodreads.com/user/show/186549008-mehmet-fatih-kara
+      href: https://www.goodreads.com/mfkara
     - text: "{{< fa envelope >}}"
-      href: mailto:im.mfk@outlook.com
+      href: mailto:info@mfkara.net
     - text: "{{< ai orcid >}}"
       url: https://orcid.org/0000-0002-0318-228X
     - text: "{{< ai clarivate >}}"
@@ -27,30 +28,24 @@ image: img/profile.jpg
 comments: false
 ---
 
-## About this blog
+I work on the genetics of disease resistance in lettuce — in particular how the crop
+responds to necrotrophic fungal pathogens, and how that response can be read at the
+level of individual transcripts rather than whole genes.
 
-This is the contents of the about page for my blog.
+My current work combines time-series transcriptomics, reference transcriptome
+construction and CRISPR-Cas9 genome editing to identify and test candidate regulators
+of resistance. Before moving into plant pathology and molecular biology, I worked in
+seed science on the longevity, storage and priming of vegetable seed.
 
-### This content appears above the formatted about page content.
+## Research interests
 
-:::{#ppc}
+- Plant immunity and resistance to necrotrophic fungal pathogens
+- Transcript-level expression analysis and alternative splicing
+- Reference transcriptome construction
+- CRISPR-Cas9 genome editing in crops
+- Seed longevity, storage and priming
 
-<!-- Finley Malloc is the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Finley enjoys spending time unicycling and playing with her pet iguana. -->
+## Contact
 
-## Education
-
-<!-- University of California, San Diego | San Diego, CA -->
-<!-- PhD in Mathematics | Sept 2011 - June 2015 -->
-
-<!-- Macalester College | St. Paul, MN -->
-<!-- B.A in Economics | Sept 2007 - June 2011 -->
-
-## Experience
-
-<!-- Wengo Analytics | Head Data Scientist | April 2018 - present -->
-
-<!-- GeoScynce | Chief Analyst | Sept 2012 - April 2018 -->
-
-:::
-
-### This content appears below the formatted about page content.
+The best way to reach me is by email at
+[info@mfkara.net](mailto:info@mfkara.net).

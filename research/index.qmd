@@ -1,0 +1,36 @@
+---
+title: Publications
+description: "Peer-reviewed publications by Mehmet Fatih Kara in plant pathology, transcriptomics and seed science."
+comments: false
+aliases:
+  - /papers/
+  - /papers/index.html
+---
+
+Also listed on
+[ORCID](https://orcid.org/0000-0002-0318-228X) ·
+[Google Scholar](https://scholar.google.com/citations?&user=56zv2gQAAAAJ) ·
+[Web of Science](https://www.webofscience.com/wos/author/record/IUP-3471-2023) ·
+[ResearchGate](https://www.researchgate.net/profile/Mehmet-Fatih-Kara)
+
+## 2024 {#year-2024}
+
+::: {.publication}
+**Kara, M.F.**, Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. *The Plant Journal*, 120(1), pp.370-386. DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978). PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/).
+:::
+
+## 2016 {#year-2016}
+
+::: {.publication}
+Ermiş, S., **Kara, F.**, Özden, E. and Demir, İ., 2016. Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality. *Journal of Agricultural Sciences*, 22(4), pp.588-595. DOI: [10.1501/tarimbil_0000001417](https://doi.org/10.1501/tarimbil_0000001417)
+:::
+
+::: {.publication}
+Demir, I., Ozden, E., **Kara, F.**, Hassanzadeh, M. and Mavi, K., 2016. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (*Lactuca sativa*). *American Journal of Experimental Agriculture*, 12(3), pp.1-5. DOI: [10.9734/ajea/2016/25526](https://doi.org/10.9734/ajea/2016/25526)
+:::
+
+## 2015 {#year-2015}
+
+::: {.publication}
+Demir, I., **Kara, F.**, Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In *VII International Symposium on Edible Alliaceae* 1143 (pp. 341-344). DOI: [10.17660/ActaHortic.2016.1143.48](https://doi.org/10.17660/ActaHortic.2016.1143.48)
+:::

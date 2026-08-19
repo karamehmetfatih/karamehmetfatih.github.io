@@ -8,8 +8,13 @@
 <title>Mehmet Fatih Kara</title>
 <link>https://www.mfkara.net/posts/</link>
 <atom:link href="https://www.mfkara.net/posts/index.xml" rel="self" type="application/rss+xml"/>
-<description>A sample blog</description>
-<generator>quarto-1.8.26</generator>
+<description>Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.</description>
+<image>
+<url>https://www.mfkara.net/img/profile.jpg</url>
+<title>Mehmet Fatih Kara</title>
+<link>https://www.mfkara.net/posts/</link>
+</image>
+<generator>quarto-1.10.18</generator>
 <lastBuildDate>Fri, 21 May 2021 21:00:00 GMT</lastBuildDate>
 <item>
   <title>Post With Code</title>

@@ -2,17 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog.">
 
 <title>Mehmet Fatih Kara</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -33,15 +40,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="./img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3c62d4973dd394477f9f9e05e49025ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ddb23a7a8e8cc5545464b780c624cf7a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -70,12 +76,23 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Atkinson+Hyperlegible+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap">
 
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Mehmet Fatih Kara">
+<meta property="og:description" content="Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog.">
+<meta property="og:image" content="https://www.mfkara.net/img/profile.jpg">
+<meta property="og:site_name" content="Mehmet Fatih Kara">
+<meta name="twitter:title" content="Mehmet Fatih Kara">
+<meta name="twitter:description" content="Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog.">
+<meta name="twitter:image" content="https://www.mfkara.net/img/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,8 +110,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-github" role="img">
-</i> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -102,12 +118,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./papers/index.html"> 
-<span class="menu-text">Papers</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./research/index.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -135,15 +147,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#deneme" id="toc-deneme" class="nav-link active" data-scroll-target="#deneme">Deneme</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -152,6 +156,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Mehmet Fatih Kara</h1>
 </div>
 
+<div>
+  <div class="description">
+    Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -166,8 +175,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="deneme" class="level2">
-<h2 class="anchored" data-anchor-id="deneme">Deneme</h2>
+<div class="gravatar-hovercard">
+    <div class="gravatar-hovercard__inner">
+        <div class="gravatar-hovercard__header-image"><img class="gravatar-hovercard__header-image-img" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" alt="" loading="lazy"></div>
+        <div class="gravatar-hovercard__header">
+            <a class="gravatar-hovercard__avatar-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
+                <img class="gravatar-hovercard__avatar" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" width="128" height="128" alt="M. Fatih Kara">
+            </a>
+            <a class="gravatar-hovercard__personal-info-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
+                <div class="gravatar-hovercard__name">M. Fatih Kara</div>
+                <p class="gravatar-hovercard__location">Ankara, Türkiye</p>
+            </a>
+        </div>
+        <div class="gravatar-hovercard__body">
+            <p class="gravatar-hovercard__description">Plant scientist 🌱 | Plant immunity &amp; MPMI | Necrotrophic fungi: Botrytis &amp; Sclerotinia | Genome editing | Lettuce omics &amp; disease resistance PhD @ UoY</p>
+        </div>
+        <div class="gravatar-hovercard__social-links">
+            <a class="gravatar-hovercard__social-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener" data-service-name="gravatar">
+                <img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/gravatar.svg" width="32" height="32" alt="Gravatar" loading="lazy">
+            </a>
+            <a class="gravatar-hovercard__social-link" href="https://bsky.app/profile/mfkara.net" target="_blank" rel="noopener" data-service-name="bluesky">
+                <img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/bluesky.svg" width="32" height="32" alt="Bluesky" loading="lazy">
+            </a>
+            <a class="gravatar-hovercard__social-link" href="https://www.linkedin.com/in/m-f-kara" target="_blank" rel="noopener" data-service-name="linkedin">
+                <img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/linkedin.svg" width="32" height="32" alt="LinkedIn" loading="lazy">
+            </a>
+            <a class="gravatar-hovercard__social-link" href="https://orcid.org/0000-0002-0318-228X" target="_blank" rel="noopener" data-service-name="orcid">
+                <img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/orcid.svg" width="32" height="32" alt="ORCID" loading="lazy">
+            </a>
+        </div>
+        <div class="gravatar-hovercard__footer">
+            <a class="gravatar-hovercard__profile-url" title="https://gravatar.com/mfkara" href="https://gravatar.com/mfkara?utm_source=profile-card" target="_blank" rel="noopener">gravatar.com/mfkara</a>
+            <a class="gravatar-hovercard__profile-link" href="https://gravatar.com/mfkara?utm_source=profile-card" target="_blank" rel="noopener">View profile →</a>
+        </div>
+        <div class="gravatar-hovercard__profile-color" style="background: rgb(227, 234, 252);"></div>
+    </div>
+</div>
+<p>I am a plant scientist working on <strong>disease resistance in lettuce</strong>, with a focus on how the crop responds to necrotrophic fungal pathogens at the transcriptional level. I am a PhD researcher at the University of York.</p>
+<p>My current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance — reading that response at the level of individual transcripts rather than whole genes. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed.</p>
+<section id="research" class="level2">
+<h2 class="anchored" data-anchor-id="research">Research</h2>
+<p><strong>Plant–pathogen interactions.</strong> How lettuce (<em>Lactuca sativa</em>) defends itself against necrotrophic fungi such as <em>Botrytis cinerea</em> and <em>Sclerotinia sclerotiorum</em>, and which regulators of that response could be useful in breeding for resistance.</p>
+<p><strong>Transcriptomics.</strong> Building transcript-level resources for lettuce, including <a href="./research/index.html">LsRTDv1</a>, a reference transcript dataset that makes accurate transcript-specific expression analysis possible in this crop.</p>
+<p><strong>Genome editing.</strong> Applying CRISPR-Cas9 approaches to functionally test candidate resistance genes in lettuce.</p>
+<p><strong>Seed science.</strong> Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage.</p>
+</section>
+<section id="selected-publication" class="level2">
+<h2 class="anchored" data-anchor-id="selected-publication">Selected publication</h2>
+<p>Kara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. <em>The Plant Journal</em>, 120(1), 370–386. DOI: <a href="https://doi.org/10.1111/tpj.16978">10.1111/tpj.16978</a></p>
+<p><a href="./research/index.html">See all publications →</a></p>
+</section>
+<section id="elsewhere" class="level2">
+<h2 class="anchored" data-anchor-id="elsewhere">Elsewhere</h2>
+<p><strong>Academic profiles</strong> — <a href="https://orcid.org/0000-0002-0318-228X">ORCID</a> · <a href="https://scholar.google.com/citations?&amp;user=56zv2gQAAAAJ">Google Scholar</a> · <a href="https://www.webofscience.com/wos/author/record/IUP-3471-2023">Web of Science</a> · <a href="https://www.researchgate.net/profile/Mehmet-Fatih-Kara">ResearchGate</a></p>
+<p><strong>Social</strong> — <a href="https://github.com/karamehmetfatih">GitHub</a> · <a href="https://www.linkedin.com/in/m-f-kara">LinkedIn</a> · <a href="https://bsky.app/profile/mfkara.net">Bluesky</a> · <a href="https://www.goodreads.com/mfkara">Goodreads</a></p>
+</section>
+<section id="contact" class="level2">
+<h2 class="anchored" data-anchor-id="contact">Contact</h2>
+<p>The best way to reach me is by email at <a href="mailto:info@mfkara.net">info@mfkara.net</a>.</p>
 
 
 </section>
@@ -246,7 +311,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/www\.mfkara\.net\/");
+        var filterRegex = new RegExp("https:\/\/www\.mfkara\.net");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -591,7 +656,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="./www.linkedin.com/in/m-f-kara">
+    <a class="nav-link" href="https://www.linkedin.com/in/m-f-kara">
       <i class="bi bi-linkedin" role="img">
 </i> 
     </a>

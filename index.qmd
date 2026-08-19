@@ -1,6 +1,101 @@
 ---
 title: "Mehmet Fatih Kara"
+description: "Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog."
 comments: false
+toc: false
+aliases:
+  - /about.html
 ---
 
-## Deneme
+```{=html}
+<div class="gravatar-hovercard">
+	<div class="gravatar-hovercard__inner">
+		<div class="gravatar-hovercard__header-image"><img class="gravatar-hovercard__header-image-img" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" alt="" loading="lazy"></div>
+		<div class="gravatar-hovercard__header">
+			<a class="gravatar-hovercard__avatar-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
+				<img class="gravatar-hovercard__avatar" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" width="128" height="128" alt="M. Fatih Kara">
+			</a>
+			<a class="gravatar-hovercard__personal-info-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
+				<div class="gravatar-hovercard__name">M. Fatih Kara</div>
+				<p class="gravatar-hovercard__location">Ankara, Türkiye</p>
+			</a>
+		</div>
+		<div class="gravatar-hovercard__body">
+			<p class="gravatar-hovercard__description">Plant scientist 🌱 | Plant immunity &amp; MPMI | Necrotrophic fungi: Botrytis &amp; Sclerotinia | Genome editing | Lettuce omics &amp; disease resistance PhD @ UoY</p>
+		</div>
+		<div class="gravatar-hovercard__social-links">
+			<a class="gravatar-hovercard__social-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener" data-service-name="gravatar">
+				<img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/gravatar.svg" width="32" height="32" alt="Gravatar" loading="lazy">
+			</a>
+			<a class="gravatar-hovercard__social-link" href="https://bsky.app/profile/mfkara.net" target="_blank" rel="noopener" data-service-name="bluesky">
+				<img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/bluesky.svg" width="32" height="32" alt="Bluesky" loading="lazy">
+			</a>
+			<a class="gravatar-hovercard__social-link" href="https://www.linkedin.com/in/m-f-kara" target="_blank" rel="noopener" data-service-name="linkedin">
+				<img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/linkedin.svg" width="32" height="32" alt="LinkedIn" loading="lazy">
+			</a>
+			<a class="gravatar-hovercard__social-link" href="https://orcid.org/0000-0002-0318-228X" target="_blank" rel="noopener" data-service-name="orcid">
+				<img class="gravatar-hovercard__social-icon" src="https://s.gravatar.com/icons/orcid.svg" width="32" height="32" alt="ORCID" loading="lazy">
+			</a>
+		</div>
+		<div class="gravatar-hovercard__footer">
+			<a class="gravatar-hovercard__profile-url" title="https://gravatar.com/mfkara" href="https://gravatar.com/mfkara?utm_source=profile-card" target="_blank" rel="noopener">gravatar.com/mfkara</a>
+			<a class="gravatar-hovercard__profile-link" href="https://gravatar.com/mfkara?utm_source=profile-card" target="_blank" rel="noopener">View profile →</a>
+		</div>
+		<div class="gravatar-hovercard__profile-color" style="background: rgb(227, 234, 252);"></div>
+	</div>
+</div>
+```
+
+I am a plant scientist working on **disease resistance in lettuce**, with a focus on
+how the crop responds to necrotrophic fungal pathogens at the transcriptional level.
+I am a PhD researcher at the University of York.
+
+My current work combines time-series transcriptomics, reference transcriptome
+construction and CRISPR-Cas9 genome editing to identify and test candidate regulators
+of resistance — reading that response at the level of individual transcripts rather
+than whole genes. Before moving into plant pathology and molecular biology, I worked
+in seed science on the longevity, storage and priming of vegetable seed.
+
+## Research
+
+**Plant–pathogen interactions.** How lettuce (*Lactuca sativa*) defends itself against
+necrotrophic fungi such as *Botrytis cinerea* and *Sclerotinia sclerotiorum*, and which
+regulators of that response could be useful in breeding for resistance.
+
+**Transcriptomics.** Building transcript-level resources for lettuce, including
+[LsRTDv1](research/index.qmd), a reference transcript dataset that makes accurate
+transcript-specific expression analysis possible in this crop.
+
+**Genome editing.** Applying CRISPR-Cas9 approaches to functionally test candidate
+resistance genes in lettuce.
+
+**Seed science.** Earlier work on seed longevity, storage and priming in lettuce,
+onion and cabbage.
+
+## Selected publication
+
+Kara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript
+dataset for accurate transcript-specific expression analysis in lettuce.
+*The Plant Journal*, 120(1), 370–386.
+DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978)
+
+[See all publications →](research/index.qmd)
+
+## Elsewhere
+
+**Academic profiles** —
+[ORCID](https://orcid.org/0000-0002-0318-228X) ·
+[Google Scholar](https://scholar.google.com/citations?&user=56zv2gQAAAAJ) ·
+[Web of Science](https://www.webofscience.com/wos/author/record/IUP-3471-2023) ·
+[ResearchGate](https://www.researchgate.net/profile/Mehmet-Fatih-Kara)
+
+**Social** —
+[GitHub](https://github.com/karamehmetfatih) ·
+[LinkedIn](https://www.linkedin.com/in/m-f-kara) ·
+[Bluesky](https://bsky.app/profile/mfkara.net) ·
+[Goodreads](https://www.goodreads.com/mfkara)
+
+## Contact
+
+The best way to reach me is by email at
+[info@mfkara.net](mailto:info@mfkara.net).

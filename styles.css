@@ -1,1 +1,224 @@
 /* css styles */
+
+/* ---------------------------------------------------------------------------
+   Typography: Atkinson Hyperlegible Next / Mono (Braille Institute), loaded
+   from Google Fonts in _quarto.yml. Set here as well as via mainfont/monofont
+   because Quarto's `monofont:` does not reach --bs-font-monospace on the HTML
+   path, and because these stacks carry real fallbacks for the load window.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --bs-body-font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible",
+    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bs-font-monospace: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+}
+
+/* Headings and navbar inherit the body face rather than the theme's own. */
+h1, h2, h3, h4, h5, h6,
+.navbar, .navbar-brand, .quarto-title-block {
+  font-family: var(--bs-body-font-family);
+}
+
+code, pre, kbd, samp, .sourceCode {
+  font-family: var(--bs-font-monospace);
+}
+
+/* Publication list: hanging indent and breathing room between entries,
+   so long citations stay readable on both desktop and mobile. */
+.publication {
+  margin-bottom: 1.1rem;
+  padding-left: 1.6em;
+  text-indent: -1.6em;
+  line-height: 1.55;
+}
+
+/* Keep DOI/PMID links from wrapping mid-identifier on narrow screens. */
+.publication a {
+  overflow-wrap: break-word;
+}
+
+/* A little more air above year headings in the publication list. */
+.publication + h2,
+h2 {
+  margin-top: 1.8rem;
+}
+
+/* Soften the About page portrait. */
+.about-image {
+  box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
+}
+
+/* ---------------------------------------------------------------------------
+   Gravatar profile card.
+   The markup copied from Gravatar ships with an empty <style> block, so every
+   rule below is ours. Floats beside the intro text on wide screens and drops
+   to full width on narrow ones.
+   --------------------------------------------------------------------------- */
+
+.gravatar-hovercard {
+  --gh-radius: 12px;
+  /* Single knob for avatar size. It deliberately overflows the banner below. */
+  --gh-avatar-size: 128px;
+  max-width: 320px;
+  margin: 0 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .gravatar-hovercard {
+    float: right;
+    width: 320px;
+    margin: 0 0 1.25rem 2rem;
+  }
+}
+
+.gravatar-hovercard__inner {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: var(--gh-radius);
+  background: var(--bs-body-bg, #fff);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 8%);
+}
+
+/* Blurred banner made from the avatar, as Gravatar renders it. Absolutely
+   positioned so it sits *behind* the avatar as a backdrop. The avatar is
+   larger than the banner is tall, so it deliberately overflows the lower
+   edge and overlaps the card body below. */
+.gravatar-hovercard__header-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 124px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.gravatar-hovercard__header-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(18px) saturate(1.2);
+  transform: scale(1.4);
+}
+
+/* Sits above the banner in the stacking order. */
+.gravatar-hovercard__header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 1rem 0;
+  text-align: center;
+}
+
+.gravatar-hovercard__avatar {
+  width: var(--gh-avatar-size);
+  height: var(--gh-avatar-size);
+  border-radius: 50%;
+  border: 3px solid var(--bs-body-bg, #fff);
+  background: var(--bs-body-bg, #fff);
+  display: block;
+}
+
+.gravatar-hovercard__personal-info-link,
+.gravatar-hovercard__avatar-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gravatar-hovercard__personal-info-link:hover .gravatar-hovercard__name {
+  text-decoration: underline;
+}
+
+.gravatar-hovercard__name {
+  margin: 0.5rem 0 0.15rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.gravatar-hovercard__location {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--bs-secondary-color, #6c757d);
+}
+
+.gravatar-hovercard__body {
+  padding: 0.75rem 1.15rem 0;
+}
+
+.gravatar-hovercard__description {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--bs-body-color, #212529);
+}
+
+.gravatar-hovercard__social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0.9rem 1rem;
+}
+
+.gravatar-hovercard__social-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  opacity: 0.75;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.gravatar-hovercard__social-link:hover .gravatar-hovercard__social-icon {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.gravatar-hovercard__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border-top: 1px solid var(--bs-border-color, #dee2e6);
+  font-size: 0.8rem;
+}
+
+.gravatar-hovercard__profile-url {
+  color: var(--bs-secondary-color, #6c757d);
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gravatar-hovercard__profile-link {
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gravatar-hovercard__profile-url:hover,
+.gravatar-hovercard__profile-link:hover {
+  text-decoration: underline;
+}
+
+/* Accent strip carrying the profile colour from the Gravatar theme. */
+.gravatar-hovercard__profile-color {
+  height: 4px;
+}
+
+/* Stop the float from bleeding past the intro into the Research section. */
+.gravatar-hovercard + p + h2,
+h2 {
+  clear: both;
+}

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mfkara.net/posts/index.html</loc>
-    <lastmod>2026-01-12T10:05:17.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.mfkara.net/papers/index.html</loc>
-    <lastmod>2026-01-11T13:38:49.626Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.mfkara.net/about.html</loc>
-    <lastmod>2026-01-12T10:07:41.781Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.mfkara.net/index.html</loc>
-    <lastmod>2026-01-12T10:33:06.585Z</lastmod>
+    <loc>https://www.mfkara.net/research/index.html</loc>
+    <lastmod>2026-08-19T19:47:47.476Z</lastmod>
   </url>
   <url>
     <loc>https://www.mfkara.net/posts/deneme/index.html</loc>
     <lastmod>2026-01-11T14:02:25.709Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mfkara.net/about.html</loc>
+    <lastmod>2026-08-19T19:49:24.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mfkara.net/index.html</loc>
+    <lastmod>2026-08-19T20:16:57.816Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mfkara.net/posts/index.html</loc>
+    <lastmod>2026-01-12T10:05:17.270Z</lastmod>
   </url>
 </urlset>

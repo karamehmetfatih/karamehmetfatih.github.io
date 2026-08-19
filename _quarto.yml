@@ -3,17 +3,23 @@ project:
   output-dir: docs
   preview:
     port: 4200
-  render: 
+  # Copied verbatim into docs/ on every render so the GitHub Pages
+  # custom domain survives Quarto clearing the output directory.
+  resources:
+    - CNAME
+  render:
     - "*.qmd"
-    - "!ignored.qmd"
-    - "!ignored-dir/"
 
 website:
   title: "Mehmet Fatih Kara"
-  site-url: "https://www.mfkara.net/"
+  site-url: "https://www.mfkara.net"
   repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
   favicon: img/favicon.png
-  description: "A sample blog"
+  description: "Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes."
+  # Fallback preview image for Open Graph / Twitter cards on pages
+  # that do not set their own `image:`. Must be site-absolute, or it is
+  # resolved relative to each page (breaking the URL for posts).
+  image: /img/profile.jpg
   back-to-top-navigation: true
   navbar:
     tools:
@@ -27,14 +33,11 @@ website:
     search: true
     left:
       - href: index.qmd
-        text: "Home"
-        icon: github
+        text: Home
       - href: posts/index.qmd
-        text: "Blog"
-      - href: papers/index.qmd
-        text: Papers
-      - href: about.qmd
-        text: About
+        text: Blog
+      - href: research/index.qmd
+        text: Publications
   search: 
     location: navbar
     type: textbox
@@ -46,17 +49,24 @@ website:
       - icon: bluesky
         href: https://bsky.app/profile/mfkara.net
       - icon: linkedin
-        href: www.linkedin.com/in/m-f-kara
+        href: https://www.linkedin.com/in/m-f-kara
       - text: "{{< fa envelope >}}"
         href: mailto:info@mfkara.net
 
 format:
   html:
     theme: sandstone
-    mainfont: arial
-    monofont: courier new 
+    mainfont: "Atkinson Hyperlegible Next"
+    monofont: "Atkinson Hyperlegible Mono"
     css: styles.css
     toc: true
+    open-graph: true
+    twitter-card: true
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Atkinson+Hyperlegible+Mono:ital,wght@0,400;0,700;1,400&display=swap">
 
 
 
