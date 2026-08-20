@@ -5,13 +5,13 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Mehmet Fatih Kara</title>
+<title>M. Fatih Kara</title>
 <link>https://www.mfkara.net/posts/</link>
 <atom:link href="https://www.mfkara.net/posts/index.xml" rel="self" type="application/rss+xml"/>
 <description>Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.</description>
 <image>
 <url>https://www.mfkara.net/img/profile.jpg</url>
-<title>Mehmet Fatih Kara</title>
+<title>M. Fatih Kara</title>
 <link>https://www.mfkara.net/posts/</link>
 </image>
 <generator>quarto-1.10.18</generator>
@@ -36,7 +36,7 @@
 </section>
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
+ ]]></description>
   <category>news</category>
   <category>code</category>
   <category>analysis</category>

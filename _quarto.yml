@@ -11,7 +11,7 @@ project:
     - "*.qmd"
 
 website:
-  title: "Mehmet Fatih Kara"
+  title: "M. Fatih Kara"
   site-url: "https://www.mfkara.net"
   repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
   favicon: img/favicon.png
@@ -20,7 +20,6 @@ website:
   # that do not set their own `image:`. Must be site-absolute, or it is
   # resolved relative to each page (breaking the URL for posts).
   image: /img/profile.jpg
-  back-to-top-navigation: true
   navbar:
     tools:
       - icon: github
@@ -43,16 +42,41 @@ website:
     type: textbox
   page-footer:
     background: dark
-    center: © 2026  &middot; Made with {{< fa brands r-project >}} and 
-      [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)
+    # Folded (>-) so the colophon is one markdown paragraph regardless of how
+    # it is wrapped here; the two visible rows come from the explicit <br>, not
+    # from the line breaks below. A <br> rather than two paragraphs keeps the
+    # rows on one line-height instead of a full paragraph gap.
+    #
+    # The GitHub logo is the "GitHub Pages" wordmark, so the word Pages is part
+    # of the artwork and is not repeated as text after it. It is wider per unit
+    # of height than the Quarto mark (169x34 vs 320x77), hence the larger width
+    # for the same optical size. Both logos are site-absolute (/img/...) for
+    # the same reason as the OG image above: the footer is emitted on every
+    # page, including nested posts.
+    #
+    # The R and Bootstrap marks are font glyphs, not images, so they take no
+    # width: `size=xl` is the equivalent knob. It resolves to fa-xl (1.5em),
+    # which at the footer's 0.8rem is 19.2px tall — the same height as the
+    # Quarto logo at width=80px, so all four marks line up. `label` overrides
+    # the shortcode's default aria-label (the raw icon name), which now has to
+    # serve as the link's accessible name.
+    center: >-
+      © Copyright 2026 M. Fatih Kara<br>
+      Made with [{{< fa brands r-project size=l title="R" label="R" >}}](https://www.r-project.org/) and
+      [![](https://quarto.org/quarto.png){.footer-logo fig-alt="Quarto" width=65px}](https://quarto.org/).
+      Powered by [{{< fa brands bootstrap size=l title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
+      [al-folio](https://github.com/alshedivat/al-folio)-inspired theme.
+      Hosted by
+      [![](/img/logo.svg){.footer-logo fig-alt="GitHub Pages" width=65px}](https://pages.github.com/).
 
 format:
   html:
     theme:
       light: [litera, al-folio.scss]
       dark: [darkly, al-folio.scss, al-folio-dark.scss]
+    # One face for the whole site, code included.
     mainfont: "Atkinson Hyperlegible Next"
-    monofont: "Atkinson Hyperlegible Mono"
+    monofont: "Atkinson Hyperlegible Next"
     css: styles.css
     toc: true
     open-graph: true
@@ -61,7 +85,51 @@ format:
       - text: |
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Atkinson+Hyperlegible+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+          <!-- Full variable range (200-800, upright + italic) rather than a
+               handful of static weights: the SCSS asks for 500 headings and
+               600 chrome, and any weight not fetched would be synthesised by
+               the browser or fall back to a different face. -->
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap">
+    # Back-to-top control, pinned bottom-right. This is a hand-rolled control
+    # rather than Quarto's `back-to-top-navigation`, which was switched off in
+    # the website block above: that one appends a text link at the end of the
+    # content column, not a floating button. Styling lives in al-folio.scss.
+    #
+    # role/tabindex/aria-label are added to the markup because a bare <div> is
+    # neither focusable nor announced; the keydown handler completes it, so the
+    # control works by keyboard as well as by mouse.
+    include-after-body:
+      - text: |
+          <div id="back-to-top" class="" role="button" tabindex="0" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></div>
+          <script>
+          (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            var SHOW_AFTER = 300; // px scrolled before it fades in
+
+            function toggle() {
+              btn.classList.toggle('show', window.scrollY > SHOW_AFTER);
+            }
+
+            function toTop() {
+              var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+              window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+            }
+
+            // Passive: this fires on every scroll frame and never calls preventDefault.
+            window.addEventListener('scroll', toggle, { passive: true });
+            toggle(); // a reload can restore a scrolled position
+
+            btn.addEventListener('click', toTop);
+            btn.addEventListener('keydown', function (event) {
+              // Buttons activate on both keys; a <div> has to be told.
+              if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+                event.preventDefault();
+                toTop();
+              }
+            });
+          })();
+          </script>
 
 
 

@@ -16,8 +16,8 @@
 // the rules here serve both modes and are not duplicated.
 //
 // Typography is deliberately NOT set here: the site uses Atkinson Hyperlegible
-// Next / Mono, which is a separate, intentional choice. al-folio's own face
-// (Roboto) is not imposed.
+// Next throughout (see the typography block at the top of styles.css), which is
+// a separate, intentional choice. al-folio's own face (Roboto) is not imposed.
 // =============================================================================
 
 // --- upstream palette (light) -------------------------------------------------
@@ -79,6 +79,13 @@ $code-color: $af-purple;
   --af-footer-bg: #{$af-grey-dark};
   --af-footer-fg: #{$af-grey-light};
   --af-footer-link: #{$af-white};
+  // The footer panel is dark here, so the black GitHub lockup is flipped white.
+  --af-footer-logo-invert: 1;
+  // The icon names the mode you are in, not the one you would switch to, so
+  // light mode shows a sun. Font Awesome Free 7.3.1 "sun"; only < and > are
+  // percent-encoded, and no fill is set because the shape is used as a mask,
+  // where alpha is all that counts.
+  --af-toggle-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath d='M320 32C328.4 32 336.3 36.4 340.6 43.7L396.1 136.3L500.9 110C509.1 108 517.8 110.4 523.7 116.3C529.6 122.2 532 131 530 139.1L503.7 243.8L596.4 299.3C603.6 303.6 608.1 311.5 608.1 319.9C608.1 328.3 603.7 336.2 596.4 340.5L503.7 396.1L530 500.8C532 509 529.6 517.7 523.7 523.6C517.8 529.5 509 532 500.9 530L396.2 503.7L340.7 596.4C336.4 603.6 328.5 608.1 320.1 608.1C311.7 608.1 303.8 603.7 299.5 596.4L243.9 503.7L139.2 530C131 532 122.4 529.6 116.4 523.7C110.4 517.8 108 509 110 500.8L136.2 396.1L43.6 340.6C36.4 336.2 32 328.4 32 320C32 311.6 36.4 303.7 43.7 299.4L136.3 243.9L110 139.1C108 130.9 110.3 122.3 116.3 116.3C122.3 110.3 131 108 139.2 110L243.9 136.2L299.4 43.6L301.2 41C305.7 35.3 312.6 31.9 320 31.9zM320 176C240.5 176 176 240.5 176 320C176 399.5 240.5 464 320 464C399.5 464 464 399.5 464 320C464 240.5 399.5 176 320 176zM320 416C267 416 224 373 224 320C224 267 267 224 320 224C373 224 416 267 416 320C416 373 373 416 320 416z'/%3E%3C/svg%3E");
   // Badge text = --global-card-bg-color upstream, i.e. the page surface.
   --af-badge-fg: #{$af-white};
 }
@@ -133,10 +140,24 @@ main a:hover,
 //   .navbar .quarto-color-scheme-toggle.alternate       .bi::before
 // Both are specificity (0,4,1), so they must be matched exactly to suppress.
 //
-// We replace the switch with a plain light/dark icon: a moon in light mode
-// (click -> dark) and a sun in dark mode (see al-folio-dark.scss). Codepoints
-// are bi-moon-stars-fill / bi-sun-fill, read from the bundled
-// bootstrap-icons.css rather than guessed.
+// We replace the switch with a plain light/dark icon that reports the CURRENT
+// mode rather than the one clicking would move to: a sun in light mode, a moon
+// in dark mode (see al-folio-dark.scss). Note this is the opposite of upstream
+// al-folio, which shows the destination. Quarto
+// generates the toggle's markup itself, so a pair of <i class="fa-solid ...">
+// tags cannot be placed in the navbar by hand; the icon is drawn onto the
+// <i class="bi"> Quarto already emits, which needs no JavaScript and survives
+// Quarto regenerating the navbar.
+//
+// The artwork is Font Awesome Free 7.3.1 (CC BY 4.0, Fonticons Inc. —
+// https://fontawesome.com/license/free), inlined as a data URI in the
+// --af-toggle-icon token rather than pulled from the icon font: the bundled
+// webfont is 6.x, and a font glyph would also make the control depend on
+// Font Awesome being loaded on the page at all.
+//
+// It is applied as a MASK, not a background-image, so the icon is painted in
+// currentColor and keeps following --af-fg and the accent colour on hover,
+// exactly as the glyph did.
 // -----------------------------------------------------------------------------
 
 // Kill the switch graphic in both of its states.
@@ -145,16 +166,16 @@ main a:hover,
   background-image: none;
 }
 
-// Render a font glyph instead of a 1rem background-image box.
 .navbar .quarto-color-scheme-toggle .bi::before {
-  content: "\f495"; // bi-moon-stars-fill
-  font-family: "bootstrap-icons";
-  font-size: 1rem;
-  line-height: 1;
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
   vertical-align: -0.125em;
   background-image: none;
-  width: auto;
-  height: auto;
+  background-color: currentColor;
+  -webkit-mask: var(--af-toggle-icon) no-repeat center / contain;
+  mask: var(--af-toggle-icon) no-repeat center / contain;
 }
 
 .navbar .quarto-color-scheme-toggle {
@@ -255,6 +276,76 @@ td code.sourceCode {
 .nav-footer a:hover {
   color: var(--af-footer-link) !important;
   text-decoration: underline;
+}
+
+// Colophon logos sit on a panel that swaps light/dark between modes, so they
+// are driven from the same token as the footer's text and links: flattened to
+// a single tone, then inverted only in the mode where the panel behind them is
+// dark. Both source images (black GitHub lockup, two-tone blue Quarto mark)
+// are transparent PNG/SVG artwork, so flattening yields a clean silhouette
+// that matches the R glyph beside them rather than three different colours.
+.nav-footer img.footer-logo {
+  filter: brightness(0) invert(var(--af-footer-logo-invert));
+  vertical-align: -0.35em;
+  margin: 0 0.15em;
+}
+
+// -----------------------------------------------------------------------------
+// Back-to-top control (markup + behaviour in _quarto.yml's include-after-body).
+//
+// Square and flat, like the rest of this theme, and painted from the accent
+// token so it follows the colour scheme without a dark-mode override.
+//
+// `visibility` is animated alongside `opacity` on purpose: opacity alone would
+// leave an invisible 2.5rem target sitting over the bottom-right of the page,
+// swallowing clicks and keeping the control in the tab order while hidden.
+// -----------------------------------------------------------------------------
+#back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1030; // over page content and footer, under Bootstrap modals (1050)
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--af-accent);
+  color: var(--af-bg);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: var(--af-fg);
+}
+
+#back-to-top:focus-visible {
+  outline: 2px solid var(--af-fg);
+  outline-offset: 2px;
+}
+
+// The source SVG carries no width/height and no fill, so both come from here.
+#back-to-top svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #back-to-top {
+    transition: none;
+  }
 }
 
 // Strip Bootstrap chrome that al-folio does without.

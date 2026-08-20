@@ -1,31 +1,54 @@
 /* css styles */
 
 /* ---------------------------------------------------------------------------
-   Typography: Atkinson Hyperlegible Next / Mono (Braille Institute), loaded
-   from Google Fonts in _quarto.yml. Set here as well as via mainfont/monofont
-   because Quarto's `monofont:` does not reach --bs-font-monospace on the HTML
-   path, and because these stacks carry real fallbacks for the load window.
+   Typography: Atkinson Hyperlegible Next (Braille Institute) everywhere —
+   body, headings, chrome, form controls, tables, listings and code alike.
+   Loaded from Google Fonts in _quarto.yml across its full 200–800 weight
+   range, upright and italic, so no weight is ever synthesised or quietly
+   swapped for a fallback face.
+
+   Set here as well as via mainfont/monofont because Quarto's `monofont:` does
+   not reach --bs-font-monospace on the HTML path, and because these stacks
+   carry real fallbacks for the load window.
+
+   The catch-all rule is deliberate. Naming selectors one by one was not
+   enough: litera sets `p` to Georgia and `.lead`/`.alert` to a system stack,
+   darkly sets Lato, Bootstrap sets `pre`/`code` to SFMono, and any Quarto
+   component added later (search box, listings, callouts, tooltips) can bring
+   its own. Matching every descendant of <body> makes the face impossible to
+   miss.
+
+   Icon fonts are the single exception, excluded in the :not() list: Font
+   Awesome (.fa*), academicons (.ai*) and bootstrap-icons (.bi*) are glyph
+   fonts, not text faces — restyling them replaces the icons with tofu.
+   Excluding an element costs nothing for text, since it then simply inherits
+   Atkinson from its parent. SVG text is *not* excluded — it is real text and
+   should be set in the site face; Mermaid additionally reads its own
+   --mermaid-font-family token, set below.
    --------------------------------------------------------------------------- */
 
 :root {
-  --bs-body-font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible",
+  --site-font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible",
     system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --bs-font-monospace: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular,
-    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-body-font-family: var(--site-font);
+  --bs-font-sans-serif: var(--site-font);
+  --bs-font-monospace: var(--site-font);
+  --bs-btn-font-family: var(--site-font);
+  --mermaid-font-family: var(--site-font);
 }
 
+html,
 body {
-  font-family: var(--bs-body-font-family);
+  font-family: var(--site-font);
 }
 
-/* Headings and navbar inherit the body face rather than the theme's own. */
-h1, h2, h3, h4, h5, h6,
-.navbar, .navbar-brand, .quarto-title-block {
-  font-family: var(--bs-body-font-family);
-}
-
-code, pre, kbd, samp, .sourceCode {
-  font-family: var(--bs-font-monospace);
+html body *:not(
+  i, iconify-icon,
+  .fa, .fas, .far, .fal, .fab, [class^="fa-"], [class*=" fa-"],
+  .ai, [class^="ai-"], [class*=" ai-"],
+  .bi, [class^="bi-"], [class*=" bi-"]
+) {
+  font-family: var(--site-font);
 }
 
 /* Publication list: hanging indent and breathing room between entries,
@@ -166,18 +189,26 @@ h2 {
   color: var(--af-fg, #212529);
 }
 
+/* Two stacked rows: academic profiles above, general social below. */
 .gravatar-hovercard__social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 1rem;
+}
+
+.gravatar-hovercard__social-row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.65rem 0.8rem;
-  padding: 0.9rem 1rem;
 }
 
 /* The icon links are authored as Quarto markdown (so the academicons and
    Font Awesome extensions are bundled), which wraps them in a <p>. Collapse
    that wrapper so the links remain direct flex children. */
-.gravatar-hovercard__social-links > p {
+.gravatar-hovercard__social-row > p {
   display: contents;
   margin: 0;
 }
