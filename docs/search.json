@@ -4,7 +4,7 @@
     "href": "research/index.html",
     "title": "Publications",
     "section": "",
-    "text": "Also listed on ORCID · Google Scholar · Web of Science · ResearchGate"
+    "text": "Also listed on ORCID · Google Scholar · Web of Science · Scopus · ResearchGate"
   },
   {
     "objectID": "research/index.html#year-2024",
@@ -53,7 +53,7 @@
     "href": "index.html",
     "title": "Mehmet Fatih Kara",
     "section": "",
-    "text": "M. Fatih Kara\n                Ankara, Türkiye\n            \n        \n        \n            Plant scientist 🌱 | Plant immunity & MPMI | Necrotrophic fungi: Botrytis & Sclerotinia | Genome editing | Lettuce omics & disease resistance PhD @ UoY\n        \n        \n            \n                \n            \n            \n                \n            \n            \n                \n            \n            \n                \n            \n        \n        \n            gravatar.com/mfkara\n            View profile →\nI am a plant scientist working on disease resistance in lettuce, with a focus on how the crop responds to necrotrophic fungal pathogens at the transcriptional level. I am a PhD researcher at the University of York.\nMy current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance — reading that response at the level of individual transcripts rather than whole genes. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed."
+    "text": "M. Fatih Kara\n                Ankara, Türkiye\n            \n        \n        \n            Plant scientist 🌱 | Plant immunity & MPMI | Necrotrophic fungi: Botrytis & Sclerotinia | Genome editing | Lettuce omics & disease resistance PhD @ UoY\n        \n\n        \n\n        \n            gravatar.com/mfkara\n            View profile →\nI am a plant scientist working on disease resistance in lettuce, with a focus on how the crop responds to necrotrophic fungal pathogens at the transcriptional level. I am a PhD researcher at the University of York.\nMy current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance — reading that response at the level of individual transcripts rather than whole genes. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed."
   },
   {
     "objectID": "index.html#research",
@@ -67,20 +67,13 @@
     "href": "index.html#selected-publication",
     "title": "Mehmet Fatih Kara",
     "section": "Selected publication",
-    "text": "Selected publication\nKara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978\nSee all publications →"
-  },
-  {
-    "objectID": "index.html#elsewhere",
-    "href": "index.html#elsewhere",
-    "title": "Mehmet Fatih Kara",
-    "section": "Elsewhere",
-    "text": "Elsewhere\nAcademic profiles — ORCID · Google Scholar · Web of Science · ResearchGate\nSocial — GitHub · LinkedIn · Bluesky · Goodreads"
+    "text": "Selected publication\nKara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978 PMID: 39145419\nSee all publications →"
   },
   {
     "objectID": "index.html#contact",
     "href": "index.html#contact",
     "title": "Mehmet Fatih Kara",
     "section": "Contact",
-    "text": "Contact\nThe best way to reach me is by email at info@mfkara.net."
+    "text": "Contact\nSend me a message and it will arrive in my inbox.\n\n    \n    \n    \n\n    \n        \n            Name\n            \n        \n        \n            Email\n            \n        \n    \n\n    \n        Message\n        \n    \n\n    \n    \n\n    Send message"
   }
 ]

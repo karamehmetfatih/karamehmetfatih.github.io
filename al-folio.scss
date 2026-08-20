@@ -28,6 +28,7 @@ $af-grey-light: #e8e8e8; // $grey-color lightened 40% (L 51% -> 91%)
 $af-white: #ffffff;
 $af-black: #000000;
 $af-divider: rgba(0, 0, 0, 0.1); // --global-divider-color
+$af-code-bg: #fbf2fb; // inline + block code background
 
 // --- core ---------------------------------------------------------------------
 $body-bg: $af-white;
@@ -73,11 +74,13 @@ $code-color: $af-purple;
   --af-accent: #{$af-purple};
   --af-muted: #{$af-grey};
   --af-divider: #{$af-divider};
-  --af-code-bg: #{rgba($af-purple, 0.05)};
+  --af-code-bg: #{$af-code-bg};
   --af-navbar-bg: #{$af-white};
   --af-footer-bg: #{$af-grey-dark};
   --af-footer-fg: #{$af-grey-light};
   --af-footer-link: #{$af-white};
+  // Badge text = --global-card-bg-color upstream, i.e. the page surface.
+  --af-badge-fg: #{$af-white};
 }
 
 // Colours are applied through the tokens rather than relying on Bootstrap's
@@ -218,7 +221,17 @@ div.sourceCode {
   padding: 0.85rem 1rem;
 }
 
-code:not(pre code) {
+// Inline code. Quarto ships
+//   p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode)
+// at specificity (0,1,2), which outranks a bare `code` rule — so the selector
+// shape has to be matched rather than simplified.
+code:not(pre code),
+p code:not(.sourceCode),
+li code:not(.sourceCode),
+td code:not(.sourceCode),
+p code.sourceCode,
+li code.sourceCode,
+td code.sourceCode {
   background-color: var(--af-code-bg);
   color: var(--af-accent);
   padding: 0.1em 0.35em;
@@ -254,6 +267,200 @@ blockquote {
   border-left: 3px solid var(--af-divider);
   padding-left: 1rem;
   color: var(--af-muted);
+}
+
+// -----------------------------------------------------------------------------
+// Badges, dates and tags.
+// Upstream: .badge { color: var(--global-card-bg-color); background-color:
+// var(--global-theme-color) } and .post-meta { color:
+// var(--global-text-color-light) }. Quarto's equivalents are the listing /
+// category classes below.
+// -----------------------------------------------------------------------------
+.badge {
+  background-color: var(--af-accent) !important;
+  color: var(--af-badge-fg) !important;
+}
+
+// Dates: listing rows, and the meta block on a post page.
+.listing-date,
+.quarto-title-meta,
+.quarto-title-meta-contents,
+.quarto-title-meta-heading,
+.post-meta {
+  color: var(--af-muted) !important;
+}
+
+// Tags / categories, and the icon that precedes them.
+.listing-category,
+.quarto-category,
+.quarto-listing-category,
+.quarto-category-count,
+.listing-category::before,
+.quarto-category::before {
+  color: var(--af-muted) !important;
+}
+
+.listing-category,
+.quarto-category {
+  border-color: var(--af-muted);
+  opacity: 1;
+}
+
+// -----------------------------------------------------------------------------
+// Profile link rows (Academic profiles / Social), each link led by an icon.
+// -----------------------------------------------------------------------------
+.profile-links {
+  margin-bottom: 1.1rem;
+}
+
+.profile-links > p:first-child {
+  margin-bottom: 0.4rem;
+}
+
+.profile-links p:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+  margin-bottom: 0;
+}
+
+// Plain text, not accent-coloured links: they read as body copy and flash to
+// the theme accent on hover. --af-fg is #000000 in light mode as specified,
+// and stays legible (#e8e8e8) in dark rather than going invisibly black.
+.profile-links a,
+.profile-links a:visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  color: var(--af-fg);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.profile-links a:hover,
+.profile-links a:focus-visible {
+  color: var(--af-accent);
+  text-decoration: none;
+}
+
+// Icons inherit the link colour, so they flash to the accent with the label
+// rather than staying black. `color: inherit` guards against the icon fonts'
+// own colour rules.
+.profile-links a i,
+.profile-links a .ai,
+.profile-links a .fa-brands {
+  color: inherit;
+  font-size: 1.05em;
+  line-height: 1;
+  // Keep labels from shifting as icon glyphs vary in width.
+  min-width: 1.05em;
+  text-align: center;
+}
+
+// -----------------------------------------------------------------------------
+// Contact form.
+// -----------------------------------------------------------------------------
+.contact-form {
+  max-width: 34rem;
+  margin-top: 0.75rem;
+}
+
+.contact-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.contact-form__row .contact-form__field {
+  flex: 1 1 12rem;
+}
+
+.contact-form__field {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.contact-form__label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--af-muted);
+  margin-bottom: 0.25rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--af-divider);
+  border-radius: 0;
+  background: var(--af-bg);
+  color: var(--af-fg);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--af-accent);
+  outline-offset: 1px;
+  border-color: var(--af-accent);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+// Honeypot: kept out of sight and out of the accessibility tree.
+.contact-form__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+// Turnstile widget. Reserve its height so the submit button does not jump
+// when the widget finishes rendering.
+.contact-form__captcha {
+  margin: 0.2rem 0 1rem;
+  min-height: 65px;
+}
+
+.contact-form__submit {
+  background: var(--af-accent);
+  color: var(--af-badge-fg);
+  border: none;
+  border-radius: 0;
+  padding: 0.55rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.contact-form__submit:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.contact-form__status {
+  margin: 0.7rem 0 0;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  color: var(--af-muted);
+}
+
+.contact-form__status.is-ok {
+  color: var(--af-accent);
+}
+
+.contact-form__status.is-error {
+  color: #b71c1c; // --global-highlight-color
 }
 
 // Publication list: keep the hanging indent, add al-folio's quiet separator.

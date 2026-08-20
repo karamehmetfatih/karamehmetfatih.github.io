@@ -67,6 +67,19 @@ The merge dropped Quarto's `about: trestles` block, which was the only thing
 displaying `img/profile.jpg`. Keep the file — it is still the Open Graph preview
 image (`image: /img/profile.jpg` in `_quarto.yml`), so link previews depend on it.
 
-## 6. Consider a CV page
+## 6. Contact form — connected, but send one test message
+
+The form posts to Formspree form `mgawdaja`. Integration is the AJAX pattern:
+`fetch` POST with `Accept: application/json`, so the visitor stays on the page.
+
+**Formspree requires you to confirm the address on the first submission.** Send
+yourself one test message from the live site after deploying; Formspree emails
+you a confirmation link, and submissions only start being delivered once you
+click it. Until then the form will appear to work but mail will not arrive.
+
+Free tier is 50 submissions/month. Formspree receives the name, email and
+message that visitors type, so it is a data processor for your site.
+
+## 7. Consider a CV page
 
 Still the most common thing visitors to an academic homepage look for.

@@ -170,8 +170,29 @@ h2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.65rem 0.8rem;
   padding: 0.9rem 1rem;
+}
+
+/* The icon links are authored as Quarto markdown (so the academicons and
+   Font Awesome extensions are bundled), which wraps them in a <p>. Collapse
+   that wrapper so the links remain direct flex children. */
+.gravatar-hovercard__social-links > p {
+  display: contents;
+  margin: 0;
+}
+
+/* Icon-only links: no text, so size the glyph and let it inherit colour. */
+.gravatar-hovercard__social-link i {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--af-fg, #000);
+  transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.gravatar-hovercard__social-link:hover i {
+  color: var(--af-accent, #b509ac);
+  transform: translateY(-1px);
 }
 
 .gravatar-hovercard__social-icon {
