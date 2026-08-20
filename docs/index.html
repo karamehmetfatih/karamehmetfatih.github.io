@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-11ad39d30f05156fa10f87f4a0f167cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-0621f99019f34f08bf4cee1f3a687ce8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-11ad39d30f05156fa10f87f4a0f167cd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6a2486c2e0a0902f0c599b40163bc490.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-06381058942a86fab5540046a2726337.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6a2486c2e0a0902f0c599b40163bc490.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
@@ -976,6 +976,45 @@ ul.task-list li input[type="checkbox"] {
   } else {
     window.addEventListener('resize', sync);
   }
+})();
+
+// Ctrl+K (Cmd+K on macOS) opens search.
+//
+// Not done through Quarto's own `search: keyboard-shortcut:`, which
+// takes single characters only and matches them with no modifier
+// check — registering "k" there would fire on every bare k typed on
+// the page. Quarto's own f / / / s defaults still work.
+//
+// keydown rather than keyup, because Ctrl+K is the browser's own
+// shortcut (address bar in Chrome, quick search in Firefox) and only
+// keydown can preventDefault it.
+(function () {
+  var isMac = /Mac|iPod|iPhone|iPad/.test(
+    navigator.platform || navigator.userAgent);
+
+  // Quoted, because this lands in a CSS `content` value.
+  document.documentElement.style.setProperty(
+    '--af-search-kbd', isMac ? '"⌘ K"' : '"Ctrl K"');
+
+  var search = document.getElementById('quarto-search');
+  if (search) {
+    search.setAttribute('aria-keyshortcuts', isMac ? 'Meta+K' : 'Control+K');
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key !== 'k' && event.key !== 'K') return;
+    if (event.altKey) return;
+    if (!(isMac ? event.metaKey : event.ctrlKey)) return;
+
+    event.preventDefault();
+    if (typeof window.quartoOpenSearch === 'function') {
+      window.quartoOpenSearch();
+    } else {
+      // Search JS not ready yet: focus the field directly.
+      var input = document.querySelector('#quarto-search .aa-Input');
+      if (input) input.focus();
+    }
+  });
 })();
 </script>
 

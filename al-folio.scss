@@ -149,6 +149,28 @@ main a:hover,
   padding-bottom: 0.3em;
 }
 
+// Shortcut hint in the search box. .aa-Form is a flex row, so ::after simply
+// becomes its last item and sits after the field without overlapping the text.
+// The label itself is written by the script in _quarto.yml, which picks Ctrl
+// or ⌘ per platform; the fallback here covers the moment before it runs.
+#quarto-search .aa-Form::after {
+  content: var(--af-search-kbd, "Ctrl K");
+  flex: 0 0 auto;
+  margin-right: 0.4em;
+  padding: 0 0.35em;
+  border: 1px solid var(--af-divider);
+  font-size: 0.7rem;
+  line-height: 1.6;
+  color: var(--af-muted);
+  white-space: nowrap;
+  pointer-events: none; // a hint, not a target
+}
+
+// Once the field is in use the hint has done its job.
+#quarto-search .aa-Form:focus-within::after {
+  display: none;
+}
+
 .navbar .nav-link:hover {
   color: var(--af-accent);
   text-decoration: none;
