@@ -31,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -49,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-83989a9d958e0881279ad60dd4c5f9bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-843d9c59f92c283aeac168d737971853.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-83989a9d958e0881279ad60dd4c5f9bb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2bde80307d70ab919426528f0a5206c1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8c2ec54dbb9cfcf7cae2cf849debf2bf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2bde80307d70ab919426528f0a5206c1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/academicons-1.9.4/all.css" rel="stylesheet">
@@ -920,7 +919,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© Copyright 2026 M. Fatih Kara<br> Made with <a href="https://www.r-project.org/"><i class="fa-brands fa-r-project fa-l" title="R" aria-label="R"></i></a> and <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="footer-logo img-fluid" alt="Quarto" width="65"></a>. Powered by <a href="https://getbootstrap.com/"><i class="fa-brands fa-bootstrap fa-l" title="Bootstrap" aria-label="Bootstrap"></i></a> with an <a href="https://github.com/alshedivat/al-folio">al-folio</a>-inspired theme. Hosted by <a href="https://pages.github.com/"><img src="./img/logo.svg" class="footer-logo img-fluid" alt="GitHub Pages" width="65"></a>.</p>
+<p>© Copyright 2026 M. Fatih Kara<br> Made with <a href="https://www.r-project.org/"><i class="fa-brands fa-r-project fa-lg" title="R" aria-label="R"></i></a> and <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="footer-logo img-fluid" alt="Quarto" width="65"></a>. Powered by <a href="https://getbootstrap.com/"><i class="fa-brands fa-bootstrap fa-lg" title="Bootstrap" aria-label="Bootstrap"></i></a> with an <a href="https://github.com/alshedivat/al-folio">al-folio</a>-inspired theme. Hosted by <a href="https://pages.github.com/"><img src="./img/logo.svg" class="footer-logo img-fluid" alt="GitHub Pages" width="65"></a>.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
@@ -955,6 +954,28 @@ ul.task-list li input[type="checkbox"] {
       toTop();
     }
   });
+})();
+
+// The footer is pinned (position: fixed in al-folio.scss), so it no
+// longer takes up space in flow. Publish its height as a custom
+// property; the SCSS uses it to pad the body and to lift the
+// back-to-top button clear. Measured rather than hard-coded because
+// the colophon rewraps to more lines as the window narrows.
+(function () {
+  var footer = document.querySelector('footer.footer');
+  if (!footer) return;
+
+  function sync() {
+    document.documentElement.style.setProperty(
+      '--af-footer-height', footer.offsetHeight + 'px');
+  }
+
+  sync();
+  if (window.ResizeObserver) {
+    new ResizeObserver(sync).observe(footer);
+  } else {
+    window.addEventListener('resize', sync);
+  }
 })();
 </script>
 

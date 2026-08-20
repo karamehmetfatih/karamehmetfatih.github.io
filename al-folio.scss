@@ -92,9 +92,15 @@ $code-color: $af-purple;
 
 // Colours are applied through the tokens rather than relying on Bootstrap's
 // compiled variables, so light and dark stay in lockstep.
+//
+// The padding is clearance for the pinned footer below, which is out of flow
+// and would otherwise cover the end of the page. --af-footer-height is
+// measured at runtime (see include-after-body in _quarto.yml); the fallback
+// covers the window between first paint and that script running.
 body {
   background-color: var(--af-bg);
   color: var(--af-fg);
+  padding-bottom: var(--af-footer-height, 6rem);
 }
 
 main a,
@@ -258,6 +264,16 @@ td code.sourceCode {
   padding: 0.1em 0.35em;
 }
 
+// Pin the footer to the bottom of the viewport, alongside the pinned navbar.
+// Body padding above reserves the space it no longer occupies in flow.
+footer.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1020; // below the fixed navbar (1030), above page content
+}
+
 // Footer. al-folio inverts this in dark mode, hence the tokens.
 .nav-footer {
   background-color: var(--af-footer-bg) !important;
@@ -303,7 +319,8 @@ td code.sourceCode {
 #back-to-top {
   position: fixed;
   right: 1.25rem;
-  bottom: 1.25rem;
+  // Sits clear of the pinned footer rather than floating over it.
+  bottom: calc(var(--af-footer-height, 6rem) + 1.25rem);
   z-index: 1030; // over page content and footer, under Bootstrap modals (1050)
   display: flex;
   align-items: center;

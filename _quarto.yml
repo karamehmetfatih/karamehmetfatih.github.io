@@ -30,6 +30,10 @@ website:
             href: https://github.com/karamehmetfatih/karamehmetfatih.github.io/issues
     background: light
     search: true
+    # The navbar is fixed-top either way, but Quarto wires it to Headroom.js,
+    # which slides it out of view on scroll-down and back in on scroll-up.
+    # `pinned` disables that, so the header simply stays put.
+    pinned: true
     left:
       - href: index.qmd
         text: Home
@@ -55,16 +59,17 @@ website:
     # page, including nested posts.
     #
     # The R and Bootstrap marks are font glyphs, not images, so they take no
-    # width: `size=xl` is the equivalent knob. It resolves to fa-xl (1.5em),
-    # which at the footer's 0.8rem is 19.2px tall — the same height as the
-    # Quarto logo at width=80px, so all four marks line up. `label` overrides
-    # the shortcode's default aria-label (the raw icon name), which now has to
-    # serve as the link's accessible name.
+    # width: `size` is the equivalent knob. `lg` resolves to fa-lg (1.25em),
+    # which at the footer's 0.8rem is 16px tall — matching the Quarto logo's
+    # 15.6px at width=65px, so all four marks line up. Valid sizes are
+    # xs/sm/lg/xl/2xl; `fa-l` exists but is the letter-L icon, not a size.
+    # `label` overrides the shortcode's default aria-label (the raw icon name),
+    # which now has to serve as the link's accessible name.
     center: >-
       © Copyright 2026 M. Fatih Kara<br>
-      Made with [{{< fa brands r-project size=l title="R" label="R" >}}](https://www.r-project.org/) and
+      Made with [{{< fa brands r-project size=lg title="R" label="R" >}}](https://www.r-project.org/) and
       [![](https://quarto.org/quarto.png){.footer-logo fig-alt="Quarto" width=65px}](https://quarto.org/).
-      Powered by [{{< fa brands bootstrap size=l title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
+      Powered by [{{< fa brands bootstrap size=lg title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
       [al-folio](https://github.com/alshedivat/al-folio)-inspired theme.
       Hosted by
       [![](/img/logo.svg){.footer-logo fig-alt="GitHub Pages" width=65px}](https://pages.github.com/).
@@ -128,6 +133,28 @@ format:
                 toTop();
               }
             });
+          })();
+
+          // The footer is pinned (position: fixed in al-folio.scss), so it no
+          // longer takes up space in flow. Publish its height as a custom
+          // property; the SCSS uses it to pad the body and to lift the
+          // back-to-top button clear. Measured rather than hard-coded because
+          // the colophon rewraps to more lines as the window narrows.
+          (function () {
+            var footer = document.querySelector('footer.footer');
+            if (!footer) return;
+
+            function sync() {
+              document.documentElement.style.setProperty(
+                '--af-footer-height', footer.offsetHeight + 'px');
+            }
+
+            sync();
+            if (window.ResizeObserver) {
+              new ResizeObserver(sync).observe(footer);
+            } else {
+              window.addEventListener('resize', sync);
+            }
           })();
           </script>
 
