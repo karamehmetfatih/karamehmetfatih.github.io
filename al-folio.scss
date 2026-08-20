@@ -51,6 +51,14 @@ $headings-margin-bottom: 0.75rem;
 $headings-font-weight: 500;
 $headings-line-height: 1.25;
 
+// --- compact chrome ------------------------------------------------------------
+// The navbar and footer are both pinned, so whatever height they take is taken
+// from every screenful, not just the first. The brand is what sets the navbar's
+// height (Bootstrap ships it at 1.375rem with 0.33rem of padding, ~46px in all,
+// while nothing else in the bar exceeds ~27px), so it is the one to bring down.
+$navbar-brand-font-size: 1.1rem;
+$navbar-brand-padding-y: 0.15rem;
+
 // --- flat: no rounded boxes, no shadows ---------------------------------------
 $border-radius: 0;
 $border-radius-sm: 0;
@@ -125,10 +133,20 @@ main a:hover,
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--af-fg);
+  // The body's 1.6 leading is generous for a single nowrap line of chrome.
+  line-height: 1.3;
 }
 
 .navbar .nav-link {
   color: var(--af-fg);
+}
+
+// Quarto sets .navbar-nav .nav-link to padding:.5em, which would leave the
+// links as the tallest thing in the bar once the brand is trimmed. Specificity
+// (0,3,0) to clear Quarto's (0,2,0).
+.navbar .navbar-nav .nav-link {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
 }
 
 .navbar .nav-link:hover {
@@ -275,13 +293,24 @@ footer.footer {
 }
 
 // Footer. al-folio inverts this in dark mode, hence the tokens.
+//
+// Kept tight because it is pinned: padding trimmed from 1.25rem, leading
+// pulled in from the body's 1.6, and Bootstrap's own floors (min-height 3.5em
+// here, 3em on .nav-footer-center) released so the two rows of colophon are
+// what set the height rather than an em-based minimum.
 .nav-footer {
   background-color: var(--af-footer-bg) !important;
   color: var(--af-footer-fg);
   border-top: none;
   font-size: 0.8rem;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  line-height: 1.45;
+  min-height: 0;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.nav-footer .nav-footer-center {
+  min-height: 0;
 }
 
 .nav-footer a,
