@@ -45,13 +45,6 @@ website:
     background: dark
     center: © 2026  &middot; Made with {{< fa brands r-project >}} and 
       [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)
-    right: 
-      - icon: bluesky
-        href: https://bsky.app/profile/mfkara.net
-      - icon: linkedin
-        href: https://www.linkedin.com/in/m-f-kara
-      - text: "{{< fa envelope >}}"
-        href: mailto:info@mfkara.net
 
 format:
   html:
