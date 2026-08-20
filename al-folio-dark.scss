@@ -48,6 +48,8 @@ $code-color: $af-cyan;
   --af-footer-bg: #{$af-grey-light};
   --af-footer-fg: #{$af-grey-dark};
   --af-footer-link: #{$af-black};
+  // Badge text = --global-card-bg-color, which is $grey-900 in dark mode.
+  --af-badge-fg: #212529;
 }
 
 // Dark mode shows a sun: clicking returns to light. The switch graphic is
