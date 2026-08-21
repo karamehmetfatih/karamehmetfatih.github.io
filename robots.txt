@@ -1,0 +1,31 @@
+# robots.txt for https://www.mfkara.net
+#
+# This file lives at the PROJECT ROOT and is copied verbatim into docs/ on every
+# render. Quarto treats a root robots.txt as an automatic project resource
+# (alongside CNAME, .nojekyll and _redirects), deleting whatever is in the
+# output directory and replacing it with this one — so this is the only copy to
+# edit. Editing docs/robots.txt directly is pointless; it is overwritten.
+#
+# IMPORTANT: the Sitemap line below must stay. Quarto writes that line itself
+# ONLY when no root robots.txt exists:
+#
+#     if (!srcRobotsTxt) { ... write `Sitemap: <base>/sitemap.xml` ... }
+#
+# Adding this file therefore switched that generation off. Delete the line and
+# the site simply stops advertising its sitemap.
+
+User-agent: *
+Allow: /
+
+# Nothing is disallowed, deliberately.
+#
+# /cv/ is kept out of the index, but with a `noindex` meta tag rather than a
+# rule here — see _includes/noindex.html. The two are not interchangeable. A
+# path blocked in robots.txt is never fetched, so the crawler never reads the
+# noindex on it, and the URL can still be indexed on the strength of external
+# links pointing at it. Blocking a page you want de-indexed is precisely the way
+# to keep it indexed with no description under it.
+#
+# The rule to remember: allow the crawl, control the index in the page.
+
+Sitemap: https://www.mfkara.net/sitemap.xml
