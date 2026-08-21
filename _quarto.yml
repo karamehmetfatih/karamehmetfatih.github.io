@@ -27,7 +27,16 @@ website:
   # Fallback preview image for Open Graph / Twitter cards on pages
   # that do not set their own `image:`. Must be site-absolute, or it is
   # resolved relative to each page (breaking the URL for posts).
-  image: /assets/img/profile.jpg
+  #
+  # A purpose-built 1200x630 card rather than profile.jpg, which is 400x400.
+  # `twitter-card` below requests summary_large_image, and that asks for roughly
+  # 1.91:1 — a square was being centre-cropped into a letterbox, or the card
+  # silently downgraded to the small variant. The portrait is still in here, set
+  # into the card next to the name and subject.
+  #
+  # Any page can override this with `image:` in its own front matter; the
+  # LsRTDv1 page is the obvious candidate if it ever earns its own artwork.
+  image: /assets/img/og-image.png
   navbar:
     # The GitHub mark links straight to the repository. It was a dropdown of
     # two items; with one destination left, a menu is only a click in the way.
