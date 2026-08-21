@@ -22,7 +22,12 @@ title: "M. Fatih Kara"
 pagetitle: "Plant Disease Resistance in Lettuce"
 title-block-style: default
 body-classes: home
-description-meta: "Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog."
+# This is the snippet a search result can show, so it must describe what is
+# actually here. The previous wording ended "Publications, research notes, and
+# blog" — the blog is parked and there are no notes, so it advertised two things
+# that do not exist. The replacement names the pathogens instead, which is what
+# the people looking for this work actually search for.
+description-meta: "Plant scientist at the University of York researching lettuce resistance to the necrotrophic fungi Botrytis cinerea and Sclerotinia sclerotiorum."
 # `description-meta` deliberately does not feed og:description — that is why it
 # was chosen over `description:`, which would print a subtitle under the title.
 # The consequence was that link previews for the home page had a title and image

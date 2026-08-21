@@ -10,7 +10,10 @@ title: "LsRTDv1"
 # "LsRTDv1: lettuce reference transcript dataset – M. Fatih Kara": exact-match
 # term first, then what it is, then whose it is.
 pagetitle: "LsRTDv1: lettuce reference transcript dataset"
-description: "LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis."
+# Kept under ~160 characters: past that a result snippet is cut mid-sentence.
+# The build method ("long- and short-read RNA sequencing") was the part dropped —
+# it is on the page, and what belongs in a snippet is what the resource is for.
+description: "LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis."
 comments: false
 toc: true
 format:

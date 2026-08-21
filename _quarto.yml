@@ -19,7 +19,11 @@ website:
   site-url: "https://www.mfkara.net"
   repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
   favicon: assets/img/favicon.png
-  description: "Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes."
+  # Fallback description for any page that does not set its own, and the text
+  # used in the WebSite node of the JSON-LD (_includes/seo-home.html) — keep the
+  # two in step. "and notes" was dropped: there are no notes, and the blog it
+  # implied is parked.
+  description: "Personal site of Mehmet Fatih Kara — plant scientist researching disease resistance in lettuce, and publications."
   # Fallback preview image for Open Graph / Twitter cards on pages
   # that do not set their own `image:`. Must be site-absolute, or it is
   # resolved relative to each page (breaking the URL for posts).
