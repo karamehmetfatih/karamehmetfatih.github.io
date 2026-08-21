@@ -7,6 +7,20 @@ project:
   # custom domain survives Quarto clearing the output directory.
   resources:
     - CNAME
+    # IndexNow ownership key for Bing/Yandex/Seznam. The protocol verifies the
+    # domain by fetching a file whose NAME is the key and whose CONTENT is the
+    # same key, from the site root — so both halves have to match exactly and
+    # the file has to survive to docs/.
+    #
+    # It needs listing here, unlike CNAME and robots.txt: Quarto auto-copies
+    # only a fixed set of well-known filenames (robots.txt, .nojekyll, CNAME,
+    # _redirects, 404) and an arbitrary .txt at the project root is not one of
+    # them. Without this line it never reaches the output and verification
+    # fails with the file simply 404ing.
+    #
+    # Not a secret despite the name — it is designed to be publicly fetchable,
+    # and must be committed, not gitignored.
+    - 8f8e944fd46f40088e3e0025a6797315.txt
   render:
     - "*.qmd"
     # Showcase is parked, not deleted. Excluding it from the render keeps its

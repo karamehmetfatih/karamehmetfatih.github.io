@@ -130,7 +130,7 @@
     "href": "lsrtdv1/index.html#download",
     "title": "LsRTDv1",
     "section": "Download",
-    "text": "Download\nThe dataset is deposited in Dryad:\n\n10.5061/dryad.xwdbrv1m8\n\n\nFiles in the current Dryad version. Read the README.md first — it documents what each file contains.\n\n\n\n\n\n\n\nFile\nContents\nSize\n\n\n\n\nlettuceRTDv1.fasta\nTranscript sequences\n~295 MB\n\n\nlettuceRTDv1.gtf\nTranscript coordinates and features\n~179 MB\n\n\nLettuceRTDv1_annotated.gtf\nAnnotated transcript information\n~507 MB\n\n\nREADME.md\nDocumentation\n~5 KB\n\n\n\nReuse terms are stated on the Dryad record; check there before redistributing.\n\nRelated data and code\n\nRaw RNA sequencing data — NCBI Sequence Read Archive, BioProject PRJNA1018253\nAnalysis code — Zenodo, 10.5281/zenodo.11658411"
+    "text": "Download\nThe dataset is deposited in Dryad:\n\n10.5061/dryad.xwdbrv1m8\n\n\nFiles in the current Dryad version. Read the README.md first — it documents what each file contains.\n\n\n\n\n\n\n\nFile\nContents\nSize\n\n\n\n\nlettuceRTDv1.fasta\nTranscript sequences\n~295 MB\n\n\nlettuceRTDv1.gtf\nTranscript coordinates and features\n~179 MB\n\n\nLettuceRTDv1_annotated.gtf\nAnnotated transcript information\n~507 MB\n\n\nREADME.md\nDocumentation\n~5 KB\n\n\n\nReleased under CC0 1.0 — you do not need permission to use, modify or redistribute it. Cite it anyway: that is the scholarly norm, and citation is how a resource like this stays fundable.\n\nRelated data and code\n\nRaw RNA sequencing data — NCBI Sequence Read Archive, BioProject PRJNA1018253\nAnalysis code — ZhangOmicsDataLab/LettuceRTD on GitHub, archived at Zenodo as 10.5281/zenodo.11658411"
   },
   {
     "objectID": "lsrtdv1/index.html#how-to-cite",

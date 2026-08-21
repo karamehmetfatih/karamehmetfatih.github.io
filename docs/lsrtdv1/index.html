@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis.">
+<meta name="description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis.">
 
 <title>LsRTDv1: lettuce reference transcript dataset – M. Fatih Kara</title>
 <style>
@@ -90,10 +90,10 @@ ul.task-list li input[type="checkbox"] {
      record. `citation` points at the paper so the two records resolve to one
      piece of work.
 
-     No `license` field. Dryad states the terms on the record itself and it was
-     not verified when this was written; asserting a licence that turns out to
-     be wrong is worse than omitting the field, since reuse decisions get made
-     on it. Add it once confirmed. -->
+     `license` is CC0 1.0, read from Dryad's own JSON-LD for this record rather
+     than assumed from Dryad's general policy. Google Dataset Search surfaces
+     the licence and reuse decisions get made on it, so it is worth having
+     verified rather than inferred. -->
 
 <link rel="canonical" href="https://www.mfkara.net/lsrtdv1/">
 <meta property="og:url" content="https://www.mfkara.net/lsrtdv1/">
@@ -129,6 +129,7 @@ ul.task-list li input[type="checkbox"] {
       },
       "datePublished": "2024",
       "version": "v1",
+      "license": "https://spdx.org/licenses/CC0-1.0.html",
       "inLanguage": "en",
       "creator": [
         { "@type": "Person", "name": "Katherine Denby" },
@@ -219,12 +220,16 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../assets/css/styles.css">
 <meta property="og:title" content="LsRTDv1: lettuce reference transcript dataset">
-<meta property="og:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis.">
-<meta property="og:image" content="https://www.mfkara.net/assets/img/profile.jpg">
+<meta property="og:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis.">
+<meta property="og:image" content="https://www.mfkara.net/assets/img/og-image.png">
 <meta property="og:site_name" content="M. Fatih Kara">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
 <meta name="twitter:title" content="LsRTDv1: lettuce reference transcript dataset">
-<meta name="twitter:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis.">
-<meta name="twitter:image" content="https://www.mfkara.net/assets/img/profile.jpg">
+<meta name="twitter:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis.">
+<meta name="twitter:image" content="https://www.mfkara.net/assets/img/og-image.png">
+<meta name="twitter:image-height" content="630">
+<meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -518,12 +523,12 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>Reuse terms are stated on the Dryad record; check there before redistributing.</p>
+<p>Released under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> — you do not need permission to use, modify or redistribute it. Cite it anyway: that is the scholarly norm, and citation is how a resource like this stays fundable.</p>
 <section id="related-data-and-code" class="level3">
 <h3 class="anchored" data-anchor-id="related-data-and-code">Related data and code</h3>
 <ul>
 <li><strong>Raw RNA sequencing data</strong> — NCBI Sequence Read Archive, BioProject <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1018253">PRJNA1018253</a></li>
-<li><strong>Analysis code</strong> — Zenodo, <a href="https://doi.org/10.5281/zenodo.11658411">10.5281/zenodo.11658411</a></li>
+<li><strong>Analysis code</strong> — <a href="https://github.com/ZhangOmicsDataLab/LettuceRTD">ZhangOmicsDataLab/LettuceRTD</a> on GitHub, archived at Zenodo as <a href="https://doi.org/10.5281/zenodo.11658411">10.5281/zenodo.11658411</a></li>
 </ul>
 </section>
 </section>
