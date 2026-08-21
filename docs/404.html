@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="/site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="/site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap-a3e182e63b77c9eac0f905b80d340773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/bootstrap/bootstrap-dark-aa7e496682843b679ae47f66d1be5505.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="/site_libs/bootstrap/bootstrap-a3e182e63b77c9eac0f905b80d340773.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-3d28eb427cb83149974011bb981b720e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="/site_libs/bootstrap/bootstrap-dark-0897f1da159e8e417c8c69e0061013ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="/site_libs/bootstrap/bootstrap-3d28eb427cb83149974011bb981b720e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="/site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="/site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -77,6 +77,34 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Keep this page out of the index.
+
+     Used on two kinds of page: the 404 (a soft-404 in the index is worse than
+     no result at all) and any page whose content is still placeholder. A thin
+     or half-written page that ranks for the site owner's name costs more than
+     it earns, so it stays out until it is worth finding.
+
+     `noindex` only, not `noindex, nofollow` — the crawler should still follow
+     the links out of the page and reach the real content behind them.
+
+     Note this must be a meta tag rather than a robots.txt rule: a disallowed
+     page can still be indexed from external links, because the crawler never
+     fetches it and so never sees the directive. -->
+
+<meta name="robots" content="noindex, follow">
+<!-- Site-wide metadata. `author` is set here rather than as document
+     front matter because Quarto would also print an author byline
+     into the title block; only the <meta> tag is wanted.
+
+     The robots value carries no index/follow — those are already the
+     default, and stating them adds nothing. `max-image-preview:large`
+     does change behaviour: it opts link previews in search results
+     up from a thumbnail to a full-width image. Pages that need to
+     stay out of the index add their own `noindex` via
+     _includes/noindex.html; where two robots tags disagree the more
+     restrictive one wins, so the two compose correctly. -->
+<meta name="author" content="Mehmet Fatih Kara">
+<meta name="robots" content="max-image-preview:large">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <!-- Full variable range (200-800, upright + italic) rather than a
@@ -279,10 +307,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="/index.html"> 
 <span class="menu-text">about</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="/_posts/index.qmd"> 
-<span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="/research/index.html"> 

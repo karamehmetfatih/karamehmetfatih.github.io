@@ -45,8 +45,25 @@ website:
     left:
       - href: index.qmd
         text: about
-      - href: _posts/index.qmd
-        text: blog
+      # Parked. This entry emitted `href="./_posts/index.qmd"` on every page of
+      # the site — a 404 in the primary navigation, which is both a dead end for
+      # visitors and a crawl error repeated site-wide.
+      #
+      # The cause is the underscore: Quarto skips underscore-prefixed
+      # directories when discovering *pages*, so `_posts/` is copied to docs/ as
+      # a raw resource and never rendered. (The same convention is what lets
+      # `_sass/` and `_includes/` hold theme and partial files without becoming
+      # pages.) The navbar then links to a .qmd that has no .html.
+      #
+      # To switch the blog back on, both halves are needed:
+      #   1. rename `_posts/` to `posts/` so Quarto renders it, and update the
+      #      href below to posts/index.qmd;
+      #   2. replace `_posts/deneme/` — it is still the Quarto template's demo
+      #      post ("Deneme 2", dated 2021) and is the only entry in the
+      #      listing. Publishing it would put a placeholder page in the index
+      #      under this site's name, which is worse than having no blog.
+      # - href: posts/index.qmd
+      #   text: blog
       - href: research/index.qmd
         text: publications
       # - href: cv/index.qmd
@@ -111,6 +128,19 @@ format:
     twitter-card: true
     include-in-header:
       - text: |
+          <!-- Site-wide metadata. `author` is set here rather than as document
+               front matter because Quarto would also print an author byline
+               into the title block; only the <meta> tag is wanted.
+
+               The robots value carries no index/follow — those are already the
+               default, and stating them adds nothing. `max-image-preview:large`
+               does change behaviour: it opts link previews in search results
+               up from a thumbnail to a full-width image. Pages that need to
+               stay out of the index add their own `noindex` via
+               _includes/noindex.html; where two robots tags disagree the more
+               restrictive one wins, so the two compose correctly. -->
+          <meta name="author" content="Mehmet Fatih Kara">
+          <meta name="robots" content="max-image-preview:large">
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <!-- Full variable range (200-800, upright + italic) rather than a

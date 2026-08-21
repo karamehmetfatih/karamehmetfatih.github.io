@@ -1,7 +1,17 @@
 ---
 title: Publications
+# No `pagetitle` override here. Quarto already renders
+# "Publications – M. Fatih Kara", which is the right shape: page subject, then
+# site name. Setting the full name in a `pagetitle` only appends it a second
+# time, since Quarto adds the site title to whatever is given.
 description: "Peer-reviewed publications by Mehmet Fatih Kara in plant pathology, transcriptomics and seed science."
 comments: false
+format:
+  html:
+    # Canonical URL plus ScholarlyArticle records for every entry below. The
+    # partial has to be kept in step with this list — see the note at its top.
+    include-in-header:
+      - ../_includes/seo-publications.html
 aliases:
   - /papers/
   - /papers/index.html

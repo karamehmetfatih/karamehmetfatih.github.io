@@ -8,7 +8,7 @@
 
 <meta name="description" content="Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog.">
 
-<title>M. Fatih Kara</title>
+<title>Mehmet Fatih Kara — Plant Disease Resistance in Lettuce – M. Fatih Kara</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -80,6 +80,117 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Home page SEO head additions.
+
+     Quarto already emits og:title, og:image, og:site_name and the twitter-card
+     tags (open-graph / twitter-card are on in _quarto.yml). It does not emit
+     og:url, og:type, og:locale or a canonical link, so those are added here
+     rather than duplicated.
+
+     The JSON-LD is one @graph rather than three separate <script> blocks so the
+     nodes can reference each other by @id: the WebSite is published by the
+     Person, and the page is *about* that same Person. `sameAs` is the load
+     bearing part — it is what ties this domain to the ORCID / Scholar / Scopus
+     records that already carry the publication history, so a search for the
+     name can resolve to one entity instead of several. -->
+
+<link rel="canonical" href="https://www.mfkara.net/">
+<meta property="og:url" content="https://www.mfkara.net/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_GB">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.mfkara.net/#website",
+      "url": "https://www.mfkara.net/",
+      "name": "M. Fatih Kara",
+      "description": "Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://www.mfkara.net/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://www.mfkara.net/#webpage",
+      "url": "https://www.mfkara.net/",
+      "name": "Mehmet Fatih Kara — Plant Disease Resistance in Lettuce",
+      "isPartOf": { "@id": "https://www.mfkara.net/#website" },
+      "about": { "@id": "https://www.mfkara.net/#person" },
+      "mainEntity": { "@id": "https://www.mfkara.net/#person" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.mfkara.net/#person",
+      "name": "Mehmet Fatih Kara",
+      "givenName": "Mehmet Fatih",
+      "familyName": "Kara",
+      "alternateName": ["M. Fatih Kara", "M.F. Kara", "Fatih Kara"],
+      "url": "https://www.mfkara.net/",
+      "image": "https://www.mfkara.net/assets/img/profile.jpg",
+      "jobTitle": "PhD Researcher",
+      "description": "Plant scientist working on disease resistance in lettuce, and how the crop responds to necrotrophic fungal pathogens at the transcriptional level.",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of York",
+        "url": "https://www.york.ac.uk/"
+      },
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of York",
+        "url": "https://www.york.ac.uk/"
+      },
+      "knowsAbout": [
+        "Plant pathology",
+        "Plant immunity",
+        "Molecular plant-microbe interactions",
+        "Lactuca sativa",
+        "Botrytis cinerea",
+        "Sclerotinia sclerotiorum",
+        "Necrotrophic fungal pathogens",
+        "Transcriptomics",
+        "Alternative splicing",
+        "Reference transcriptome construction",
+        "CRISPR-Cas9 genome editing",
+        "Seed longevity, storage and priming"
+      ],
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "https://orcid.org/0000-0002-0318-228X"
+      },
+      "sameAs": [
+        "https://orcid.org/0000-0002-0318-228X",
+        "https://scholar.google.com/citations?user=56zv2gQAAAAJ",
+        "https://www.webofscience.com/wos/author/record/IUP-3471-2023",
+        "https://www.scopus.com/authid/detail.uri?authorId=57192592048",
+        "https://www.researchgate.net/profile/Mehmet-Fatih-Kara",
+        "https://github.com/karamehmetfatih",
+        "https://www.linkedin.com/in/m-f-kara",
+        "https://bsky.app/profile/mfkara.net",
+        "https://www.goodreads.com/mfkara",
+        "https://gravatar.com/mfkara"
+      ]
+    }
+  ]
+}
+</script>
+<!-- Site-wide metadata. `author` is set here rather than as document
+     front matter because Quarto would also print an author byline
+     into the title block; only the <meta> tag is wanted.
+
+     The robots value carries no index/follow — those are already the
+     default, and stating them adds nothing. `max-image-preview:large`
+     does change behaviour: it opts link previews in search results
+     up from a thumbnail to a full-width image. Pages that need to
+     stay out of the index add their own `noindex` via
+     _includes/noindex.html; where two robots tags disagree the more
+     restrictive one wins, so the two compose correctly. -->
+<meta name="author" content="Mehmet Fatih Kara">
+<meta name="robots" content="max-image-preview:large">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <!-- Full variable range (200-800, upright + italic) rather than a
@@ -90,10 +201,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="assets/css/styles.css">
-<meta property="og:title" content="M. Fatih Kara">
+<meta property="og:title" content="Mehmet Fatih Kara — Plant Disease Resistance in Lettuce">
+<meta property="og:description" content="Plant scientist working on disease resistance in lettuce — how the crop responds to necrotrophic fungal pathogens such as Botrytis cinerea and Sclerotinia sclerotiorum.">
 <meta property="og:image" content="https://www.mfkara.net/assets/img/profile.jpg">
 <meta property="og:site_name" content="M. Fatih Kara">
-<meta name="twitter:title" content="M. Fatih Kara">
+<meta name="twitter:title" content="Mehmet Fatih Kara — Plant Disease Resistance in Lettuce">
+<meta name="twitter:description" content="Plant scientist working on disease resistance in lettuce — how the crop responds to necrotrophic fungal pathogens such as Botrytis cinerea and Sclerotinia sclerotiorum.">
 <meta name="twitter:image" content="https://www.mfkara.net/assets/img/profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -280,10 +393,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">about</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./_posts/index.qmd"> 
-<span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./research/index.html"> 

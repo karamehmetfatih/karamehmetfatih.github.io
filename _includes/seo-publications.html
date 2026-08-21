@@ -1,0 +1,178 @@
+<!-- Publications page SEO head additions.
+
+     Every entry below is transcribed from the visible list in
+     research/index.qmd — same authors, journal, volume, pages and DOI. That is
+     a requirement, not tidiness: structured data that does not match the
+     rendered page is a manual-action risk, so this file has to be edited
+     whenever a publication is added.
+
+     ScholarlyArticle rather than Article, and the DOI is given twice — once as
+     `identifier` (the machine-readable claim) and once as `sameAs` (the
+     canonical copy of record elsewhere). `author` is a list of Person nodes so
+     the position of each name is preserved; the site owner is linked by @id to
+     the Person defined on the home page rather than re-described here. -->
+
+<link rel="canonical" href="https://www.mfkara.net/research/">
+<meta property="og:url" content="https://www.mfkara.net/research/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.mfkara.net/research/#webpage",
+      "url": "https://www.mfkara.net/research/",
+      "name": "Publications — Mehmet Fatih Kara",
+      "description": "Peer-reviewed publications by Mehmet Fatih Kara in plant pathology, transcriptomics and seed science.",
+      "isPartOf": { "@id": "https://www.mfkara.net/#website" },
+      "about": { "@id": "https://www.mfkara.net/#person" },
+      "inLanguage": "en",
+      "mainEntity": { "@id": "https://www.mfkara.net/research/#publications" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.mfkara.net/research/#publications",
+      "name": "Peer-reviewed publications",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "@id": "https://doi.org/10.1111/tpj.16978",
+            "headline": "LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce",
+            "name": "LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce",
+            "datePublished": "2024",
+            "inLanguage": "en",
+            "author": [
+              { "@id": "https://www.mfkara.net/#person" },
+              { "@type": "Person", "name": "W. Guo" },
+              { "@type": "Person", "name": "R. Zhang" },
+              { "@type": "Person", "name": "K. Denby" }
+            ],
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "1",
+              "isPartOf": {
+                "@type": "PublicationVolume",
+                "volumeNumber": "120",
+                "isPartOf": {
+                  "@type": "Periodical",
+                  "name": "The Plant Journal",
+                  "issn": "1365-313X"
+                }
+              }
+            },
+            "pageStart": "370",
+            "pageEnd": "386",
+            "identifier": [
+              { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.1111/tpj.16978" },
+              { "@type": "PropertyValue", "propertyID": "PMID", "value": "39145419" }
+            ],
+            "sameAs": "https://doi.org/10.1111/tpj.16978",
+            "url": "https://doi.org/10.1111/tpj.16978"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "@id": "https://doi.org/10.1501/tarimbil_0000001417",
+            "headline": "Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality",
+            "name": "Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality",
+            "datePublished": "2016",
+            "inLanguage": "en",
+            "author": [
+              { "@type": "Person", "name": "S. Ermiş" },
+              { "@id": "https://www.mfkara.net/#person" },
+              { "@type": "Person", "name": "E. Özden" },
+              { "@type": "Person", "name": "İ. Demir" }
+            ],
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "4",
+              "isPartOf": {
+                "@type": "PublicationVolume",
+                "volumeNumber": "22",
+                "isPartOf": { "@type": "Periodical", "name": "Journal of Agricultural Sciences" }
+              }
+            },
+            "pageStart": "588",
+            "pageEnd": "595",
+            "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.1501/tarimbil_0000001417" },
+            "sameAs": "https://doi.org/10.1501/tarimbil_0000001417",
+            "url": "https://doi.org/10.1501/tarimbil_0000001417"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "@id": "https://doi.org/10.9734/ajea/2016/25526",
+            "headline": "Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (Lactuca sativa)",
+            "name": "Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (Lactuca sativa)",
+            "datePublished": "2016",
+            "inLanguage": "en",
+            "author": [
+              { "@type": "Person", "name": "I. Demir" },
+              { "@type": "Person", "name": "E. Özden" },
+              { "@id": "https://www.mfkara.net/#person" },
+              { "@type": "Person", "name": "M. Hassanzadeh" },
+              { "@type": "Person", "name": "K. Mavi" }
+            ],
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "3",
+              "isPartOf": {
+                "@type": "PublicationVolume",
+                "volumeNumber": "12",
+                "isPartOf": { "@type": "Periodical", "name": "American Journal of Experimental Agriculture" }
+              }
+            },
+            "pageStart": "1",
+            "pageEnd": "5",
+            "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.9734/ajea/2016/25526" },
+            "sameAs": "https://doi.org/10.9734/ajea/2016/25526",
+            "url": "https://doi.org/10.9734/ajea/2016/25526"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "@id": "https://doi.org/10.17660/ActaHortic.2016.1143.48",
+            "headline": "The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars",
+            "name": "The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars",
+            "datePublished": "2016",
+            "inLanguage": "en",
+            "author": [
+              { "@type": "Person", "name": "I. Demir" },
+              { "@id": "https://www.mfkara.net/#person" },
+              { "@type": "Person", "name": "E. Özden" },
+              { "@type": "Person", "name": "M. Hassanzadeh" }
+            ],
+            "isPartOf": {
+              "@type": "PublicationVolume",
+              "volumeNumber": "1143",
+              "isPartOf": { "@type": "Periodical", "name": "Acta Horticulturae" }
+            },
+            "pageStart": "341",
+            "pageEnd": "344",
+            "identifier": { "@type": "PropertyValue", "propertyID": "DOI", "value": "10.17660/ActaHortic.2016.1143.48" },
+            "sameAs": "https://doi.org/10.17660/ActaHortic.2016.1143.48",
+            "url": "https://doi.org/10.17660/ActaHortic.2016.1143.48"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>

@@ -1,9 +1,26 @@
 ---
 title: "cv"
+# Only to capitalise the initialism in the browser tab and any result listing —
+# the visible heading keeps the site's lowercase style. Quarto appends the site
+# title, giving "CV – M. Fatih Kara"; the name does not belong in this string.
+pagetitle: "CV"
 description-meta: "Curriculum vitae of Mehmet Fatih Kara — plant pathology, transcriptomics and seed science."
 toc: true
 toc-location: left
 comments: false
+format:
+  html:
+    # Held back from the index for now. This page is rendered and listed in
+    # sitemap.xml, but the navbar entry for it is commented out in _quarto.yml,
+    # so it is reachable only by search — and the dates, MSc, BSc and languages
+    # are all still literal "TODO". A page that answers a search for this name
+    # with the word TODO is worse than no page.
+    #
+    # Remove this include once the entries are filled in, and uncomment the cv
+    # navbar entry at the same time: an indexed page with no route in from the
+    # navigation is a weak signal regardless of its content.
+    include-in-header:
+      - ../_includes/noindex.html
 ---
 
 <!-- A PDF button, once you have one to link. Drop the file at assets/pdf/cv.pdf

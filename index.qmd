@@ -7,10 +7,38 @@
 # `description-meta` rather than `description:` keeps the
 # <meta name="description"> for search engines and link previews without
 # printing a subtitle under the title.
+#
+# `pagetitle` sets the <title> tag only, leaving the rendered H1 as the name
+# alone. Before this the two were the same string, so the single most valuable
+# piece of text on the site — the search result headline — read "M. Fatih Kara"
+# and said nothing about the subject.
+#
+# Write it as the topic alone, with no name in it. Quarto appends " – " plus the
+# site title (`website: title:`) to whatever is set here, so the full rendered
+# result is "Plant Disease Resistance in Lettuce – M. Fatih Kara": subject first,
+# name second, ~50 characters, no truncation in a result listing. Putting the
+# name here as well produces it twice.
 title: "M. Fatih Kara"
+pagetitle: "Plant Disease Resistance in Lettuce"
 title-block-style: default
 body-classes: home
 description-meta: "Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog."
+# `description-meta` deliberately does not feed og:description — that is why it
+# was chosen over `description:`, which would print a subtitle under the title.
+# The consequence was that link previews for the home page had a title and image
+# but no text at all. Setting the two card descriptions explicitly restores the
+# preview copy without putting a subtitle on the page.
+open-graph:
+  description: "Plant scientist working on disease resistance in lettuce — how the crop responds to necrotrophic fungal pathogens such as Botrytis cinerea and Sclerotinia sclerotiorum."
+twitter-card:
+  description: "Plant scientist working on disease resistance in lettuce — how the crop responds to necrotrophic fungal pathogens such as Botrytis cinerea and Sclerotinia sclerotiorum."
+format:
+  html:
+    # Canonical URL, og:url/type/locale and the Person + WebSite JSON-LD.
+    # Appended to the project-level header includes in _quarto.yml, not a
+    # replacement for them.
+    include-in-header:
+      - _includes/seo-home.html
 comments: false
 toc: false
 # `full` is required by the .portfolio-container grid below, not a style

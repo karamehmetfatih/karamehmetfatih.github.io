@@ -1,0 +1,15 @@
+<!-- Keep this page out of the index.
+
+     Used on two kinds of page: the 404 (a soft-404 in the index is worse than
+     no result at all) and any page whose content is still placeholder. A thin
+     or half-written page that ranks for the site owner's name costs more than
+     it earns, so it stays out until it is worth finding.
+
+     `noindex` only, not `noindex, nofollow` — the crawler should still follow
+     the links out of the page and reach the real content behind them.
+
+     Note this must be a meta tag rather than a robots.txt rule: a disallowed
+     page can still be indexed from external links, because the crawler never
+     fetches it and so never sees the directive. -->
+
+<meta name="robots" content="noindex, follow">
