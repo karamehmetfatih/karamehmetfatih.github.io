@@ -304,10 +304,16 @@ h2 {
   z-index: 0;
 }
 
-.gravatar-hovercard__header-image-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Painted as a background rather than an <img>: the banner carries no
+   information (it is the avatar below, blurred), so an <img> here could only
+   ever have an empty alt — which screen readers skip and SEO crawlers flag. */
+.gravatar-hovercard__header-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&d=initials");
+  background-size: cover;
+  background-position: center;
   filter: blur(18px) saturate(1.2);
   transform: scale(1.4);
 }

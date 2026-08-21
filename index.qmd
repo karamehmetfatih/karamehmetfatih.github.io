@@ -62,7 +62,7 @@ aliases:
 ```{=html}
 <div class="gravatar-hovercard">
 	<div class="gravatar-hovercard__inner">
-		<div class="gravatar-hovercard__header-image"><img class="gravatar-hovercard__header-image-img" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" alt="" loading="lazy"></div>
+		<div class="gravatar-hovercard__header-image" aria-hidden="true"></div>
 		<div class="gravatar-hovercard__header">
 			<a class="gravatar-hovercard__avatar-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
 				<img class="gravatar-hovercard__avatar" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" width="128" height="128" alt="M. Fatih Kara">
