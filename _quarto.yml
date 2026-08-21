@@ -84,8 +84,8 @@ website:
       © Copyright 2026 M. Fatih Kara<br>
       Made with [{{< fa brands r-project size=lg title="R" label="R" >}}](https://www.r-project.org/) and
       [![](https://quarto.org/quarto.png){.footer-logo fig-alt="Quarto" width=65px}](https://quarto.org/).
-      Powered by [{{< fa brands bootstrap size=lg title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
-      [al-folio](https://github.com/alshedivat/al-folio)-inspired theme.
+      [Powered by [{{< fa brands bootstrap size=lg title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
+      [al-folio](https://github.com/alshedivat/al-folio)-inspired theme.]{.footer-secondary}
       Hosted by
       [![](/assets/img/logo.svg){.footer-logo fig-alt="GitHub Pages" width=65px}](https://pages.github.com/).
 

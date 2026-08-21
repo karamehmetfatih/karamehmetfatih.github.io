@@ -416,6 +416,50 @@ footer.footer {
   z-index: 1020; // below the fixed navbar (1030), above page content
 }
 
+// Phones. The colophon that runs to two lines on a desktop wraps to five or
+// six on a 390px screen, and because the footer is pinned that cost is paid on
+// every screenful. Roughly halved here by dropping the least load-bearing
+// sentence (the "Powered by ..." credit, which the desktop footer keeps) and
+// tightening the leading and padding around what is left.
+//
+// Nothing else needs adjusting: the height is measured at runtime into
+// --af-footer-height, so the body padding and the back-to-top offset both
+// follow the smaller footer automatically.
+@media (max-width: 767.98px) {
+  .nav-footer {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .nav-footer .footer-secondary {
+    display: none;
+  }
+
+  // Quarto stacks the three footer slots below this breakpoint and pads the
+  // centre one generously for a footer that scrolls past once. Pinned, that
+  // margin-top of 3em is ~36px of blank space carried on every screenful.
+  .nav-footer-center {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// Below 576px Quarto gives the left and right slots `flex: 100%`, so each
+// becomes its own full-width row. Quarto fills both with a bare &nbsp; when no
+// left/right footer content is configured — as here — so they contribute two
+// empty lines plus 1em of margin each, for nothing.
+//
+// Remove this block if you ever add `page-footer: left:` or `right:` content,
+// or it will be hidden on small screens.
+@media (max-width: 575.98px) {
+  .nav-footer-left,
+  .nav-footer-right {
+    display: none;
+  }
+}
+
 // Footer. al-folio inverts this in dark mode, hence the tokens.
 //
 // Kept tight because it is pinned: padding trimmed from 1.25rem, leading
