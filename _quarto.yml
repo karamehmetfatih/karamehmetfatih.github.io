@@ -20,7 +20,12 @@ project:
     #
     # Not a secret despite the name — it is designed to be publicly fetchable,
     # and must be committed, not gitignored.
-    - 8f8e944fd46f40088e3e0025a6797315.txt
+    #
+    # Replaced 8f8e944fd46f40088e3e0025a6797315 on 2026-08-21. Removal from this
+    # list is what retires a key: Quarto clears docs/ on every render, so a key
+    # absent here stops being served at the next one, whatever is left lying
+    # around at the project root. Exactly one entry belongs below.
+    - 944edb0f8e4b459e8b54cf5c3eb92a45.txt
   render:
     - "*.qmd"
     # Showcase is parked, not deleted. Excluding it from the render keeps its

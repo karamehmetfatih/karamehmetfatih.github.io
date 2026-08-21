@@ -1,0 +1,121 @@
+# Pings IndexNow whenever the published site changes, so the participating
+# engines (Bing, Yandex, Seznam, Naver, DuckDuckGo) refetch a page instead of
+# waiting for their own crawl schedule to come round. Google does not take part
+# in the protocol; nothing here affects it either way.
+#
+# Submission is driven off the sitemap rather than a hand-kept URL list. Quarto
+# rewrites docs/sitemap.xml on every render, so it is the one file that always
+# knows what the site contains and when each page last changed — which also
+# means the run is incremental for free: only URLs whose `lastmod` is inside the
+# `since` window below get submitted, not the whole site on every push.
+
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+    # docs/ is the published output (`project.output-dir` in _quarto.yml). A push
+    # touching only sources — .qmd, _sass, TODO.md — changes nothing a crawler
+    # can see, because the render that turns those into HTML has not happened
+    # yet. There is nothing to announce until docs/ moves.
+    paths:
+      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      since_days:
+        description: 'Submit pages whose sitemap lastmod falls within this many days'
+        required: false
+        default: '1'
+
+# Reads a public sitemap over HTTPS and calls a third-party API. It wants
+# nothing from the repository itself, so it gets no token.
+permissions: {}
+
+# Two pushes in quick succession would otherwise race to submit overlapping URL
+# sets. Queue them. `cancel-in-progress` would be wrong here: a cancelled run
+# does not submit at all, and the push that cancelled it may cover different
+# pages, so a URL could be dropped silently.
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      # The action fetches the sitemap from the LIVE site, but this workflow
+      # fires on push — before GitHub Pages has finished publishing. Without a
+      # wait it would read the previous deploy's sitemap and submit yesterday's
+      # URLs. So: fetch the sitemap as committed at this exact SHA (immutable on
+      # raw.githubusercontent.com, hence safe to cache) and poll the live one
+      # until they match.
+      #
+      # When a push does not touch the sitemap — a CSS-only change, say — the two
+      # already match and this passes on the first attempt. That is the correct
+      # outcome: the URL set has not changed, and the engine fetches the page
+      # itself later anyway.
+      - name: Wait for Pages to serve this commit
+        env:
+          SITEMAP_URL: https://www.mfkara.net/sitemap.xml
+        run: |
+          set -uo pipefail
+
+          committed="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/docs/sitemap.xml"
+          if ! curl -fsSL --max-time 30 "$committed" -o committed.xml; then
+            echo "::warning::Could not read docs/sitemap.xml at ${GITHUB_SHA}; submitting without waiting."
+            exit 0
+          fi
+          want="$(sha256sum committed.xml | cut -d' ' -f1)"
+
+          for attempt in $(seq 1 30); do
+            if curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "$SITEMAP_URL" -o live.xml; then
+              if [ "$(sha256sum live.xml | cut -d' ' -f1)" = "$want" ]; then
+                echo "Pages is serving this commit's sitemap (attempt ${attempt})."
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+
+          echo "::warning::Live sitemap still differs from this commit after 5 minutes; submitting anyway."
+
+      # Pinned to the commit behind tag v3 (v3.0.0, tagged 2026-05-26), not to
+      # the tag itself: a tag is a movable pointer, and `@v3` or `@master` would
+      # let the upstream repo change what runs here without a commit in this one.
+      - name: Submit changed URLs to IndexNow
+        uses: bojieyang/indexnow-action@38ddfbd93579a8a44c0dee662121bf9d51098f71 # v3.0.0
+        with:
+          sitemap-location: https://www.mfkara.net/sitemap.xml
+
+          # Deliberately not a repository secret. An IndexNow key is public by
+          # design — the protocol verifies domain ownership by fetching the key
+          # back from the site root, so anyone can already read it at
+          # https://www.mfkara.net/944edb0f8e4b459e8b54cf5c3eb92a45.txt. Hiding
+          # it in `secrets` would add a second place to keep in sync, protect
+          # nothing, and make the mismatch that breaks submission (key file vs.
+          # key value) invisible in review. See the note in _quarto.yml, where
+          # the same key is registered as a project resource so it survives to
+          # docs/ on every render.
+          #
+          # These two must agree with each other AND with the deployed file, or
+          # the endpoint answers 403. Changing the key means changing three
+          # things: the file at the project root, the _quarto.yml resource entry,
+          # and this pair.
+          key: '944edb0f8e4b459e8b54cf5c3eb92a45'
+          key-location: https://www.mfkara.net/944edb0f8e4b459e8b54cf5c3eb92a45.txt
+
+          # Neutral endpoint. Submitting to any one participating engine shares
+          # the URLs with all the others, so this is a matter of not picking a
+          # side rather than of coverage.
+          endpoint: api.indexnow.org
+
+          # Empty on `push`, where the input does not exist, so it falls through
+          # to one day — matching how often the site could plausibly be pushed.
+          # Widen it from the Actions tab to force a resubmission of older pages.
+          since: ${{ inputs.since_days || '1' }}
+          since-unit: day
+
+          # Upstream defaults to `ignore`, which turns a rejected key into a
+          # green tick and months of silently unindexed pages. A 403 here should
+          # be loud.
+          failure-strategy: error

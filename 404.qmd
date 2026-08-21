@@ -1,5 +1,20 @@
 ---
 title: Page Not Found
+# `description-meta` rather than `description:`, matching index.qmd and
+# cv/index.qmd: both emit <meta name="description">, but `description:` also
+# prints the text as a subtitle beneath the page title, which would leave this
+# page saying the same thing twice — once in the subtitle, once in the body.
+#
+# Needed at all because <meta name="description"> does NOT fall back to
+# `website.description` in _quarto.yml the way og:description and
+# twitter:description do; omit it and the page ships with no description tag,
+# which is what an SEO audit reports against this page.
+#
+# Worth setting even though the page is noindex, below: auditors fetch
+# /404.html directly, and GitHub Pages serves the file itself as 200 — the 404
+# status applies only when it stands in for a missing URL — so the warning
+# recurs on every crawl until the tag exists.
+description-meta: "This page could not be found. Search the site, or return to the homepage for research on lettuce disease resistance."
 # GitHub Pages serves this file with a 404 status, so search engines mostly get
 # the message from the status code. The meta tag covers the case where they do
 # not — a 404 page that gets indexed shows up as a real result for the site and
