@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Curriculum vitae of Mehmet Fatih Kara — plant pathology, transcriptomics and seed science.">
+<meta name="description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis.">
 
-<title>CV – M. Fatih Kara</title>
+<title>LsRTDv1: lettuce reference transcript dataset – M. Fatih Kara</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -78,21 +78,123 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Keep this page out of the index.
+<!-- LsRTDv1 page SEO head additions.
 
-     Used on two kinds of page: the 404 (a soft-404 in the index is worse than
-     no result at all) and any page whose content is still placeholder. A thin
-     or half-written page that ranks for the site owner's name costs more than
-     it earns, so it stays out until it is worth finding.
+     The `Dataset` node is the point of this file. Google Dataset Search indexes
+     schema.org/Dataset specifically, and it is a far smaller pool to compete in
+     than ordinary web results — a research artefact with a DOI, a named
+     repository and a distribution list is exactly the shape it looks for.
 
-     `noindex` only, not `noindex, nofollow` — the crawler should still follow
-     the links out of the page and reach the real content behind them.
+     `identifier` and `sameAs` both carry the Dryad DOI: the DOI is the stable
+     name of the thing, and this page is a description of it, not the copy of
+     record. `citation` points at the paper so the two records resolve to one
+     piece of work.
 
-     Note this must be a meta tag rather than a robots.txt rule: a disallowed
-     page can still be indexed from external links, because the crawler never
-     fetches it and so never sees the directive. -->
+     No `license` field. Dryad states the terms on the record itself and it was
+     not verified when this was written; asserting a licence that turns out to
+     be wrong is worse than omitting the field, since reuse decisions get made
+     on it. Add it once confirmed. -->
 
-<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.mfkara.net/lsrtdv1/">
+<meta property="og:url" content="https://www.mfkara.net/lsrtdv1/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.mfkara.net/lsrtdv1/#webpage",
+      "url": "https://www.mfkara.net/lsrtdv1/",
+      "name": "LsRTDv1 — lettuce reference transcript dataset",
+      "isPartOf": { "@id": "https://www.mfkara.net/#website" },
+      "about": { "@id": "https://doi.org/10.5061/dryad.xwdbrv1m8" },
+      "mainEntity": { "@id": "https://doi.org/10.5061/dryad.xwdbrv1m8" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5061/dryad.xwdbrv1m8",
+      "name": "LsRTDv1: A reference transcript dataset for accurate transcript-specific expression analysis in lettuce",
+      "alternateName": "LsRTDv1",
+      "description": "A reference transcript dataset (RTD) for lettuce, Lactuca sativa cv. Saladin, combining long- and short-read RNA sequencing with publicly available transcriptome annotations and filtered to retain only transcripts with high-confidence splice junctions and transcriptional start and end sites. LsRTDv1 identifies novel genes, mostly long non-coding RNAs, and raises the number of transcript isoforms per gene in the lettuce genome from 1.4 to 2.7, enabling alignment-free transcript-specific quantification and detection of differential alternative splicing.",
+      "url": "https://www.mfkara.net/lsrtdv1/",
+      "sameAs": "https://doi.org/10.5061/dryad.xwdbrv1m8",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5061/dryad.xwdbrv1m8"
+      },
+      "datePublished": "2024",
+      "version": "v1",
+      "inLanguage": "en",
+      "creator": [
+        { "@type": "Person", "name": "Katherine Denby" },
+        { "@id": "https://www.mfkara.net/#person" },
+        { "@type": "Person", "name": "Wenbin Guo" },
+        { "@type": "Person", "name": "Runxuan Zhang" }
+      ],
+      "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "Dryad",
+        "url": "https://datadryad.org/"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "lettuceRTDv1.fasta",
+          "description": "Transcript sequences.",
+          "encodingFormat": "text/x-fasta",
+          "contentUrl": "https://doi.org/10.5061/dryad.xwdbrv1m8"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "lettuceRTDv1.gtf",
+          "description": "Transcript coordinates and features.",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://doi.org/10.5061/dryad.xwdbrv1m8"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "LettuceRTDv1_annotated.gtf",
+          "description": "Annotated transcript information.",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://doi.org/10.5061/dryad.xwdbrv1m8"
+        }
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Lactuca sativa",
+        "sameAs": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4236"
+      },
+      "measurementTechnique": [
+        "RNA sequencing",
+        "Long-read sequencing",
+        "Short-read sequencing",
+        "Transcriptome assembly"
+      ],
+      "keywords": [
+        "Lactuca sativa",
+        "lettuce",
+        "reference transcript dataset",
+        "transcriptome",
+        "transcript isoforms",
+        "alternative splicing",
+        "RNA-seq analysis",
+        "gene expression",
+        "transcription start and end sites",
+        "Botrytis cinerea"
+      ],
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1111/tpj.16978"
+      }
+    }
+  ]
+}
+</script>
 <!-- Site-wide metadata. `author` is set here rather than as document
      front matter because Quarto would also print an author byline
      into the title block; only the <meta> tag is wanted.
@@ -116,17 +218,17 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../assets/css/styles.css">
-<meta property="og:title" content="CV">
-<meta property="og:description" content="Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.">
+<meta property="og:title" content="LsRTDv1: lettuce reference transcript dataset">
+<meta property="og:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis.">
 <meta property="og:image" content="https://www.mfkara.net/assets/img/profile.jpg">
 <meta property="og:site_name" content="M. Fatih Kara">
-<meta name="twitter:title" content="CV">
-<meta name="twitter:description" content="Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.">
+<meta name="twitter:title" content="LsRTDv1: lettuce reference transcript dataset">
+<meta name="twitter:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis.">
 <meta name="twitter:image" content="https://www.mfkara.net/assets/img/profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -325,27 +427,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics">basics</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">education</a></li>
-  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">experience</a></li>
-  <li><a href="#selected-publications" id="toc-selected-publications" class="nav-link" data-scroll-target="#selected-publications">selected publications</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">skills</a></li>
-  <li><a href="#interests" id="toc-interests" class="nav-link" data-scroll-target="#interests">interests</a></li>
-  <li><a href="#languages" id="toc-languages" class="nav-link" data-scroll-target="#languages">languages</a></li>
+  <li><a href="#what-is-in-it" id="toc-what-is-in-it" class="nav-link active" data-scroll-target="#what-is-in-it">What is in it</a></li>
+  <li><a href="#what-it-makes-possible" id="toc-what-it-makes-possible" class="nav-link" data-scroll-target="#what-it-makes-possible">What it makes possible</a></li>
+  <li><a href="#download" id="toc-download" class="nav-link" data-scroll-target="#download">Download</a>
+  <ul class="collapse">
+  <li><a href="#related-data-and-code" id="toc-related-data-and-code" class="nav-link" data-scroll-target="#related-data-and-code">Related data and code</a></li>
+  </ul></li>
+  <li><a href="#how-to-cite" id="toc-how-to-cite" class="nav-link" data-scroll-target="#how-to-cite">How to cite</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">cv</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">LsRTDv1</h1></header>
 
 
 <header id="title-block-header">
@@ -354,150 +454,98 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<!-- A PDF button, once you have one to link. Drop the file at assets/pdf/cv.pdf
-     (al-folio keeps PDFs there) and uncomment. Left out for now rather than
-     shipping a 404.
-[ Download as PDF](/assets/pdf/cv.pdf){.cv-download}
--->
-<section id="basics" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="basics">basics</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>Ankara, Türkiye</p>
-</div>
-<div class="cv-entry__what">
-<p><strong>Mehmet Fatih Kara</strong></p>
-<p>Plant scientist working on the genetics of disease resistance in lettuce, and how that response can be read at the level of individual transcripts rather than whole genes. PhD researcher at the University of York.</p>
-<p><a href="mailto:info@mfkara.net">info@mfkara.net</a> · <a href="https://orcid.org/0000-0002-0318-228X">ORCID</a> · <a href="https://scholar.google.com/citations?&amp;user=56zv2gQAAAAJ">Google Scholar</a> · <a href="https://www.linkedin.com/in/m-f-kara">LinkedIn</a></p>
-</div>
-</div>
-</section>
-<section id="education" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="education">education</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>TODO – present</p>
-</div>
-<div class="cv-entry__what">
-<p><strong>PhD, Department of Biology</strong> · <a href="https://www.york.ac.uk/">University of York</a></p>
-<p>Genetic basis of lettuce resistance to the necrotrophic fungi <em>Botrytis cinerea</em> and <em>Sclerotinia sclerotiorum</em>, combining time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing.</p>
-</div>
-</div>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>TODO – TODO</p>
-</div>
-<div class="cv-entry__what">
-<p><strong>MSc, TODO</strong> · TODO</p>
-<p>TODO — add programme and thesis topic.</p>
-</div>
-</div>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>TODO – TODO</p>
-</div>
-<div class="cv-entry__what">
-<p><strong>BSc, TODO</strong> · TODO</p>
-<p>TODO — add programme.</p>
-</div>
-</div>
-</section>
-<section id="experience" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="experience">experience</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>TODO – present</p>
-</div>
-<div class="cv-entry__what">
-<p><strong>PhD Researcher</strong> · University of York</p>
+<p><strong>LsRTDv1</strong> is a reference transcript dataset (RTD) for lettuce, <em>Lactuca sativa</em> cv. Saladin. It gives the lettuce community a transcript-level reference to quantify against, so that RNA-seq analysis in this crop can resolve individual transcript isoforms rather than collapsing them into whole-gene counts.</p>
+<p>Alignment-free quantification is fast and precise, but it cannot be run without a reference transcriptome — and the isoform-level annotation lettuce had before this was thin. LsRTDv1 exists to remove that as a blocker.</p>
+<section id="what-is-in-it" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-in-it">What is in it</h2>
+<p>LsRTDv1 combines long- and short-read sequencing with publicly available transcriptome annotations, then filters the result to keep only transcripts with high-confidence splice junctions and high-confidence transcriptional start and end sites. The filtering is the part that matters: an RTD that keeps everything it assembles inflates the isoform count with artefacts, and quantification against a noisy reference is worse than not having one.</p>
+<p>The dataset:</p>
 <ul>
-<li>Built <a href="../lsrtdv1/index.html">LsRTDv1</a>, a reference transcript dataset enabling accurate transcript-specific expression analysis in lettuce.</li>
-<li>Time-series transcriptomics of the lettuce response to necrotrophic infection.</li>
-<li>CRISPR-Cas9 editing to test candidate regulators of resistance.</li>
+<li>raises the number of transcript isoforms per gene in the lettuce genome from <strong>1.4 to 2.7</strong>;</li>
+<li>identifies <strong>novel genes</strong>, most of them long non-coding RNAs;</li>
+<li>significantly increases the <strong>mapping rate</strong> of lettuce RNA-seq data.</li>
 </ul>
-</div>
-</div>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>TODO – TODO</p>
-</div>
-<div class="cv-entry__what">
-<p><strong>Seed science research</strong> · TODO</p>
-<p>Longevity, storage and priming of vegetable seed — lettuce, onion and cabbage. Work published with Demir, Özden, Ermiş and colleagues.</p>
-</div>
-</div>
 </section>
-<section id="selected-publications" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="selected-publications">selected publications</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>2024</p>
-</div>
-<div class="cv-entry__what">
-<p>Kara, M.F., Guo, W., Zhang, R. and Denby, K. LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. <em>The Plant Journal</em>, 120(1), 370–386. <a href="https://doi.org/10.1111/tpj.16978">10.1111/tpj.16978</a></p>
-</div>
-</div>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>2016</p>
-</div>
-<div class="cv-entry__what">
-<p>Demir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (<em>Lactuca sativa</em>). <em>American Journal of Experimental Agriculture</em>, 12(3), 1–5. <a href="https://doi.org/10.9734/ajea/2016/25526">10.9734/ajea/2016/25526</a></p>
-</div>
-</div>
-<p><a href="../research/index.html">Full list of publications →</a></p>
+<section id="what-it-makes-possible" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-makes-possible">What it makes possible</h2>
+<p>Validated on a lettuce time-series experiment — mock-inoculated and inoculated with the necrotrophic fungus <em>Botrytis cinerea</em> — LsRTDv1 enables:</p>
+<ul>
+<li>detection of genes that are <strong>differentially alternatively spliced</strong> in response to infection;</li>
+<li><strong>transcript-specific expression changes</strong>, rather than a single number per gene.</li>
+</ul>
+<p>Alternative splicing and post-transcriptional regulation during infection are largely unresolved in this crop, and a transcript-level reference is the precondition for studying them at all.</p>
 </section>
-<section id="skills" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="skills">skills</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>Molecular</p>
+<section id="download" class="level2">
+<h2 class="anchored" data-anchor-id="download">Download</h2>
+<p>The dataset is deposited in <strong>Dryad</strong>:</p>
+<div class="publication">
+<p><a href="https://doi.org/10.5061/dryad.xwdbrv1m8">10.5061/dryad.xwdbrv1m8</a></p>
 </div>
-<div class="cv-entry__what">
-<p>CRISPR-Cas9 genome editing · RNP delivery to protoplasts · cloning and transformation · detached-leaf pathogen assays</p>
-</div>
-</div>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>Computational</p>
-</div>
-<div class="cv-entry__what">
-<p>RNA-seq and transcript-level quantification · reference transcriptome assembly · differential expression and alternative splicing analysis · R</p>
-</div>
-</div>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>Seed science</p>
-</div>
-<div class="cv-entry__what">
-<p>Seed longevity testing · controlled deterioration · solid matrix priming · seed quality assessment</p>
-</div>
-</div>
+<table class="caption-top table">
+<caption>Files in the current Dryad version. Read the <code>README.md</code> first — it documents what each file contains.</caption>
+<colgroup>
+<col style="width: 32%">
+<col style="width: 48%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>Contents</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>lettuceRTDv1.fasta</code></td>
+<td>Transcript sequences</td>
+<td>~295 MB</td>
+</tr>
+<tr class="even">
+<td><code>lettuceRTDv1.gtf</code></td>
+<td>Transcript coordinates and features</td>
+<td>~179 MB</td>
+</tr>
+<tr class="odd">
+<td><code>LettuceRTDv1_annotated.gtf</code></td>
+<td>Annotated transcript information</td>
+<td>~507 MB</td>
+</tr>
+<tr class="even">
+<td><code>README.md</code></td>
+<td>Documentation</td>
+<td>~5 KB</td>
+</tr>
+</tbody>
+</table>
+<p>Reuse terms are stated on the Dryad record; check there before redistributing.</p>
+<section id="related-data-and-code" class="level3">
+<h3 class="anchored" data-anchor-id="related-data-and-code">Related data and code</h3>
+<ul>
+<li><strong>Raw RNA sequencing data</strong> — NCBI Sequence Read Archive, BioProject <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1018253">PRJNA1018253</a></li>
+<li><strong>Analysis code</strong> — Zenodo, <a href="https://doi.org/10.5281/zenodo.11658411">10.5281/zenodo.11658411</a></li>
+</ul>
 </section>
-<section id="interests" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="interests">interests</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>Research</p>
-</div>
-<div class="cv-entry__what">
-<p>Plant immunity and resistance to necrotrophic fungal pathogens · transcript-level expression and alternative splicing · reference transcriptome construction · CRISPR-Cas9 genome editing in crops · seed longevity, storage and priming</p>
-</div>
-</div>
 </section>
-<section id="languages" class="level2 cv-section">
-<h2 class="anchored" data-anchor-id="languages">languages</h2>
-<div class="cv-entry">
-<div class="cv-entry__when">
-<p>TODO</p>
+<section id="how-to-cite" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-cite">How to cite</h2>
+<p>Cite <strong>the paper</strong> if you are describing or building on the work:</p>
+<div class="publication">
+<p>Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. <em>The Plant Journal</em>, 120(1), pp.370-386. DOI: <a href="https://doi.org/10.1111/tpj.16978">10.1111/tpj.16978</a>. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/39145419/">39145419</a>.</p>
 </div>
-<div class="cv-entry__what">
-<p>TODO — e.g.&nbsp;Turkish (native), English (fluent).</p>
+<p>Cite <strong>the dataset</strong> if you quantified against it — this is the citation Dryad recommends, and the author order differs from the paper:</p>
+<div class="publication">
+<p>Denby, Katherine; Kara, Mehmet Fatih; Guo, Wenbin; Zhang, Runxuan (2024). LsRTDv1: A reference transcript dataset for accurate transcript-specific expression analysis in lettuce [Dataset]. <em>Dryad</em>. DOI: <a href="https://doi.org/10.5061/dryad.xwdbrv1m8">10.5061/dryad.xwdbrv1m8</a>.</p>
 </div>
-</div>
+<p>Citing both is the safer habit — the paper explains how the resource was built and what it is good for, the dataset DOI pins the exact version your numbers came from.</p>
 </section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>If something in the RTD does not behave as you expect, or you want to compare notes on using it, <a href="../#contact">get in touch</a> — I would rather hear about it than not.</p>
+<p><a href="../research/">← All publications</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

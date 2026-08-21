@@ -1,0 +1,117 @@
+<!-- LsRTDv1 page SEO head additions.
+
+     The `Dataset` node is the point of this file. Google Dataset Search indexes
+     schema.org/Dataset specifically, and it is a far smaller pool to compete in
+     than ordinary web results — a research artefact with a DOI, a named
+     repository and a distribution list is exactly the shape it looks for.
+
+     `identifier` and `sameAs` both carry the Dryad DOI: the DOI is the stable
+     name of the thing, and this page is a description of it, not the copy of
+     record. `citation` points at the paper so the two records resolve to one
+     piece of work.
+
+     No `license` field. Dryad states the terms on the record itself and it was
+     not verified when this was written; asserting a licence that turns out to
+     be wrong is worse than omitting the field, since reuse decisions get made
+     on it. Add it once confirmed. -->
+
+<link rel="canonical" href="https://www.mfkara.net/lsrtdv1/">
+<meta property="og:url" content="https://www.mfkara.net/lsrtdv1/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.mfkara.net/lsrtdv1/#webpage",
+      "url": "https://www.mfkara.net/lsrtdv1/",
+      "name": "LsRTDv1 — lettuce reference transcript dataset",
+      "isPartOf": { "@id": "https://www.mfkara.net/#website" },
+      "about": { "@id": "https://doi.org/10.5061/dryad.xwdbrv1m8" },
+      "mainEntity": { "@id": "https://doi.org/10.5061/dryad.xwdbrv1m8" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://doi.org/10.5061/dryad.xwdbrv1m8",
+      "name": "LsRTDv1: A reference transcript dataset for accurate transcript-specific expression analysis in lettuce",
+      "alternateName": "LsRTDv1",
+      "description": "A reference transcript dataset (RTD) for lettuce, Lactuca sativa cv. Saladin, combining long- and short-read RNA sequencing with publicly available transcriptome annotations and filtered to retain only transcripts with high-confidence splice junctions and transcriptional start and end sites. LsRTDv1 identifies novel genes, mostly long non-coding RNAs, and raises the number of transcript isoforms per gene in the lettuce genome from 1.4 to 2.7, enabling alignment-free transcript-specific quantification and detection of differential alternative splicing.",
+      "url": "https://www.mfkara.net/lsrtdv1/",
+      "sameAs": "https://doi.org/10.5061/dryad.xwdbrv1m8",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.5061/dryad.xwdbrv1m8"
+      },
+      "datePublished": "2024",
+      "version": "v1",
+      "inLanguage": "en",
+      "creator": [
+        { "@type": "Person", "name": "Katherine Denby" },
+        { "@id": "https://www.mfkara.net/#person" },
+        { "@type": "Person", "name": "Wenbin Guo" },
+        { "@type": "Person", "name": "Runxuan Zhang" }
+      ],
+      "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "Dryad",
+        "url": "https://datadryad.org/"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "name": "lettuceRTDv1.fasta",
+          "description": "Transcript sequences.",
+          "encodingFormat": "text/x-fasta",
+          "contentUrl": "https://doi.org/10.5061/dryad.xwdbrv1m8"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "lettuceRTDv1.gtf",
+          "description": "Transcript coordinates and features.",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://doi.org/10.5061/dryad.xwdbrv1m8"
+        },
+        {
+          "@type": "DataDownload",
+          "name": "LettuceRTDv1_annotated.gtf",
+          "description": "Annotated transcript information.",
+          "encodingFormat": "text/plain",
+          "contentUrl": "https://doi.org/10.5061/dryad.xwdbrv1m8"
+        }
+      ],
+      "about": {
+        "@type": "Thing",
+        "name": "Lactuca sativa",
+        "sameAs": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=4236"
+      },
+      "measurementTechnique": [
+        "RNA sequencing",
+        "Long-read sequencing",
+        "Short-read sequencing",
+        "Transcriptome assembly"
+      ],
+      "keywords": [
+        "Lactuca sativa",
+        "lettuce",
+        "reference transcript dataset",
+        "transcriptome",
+        "transcript isoforms",
+        "alternative splicing",
+        "RNA-seq analysis",
+        "gene expression",
+        "transcription start and end sites",
+        "Botrytis cinerea"
+      ],
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1111/tpj.16978"
+      }
+    }
+  ]
+}
+</script>

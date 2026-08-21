@@ -1,0 +1,119 @@
+---
+title: "LsRTDv1"
+# Top-level /lsrtdv1/ rather than a child of /research/. The name is the query
+# people will type — it is the identifier used in the paper, in the Dryad
+# record and in anything that cites either — so it is worth having as the whole
+# path. It also makes the URL short enough to put in a slide or a talk.
+#
+# The `pagetitle` leads with the identifier and carries the descriptive phrase
+# behind it, so the rendered <title> is
+# "LsRTDv1: lettuce reference transcript dataset – M. Fatih Kara": exact-match
+# term first, then what it is, then whose it is.
+pagetitle: "LsRTDv1: lettuce reference transcript dataset"
+description: "LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), built from long- and short-read RNA sequencing for transcript-specific expression and alternative splicing analysis."
+comments: false
+toc: true
+format:
+  html:
+    # Canonical URL plus schema.org/Dataset. See the note in the partial for why
+    # the Dataset node is the valuable part.
+    include-in-header:
+      - ../_includes/seo-lsrtdv1.html
+---
+
+**LsRTDv1** is a reference transcript dataset (RTD) for lettuce, *Lactuca sativa*
+cv. Saladin. It gives the lettuce community a transcript-level reference to quantify
+against, so that RNA-seq analysis in this crop can resolve individual transcript
+isoforms rather than collapsing them into whole-gene counts.
+
+Alignment-free quantification is fast and precise, but it cannot be run without a
+reference transcriptome — and the isoform-level annotation lettuce had before this
+was thin. LsRTDv1 exists to remove that as a blocker.
+
+## What is in it
+
+LsRTDv1 combines long- and short-read sequencing with publicly available
+transcriptome annotations, then filters the result to keep only transcripts with
+high-confidence splice junctions and high-confidence transcriptional start and end
+sites. The filtering is the part that matters: an RTD that keeps everything it
+assembles inflates the isoform count with artefacts, and quantification against a
+noisy reference is worse than not having one.
+
+The dataset:
+
+- raises the number of transcript isoforms per gene in the lettuce genome from
+  **1.4 to 2.7**;
+- identifies **novel genes**, most of them long non-coding RNAs;
+- significantly increases the **mapping rate** of lettuce RNA-seq data.
+
+## What it makes possible
+
+Validated on a lettuce time-series experiment — mock-inoculated and inoculated with
+the necrotrophic fungus *Botrytis cinerea* — LsRTDv1 enables:
+
+- detection of genes that are **differentially alternatively spliced** in response to
+  infection;
+- **transcript-specific expression changes**, rather than a single number per gene.
+
+Alternative splicing and post-transcriptional regulation during infection are largely
+unresolved in this crop, and a transcript-level reference is the precondition for
+studying them at all.
+
+## Download
+
+The dataset is deposited in **Dryad**:
+
+::: {.publication}
+[10.5061/dryad.xwdbrv1m8](https://doi.org/10.5061/dryad.xwdbrv1m8)
+:::
+
+| File | Contents | Size |
+|------|----------|------|
+| `lettuceRTDv1.fasta` | Transcript sequences | ~295 MB |
+| `lettuceRTDv1.gtf` | Transcript coordinates and features | ~179 MB |
+| `LettuceRTDv1_annotated.gtf` | Annotated transcript information | ~507 MB |
+| `README.md` | Documentation | ~5 KB |
+
+: Files in the current Dryad version. Read the `README.md` first — it documents
+what each file contains. {tbl-colwidths="[32,48,20]"}
+
+Reuse terms are stated on the Dryad record; check there before redistributing.
+
+### Related data and code
+
+- **Raw RNA sequencing data** — NCBI Sequence Read Archive, BioProject
+  [PRJNA1018253](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1018253)
+- **Analysis code** — Zenodo,
+  [10.5281/zenodo.11658411](https://doi.org/10.5281/zenodo.11658411)
+
+## How to cite
+
+Cite **the paper** if you are describing or building on the work:
+
+::: {.publication}
+Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript
+dataset for accurate transcript-specific expression analysis in lettuce.
+*The Plant Journal*, 120(1), pp.370-386.
+DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978).
+PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/).
+:::
+
+Cite **the dataset** if you quantified against it — this is the citation Dryad
+recommends, and the author order differs from the paper:
+
+::: {.publication}
+Denby, Katherine; Kara, Mehmet Fatih; Guo, Wenbin; Zhang, Runxuan (2024).
+LsRTDv1: A reference transcript dataset for accurate transcript-specific expression
+analysis in lettuce [Dataset]. *Dryad*.
+DOI: [10.5061/dryad.xwdbrv1m8](https://doi.org/10.5061/dryad.xwdbrv1m8).
+:::
+
+Citing both is the safer habit — the paper explains how the resource was built and
+what it is good for, the dataset DOI pins the exact version your numbers came from.
+
+## Questions
+
+If something in the RTD does not behave as you expect, or you want to compare notes
+on using it, [get in touch](/#contact) — I would rather hear about it than not.
+
+[← All publications](/research/)

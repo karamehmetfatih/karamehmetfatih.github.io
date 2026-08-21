@@ -11,7 +11,7 @@
     "href": "research/index.html#year-2024",
     "title": "Publications",
     "section": "2024",
-    "text": "2024\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419."
+    "text": "2024\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419. About the dataset, and how to download it →"
   },
   {
     "objectID": "research/index.html#year-2016",
@@ -26,6 +26,34 @@
     "title": "Publications",
     "section": "2015",
     "text": "2015\n\nDemir, I., Kara, F., Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In VII International Symposium on Edible Alliaceae 1143 (pp. 341-344). DOI: 10.17660/ActaHortic.2016.1143.48"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "M. Fatih Kara",
+    "section": "",
+    "text": "M. Fatih Kara\n                Ankara, Türkiye\n            \n        \n        \n            Plant scientist 🌱 | Plant immunity & MPMI | Necrotrophic fungi: Botrytis & Sclerotinia | Genome editing | Lettuce omics & disease resistance PhD @ UoY\n        \n\n\n    \n\n\n   \n\n\n        \n            gravatar.com/mfkara\n            View profile →\n        \n        \n    \n\n\n\nI am a plant scientist working on disease resistance in lettuce, with a focus on how the crop responds to necrotrophic fungal pathogens at the transcriptional level. I am a PhD researcher at the University of York.\nMy current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance — reading that response at the level of individual transcripts rather than whole genes. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed.\n\n\nPlant–pathogen interactions. How lettuce (Lactuca sativa) defends itself against necrotrophic fungi such as Botrytis cinerea and Sclerotinia sclerotiorum, and which regulators of that response could be useful in breeding for resistance.\nTranscriptomics. Building transcript-level resources for lettuce, including LsRTDv1, a reference transcript dataset that makes accurate transcript-specific expression analysis possible in this crop.\nGenome editing. Applying CRISPR-Cas9 approaches to functionally test candidate resistance genes in lettuce.\nSeed science. Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage.\n\n\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978 PMID: 39145419\nSee all publications →\n\n\n\nSend me a message and it will arrive in my inbox.\n\n    \n    \n    \n\n    \n        \n            Name\n            \n        \n        \n            Email\n            \n        \n    \n\n    \n        Message\n        \n    \n\n    \n    \n\n    Send message"
+  },
+  {
+    "objectID": "index.html#research",
+    "href": "index.html#research",
+    "title": "M. Fatih Kara",
+    "section": "",
+    "text": "Plant–pathogen interactions. How lettuce (Lactuca sativa) defends itself against necrotrophic fungi such as Botrytis cinerea and Sclerotinia sclerotiorum, and which regulators of that response could be useful in breeding for resistance.\nTranscriptomics. Building transcript-level resources for lettuce, including LsRTDv1, a reference transcript dataset that makes accurate transcript-specific expression analysis possible in this crop.\nGenome editing. Applying CRISPR-Cas9 approaches to functionally test candidate resistance genes in lettuce.\nSeed science. Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage."
+  },
+  {
+    "objectID": "index.html#selected-publication",
+    "href": "index.html#selected-publication",
+    "title": "M. Fatih Kara",
+    "section": "",
+    "text": "Kara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978 PMID: 39145419\nSee all publications →"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "M. Fatih Kara",
+    "section": "",
+    "text": "Send me a message and it will arrive in my inbox.\n\n    \n    \n    \n\n    \n        \n            Name\n            \n        \n        \n            Email\n            \n        \n    \n\n    \n        Message\n        \n    \n\n    \n    \n\n    Send message"
   },
   {
     "objectID": "cv/index.html#basics",
@@ -77,31 +105,45 @@
     "text": "languages\n\n\nTODO\n\n\nTODO — e.g. Turkish (native), English (fluent)."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "M. Fatih Kara",
+    "objectID": "lsrtdv1/index.html",
+    "href": "lsrtdv1/index.html",
+    "title": "LsRTDv1",
     "section": "",
-    "text": "M. Fatih Kara\n                Ankara, Türkiye\n            \n        \n        \n            Plant scientist 🌱 | Plant immunity & MPMI | Necrotrophic fungi: Botrytis & Sclerotinia | Genome editing | Lettuce omics & disease resistance PhD @ UoY\n        \n\n\n    \n\n\n   \n\n\n        \n            gravatar.com/mfkara\n            View profile →\n        \n        \n    \n\n\n\nI am a plant scientist working on disease resistance in lettuce, with a focus on how the crop responds to necrotrophic fungal pathogens at the transcriptional level. I am a PhD researcher at the University of York.\nMy current work combines time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing to identify and test candidate regulators of resistance — reading that response at the level of individual transcripts rather than whole genes. Before moving into plant pathology and molecular biology, I worked in seed science on the longevity, storage and priming of vegetable seed.\n\n\nPlant–pathogen interactions. How lettuce (Lactuca sativa) defends itself against necrotrophic fungi such as Botrytis cinerea and Sclerotinia sclerotiorum, and which regulators of that response could be useful in breeding for resistance.\nTranscriptomics. Building transcript-level resources for lettuce, including LsRTDv1, a reference transcript dataset that makes accurate transcript-specific expression analysis possible in this crop.\nGenome editing. Applying CRISPR-Cas9 approaches to functionally test candidate resistance genes in lettuce.\nSeed science. Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage.\n\n\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978 PMID: 39145419\nSee all publications →\n\n\n\nSend me a message and it will arrive in my inbox.\n\n    \n    \n    \n\n    \n        \n            Name\n            \n        \n        \n            Email\n            \n        \n    \n\n    \n        Message\n        \n    \n\n    \n    \n\n    Send message"
+    "text": "LsRTDv1 is a reference transcript dataset (RTD) for lettuce, Lactuca sativa cv. Saladin. It gives the lettuce community a transcript-level reference to quantify against, so that RNA-seq analysis in this crop can resolve individual transcript isoforms rather than collapsing them into whole-gene counts.\nAlignment-free quantification is fast and precise, but it cannot be run without a reference transcriptome — and the isoform-level annotation lettuce had before this was thin. LsRTDv1 exists to remove that as a blocker."
   },
   {
-    "objectID": "index.html#research",
-    "href": "index.html#research",
-    "title": "M. Fatih Kara",
-    "section": "",
-    "text": "Plant–pathogen interactions. How lettuce (Lactuca sativa) defends itself against necrotrophic fungi such as Botrytis cinerea and Sclerotinia sclerotiorum, and which regulators of that response could be useful in breeding for resistance.\nTranscriptomics. Building transcript-level resources for lettuce, including LsRTDv1, a reference transcript dataset that makes accurate transcript-specific expression analysis possible in this crop.\nGenome editing. Applying CRISPR-Cas9 approaches to functionally test candidate resistance genes in lettuce.\nSeed science. Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage."
+    "objectID": "lsrtdv1/index.html#what-is-in-it",
+    "href": "lsrtdv1/index.html#what-is-in-it",
+    "title": "LsRTDv1",
+    "section": "What is in it",
+    "text": "What is in it\nLsRTDv1 combines long- and short-read sequencing with publicly available transcriptome annotations, then filters the result to keep only transcripts with high-confidence splice junctions and high-confidence transcriptional start and end sites. The filtering is the part that matters: an RTD that keeps everything it assembles inflates the isoform count with artefacts, and quantification against a noisy reference is worse than not having one.\nThe dataset:\n\nraises the number of transcript isoforms per gene in the lettuce genome from 1.4 to 2.7;\nidentifies novel genes, most of them long non-coding RNAs;\nsignificantly increases the mapping rate of lettuce RNA-seq data."
   },
   {
-    "objectID": "index.html#selected-publication",
-    "href": "index.html#selected-publication",
-    "title": "M. Fatih Kara",
-    "section": "",
-    "text": "Kara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. DOI: 10.1111/tpj.16978 PMID: 39145419\nSee all publications →"
+    "objectID": "lsrtdv1/index.html#what-it-makes-possible",
+    "href": "lsrtdv1/index.html#what-it-makes-possible",
+    "title": "LsRTDv1",
+    "section": "What it makes possible",
+    "text": "What it makes possible\nValidated on a lettuce time-series experiment — mock-inoculated and inoculated with the necrotrophic fungus Botrytis cinerea — LsRTDv1 enables:\n\ndetection of genes that are differentially alternatively spliced in response to infection;\ntranscript-specific expression changes, rather than a single number per gene.\n\nAlternative splicing and post-transcriptional regulation during infection are largely unresolved in this crop, and a transcript-level reference is the precondition for studying them at all."
   },
   {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "M. Fatih Kara",
-    "section": "",
-    "text": "Send me a message and it will arrive in my inbox.\n\n    \n    \n    \n\n    \n        \n            Name\n            \n        \n        \n            Email\n            \n        \n    \n\n    \n        Message\n        \n    \n\n    \n    \n\n    Send message"
+    "objectID": "lsrtdv1/index.html#download",
+    "href": "lsrtdv1/index.html#download",
+    "title": "LsRTDv1",
+    "section": "Download",
+    "text": "Download\nThe dataset is deposited in Dryad:\n\n10.5061/dryad.xwdbrv1m8\n\n\nFiles in the current Dryad version. Read the README.md first — it documents what each file contains.\n\n\n\n\n\n\n\nFile\nContents\nSize\n\n\n\n\nlettuceRTDv1.fasta\nTranscript sequences\n~295 MB\n\n\nlettuceRTDv1.gtf\nTranscript coordinates and features\n~179 MB\n\n\nLettuceRTDv1_annotated.gtf\nAnnotated transcript information\n~507 MB\n\n\nREADME.md\nDocumentation\n~5 KB\n\n\n\nReuse terms are stated on the Dryad record; check there before redistributing.\n\nRelated data and code\n\nRaw RNA sequencing data — NCBI Sequence Read Archive, BioProject PRJNA1018253\nAnalysis code — Zenodo, 10.5281/zenodo.11658411"
+  },
+  {
+    "objectID": "lsrtdv1/index.html#how-to-cite",
+    "href": "lsrtdv1/index.html#how-to-cite",
+    "title": "LsRTDv1",
+    "section": "How to cite",
+    "text": "How to cite\nCite the paper if you are describing or building on the work:\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), pp.370-386. DOI: 10.1111/tpj.16978. PMID: 39145419.\n\nCite the dataset if you quantified against it — this is the citation Dryad recommends, and the author order differs from the paper:\n\nDenby, Katherine; Kara, Mehmet Fatih; Guo, Wenbin; Zhang, Runxuan (2024). LsRTDv1: A reference transcript dataset for accurate transcript-specific expression analysis in lettuce [Dataset]. Dryad. DOI: 10.5061/dryad.xwdbrv1m8.\n\nCiting both is the safer habit — the paper explains how the resource was built and what it is good for, the dataset DOI pins the exact version your numbers came from."
+  },
+  {
+    "objectID": "lsrtdv1/index.html#questions",
+    "href": "lsrtdv1/index.html#questions",
+    "title": "LsRTDv1",
+    "section": "Questions",
+    "text": "Questions\nIf something in the RTD does not behave as you expect, or you want to compare notes on using it, get in touch — I would rather hear about it than not.\n← All publications"
   }
 ]

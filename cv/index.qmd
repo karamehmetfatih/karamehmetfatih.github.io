@@ -100,7 +100,7 @@ TODO – present
 ::: {.cv-entry__what}
 **PhD Researcher** · University of York
 
-- Built [LsRTDv1](../research/index.qmd), a reference transcript dataset enabling
+- Built [LsRTDv1](../lsrtdv1/index.qmd), a reference transcript dataset enabling
   accurate transcript-specific expression analysis in lettuce.
 - Time-series transcriptomics of the lettuce response to necrotrophic infection.
 - CRISPR-Cas9 editing to test candidate regulators of resistance.

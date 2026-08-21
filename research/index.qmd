@@ -28,6 +28,7 @@ Also listed on
 
 ::: {.publication}
 **Kara, M.F.**, Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. *The Plant Journal*, 120(1), pp.370-386. DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978). PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/).
+[About the dataset, and how to download it →](/lsrtdv1/)
 :::
 
 ## 2016 {#year-2016}
