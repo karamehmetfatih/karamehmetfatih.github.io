@@ -26,6 +26,17 @@ project:
     # absent here stops being served at the next one, whatever is left lying
     # around at the project root. Exactly one entry belongs below.
     - 944edb0f8e4b459e8b54cf5c3eb92a45.txt
+  # Repairs the redirect stubs Quarto writes for `aliases:` — /about.html and
+  # /papers/. It emits them with a JS-only <head>: no description (which is what
+  # an SEO audit flags them for), no canonical, the literal title "Redirect",
+  # and — on a Windows render — backslashes inside the redirect URL. The script
+  # is idempotent, so rendering twice changes nothing the second time.
+  #
+  # Needs `python` on PATH. It is stdlib-only, so any Python 3 will do, but a
+  # render from an environment without one fails here rather than silently
+  # shipping the unpatched stubs.
+  post-render:
+    - python scripts/finish-alias-stubs.py
   render:
     - "*.qmd"
     # Showcase is parked, not deleted. Excluding it from the render keeps its
