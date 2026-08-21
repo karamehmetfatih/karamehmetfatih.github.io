@@ -137,6 +137,62 @@ main a:hover,
   line-height: 1.3;
 }
 
+// -----------------------------------------------------------------------------
+// Navbar layout: one centred group, not left and right clusters.
+//
+// Quarto emits brand | search | toggler | links | tools inside a flex row, and
+// Bootstrap pushes those to the edges with three utilities: `mx-auto` on the
+// brand container, `me-auto` on the link list, and flex-grow on the collapse.
+// Neutralising all three and centring the container gathers them into a single
+// run; `order` then sequences it as title, links, search, tools, since the
+// source order would otherwise drop the search box between title and links.
+//
+// Scoped to lg and up. Below that the bar is a collapsing menu and Quarto's
+// own layout is the one that should apply.
+// -----------------------------------------------------------------------------
+@media (min-width: 992px) {
+  .navbar .navbar-container {
+    justify-content: center;
+    column-gap: 0.75rem;
+  }
+
+  .navbar .navbar-brand-container {
+    margin-left: 0 !important; // clears mx-auto
+    margin-right: 0 !important;
+    order: 1;
+  }
+
+  .navbar .navbar-collapse {
+    flex-grow: 0;
+    flex-basis: auto;
+    order: 2;
+  }
+
+  .navbar .navbar-nav.me-auto {
+    margin-right: 0 !important; // clears me-auto
+  }
+
+  .navbar #quarto-search {
+    order: 3;
+  }
+
+  .navbar .quarto-navbar-tools {
+    order: 4;
+  }
+}
+
+// The site name appears once per page. Everywhere else that is the navbar
+// brand; on the home page it is the page's own title block, so the brand is
+// dropped there. `home` comes from `body-classes:` in index.qmd.
+//
+// The container rather than .navbar-brand itself: the container carries
+// `mx-auto`, and hiding only the inner element would leave its centring margin
+// behind. The About nav link (which points at index.qmd) still covers getting
+// back, which is the brand's other job.
+body.home .navbar .navbar-brand-container {
+  display: none;
+}
+
 .navbar .nav-link {
   color: var(--af-fg);
 }

@@ -21,26 +21,30 @@ website:
   # resolved relative to each page (breaking the URL for posts).
   image: /img/profile.jpg
   navbar:
+    # The GitHub mark links straight to the repository. It was a dropdown of
+    # two items; with one destination left, a menu is only a click in the way.
+    # `aria-label` matters here: the control is icon-only, so without it the
+    # link has no accessible name at all.
     tools:
       - icon: github
-        menu:
-          - text: Source Code
-            href: https://github.com/karamehmetfatih/karamehmetfatih.github.io
-          - text: Report an Issue
-            href: https://github.com/karamehmetfatih/karamehmetfatih.github.io/issues
+        href: https://github.com/karamehmetfatih/karamehmetfatih.github.io
+        aria-label: Source code on GitHub
     background: light
     search: true
     # The navbar is fixed-top either way, but Quarto wires it to Headroom.js,
     # which slides it out of view on scroll-down and back in on scroll-up.
     # `pinned` disables that, so the header simply stays put.
     pinned: true
+    # Lowercase labels are a style choice for the nav links only. The brand
+    # ("M. Fatih Kara", from `website: title:` above) keeps its capitals — it
+    # is a name, and the same string is reused in every page's <title>.
     left:
       - href: index.qmd
-        text: Home
+        text: about
       - href: posts/index.qmd
-        text: Blog
+        text: blog
       - href: research/index.qmd
-        text: Publications
+        text: publications
   search: 
     location: navbar
     type: textbox
@@ -83,6 +87,11 @@ format:
     mainfont: "Atkinson Hyperlegible Next"
     monofont: "Atkinson Hyperlegible Next"
     css: styles.css
+    # Site-wide default: no rendered title block. These pages carry the site
+    # name in the navbar brand instead, so a heading above the content would
+    # only repeat it. index.qmd opts back in, and hides the brand in turn —
+    # see the note in its front matter.
+    title-block-style: none
     toc: true
     open-graph: true
     twitter-card: true

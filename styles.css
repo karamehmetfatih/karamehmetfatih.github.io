@@ -77,10 +77,57 @@ h2 {
 }
 
 /* ---------------------------------------------------------------------------
+   Home page: profile sidebar + research column.
+
+   Mobile first — one column, profile card on top, everything scrolling
+   normally. From 768px it splits into a fixed 300px sidebar and a flexible
+   reading column, capped at 1200px and centred.
+
+   Requires `page-layout: full` in index.qmd. Under Quarto's default `article`
+   layout the content column is ~800px wide, so the 1200px cap would be dead
+   and the two tracks would have nothing to split.
+   --------------------------------------------------------------------------- */
+
+.portfolio-container {
+  display: grid;
+  grid-template-columns: 1fr; /* single column */
+  gap: 2rem;
+  padding: 1.5rem;
+  max-width: 100%;
+}
+
+.profile-sidebar {
+  /* Profile sits at the top and scrolls with the page on mobile. */
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .portfolio-container {
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    padding: 3rem;
+    max-width: 1200px; /* caps the total width on huge screens */
+    margin: 0 auto; /* centres the whole layout */
+  }
+
+  .profile-sidebar {
+    /* Stays in view while the research column scrolls. `top` clears the
+       pinned navbar, which is ~30px plus breathing room. */
+    position: sticky;
+    top: 3rem;
+    height: max-content; /* stops the sidebar stretching to row height */
+  }
+
+  .main-research-content {
+    max-width: 800px; /* caps the measure for readability */
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Gravatar profile card.
    The markup copied from Gravatar ships with an empty <style> block, so every
-   rule below is ours. Floats beside the intro text on wide screens and drops
-   to full width on narrow ones.
+   rule below is ours. Sits in the sidebar column above, so it no longer floats
+   beside the intro text — the grid does that job now.
    --------------------------------------------------------------------------- */
 
 .gravatar-hovercard {
@@ -91,11 +138,12 @@ h2 {
   margin: 0 0 1.5rem;
 }
 
+/* No float any more: at >=768px the card is the whole content of the sidebar
+   grid track, so it just fills that column's 300px. */
 @media (min-width: 768px) {
   .gravatar-hovercard {
-    float: right;
-    width: 320px;
-    margin: 0 0 1.25rem 2rem;
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -273,8 +321,8 @@ h2 {
   height: 4px;
 }
 
-/* Stop the float from bleeding past the intro into the Research section. */
-.gravatar-hovercard + p + h2,
+/* Kept for any page that still floats something past a heading; the profile
+   card no longer floats, so this is no longer doing work on the home page. */
 h2 {
   clear: both;
 }

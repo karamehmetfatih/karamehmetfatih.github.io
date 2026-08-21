@@ -1,15 +1,30 @@
 ---
-# No `title:`/`description:` — the page opens with the profile card, so a
-# rendered title block above it would only repeat the name. `pagetitle` and
-# `description-meta` keep the <title> and <meta name="description"> for
-# browsers, search engines and link previews without drawing anything.
-pagetitle: "M. Fatih Kara"
+# The home page is the one page with a rendered title block: it opts back in
+# from the site-wide `title-block-style: none` in _quarto.yml. In exchange the
+# navbar brand is hidden here, so the name is shown once rather than twice —
+# `body-classes: home` is the hook al-folio.scss keys that rule off.
+#
+# `description-meta` rather than `description:` keeps the
+# <meta name="description"> for search engines and link previews without
+# printing a subtitle under the title.
+title: "M. Fatih Kara"
+title-block-style: default
+body-classes: home
 description-meta: "Plant scientist working on disease resistance in lettuce. Publications, research notes, and blog."
 comments: false
 toc: false
+# `full` is required by the .portfolio-container grid below, not a style
+# preference: the default `article` layout pens content into a ~800px column,
+# so the grid's 1200px max-width could never be reached and the sidebar and
+# main column would have nothing to divide.
+page-layout: full
 aliases:
   - /about.html
 ---
+
+::::: {.portfolio-container}
+
+:::: {.profile-sidebar}
 
 ```{=html}
 <div class="gravatar-hovercard">
@@ -56,6 +71,10 @@ aliases:
 </div>
 ```
 
+::::
+
+:::: {.main-research-content}
+
 I am a plant scientist working on **disease resistance in lettuce**, with a focus on
 how the crop responds to necrotrophic fungal pathogens at the transcriptional level.
 I am a PhD researcher at the University of York.
@@ -66,7 +85,7 @@ of resistance — reading that response at the level of individual transcripts r
 than whole genes. Before moving into plant pathology and molecular biology, I worked
 in seed science on the longevity, storage and priming of vegetable seed.
 
-## Research
+## research
 
 **Plant–pathogen interactions.** How lettuce (*Lactuca sativa*) defends itself against
 necrotrophic fungi such as *Botrytis cinerea* and *Sclerotinia sclerotiorum*, and which
@@ -82,7 +101,7 @@ resistance genes in lettuce.
 **Seed science.** Earlier work on seed longevity, storage and priming in lettuce,
 onion and cabbage.
 
-## Selected publication
+## selected publication
 
 Kara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript
 dataset for accurate transcript-specific expression analysis in lettuce.
@@ -91,7 +110,7 @@ DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978) PMID: [39145419](htt
 
 [See all publications →](research/index.qmd)
 
-## Contact
+## contact
 
 Send me a message and it will arrive in my inbox.
 
@@ -219,3 +238,7 @@ Send me a message and it will arrive in my inbox.
 </script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cfTurnstileOnLoad&render=explicit" async defer></script>
 ```
+
+::::
+
+:::::
