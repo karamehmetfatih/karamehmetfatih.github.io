@@ -80,13 +80,16 @@ The dataset is deposited in **Dryad**:
 : Files in the current Dryad version. Read the `README.md` first — it documents
 what each file contains. {tbl-colwidths="[32,48,20]"}
 
-Reuse terms are stated on the Dryad record; check there before redistributing.
+Released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) — you
+do not need permission to use, modify or redistribute it. Cite it anyway: that is
+the scholarly norm, and citation is how a resource like this stays fundable.
 
 ### Related data and code
 
 - **Raw RNA sequencing data** — NCBI Sequence Read Archive, BioProject
   [PRJNA1018253](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1018253)
-- **Analysis code** — Zenodo,
+- **Analysis code** — [ZhangOmicsDataLab/LettuceRTD](https://github.com/ZhangOmicsDataLab/LettuceRTD)
+  on GitHub, archived at Zenodo as
   [10.5281/zenodo.11658411](https://doi.org/10.5281/zenodo.11658411)
 
 ## How to cite

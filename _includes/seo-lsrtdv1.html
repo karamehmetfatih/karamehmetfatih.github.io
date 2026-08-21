@@ -10,10 +10,10 @@
      record. `citation` points at the paper so the two records resolve to one
      piece of work.
 
-     No `license` field. Dryad states the terms on the record itself and it was
-     not verified when this was written; asserting a licence that turns out to
-     be wrong is worse than omitting the field, since reuse decisions get made
-     on it. Add it once confirmed. -->
+     `license` is CC0 1.0, read from Dryad's own JSON-LD for this record rather
+     than assumed from Dryad's general policy. Google Dataset Search surfaces
+     the licence and reuse decisions get made on it, so it is worth having
+     verified rather than inferred. -->
 
 <link rel="canonical" href="https://www.mfkara.net/lsrtdv1/">
 <meta property="og:url" content="https://www.mfkara.net/lsrtdv1/">
@@ -49,6 +49,7 @@
       },
       "datePublished": "2024",
       "version": "v1",
+      "license": "https://spdx.org/licenses/CC0-1.0.html",
       "inLanguage": "en",
       "creator": [
         { "@type": "Person", "name": "Katherine Denby" },
