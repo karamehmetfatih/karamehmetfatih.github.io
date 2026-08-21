@@ -1,0 +1,196 @@
+---
+title: "cv"
+description-meta: "Curriculum vitae of Mehmet Fatih Kara — plant pathology, transcriptomics and seed science."
+toc: true
+toc-location: left
+comments: false
+---
+
+<!-- A PDF button, once you have one to link. Drop the file at assets/pdf/cv.pdf
+     (al-folio keeps PDFs there) and uncomment. Left out for now rather than
+     shipping a 404.
+[{{< fa file-pdf >}} Download as PDF](/assets/pdf/cv.pdf){.cv-download}
+-->
+
+:::: {.cv-section}
+## basics
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+Ankara, Türkiye
+:::
+::: {.cv-entry__what}
+**Mehmet Fatih Kara**
+
+Plant scientist working on the genetics of disease resistance in lettuce, and how
+that response can be read at the level of individual transcripts rather than whole
+genes. PhD researcher at the University of York.
+
+[info@mfkara.net](mailto:info@mfkara.net) ·
+[ORCID](https://orcid.org/0000-0002-0318-228X) ·
+[Google Scholar](https://scholar.google.com/citations?&user=56zv2gQAAAAJ) ·
+[LinkedIn](https://www.linkedin.com/in/m-f-kara)
+:::
+:::
+::::
+
+:::: {.cv-section}
+## education
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+TODO – present
+:::
+::: {.cv-entry__what}
+**PhD, Department of Biology** · [University of York](https://www.york.ac.uk/)
+
+Genetic basis of lettuce resistance to the necrotrophic fungi *Botrytis cinerea*
+and *Sclerotinia sclerotiorum*, combining time-series transcriptomics, reference
+transcriptome construction and CRISPR-Cas9 genome editing.
+:::
+:::
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+TODO – TODO
+:::
+::: {.cv-entry__what}
+**MSc, TODO** · TODO
+
+TODO — add programme and thesis topic.
+:::
+:::
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+TODO – TODO
+:::
+::: {.cv-entry__what}
+**BSc, TODO** · TODO
+
+TODO — add programme.
+:::
+:::
+::::
+
+:::: {.cv-section}
+## experience
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+TODO – present
+:::
+::: {.cv-entry__what}
+**PhD Researcher** · University of York
+
+- Built [LsRTDv1](../research/index.qmd), a reference transcript dataset enabling
+  accurate transcript-specific expression analysis in lettuce.
+- Time-series transcriptomics of the lettuce response to necrotrophic infection.
+- CRISPR-Cas9 editing to test candidate regulators of resistance.
+:::
+:::
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+TODO – TODO
+:::
+::: {.cv-entry__what}
+**Seed science research** · TODO
+
+Longevity, storage and priming of vegetable seed — lettuce, onion and cabbage.
+Work published with Demir, Özden, Ermiş and colleagues.
+:::
+:::
+::::
+
+:::: {.cv-section}
+## selected publications
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+2024
+:::
+::: {.cv-entry__what}
+Kara, M.F., Guo, W., Zhang, R. and Denby, K. LsRTDv1, a reference transcript dataset
+for accurate transcript-specific expression analysis in lettuce. *The Plant Journal*,
+120(1), 370–386.
+[10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978)
+:::
+:::
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+2016
+:::
+::: {.cv-entry__what}
+Demir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K. Effects of ambient
+storage temperature and seed moisture content on seed longevity of lettuce
+(*Lactuca sativa*). *American Journal of Experimental Agriculture*, 12(3), 1–5.
+[10.9734/ajea/2016/25526](https://doi.org/10.9734/ajea/2016/25526)
+:::
+:::
+
+[Full list of publications →](../research/index.qmd)
+::::
+
+:::: {.cv-section}
+## skills
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+Molecular
+:::
+::: {.cv-entry__what}
+CRISPR-Cas9 genome editing · RNP delivery to protoplasts · cloning and transformation
+· detached-leaf pathogen assays
+:::
+:::
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+Computational
+:::
+::: {.cv-entry__what}
+RNA-seq and transcript-level quantification · reference transcriptome assembly ·
+differential expression and alternative splicing analysis · R
+:::
+:::
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+Seed science
+:::
+::: {.cv-entry__what}
+Seed longevity testing · controlled deterioration · solid matrix priming · seed
+quality assessment
+:::
+:::
+::::
+
+:::: {.cv-section}
+## interests
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+Research
+:::
+::: {.cv-entry__what}
+Plant immunity and resistance to necrotrophic fungal pathogens · transcript-level
+expression and alternative splicing · reference transcriptome construction ·
+CRISPR-Cas9 genome editing in crops · seed longevity, storage and priming
+:::
+:::
+::::
+
+:::: {.cv-section}
+## languages
+
+::: {.cv-entry}
+::: {.cv-entry__when}
+TODO
+:::
+::: {.cv-entry__what}
+TODO — e.g. Turkish (native), English (fluent).
+:::
+:::
+::::

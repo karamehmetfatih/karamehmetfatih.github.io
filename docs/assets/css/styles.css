@@ -124,6 +124,136 @@ h2 {
 }
 
 /* ---------------------------------------------------------------------------
+   CV.
+
+   al-folio's layout: each section is a bordered card, and inside it every entry
+   is a two-column row — a narrow left rail carrying dates (or a label), and the
+   detail beside it. The rail collapses above the content below 768px, where a
+   9rem column would leave nothing usable for the text.
+   --------------------------------------------------------------------------- */
+
+.cv-section {
+  border: 1px solid var(--af-divider);
+  padding: 0.25rem 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Section heading: the global `main h2` rule adds a rule and 2.25rem of top
+   margin, both of which fight the card. */
+.cv-section > h2 {
+  border-bottom: none;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15rem 1.5rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--af-divider);
+}
+
+/* No rule above the first entry — the heading already separates it. */
+.cv-entry:first-of-type {
+  border-top: none;
+}
+
+@media (min-width: 768px) {
+  .cv-entry {
+    grid-template-columns: 9rem 1fr;
+  }
+}
+
+.cv-entry__when {
+  color: var(--af-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding-top: 0.15em; /* optical alignment with the bolded title beside it */
+}
+
+.cv-entry__what > :first-child {
+  margin-top: 0;
+}
+
+.cv-entry__what > :last-child {
+  margin-bottom: 0;
+}
+
+.cv-entry__what ul {
+  margin-bottom: 0;
+  padding-left: 1.1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Showcase grid.
+
+   A 12-column track; each card spans `--showcase-width` of them, set per item
+   from the `width` field in its front matter. Widths that are multiples of 3
+   or 4 tile without gaps; 1 is for small badges.
+
+   `grid-auto-flow: dense` lets a narrow card backfill a gap a wider one left
+   behind, which is the packing behaviour Masonry is usually wanted for. It is
+   NOT true masonry: rows still align, so cards in a row share a height rather
+   than stacking at their natural heights. See the note in the chat if you want
+   the real thing.
+
+   Single column below 768px, where twelfths stop meaning anything.
+   --------------------------------------------------------------------------- */
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+  }
+
+  .showcase-card {
+    grid-column: span min(var(--showcase-width, 4), 12);
+  }
+}
+
+.showcase-card {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--af-divider);
+  background-color: var(--af-bg);
+  overflow-wrap: break-word;
+}
+
+/* Whatever an item puts in its card, keep media inside the box. */
+.showcase-card img,
+.showcase-card video,
+.showcase-card iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.showcase-card__title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.showcase-card__text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--af-fg);
+}
+
+.showcase-card__link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* ---------------------------------------------------------------------------
    Gravatar profile card.
    The markup copied from Gravatar ships with an empty <style> block, so every
    rule below is ours. Sits in the sidebar column above, so it no longer floats
@@ -235,6 +365,21 @@ h2 {
   line-height: 1.5;
   text-align: center;
   color: var(--af-fg, #212529);
+}
+
+/* Links inside the bio line (UoY). Underlined rather than coloured: the line
+   is a run of short phrases separated by pipes, and an accent-coloured word in
+   the middle of it reads as emphasis rather than as a link. */
+.gravatar-hovercard__description-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-color: var(--af-muted);
+}
+
+.gravatar-hovercard__description-link:hover {
+  color: var(--af-accent);
+  text-decoration-color: var(--af-accent);
 }
 
 /* Two stacked rows: academic profiles above, general social below. */

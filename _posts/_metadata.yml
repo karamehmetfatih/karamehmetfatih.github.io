@@ -1,0 +1,18 @@
+comments:
+  giscus:
+    repo: karamehmetfatih/karamehmetfatih.github.io
+    repo-id: "R_kgDOQ3PkWg"
+    category: Comments
+    category-id: "DIC_kwDOQ3PkWs4DD3GV"
+    mapping: title
+    reactions-enabled: true
+    input-position: bottom
+    language: "en"
+    # loading: "lazy"
+    theme:
+      light: light
+      dark: dark_dimmed
+# Enable banner style title blocks
+title-block-banner: true
+toc-location: left
+search: false

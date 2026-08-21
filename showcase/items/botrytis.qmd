@@ -1,0 +1,14 @@
+---
+title: "Botrytis on lettuce"
+date: 2026-08-21
+width: 3
+card: |
+  <h3 class="showcase-card__title">Botrytis on lettuce</h3>
+  <p class="showcase-card__text">
+    Detached-leaf assay, 72&nbsp;hpi. Lesions photographed and measured in
+    ImageJ — the field's standard readout.
+  </p>
+---
+
+Replace the `card:` block with an `<img>` when you have a photograph to hand;
+anything valid inside a `<div>` works.

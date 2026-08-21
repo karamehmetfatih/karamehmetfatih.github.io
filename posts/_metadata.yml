@@ -1,8 +1,0 @@
-comments:
-  giscus:
-    repo: karamehmetfatih/karamehmetfatih.github.io
-    category: Blog
-# Enable banner style title blocks
-title-block-banner: true
-toc-location: left
-search: false

@@ -24,7 +24,7 @@ about:
       url: https://scholar.google.com/citations?&user=56zv2gQAAAAJ
     - text: "{{< ai researchgate >}}"
       url: https://www.researchgate.net/profile/Mehmet-Fatih-Kara
-image: img/profile.jpg
+image: assets/img/profile.jpg
 comments: false
 ---
 

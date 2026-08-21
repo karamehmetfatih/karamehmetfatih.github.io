@@ -28,6 +28,55 @@
     "text": "2015\n\nDemir, I., Kara, F., Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In VII International Symposium on Edible Alliaceae 1143 (pp. 341-344). DOI: 10.17660/ActaHortic.2016.1143.48"
   },
   {
+    "objectID": "cv/index.html#basics",
+    "href": "cv/index.html#basics",
+    "title": "cv",
+    "section": "basics",
+    "text": "basics\n\n\nAnkara, Türkiye\n\n\nMehmet Fatih Kara\nPlant scientist working on the genetics of disease resistance in lettuce, and how that response can be read at the level of individual transcripts rather than whole genes. PhD researcher at the University of York.\ninfo@mfkara.net · ORCID · Google Scholar · LinkedIn"
+  },
+  {
+    "objectID": "cv/index.html#education",
+    "href": "cv/index.html#education",
+    "title": "cv",
+    "section": "education",
+    "text": "education\n\n\nTODO – present\n\n\nPhD, Department of Biology · University of York\nGenetic basis of lettuce resistance to the necrotrophic fungi Botrytis cinerea and Sclerotinia sclerotiorum, combining time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing.\n\n\n\n\nTODO – TODO\n\n\nMSc, TODO · TODO\nTODO — add programme and thesis topic.\n\n\n\n\nTODO – TODO\n\n\nBSc, TODO · TODO\nTODO — add programme."
+  },
+  {
+    "objectID": "cv/index.html#experience",
+    "href": "cv/index.html#experience",
+    "title": "cv",
+    "section": "experience",
+    "text": "experience\n\n\nTODO – present\n\n\nPhD Researcher · University of York\n\nBuilt LsRTDv1, a reference transcript dataset enabling accurate transcript-specific expression analysis in lettuce.\nTime-series transcriptomics of the lettuce response to necrotrophic infection.\nCRISPR-Cas9 editing to test candidate regulators of resistance.\n\n\n\n\n\nTODO – TODO\n\n\nSeed science research · TODO\nLongevity, storage and priming of vegetable seed — lettuce, onion and cabbage. Work published with Demir, Özden, Ermiş and colleagues."
+  },
+  {
+    "objectID": "cv/index.html#selected-publications",
+    "href": "cv/index.html#selected-publications",
+    "title": "cv",
+    "section": "selected publications",
+    "text": "selected publications\n\n\n2024\n\n\nKara, M.F., Guo, W., Zhang, R. and Denby, K. LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. The Plant Journal, 120(1), 370–386. 10.1111/tpj.16978\n\n\n\n\n2016\n\n\nDemir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (Lactuca sativa). American Journal of Experimental Agriculture, 12(3), 1–5. 10.9734/ajea/2016/25526\n\n\nFull list of publications →"
+  },
+  {
+    "objectID": "cv/index.html#skills",
+    "href": "cv/index.html#skills",
+    "title": "cv",
+    "section": "skills",
+    "text": "skills\n\n\nMolecular\n\n\nCRISPR-Cas9 genome editing · RNP delivery to protoplasts · cloning and transformation · detached-leaf pathogen assays\n\n\n\n\nComputational\n\n\nRNA-seq and transcript-level quantification · reference transcriptome assembly · differential expression and alternative splicing analysis · R\n\n\n\n\nSeed science\n\n\nSeed longevity testing · controlled deterioration · solid matrix priming · seed quality assessment"
+  },
+  {
+    "objectID": "cv/index.html#interests",
+    "href": "cv/index.html#interests",
+    "title": "cv",
+    "section": "interests",
+    "text": "interests\n\n\nResearch\n\n\nPlant immunity and resistance to necrotrophic fungal pathogens · transcript-level expression and alternative splicing · reference transcriptome construction · CRISPR-Cas9 genome editing in crops · seed longevity, storage and priming"
+  },
+  {
+    "objectID": "cv/index.html#languages",
+    "href": "cv/index.html#languages",
+    "title": "cv",
+    "section": "languages",
+    "text": "languages\n\n\nTODO\n\n\nTODO — e.g. Turkish (native), English (fluent)."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",

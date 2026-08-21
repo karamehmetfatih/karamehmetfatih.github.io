@@ -1,0 +1,18 @@
+---
+title: "LsRTDv1"
+date: 2024-08-15
+# Twelfths. Multiples of 3 or 4 tile cleanly against the 12-column grid.
+width: 6
+card: |
+  <h3 class="showcase-card__title">LsRTDv1</h3>
+  <p class="showcase-card__text">
+    A reference transcript dataset for lettuce, built so transcript-level
+    expression analysis is finally accurate in this crop. Published in
+    <em>The Plant Journal</em>.
+  </p>
+link: https://doi.org/10.1111/tpj.16978
+---
+
+The reference transcript dataset behind transcript-specific expression analysis
+in lettuce. See the [publications page](../../research/index.qmd) for the full
+citation.

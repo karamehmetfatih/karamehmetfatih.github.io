@@ -1,0 +1,24 @@
+---
+title: "showcase"
+description-meta: "Things worth showing — projects, photographs, books and odds and ends."
+page-layout: full
+toc: false
+listing:
+  id: showcase
+  # One file per item, in items/. Cards are ordered newest first.
+  contents: items
+  sort: "date desc"
+  # Custom template: the built-in grid card is fixed-shape, and the point of a
+  # showcase is that each item chooses its own HTML.
+  template: _card.ejs.md
+  # `width` and `card` are not fields Quarto knows about; naming them here is
+  # what makes them available to the template as item.width / item.card.
+  fields: [title, date, width, card, link, image]
+  page-size: 60
+---
+
+A place for things that do not belong anywhere else on the site — projects,
+photographs, books, and the occasional oddity.
+
+::: {#showcase .showcase-grid}
+:::

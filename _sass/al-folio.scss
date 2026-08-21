@@ -21,28 +21,40 @@
 // =============================================================================
 
 // --- upstream palette (light) -------------------------------------------------
-$af-purple: #b509ac; // --global-theme-color
-$af-grey: #828282; // --global-text-color-light  ($grey-color)
-$af-grey-dark: #1c1c1d; // --global-footer-bg-color   ($grey-color-dark)
-$af-grey-light: #e8e8e8; // $grey-color lightened 40% (L 51% -> 91%)
-$af-white: #ffffff;
-$af-black: #000000;
-$af-divider: rgba(0, 0, 0, 0.1); // --global-divider-color
-$af-code-bg: #fbf2fb; // inline + block code background
+//
+// !default on everything al-folio-dark.scss also declares. Quarto emits each
+// theme layer's scss:defaults highest-priority-FIRST and leans on !default for
+// precedence, so a plain assignment here (the lower-priority layer, written
+// last) silently overwrote the dark layer's value. That is why the dark bundle
+// was compiling body-color #000000, link-color #b509ac and sidebar-bg #ffffff
+// while the page itself looked correct: the --af-* runtime tokens were right,
+// but every component built from a compiled Bootstrap variable — sidebar,
+// navbar highlight — kept the light value.
+//
+// !default is the right marker under either emission order: written first it
+// still assigns, written last it defers to the dark layer.
+$af-purple: #b509ac !default; // --global-theme-color
+$af-grey: #828282 !default; // --global-text-color-light  ($grey-color)
+$af-grey-dark: #1c1c1d !default; // --global-footer-bg-color   ($grey-color-dark)
+$af-grey-light: #e8e8e8 !default; // $grey-color lightened 40% (L 51% -> 91%)
+$af-white: #ffffff !default;
+$af-black: #000000 !default;
+$af-divider: rgba(0, 0, 0, 0.1) !default; // --global-divider-color
+$af-code-bg: #fbf2fb !default; // inline + block code background
 
 // --- core ---------------------------------------------------------------------
-$body-bg: $af-white;
-$body-color: $af-black;
-$secondary: $af-grey;
+$body-bg: $af-white !default;
+$body-color: $af-black !default;
+$secondary: $af-grey !default;
 
-$link-color: $af-purple;
-$link-hover-color: $af-purple;
-$link-decoration: none;
-$link-hover-decoration: underline;
+$link-color: $af-purple !default;
+$link-hover-color: $af-purple !default;
+$link-decoration: none !default;
+$link-hover-decoration: underline !default;
 
-$border-color: $af-divider;
-$hr-border-color: $af-divider;
-$hr-opacity: 1;
+$border-color: $af-divider !default;
+$hr-border-color: $af-divider !default;
+$hr-opacity: 1 !default;
 
 // --- rhythm: al-folio is airy --------------------------------------------------
 $line-height-base: 1.6;
@@ -69,7 +81,7 @@ $box-shadow-lg: none;
 $card-border-width: 0;
 $card-bg: transparent;
 
-$code-color: $af-purple;
+$code-color: $af-purple !default; // dark layer overrides to $af-cyan
 
 /*-- scss:rules --*/
 
@@ -124,9 +136,32 @@ main a:hover,
 }
 
 // Navbar: a hairline rule, not a filled colour bar.
+//
 .navbar {
   background-color: var(--af-navbar-bg) !important;
   border-bottom: 1px solid var(--af-divider);
+}
+
+// The active/hover colours are re-pointed at the accent token because Quarto
+// derives Bootstrap's $navbar-hl from $link-color, which al-folio.scss sets to
+// $af-purple for BOTH bundles — so the dark build compiled the active link as
+// rgb(54.3, 2.7, 51.6) (#360334, purple at 30%) and never saw the cyan accent.
+//
+// The [data-bs-theme] half is required, not belt-and-braces: Bootstrap sets
+// these same variables again under `.navbar-dark, .navbar[data-bs-theme=dark]`,
+// and Quarto stamps data-bs-theme="dark" on the nav element. That selector is
+// (0,2,0), so a plain `.navbar` override is outranked no matter how late it
+// appears. Matching (0,2,0) and coming later in the bundle wins the tie.
+.navbar,
+.navbar[data-bs-theme] {
+  --bs-navbar-active-color: var(--af-accent);
+  --bs-navbar-hover-color: var(--af-accent);
+  --bs-navbar-brand-hover-color: var(--af-accent);
+}
+
+// Same colour, hard-coded rather than via a variable, on the navbar tool icons.
+.navbar .quarto-navbar-tools .quarto-navigation-tool:hover {
+  color: var(--af-accent);
 }
 
 .navbar .navbar-brand {
@@ -205,10 +240,21 @@ body.home .navbar .navbar-brand-container {
   padding-bottom: 0.3em;
 }
 
-// Shortcut hint in the search box. .aa-Form is a flex row, so ::after simply
-// becomes its last item and sits after the field without overlapping the text.
-// The label itself is written by the script in _quarto.yml, which picks Ctrl
-// or ⌘ per platform; the fallback here covers the moment before it runs.
+// `search: type: overlay` renders the navbar control as a bare magnifier —
+// Quarto pins .aa-Autocomplete to a 40px box and hides .aa-InputWrapper — so
+// the shortcut hint below would be clipped by that fixed width. Let the box
+// size to its content instead, and the hint sits beside the icon (the same
+// icon + kbd pairing docs sites use). Specificity matches Quarto's (1,3,1) and
+// wins on source order.
+.navbar #quarto-search.type-overlay .aa-Autocomplete {
+  width: auto;
+}
+
+// Shortcut hint in the search control. .aa-Form is a flex row, so ::after
+// simply becomes its last item and sits after the icon (or after the field, on
+// the textbox type) without overlapping anything. The label itself is written
+// by the script in _quarto.yml, which picks Ctrl or ⌘ per platform; the
+// fallback here covers the moment before it runs.
 #quarto-search .aa-Form::after {
   content: var(--af-search-kbd, "Ctrl K");
   flex: 0 0 auto;

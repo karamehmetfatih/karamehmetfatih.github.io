@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Curriculum vitae of Mehmet Fatih Kara — plant pathology, transcriptomics and seed science.">
 
-<title>Blog – M. Fatih Kara</title>
+<title>cv – M. Fatih Kara</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -35,9 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../img/favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="../assets/img/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -49,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bc34ed75c0a4bc160ef7abef9bd0e9ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f6a03369a5c3117fb2e5752c0d372817.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-bc34ed75c0a4bc160ef7abef9bd0e9ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4db1460acc1cfc16afc277831ea24d29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f515dca58bd4b70fc1c89f8f29cad328.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4db1460acc1cfc16afc277831ea24d29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -59,12 +58,11 @@ ul.task-list li input[type="checkbox"] {
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "textbox",
-  "limit": 50,
+  "type": "overlay",
+  "limit": 10,
   "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
+    "?",
+    "H"
   ],
   "language": {
     "search-no-results-text": "No results",
@@ -80,35 +78,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <!-- Full variable range (200-800, upright + italic) rather than a
@@ -117,44 +86,15 @@ ul.task-list li input[type="checkbox"] {
      the browser or fall back to a different face. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&amp;display=swap">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="M. Fatih Kara" href="index.xml" data-external="1"><meta property="og:title" content="Blog – M. Fatih Kara">
-<meta property="og:description" content="News, tips, and commentary">
-<meta property="og:image" content="https://www.mfkara.net/img/profile.jpg">
+<link rel="stylesheet" href="../assets/css/styles.css">
+<meta property="og:title" content="cv – M. Fatih Kara">
+<meta property="og:description" content="Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.">
+<meta property="og:image" content="https://www.mfkara.net/assets/img/profile.jpg">
 <meta property="og:site_name" content="M. Fatih Kara">
-<meta name="twitter:title" content="Blog – M. Fatih Kara">
-<meta name="twitter:description" content="News, tips, and commentary">
-<meta name="twitter:image" content="https://www.mfkara.net/img/profile.jpg">
+<meta name="twitter:title" content="cv – M. Fatih Kara">
+<meta name="twitter:description" content="Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes.">
+<meta name="twitter:image" content="https://www.mfkara.net/assets/img/profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -342,7 +282,7 @@ window.Quarto = {
 <span class="menu-text">about</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../posts/index.html" aria-current="page"> 
+    <a class="nav-link" href="../_posts/index.qmd"> 
 <span class="menu-text">blog</span></a>
   </li>  
   <li class="nav-item">
@@ -359,70 +299,183 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#basics" id="toc-basics" class="nav-link active" data-scroll-target="#basics">basics</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">education</a></li>
+  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">experience</a></li>
+  <li><a href="#selected-publications" id="toc-selected-publications" class="nav-link" data-scroll-target="#selected-publications">selected publications</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">skills</a></li>
+  <li><a href="#interests" id="toc-interests" class="nav-link" data-scroll-target="#interests">interests</a></li>
+  <li><a href="#languages" id="toc-languages" class="nav-link" data-scroll-target="#languages">languages</a></li>
+  </ul>
+</nav>
+</nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YW5hbHlzaXM=">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Blog</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">cv</h1></header>
 
 
 <header id="title-block-header">
 
-<p class="subtitle lead">News, tips, and commentary</p>
 
 </header>
 
 
-<div class="column-page">
-
+<!-- A PDF button, once you have one to link. Drop the file at assets/pdf/cv.pdf
+     (al-folio keeps PDFs there) and uncomment. Left out for now rather than
+     shipping a 404.
+[ Download as PDF](/assets/pdf/cv.pdf){.cv-download}
+-->
+<section id="basics" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="basics">basics</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>Ankara, Türkiye</p>
 </div>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bmV3cyUyQ2NvZGUlMkNhbmFseXNpcw==" data-listing-date-sort="1621630800000" data-listing-file-modified-sort="1787300644259" data-listing-date-modified-sort="1621717200000" data-listing-reading-time-sort="1" data-listing-word-count-sort="52">
-<div class="thumbnail"><a href="../posts/deneme/index.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../posts/deneme/index.html" class="no-external">Post With Code</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('bmV3cw=='); return false;">news</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">code</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('YW5hbHlzaXM='); return false;">analysis</div>
-
-</div>
-<div class="delink listing-description"><a href="../posts/deneme/index.html" class="no-external">
-<p>Post description</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../posts/deneme/index.html" class="no-external">
-<div class="listing-date">
-May 22, 2021
-</div>
-<div class="listing-author">
-MFK
-</div>
-</a>
+<div class="cv-entry__what">
+<p><strong>Mehmet Fatih Kara</strong></p>
+<p>Plant scientist working on the genetics of disease resistance in lettuce, and how that response can be read at the level of individual transcripts rather than whole genes. PhD researcher at the University of York.</p>
+<p><a href="mailto:info@mfkara.net">info@mfkara.net</a> · <a href="https://orcid.org/0000-0002-0318-228X">ORCID</a> · <a href="https://scholar.google.com/citations?&amp;user=56zv2gQAAAAJ">Google Scholar</a> · <a href="https://www.linkedin.com/in/m-f-kara">LinkedIn</a></p>
 </div>
 </div>
+</section>
+<section id="education" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="education">education</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>TODO – present</p>
 </div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+<div class="cv-entry__what">
+<p><strong>PhD, Department of Biology</strong> · <a href="https://www.york.ac.uk/">University of York</a></p>
+<p>Genetic basis of lettuce resistance to the necrotrophic fungi <em>Botrytis cinerea</em> and <em>Sclerotinia sclerotiorum</em>, combining time-series transcriptomics, reference transcriptome construction and CRISPR-Cas9 genome editing.</p>
+</div>
+</div>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>TODO – TODO</p>
+</div>
+<div class="cv-entry__what">
+<p><strong>MSc, TODO</strong> · TODO</p>
+<p>TODO — add programme and thesis topic.</p>
+</div>
+</div>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>TODO – TODO</p>
+</div>
+<div class="cv-entry__what">
+<p><strong>BSc, TODO</strong> · TODO</p>
+<p>TODO — add programme.</p>
+</div>
+</div>
+</section>
+<section id="experience" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="experience">experience</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>TODO – present</p>
+</div>
+<div class="cv-entry__what">
+<p><strong>PhD Researcher</strong> · University of York</p>
+<ul>
+<li>Built <a href="../research/index.html">LsRTDv1</a>, a reference transcript dataset enabling accurate transcript-specific expression analysis in lettuce.</li>
+<li>Time-series transcriptomics of the lettuce response to necrotrophic infection.</li>
+<li>CRISPR-Cas9 editing to test candidate regulators of resistance.</li>
+</ul>
+</div>
+</div>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>TODO – TODO</p>
+</div>
+<div class="cv-entry__what">
+<p><strong>Seed science research</strong> · TODO</p>
+<p>Longevity, storage and priming of vegetable seed — lettuce, onion and cabbage. Work published with Demir, Özden, Ermiş and colleagues.</p>
+</div>
+</div>
+</section>
+<section id="selected-publications" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="selected-publications">selected publications</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>2024</p>
+</div>
+<div class="cv-entry__what">
+<p>Kara, M.F., Guo, W., Zhang, R. and Denby, K. LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. <em>The Plant Journal</em>, 120(1), 370–386. <a href="https://doi.org/10.1111/tpj.16978">10.1111/tpj.16978</a></p>
+</div>
+</div>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>2016</p>
+</div>
+<div class="cv-entry__what">
+<p>Demir, I., Ozden, E., Kara, F., Hassanzadeh, M. and Mavi, K. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (<em>Lactuca sativa</em>). <em>American Journal of Experimental Agriculture</em>, 12(3), 1–5. <a href="https://doi.org/10.9734/ajea/2016/25526">10.9734/ajea/2016/25526</a></p>
+</div>
+</div>
+<p><a href="../research/index.html">Full list of publications →</a></p>
+</section>
+<section id="skills" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="skills">skills</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>Molecular</p>
+</div>
+<div class="cv-entry__what">
+<p>CRISPR-Cas9 genome editing · RNP delivery to protoplasts · cloning and transformation · detached-leaf pathogen assays</p>
+</div>
+</div>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>Computational</p>
+</div>
+<div class="cv-entry__what">
+<p>RNA-seq and transcript-level quantification · reference transcriptome assembly · differential expression and alternative splicing analysis · R</p>
+</div>
+</div>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>Seed science</p>
+</div>
+<div class="cv-entry__what">
+<p>Seed longevity testing · controlled deterioration · solid matrix priming · seed quality assessment</p>
+</div>
+</div>
+</section>
+<section id="interests" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="interests">interests</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>Research</p>
+</div>
+<div class="cv-entry__what">
+<p>Plant immunity and resistance to necrotrophic fungal pathogens · transcript-level expression and alternative splicing · reference transcriptome construction · CRISPR-Cas9 genome editing in crops · seed longevity, storage and priming</p>
+</div>
+</div>
+</section>
+<section id="languages" class="level2 cv-section">
+<h2 class="anchored" data-anchor-id="languages">languages</h2>
+<div class="cv-entry">
+<div class="cv-entry__when">
+<p>TODO</p>
+</div>
+<div class="cv-entry__what">
+<p>TODO — e.g.&nbsp;Turkish (native), English (fluent).</p>
+</div>
+</div>
+</section>
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -843,7 +896,7 @@ MFK
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© Copyright 2026 M. Fatih Kara<br> Made with <a href="https://www.r-project.org/"><i class="fa-brands fa-r-project fa-lg" title="R" aria-label="R"></i></a> and <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="footer-logo img-fluid" alt="Quarto" width="65"></a>. Powered by <a href="https://getbootstrap.com/"><i class="fa-brands fa-bootstrap fa-lg" title="Bootstrap" aria-label="Bootstrap"></i></a> with an <a href="https://github.com/alshedivat/al-folio">al-folio</a>-inspired theme. Hosted by <a href="https://pages.github.com/"><img src="../img/logo.svg" class="footer-logo img-fluid" alt="GitHub Pages" width="65"></a>.</p>
+<p>© Copyright 2026 M. Fatih Kara<br> Made with <a href="https://www.r-project.org/"><i class="fa-brands fa-r-project fa-lg" title="R" aria-label="R"></i></a> and <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="footer-logo img-fluid" alt="Quarto" width="65"></a>. Powered by <a href="https://getbootstrap.com/"><i class="fa-brands fa-bootstrap fa-lg" title="Bootstrap" aria-label="Bootstrap"></i></a> with an <a href="https://github.com/alshedivat/al-folio">al-folio</a>-inspired theme. Hosted by <a href="https://pages.github.com/"><img src="../assets/img/logo.svg" class="footer-logo img-fluid" alt="GitHub Pages" width="65"></a>.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

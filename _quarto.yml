@@ -9,17 +9,21 @@ project:
     - CNAME
   render:
     - "*.qmd"
+    # Showcase is parked, not deleted. Excluding it from the render keeps its
+    # pages out of docs/ and out of search.json, while showcase/ stays on disk
+    # ready to switch back on: drop this line and uncomment the navbar entry.
+    - "!showcase/**"
 
 website:
   title: "M. Fatih Kara"
   site-url: "https://www.mfkara.net"
   repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
-  favicon: img/favicon.png
+  favicon: assets/img/favicon.png
   description: "Personal site of Mehmet Fatih Kara — plant science research on disease resistance in lettuce, publications, and notes."
   # Fallback preview image for Open Graph / Twitter cards on pages
   # that do not set their own `image:`. Must be site-absolute, or it is
   # resolved relative to each page (breaking the URL for posts).
-  image: /img/profile.jpg
+  image: /assets/img/profile.jpg
   navbar:
     # The GitHub mark links straight to the repository. It was a dropdown of
     # two items; with one destination left, a menu is only a click in the way.
@@ -41,13 +45,20 @@ website:
     left:
       - href: index.qmd
         text: about
-      - href: posts/index.qmd
+      - href: _posts/index.qmd
         text: blog
       - href: research/index.qmd
         text: publications
-  search: 
+      # - href: cv/index.qmd
+      #   text: cv
+      # Parked — see the render exclusion at the top of this file.
+      # - href: showcase/index.qmd
+      #   text: showcase
+  search:
     location: navbar
-    type: textbox
+    type: overlay
+    limit: 10
+    keyboard-shortcut: ["?", "H"]
   page-footer:
     background: dark
     # Folded (>-) so the colophon is one markdown paragraph regardless of how
@@ -58,7 +69,7 @@ website:
     # The GitHub logo is the "GitHub Pages" wordmark, so the word Pages is part
     # of the artwork and is not repeated as text after it. It is wider per unit
     # of height than the Quarto mark (169x34 vs 320x77), hence the larger width
-    # for the same optical size. Both logos are site-absolute (/img/...) for
+    # for the same optical size. Both logos are site-absolute (/assets/img/...) for
     # the same reason as the OG image above: the footer is emitted on every
     # page, including nested posts.
     #
@@ -76,17 +87,20 @@ website:
       Powered by [{{< fa brands bootstrap size=lg title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
       [al-folio](https://github.com/alshedivat/al-folio)-inspired theme.
       Hosted by
-      [![](/img/logo.svg){.footer-logo fig-alt="GitHub Pages" width=65px}](https://pages.github.com/).
+      [![](/assets/img/logo.svg){.footer-logo fig-alt="GitHub Pages" width=65px}](https://pages.github.com/).
 
 format:
   html:
+    # _sass/ mirrors al-folio. Quarto skips underscore-prefixed directories when
+    # discovering *pages*, but theme files are resolved as paths rather than
+    # inputs, so they load fine from here.
     theme:
-      light: [litera, al-folio.scss]
-      dark: [darkly, al-folio.scss, al-folio-dark.scss]
+      light: [litera, _sass/al-folio.scss]
+      dark: [darkly, _sass/al-folio.scss, _sass/al-folio-dark.scss]
     # One face for the whole site, code included.
     mainfont: "Atkinson Hyperlegible Next"
     monofont: "Atkinson Hyperlegible Next"
-    css: styles.css
+    css: assets/css/styles.css
     # Site-wide default: no rendered title block. These pages carry the site
     # name in the navbar brand instead, so a heading above the content would
     # only repeat it. index.qmd opts back in, and hides the brand in turn —

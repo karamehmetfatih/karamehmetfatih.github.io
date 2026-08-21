@@ -1,0 +1,20 @@
+---
+title: "Blog"
+subtitle: News, tips, and commentary
+listing:
+  contents: "/*/index.qmd"
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  feed: true
+page-layout: full
+title-block-banner: false
+search: false
+comments: false
+---
+
+::: {.column-page}
+
+:::
