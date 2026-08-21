@@ -33,6 +33,9 @@
 
 <section id="deneme-2" class="level2">
 <h2 class="anchored" data-anchor-id="deneme-2">Deneme 2</h2>
+</section>
+<section id="r-column-screen-inset-shaded-layout-nrow-1-fig-alt---scatterplot-of-stopping-distance-rising-with-car-speed---scatterplot-matrix-of-the-five-iris-variables---scatterplot-of-vapor-pressure-rising-steeply-with-temperature-plotcars-plotiris-plotpressure" class="level1">
+<h1><code>{r} # #| column: screen-inset-shaded # #| layout-nrow: 1 # #| fig-alt: # #|   - "Scatterplot of stopping distance rising with car speed" # #|   - "Scatterplot matrix of the five iris variables" # #|   - "Scatterplot of vapor pressure rising steeply with temperature" #  # plot(cars) # plot(iris) # plot(pressure) #</code></h1>
 <section id="deneme-3" class="level3">
 <h3 class="anchored" data-anchor-id="deneme-3">Deneme 3</h3>
 

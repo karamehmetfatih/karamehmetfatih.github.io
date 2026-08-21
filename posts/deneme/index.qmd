@@ -17,4 +17,18 @@ format:
 ## Deneme 2
 
 
+# ```{r}
+# #| column: screen-inset-shaded
+# #| layout-nrow: 1
+# #| fig-alt:
+# #|   - "Scatterplot of stopping distance rising with car speed"
+# #|   - "Scatterplot matrix of the five iris variables"
+# #|   - "Scatterplot of vapor pressure rising steeply with temperature"
+# 
+# plot(cars)
+# plot(iris)
+# plot(pressure)
+# ```
+
+
 ### Deneme 3
