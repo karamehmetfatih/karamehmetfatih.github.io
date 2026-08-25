@@ -114,6 +114,9 @@ PROJECT_DIR = Path(os.environ.get("QUARTO_PROJECT_DIR", "."))
 REDIRECTS_RE = re.compile(r"var redirects = (\{.*?\});")
 DESCRIPTION_RE = re.compile(r'<meta\s+name="description"\s+content="([^"]*)"')
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.S)
+SITEMAP_URL_RE = re.compile(r"[ \t]*<url>.*?</url>\n?", re.S)
+LOC_RE = re.compile(r"<loc>([^<]*)</loc>")
+ROBOTS_NOINDEX_RE = re.compile(r'<meta\s+name="robots"[^>]*content="[^"]*noindex', re.I)
 
 
 def write_replacing(path: Path, text: str) -> None:
@@ -170,6 +173,54 @@ def target_of(text: str) -> str | None:
     return target.replace("\\", "/") if target else None
 
 
+def tidy_sitemap(base: str) -> None:
+    """Make sitemap.xml agree with the canonicals, and drop noindex pages.
+
+    Quarto writes every <loc> in `.../index.html` form while writing every
+    <link rel="canonical"> in directory form, so each page is advertised under a
+    URL its own canonical disowns. Google crawls the advertised one, reads the
+    canonical, and files it under "Alternative page with proper canonical tag".
+    A sitemap is meant to list canonical URLs, so the sitemap is the wrong half.
+
+    It also lists /cv/, which carries a noindex meta tag — asking a crawler to
+    fetch a page that then tells it not to index. Those come out entirely.
+
+    Both URL forms keep working; this only changes which one is advertised.
+    """
+    sitemap = OUTPUT_DIR / "sitemap.xml"
+    if not sitemap.is_file():
+        return
+
+    text = sitemap.read_text(encoding="utf-8")
+    dropped = rewritten = 0
+
+    def visit(match: re.Match[str]) -> str:
+        nonlocal dropped, rewritten
+        block = match.group(0)
+        found = LOC_RE.search(block)
+        if not found:
+            return block
+        loc = found.group(1)
+
+        relative = loc[len(base) :].lstrip("/") if loc.startswith(base) else loc
+        page = OUTPUT_DIR / (relative if relative else "index.html")
+        if page.is_dir():
+            page = page / "index.html"
+        if page.is_file() and ROBOTS_NOINDEX_RE.search(page.read_text(encoding="utf-8")):
+            dropped += 1
+            return ""
+
+        if loc.endswith("/index.html"):
+            block = block.replace(loc, loc[: -len("index.html")])
+            rewritten += 1
+        return block
+
+    updated = SITEMAP_URL_RE.sub(visit, text)
+    if updated != text:
+        write_replacing(sitemap, updated)
+    report(f"finish-alias-stubs: sitemap {rewritten} rewritten, {dropped} dropped")
+
+
 def main() -> int:
     if not OUTPUT_DIR.is_dir():
         raise SystemExit(f"finish-alias-stubs: no output directory at {OUTPUT_DIR}")
@@ -194,7 +245,15 @@ def main() -> int:
         stub_dir = path.parent.relative_to(OUTPUT_DIR).as_posix()
         stub_dir = "" if stub_dir == "." else stub_dir
         destination = posixpath.normpath(posixpath.join(stub_dir, target))
-        canonical = f"{base}/{destination}"
+
+        # The canonical names the directory form, matching what Quarto puts in
+        # the destination page's own canonical and what tidy_sitemap advertises.
+        # The refresh below keeps the literal `index.html` path, because that one
+        # has to resolve as a relative file reference from the stub.
+        canonical_path = destination
+        if canonical_path.endswith("index.html"):
+            canonical_path = canonical_path[: -len("index.html")]
+        canonical = f"{base}/{canonical_path}"
 
         # Borrow the destination's own description and title. A stub that
         # describes where it points is more useful to a searcher than any
@@ -239,6 +298,7 @@ def main() -> int:
         patched += 1
 
     report(f"finish-alias-stubs: {patched} stub(s) patched")
+    tidy_sitemap(base)
     return 0
 
 

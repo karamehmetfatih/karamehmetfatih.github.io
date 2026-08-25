@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mfkara.net/research/index.html</loc>
+    <loc>https://www.mfkara.net/research/</loc>
     <lastmod>2026-08-21T12:22:56.259Z</lastmod>
   </url>
   <url>
-    <loc>https://www.mfkara.net/index.html</loc>
+    <loc>https://www.mfkara.net/</loc>
     <lastmod>2026-08-21T14:17:59.774Z</lastmod>
   </url>
   <url>
-    <loc>https://www.mfkara.net/cv/index.html</loc>
-    <lastmod>2026-08-21T12:22:48.412Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.mfkara.net/lsrtdv1/index.html</loc>
+    <loc>https://www.mfkara.net/lsrtdv1/</loc>
     <lastmod>2026-08-21T13:14:46.132Z</lastmod>
   </url>
 </urlset>
