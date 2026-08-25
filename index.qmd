@@ -91,6 +91,8 @@ aliases:
 [{{< fa brands linkedin >}}](https://www.linkedin.com/in/m-f-kara){.gravatar-hovercard__social-link title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"}
 [{{< fa brands bluesky >}}](https://bsky.app/profile/mfkara.net){.gravatar-hovercard__social-link title="Bluesky" aria-label="Bluesky" target="_blank" rel="noopener"}
 [{{< fa brands goodreads >}}](https://www.goodreads.com/mfkara){.gravatar-hovercard__social-link title="Goodreads" aria-label="Goodreads" target="_blank" rel="noopener"}
+[{{< fa brands spotify >}}](https://open.spotify.com/user/31dtt4p7e4m3qfagatcd7kezqwji){.gravatar-hovercard__social-link title="Spotify" aria-label="Spotify" target="_blank" rel="noopener"}
+[{{< fa brands pinterest >}}](https://www.pinterest.com/karamehmetfatih/){.gravatar-hovercard__social-link title="Pinterest" aria-label="Pinterest" target="_blank" rel="noopener"}
 :::
 :::
 
