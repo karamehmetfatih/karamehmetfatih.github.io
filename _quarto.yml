@@ -154,9 +154,33 @@ format:
     # _sass/ mirrors al-folio. Quarto skips underscore-prefixed directories when
     # discovering *pages*, but theme files are resolved as paths rather than
     # inputs, so they load fine from here.
+    # Both modes share ONE Bootswatch base. They used to differ — litera for
+    # light, darkly for dark — and a Bootswatch theme is not a palette, it is a
+    # whole design: its own type scale, control padding and chrome metrics. So
+    # the toggle silently changed the layout, not just the colours. Measured off
+    # the two compiled bundles, 19 geometry variables disagreed, among them
+    #
+    #   --bs-body-font-size       1.1rem  ->  1rem    (all body text shrank)
+    #   --bs-navbar-padding-y     0.5rem  ->  1rem    (header grew 16px taller)
+    #   --bs-nav-link-padding-x   1.1rem  ->  2rem
+    #   --bs-btn-font-size        0.875rem -> 1rem
+    #
+    # plus badge, breadcrumb, dropdown, pagination, popover, progress and
+    # tooltip metrics. Pinning each one in al-folio.scss would be endless — the
+    # next Bootswatch or Quarto bump reopens it. Sharing the base makes the two
+    # modes identical in geometry by construction, leaving exactly one axis of
+    # difference: colour, which is al-folio-dark.scss's whole job.
+    #
+    # Dropping darkly costs nothing here. The chrome is painted from the --af-*
+    # tokens (the navbar background is `var(--af-navbar-bg) !important`), and
+    # al-folio-dark.scss already restates every Bootstrap colour it needs, so
+    # darkly's palette was reaching almost nothing. For generic components,
+    # Quarto sets `data-bs-theme="dark"` on <html>, which is Bootstrap 5.3's own
+    # dark colour mode — that, not the Bootswatch theme, is what darkens tables,
+    # inputs and dropdowns.
     theme:
       light: [litera, _sass/al-folio.scss]
-      dark: [darkly, _sass/al-folio.scss, _sass/al-folio-dark.scss]
+      dark: [litera, _sass/al-folio.scss, _sass/al-folio-dark.scss]
     # One face for the whole site, code included.
     mainfont: "Atkinson Hyperlegible Next"
     monofont: "Atkinson Hyperlegible Next"

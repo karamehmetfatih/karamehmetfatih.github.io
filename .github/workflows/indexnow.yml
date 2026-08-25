@@ -12,14 +12,14 @@
 name: IndexNow
 
 on:
-  push:
-    branches: [main]
-    # docs/ is the published output (`project.output-dir` in _quarto.yml). A push
-    # touching only sources — .qmd, _sass, TODO.md — changes nothing a crawler
-    # can see, because the render that turns those into HTML has not happened
-    # yet. There is nothing to announce until docs/ moves.
-    paths:
-      - 'docs/**'
+  # Chained to the Pages deploy rather than to `push`. The action reads the
+  # sitemap from the LIVE site, so it cannot run until the deploy that produced
+  # that sitemap is actually serving. The first version of this workflow fired
+  # on push and tried to bridge the gap by polling the live sitemap until it
+  # matched the commit — which cannot work, see the cache note below.
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       since_days:
@@ -27,57 +27,62 @@ on:
         required: false
         default: '1'
 
-# Reads a public sitemap over HTTPS and calls a third-party API. It wants
-# nothing from the repository itself, so it gets no token.
 permissions: {}
 
-# Two pushes in quick succession would otherwise race to submit overlapping URL
-# sets. Queue them. `cancel-in-progress` would be wrong here: a cancelled run
-# does not submit at all, and the push that cancelled it may cover different
-# pages, so a URL could be dropped silently.
 concurrency:
   group: indexnow
   cancel-in-progress: false
 
 jobs:
   submit:
+    # workflow_run fires whatever the outcome, so a failed Pages build would
+    # otherwise submit against whatever is still deployed.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
-      # The action fetches the sitemap from the LIVE site, but this workflow
-      # fires on push — before GitHub Pages has finished publishing. Without a
-      # wait it would read the previous deploy's sitemap and submit yesterday's
-      # URLs. So: fetch the sitemap as committed at this exact SHA (immutable on
-      # raw.githubusercontent.com, hence safe to cache) and poll the live one
-      # until they match.
+      # Fetch the sitemap ourselves before handing the URL to the action, for
+      # two reasons.
       #
-      # When a push does not touch the sitemap — a CSS-only change, say — the two
-      # already match and this passes on the first attempt. That is the correct
-      # outcome: the URL set has not changed, and the engine fetches the page
-      # itself later anyway.
-      - name: Wait for Pages to serve this commit
+      # Cache: www.mfkara.net is behind Cloudflare, in front of GitHub's own
+      # Fastly cache, and the sitemap is served with `Cache-Control: max-age=600`.
+      # A Pages deploy purges GitHub's cache but has no way to purge Cloudflare's,
+      # so for up to ten minutes after a deploy the edge can still hand out the
+      # previous sitemap. A `Cache-Control: no-cache` request header does not
+      # help — that is a request directive an edge is free to ignore, and
+      # Cloudflare does. A changing query string does work: query strings are
+      # part of the cache key by default, so `?v=<run id>` is a guaranteed miss
+      # and comes from the origin.
+      #
+      # Diagnosis: when the fetch returns something that is not XML, the action
+      # fails deep inside its XML parser with a message that names neither the
+      # URL nor the response ("Tag '=' is an invalid name.:1:1343"). Checking
+      # here means an HTML error or challenge page is reported as exactly that,
+      # with the first part of the body in the log.
+      - name: Fetch and validate the live sitemap
+        id: sitemap
         env:
-          SITEMAP_URL: https://www.mfkara.net/sitemap.xml
+          SITEMAP: https://www.mfkara.net/sitemap.xml
         run: |
           set -uo pipefail
+          url="${SITEMAP}?v=${GITHUB_RUN_ID}"
 
-          committed="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/docs/sitemap.xml"
-          if ! curl -fsSL --max-time 30 "$committed" -o committed.xml; then
-            echo "::warning::Could not read docs/sitemap.xml at ${GITHUB_SHA}; submitting without waiting."
-            exit 0
-          fi
-          want="$(sha256sum committed.xml | cut -d' ' -f1)"
-
-          for attempt in $(seq 1 30); do
-            if curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "$SITEMAP_URL" -o live.xml; then
-              if [ "$(sha256sum live.xml | cut -d' ' -f1)" = "$want" ]; then
-                echo "Pages is serving this commit's sitemap (attempt ${attempt})."
-                exit 0
-              fi
+          for attempt in 1 2 3 4 5; do
+            code=$(curl -sS -o body.xml -w '%{http_code}' --max-time 30 "$url" || echo 000)
+            if [ "$code" = "200" ] && grep -q '<urlset' body.xml; then
+              echo "Sitemap OK on attempt ${attempt} ($(grep -c '<loc>' body.xml) URLs)."
+              echo "url=$url" >> "$GITHUB_OUTPUT"
+              exit 0
             fi
-            sleep 10
+            echo "Attempt ${attempt}: HTTP ${code}, not a sitemap. Retrying in 30s."
+            sleep 30
           done
 
-          echo "::warning::Live sitemap still differs from this commit after 5 minutes; submitting anyway."
+          echo "::error::Could not fetch a valid sitemap from ${url} (last HTTP ${code})."
+          echo "First 300 bytes of what came back instead:"
+          head -c 300 body.xml || true
+          exit 1
 
       # Pinned to the commit behind tag v3 (v3.0.0, tagged 2026-05-26), not to
       # the tag itself: a tag is a movable pointer, and `@v3` or `@master` would
@@ -85,7 +90,7 @@ jobs:
       - name: Submit changed URLs to IndexNow
         uses: bojieyang/indexnow-action@38ddfbd93579a8a44c0dee662121bf9d51098f71 # v3.0.0
         with:
-          sitemap-location: https://www.mfkara.net/sitemap.xml
+          sitemap-location: ${{ steps.sitemap.outputs.url }}
 
           # Deliberately not a repository secret. An IndexNow key is public by
           # design — the protocol verifies domain ownership by fetching the key
@@ -109,13 +114,14 @@ jobs:
           # side rather than of coverage.
           endpoint: api.indexnow.org
 
-          # Empty on `push`, where the input does not exist, so it falls through
-          # to one day — matching how often the site could plausibly be pushed.
-          # Widen it from the Actions tab to force a resubmission of older pages.
+          # Empty on workflow_run, where the input does not exist, so it falls
+          # through to one day. Widen it from the Actions tab to force a
+          # resubmission of older pages.
           since: ${{ inputs.since_days || '1' }}
           since-unit: day
 
           # Upstream defaults to `ignore`, which turns a rejected key into a
           # green tick and months of silently unindexed pages. A 403 here should
-          # be loud.
+          # be loud. The preflight above means a failure at this point is a real
+          # IndexNow problem rather than a fetch that went sideways.
           failure-strategy: error

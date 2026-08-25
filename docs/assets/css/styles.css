@@ -13,10 +13,14 @@
 
    The catch-all rule is deliberate. Naming selectors one by one was not
    enough: litera sets `p` to Georgia and `.lead`/`.alert` to a system stack,
-   darkly sets Lato, Bootstrap sets `pre`/`code` to SFMono, and any Quarto
-   component added later (search box, listings, callouts, tooltips) can bring
-   its own. Matching every descendant of <body> makes the face impossible to
-   miss.
+   Bootstrap sets `pre`/`code` to SFMono, and any Quarto component added later
+   (search box, listings, callouts, tooltips) can bring its own. Matching every
+   descendant of <body> makes the face impossible to miss.
+
+   Dark mode used to add one more source of drift — it was built on darkly,
+   which prepends Lato to $font-family-sans-serif. Both modes now share litera
+   (see the note on `theme:` in _quarto.yml), so that one is gone; the rest of
+   the reasoning stands.
 
    Icon fonts are the single exception, excluded in the :not() list: Font
    Awesome (.fa*), academicons (.ai*) and bootstrap-icons (.bi*) are glyph
