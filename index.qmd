@@ -80,7 +80,7 @@ aliases:
 ::: {.gravatar-hovercard__social-links}
 ::: {.gravatar-hovercard__social-row aria-label="Academic profiles"}
 [{{< ai orcid >}}](https://orcid.org/0000-0002-0318-228X){.gravatar-hovercard__social-link title="ORCID" aria-label="ORCID" target="_blank" rel="noopener"}
-[{{< ai google-scholar >}}](https://scholar.google.com/citations?hl=en&user=56zv2gQAAAAJ&inst=9600033855459059410){.gravatar-hovercard__social-link title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener"}
+[{{< ai google-scholar >}}](https://scholar.google.com/citations?&user=56zv2gQAAAAJ){.gravatar-hovercard__social-link title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener"}
 [{{< ai clarivate >}}](https://www.webofscience.com/wos/author/record/IUP-3471-2023){.gravatar-hovercard__social-link title="Web of Science" aria-label="Web of Science" target="_blank" rel="noopener"}
 [{{< ai scopus >}}](https://www.scopus.com/authid/detail.uri?authorId=57192592048){.gravatar-hovercard__social-link title="Scopus" aria-label="Scopus" target="_blank" rel="noopener"}
 [{{< ai researchgate >}}](https://www.researchgate.net/profile/Mehmet-Fatih-Kara){.gravatar-hovercard__social-link title="ResearchGate" aria-label="ResearchGate" target="_blank" rel="noopener"}
