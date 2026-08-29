@@ -92,6 +92,17 @@ the scholarly norm, and citation is how a resource like this stays fundable.
   on GitHub, archived at Zenodo as
   [10.5281/zenodo.11658411](https://doi.org/10.5281/zenodo.11658411)
 
+<!-- Static SVGs rather than a script: these are images, so they cannot run
+     anything on the page, and the repository badges stay current because the
+     shield is generated per request. The alt text carries the same information
+     as the badge — a screen reader gets the archive DOI and the repository
+     state, not the word "badge". -->
+::: {.shields}
+[![Analysis code archived at Zenodo, DOI 10.5281/zenodo.11658411](https://zenodo.org/badge/DOI/10.5281/zenodo.11658411.svg)](https://doi.org/10.5281/zenodo.11658411)
+[![Stars on the LettuceRTD GitHub repository](https://img.shields.io/github/stars/ZhangOmicsDataLab/LettuceRTD?logo=github&label=stars)](https://github.com/ZhangOmicsDataLab/LettuceRTD)
+[![Date of the last commit to the LettuceRTD repository](https://img.shields.io/github/last-commit/ZhangOmicsDataLab/LettuceRTD?logo=github&label=last%20commit)](https://github.com/ZhangOmicsDataLab/LettuceRTD/commits/)
+:::
+
 ## How to cite
 
 Cite **the paper** if you are describing or building on the work:

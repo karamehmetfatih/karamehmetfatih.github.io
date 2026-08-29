@@ -781,3 +781,320 @@ blockquote {
   border-bottom: none;
   padding-bottom: 0.2rem;
 }
+
+// -----------------------------------------------------------------------------
+// Bibliography (publications page) — al-folio's publication list.
+//
+// Upstream markup is `ol.bibliography > li > .row`, with a venue chip in a
+// narrow column and title / author / periodical / links / badges stacked in the
+// body column. The grid here is flex rather than Bootstrap's `.row`, which
+// carries negative gutter margins that fight Quarto's own page-column layout.
+// -----------------------------------------------------------------------------
+
+// The large, faint year marker. Upstream sets rgba(0, 0, 0, 0.1); `opacity` on
+// the inherited colour is used instead so the same rule works in dark mode
+// without a second declaration.
+//
+// 0.3 rather than upstream's 0.1: at 0.1 the year fails WCAG contrast by a wide
+// margin, and it is the only thing separating one year's entries from the next.
+// For an exact upstream match, change this one value to 0.1.
+h2.bibliography,
+section.bibliography > h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0.3;
+  margin: 2rem 0 1rem;
+  border-bottom: none;
+}
+
+ol.bibliography {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+ol.bibliography > li {
+  margin-bottom: 1.4rem;
+}
+
+.bib-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.bib-abbr {
+  flex: 0 0 7.5rem;
+}
+
+// min-width: 0 lets the body column shrink below its longest word; without it a
+// long title or a wide badge would push the row past the content column.
+.bib-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+// The venue chip. Colour comes from the shared .badge rule further up, so it
+// follows the accent token in both modes; only the shape is set here.
+.bib-abbr .badge {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.bib-body .title {
+  font-weight: 400;
+}
+
+// Author and periodical sit a step lighter than the title, which is what
+// separates them upstream — the title is not bolded, the rest is lightened.
+.bib-body .author,
+.bib-body .periodical {
+  font-weight: 300;
+  color: var(--af-muted);
+}
+
+// Own name: underlined rather than italicised, per al-folio.
+.bib-body .author em {
+  font-style: normal;
+  color: var(--af-fg);
+  border-bottom: 1px solid currentColor;
+}
+
+.bib-body .links {
+  // One height for everything on the row, and one knob for it. --row-h is
+  // deliberately unitless: it has to drive both lengths and a bare scale factor,
+  // and a number divided by a number is the only way to get the latter in CSS.
+  //
+  // 18 is the height Altmetric's bar and Dimensions' rectangle render at
+  // natively, so any other value means scaling them. Altmetric is a 120x24 PNG
+  // and stays crisp up to 24. Dimensions has to be scaled by transform on the
+  // whole badge — setting its SVG height directly moves the graphic but leaves
+  // its overlaid score text behind, detaching the number from its panel.
+  --row-h: 21;
+  --row-item-h: calc(var(--row-h) * 1px);
+
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  // Tight enough that a fully-equipped entry — two toggles, four links, a
+  // shield and two metric widgets — still fits one line in the body column.
+  // flex-wrap is kept for narrow viewports, where wrapping is correct.
+  gap: 0.35rem;
+}
+
+// Shields badge in the links row (Google Scholar). No button chrome around it:
+// the badge draws its own label and ground, so a border would be a box in a box.
+// The count is baked into the URL and does not update itself — Scholar has no
+// API, and scraping it for a live figure is against their terms.
+//
+// 18px, not the shield's native 20px, to match the two widgets it sits between:
+// Altmetric's bar is 18px and Dimensions' rectangle 17.6px, and those are fixed
+// by the services. This is the only one of the three whose height is ours to
+// set, so it is the one that moves.
+.pub-shield img {
+  display: block;
+  height: var(--row-item-h);
+  width: auto;
+}
+
+// Small square outline buttons, matching the theme's flat treatment rather than
+// Bootstrap's rounded .btn — hence a bare class instead of .btn.
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  height: var(--row-item-h);
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: var(--af-fg);
+  // currentColor, not the divider token: upstream outlines these in the text
+  // colour itself, and at this size a divider-weight border reads as disabled.
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.pub-btn:hover,
+.pub-btn:focus-visible {
+  color: var(--af-badge-fg);
+  background-color: var(--af-accent);
+  border-color: var(--af-accent);
+  text-decoration: none;
+}
+
+// Service marks keep their own colours rather than being flattened to the text
+// colour the way the footer lockups are: the DOI disc is a yellow ground with a
+// dark glyph, and the PubMed mark carries a white knock-out "M" that a
+// silhouette would fill in and destroy.
+//
+// alt="" in the markup is deliberate: each button's own text already names the
+// destination, so a second announcement of "DOI" or "PubMed" is noise to a
+// screen reader.
+// Sized off the row height rather than the font, so the icon buttons and the
+// text buttons stay the same height whatever --row-item-h becomes. The 6px is
+// the 2px of border plus 4px of breathing room above and below.
+.pub-btn__icon {
+  height: calc(var(--row-item-h) - 6px);
+  width: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Metric badges. They share the links row rather than sitting on one of their
+// own: one row per entry keeps the block compact, and the widgets are close
+// enough in height (Altmetric's bar 30px, Dimensions' rectangle 18px, the
+// Scholar shield 20px) that centring them against the buttons reads as
+// deliberate rather than ragged.
+// -----------------------------------------------------------------------------
+
+// Both services hand back a fixed-size widget inside a <span> they do not size:
+// Altmetric's type 2 bar is 88x18, Dimensions' small_rectangle 88x17.6. Left as
+// inline elements the spans inherit the row's line-height and stand ~30px tall,
+// so the badge sits high inside its own box — centring the boxes then leaves the
+// *visible* badge 4px above everything else on the row. `display: block` stops
+// the span being sized as text and `line-height: 0` collapses it onto the badge,
+// which is what actually puts the two in line with the buttons and the shield.
+.bib-body .links .altmetric-embed,
+.bib-body .links .__dimensions_badge_embed__ {
+  display: block;
+  flex: 0 0 auto;
+  line-height: 0;
+  height: var(--row-item-h);
+}
+
+// Altmetric hands back a plain <img>, so it takes a height directly. Its source
+// is 120x24, which is why the row height should not go above 24 — past that it
+// is being enlarged beyond its own resolution.
+.bib-body .links .altmetric-embed img {
+  height: var(--row-item-h);
+  width: auto;
+}
+
+// Dimensions is scaled as a whole instead. Its badge is an SVG with the score
+// drawn as a separate absolutely-placed <div> on top; resizing the SVG alone
+// leaves that text where it was, so the transform is applied to the anchor that
+// contains both and they scale together. A transform leaves the layout box
+// behind, so the wrapper above is given the scaled dimensions explicitly —
+// 88x18 is the fixed size of the `small_rectangle` badge.
+.bib-body .links .__dimensions_badge_embed__ {
+  width: calc(88px * var(--row-h) / 18);
+}
+
+.bib-body .links .__dimensions_badge_embed__ .__dimensions_Link {
+  display: block;
+  transform: scale(calc(var(--row-h) / 18));
+  transform-origin: top left;
+}
+
+// Match the two counts. Only one of them can be styled: Altmetric's badge is a
+// single PNG with its score drawn into the image, while Dimensions' is real
+// text — so Dimensions is brought to Altmetric rather than the other way round.
+//
+// Altmetric's digit measures 9px in a 24px-tall source image, i.e. 0.375 of the
+// badge height, which at any row height renders as 0.375 * --row-h. Dimensions'
+// font puts 0.75px of ink on the page per 1px of font-size, and the badge is
+// already being scaled by --row-h / 18, so the size that lands on the same ink
+// height works out at a constant 9px whatever --row-h is set to.
+.bib-body .links .__dimensions_badge_embed__ .__db_score {
+  font-size: 9px;
+}
+
+// -----------------------------------------------------------------------------
+// Abstract panel. Upstream collapses it with a max-height transition behind a
+// dashed border that is invisible until opened; same mechanic here.
+//
+// The `is-collapsible` class is added by script, so without JavaScript the
+// panel stays plain visible text rather than a block no one can open — and the
+// button that operates it stays `hidden` until the same script runs.
+// -----------------------------------------------------------------------------
+.abs-panel {
+  font-size: 0.875rem;
+  text-align: justify;
+}
+
+.pub-panel p {
+  line-height: 1.4;
+  margin: 10px;
+}
+
+// Keywords as published, set a step back from the abstract itself: they are
+// the paper's own index terms, not part of its prose.
+.abs-keywords {
+  color: var(--af-muted);
+  text-align: left;
+}
+
+// visibility, not just max-height: a zero-height overflow-hidden box is still
+// read out by screen readers, so upstream's collapsed abstract is audible when
+// it should not be. Transitioning visibility with a delay keeps the animation.
+.pub-panel.is-collapsible {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  border: 1px dashed transparent;
+  transition: max-height 0.15s, visibility 0s 0.15s;
+}
+
+.pub-panel.is-collapsible.open {
+  max-height: 100em;
+  visibility: visible;
+  border-color: var(--af-fg);
+  transition: max-height 0.15s, visibility 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abs-panel.is-collapsible,
+  .pub-panel.is-collapsible.open {
+    transition: none;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Static badge strip (Zenodo, GitHub) under a resource's links. Named apart
+// from .badges above because that row holds live 64px widgets and this one
+// holds 20px SVGs — one height rule cannot serve both.
+// -----------------------------------------------------------------------------
+.shields,
+.shields p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.shields {
+  margin-top: 0.7rem;
+}
+
+// Shields and Zenodo both render at 20px tall; pinning the height keeps the
+// strip even if either changes its own metrics.
+.shields img {
+  height: 20px;
+  width: auto;
+}
+
+// BibTeX panel. Monospaced, and allowed to scroll sideways on its own rather
+// than widening the entry: a bib line is as long as its longest field and
+// nothing useful is gained by wrapping it.
+.bib-panel pre {
+  margin: 10px;
+  padding: 0.6rem 0.75rem;
+  overflow-x: auto;
+  background: var(--af-code-bg);
+  border: none;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.bib-panel code {
+  white-space: pre;
+}

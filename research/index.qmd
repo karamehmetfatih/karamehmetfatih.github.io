@@ -17,32 +17,168 @@ aliases:
   - /papers/index.html
 ---
 
-Also listed on
-[ORCID](https://orcid.org/0000-0002-0318-228X) ·
-[Google Scholar](https://scholar.google.com/citations?&user=56zv2gQAAAAJ) ·
-[Web of Science](https://www.webofscience.com/wos/author/record/IUP-3471-2023) ·
-[Scopus](https://www.scopus.com/authid/detail.uri?authorId=57192592048) ·
-[ResearchGate](https://www.researchgate.net/profile/Mehmet-Fatih-Kara)
+<!-- Entries follow al-folio's bibliography layout: a venue chip in a narrow left
+     column, then title / authors / periodical / link buttons / metric badges in
+     the body column. It is written as raw HTML rather than as Quarto fenced divs
+     because the structure nests three levels deep and the markdown form of that
+     is harder to read than the markup it produces. Own name in <em> per
+     al-folio, which underlines it rather than italicising it.
 
-## 2024 {#year-2024}
+     `.bibliography` on each year heading is what greys it back to al-folio's
+     large faint year marker; the {#year-} anchors are unchanged, so existing
+     links into the page and the sidebar TOC still work. -->
 
-::: {.publication}
-**Kara, M.F.**, Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript‐specific expression analysis in lettuce. *The Plant Journal*, 120(1), pp.370-386. DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978). PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/).
-[About the dataset, and how to download it →](/lsrtdv1/)
-:::
+## 2024 {#year-2024 .bibliography}
 
-## 2016 {#year-2016}
+<ol class="bibliography">
+<li>
+<div class="bib-row">
+<div class="bib-abbr"><abbr class="badge" title="The Plant Journal">Plant J</abbr></div>
+<div class="bib-body">
+<div class="title">LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce</div>
+<div class="author"><em>M. Fatih Kara</em>, Wenbin Guo, Runxuan Zhang, and Katherine Denby</div>
+<div class="periodical">The Plant Journal, 120(1), 370–386, 2024</div>
+<div class="links"><button class="pub-btn" type="button" aria-controls="abs-tpj16978" aria-expanded="false" hidden>Abs</button><button class="pub-btn" type="button" aria-controls="bib-kara2024" aria-expanded="false" hidden>Bib</button><a class="pub-btn" title="DOI" href="https://doi.org/10.1111/tpj.16978"><img class="pub-btn__icon" src="/assets/img/DOI_logo.svg" alt="DOI" width="130" height="130"></a><a class="pub-btn" title="PubMed" href="https://pubmed.ncbi.nlm.nih.gov/39145419/"><img class="pub-btn__icon" src="/assets/img/PubMed_logo_blue.svg" alt="PubMed" width="54" height="69"></a><a class="pub-btn" href="/lsrtdv1/">Dataset</a><a class="pub-shield" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=56zv2gQAAAAJ&amp;citation_for_view=56zv2gQAAAAJ%3ABqipwSGYUEgC&amp;inst=9600033855459059410"><img src="https://img.shields.io/badge/-4-4285F4?logo=googlescholar&amp;labelColor=beige" alt="4 citations on Google Scholar" height="20"></a><span class="altmetric-embed" data-badge-type="2" data-badge-popover="right" data-hide-no-mentions="true" data-doi="10.1111/tpj.16978"></span><span class="__dimensions_badge_embed__" data-doi="10.1111/tpj.16978" data-style="small_rectangle" data-legend="hover"></span></div>
+<!-- Abstract as published, retrieved from the PubMed record for this
+     paper (PMID 39145419) and reproduced verbatim. Written out here
+     rather than fetched at runtime so the page has no dependency on a
+     third party for its own content. -->
+<div class="pub-panel abs-panel" id="abs-tpj16978"><p>Accurate quantification of gene and transcript-specific expression, with the underlying knowledge of precise transcript isoforms, is crucial to understanding many biological processes. Analysis of RNA sequencing data has benefited from the development of alignment-free algorithms which enhance the precision and speed of expression analysis. However, such algorithms require a reference transcriptome. Here we generate a reference transcript dataset (LsRTDv1) for lettuce (cv. Saladin), combining long- and short-read sequencing with publicly available transcriptome annotations, and filtering to keep only transcripts with high-confidence splice junctions and transcriptional start and end sites. LsRTDv1 identifies novel genes (mostly long non-coding RNAs) and increases the number of transcript isoforms per gene in the lettuce genome from 1.4 to 2.7. We show that LsRTDv1 significantly increases the mapping rate of RNA-seq data from a lettuce time-series experiment (mock- and Botrytis cinerea-inoculated) and enables detection of genes that are differentially alternatively spliced in response to infection as well as transcript-specific expression changes. LsRTDv1 is a valuable resource for investigation of transcriptional and alternative splicing regulation in lettuce.</p></div>
+<div class="pub-panel bib-panel" id="bib-kara2024"><pre><code>@article{kara2024,
+  title = {{{LsRTDv1}}, a Reference Transcript Dataset for Accurate Transcript-Specific Expression Analysis in Lettuce},
+  shorttitle = {Transcript Annotation for Lettuce},
+  author = {Kara, Mehmet Fatih and Guo, Wenbin and Zhang, Runxuan and Denby, Katherine},
+  year = 2024,
+  month = oct,
+  journal = {The Plant Journal},
+  volume = {120},
+  number = {1},
+  pages = {370--386},
+  publisher = {John Wiley &amp; Sons, Ltd},
+  issn = {0960-7412},
+  doi = {10.1111/tpj.16978},
+  copyright = {CC-BY-4.0},
+  pmid = {39145419}
+}</code></pre></div>
+</div>
+</div>
+</li>
+</ol>
 
-::: {.publication}
-Ermiş, S., **Kara, F.**, Özden, E. and Demir, İ., 2016. Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality. *Journal of Agricultural Sciences*, 22(4), pp.588-595. DOI: [10.1501/tarimbil_0000001417](https://doi.org/10.1501/tarimbil_0000001417)
-:::
+## 2016 {#year-2016 .bibliography}
 
-::: {.publication}
-Demir, I., Ozden, E., **Kara, F.**, Hassanzadeh, M. and Mavi, K., 2016. Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (*Lactuca sativa*). *American Journal of Experimental Agriculture*, 12(3), pp.1-5. DOI: [10.9734/ajea/2016/25526](https://doi.org/10.9734/ajea/2016/25526)
-:::
+<ol class="bibliography">
+<li>
+<div class="bib-row">
+<div class="bib-abbr"><abbr class="badge" title="Journal of Agricultural Sciences">J Agric Sci</abbr></div>
+<div class="bib-body">
+<div class="title">Solid matrix priming of cabbage seed lots: repair of ageing and increasing seed quality</div>
+<div class="author">Sıtkı Ermiş, <em>F. Kara</em>, Eren Özden, and İbrahim Demir</div>
+<div class="periodical">Journal of Agricultural Sciences, 22(4), 588–595, 2016</div>
+<div class="links"><button class="pub-btn" type="button" aria-controls="abs-tarimbil" aria-expanded="false" hidden>Abs</button><button class="pub-btn" type="button" aria-controls="bib-ermis2016" aria-expanded="false" hidden>Bib</button><a class="pub-btn" title="DOI" href="https://doi.org/10.1501/tarimbil_0000001417"><img class="pub-btn__icon" src="/assets/img/DOI_logo.svg" alt="DOI" width="130" height="130"></a><a class="pub-shield" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=56zv2gQAAAAJ&amp;citation_for_view=56zv2gQAAAAJ%3AYFjsv_pBGBYC&amp;inst=9600033855459059410"><img src="https://img.shields.io/badge/-27-4285F4?logo=googlescholar&amp;labelColor=beige" alt="27 citations on Google Scholar" height="20"></a><span class="altmetric-embed" data-badge-type="2" data-badge-popover="right" data-hide-no-mentions="true" data-doi="10.1501/tarimbil_0000001417"></span><span class="__dimensions_badge_embed__" data-doi="10.1501/tarimbil_0000001417" data-style="small_rectangle" data-legend="hover"></span></div>
+<!-- Abstract as published, supplied by the author. This journal deposits no
+     abstract to Crossref, so there is nothing to retrieve for it. -->
+<div class="pub-panel abs-panel" id="abs-tarimbil"><p>This study was conducted to determine the effect of solid matrix priming treatment on 25 cabbage seed lots of various ages in terms of enhanced germination, emergence, mean germination and emergence time, and electrical conductivity. Solid matrix priming at a seed: vermiculite: water rate of 1:2:2.5 (w:w:w) was applied at 25 °C for 16 hours in the dark. Matrix priming was found to increase germination and emergence, reduced mean germination, emergence times and solute leakage. The advantages of solid matrix priming were observed more in aged than fresh seeds. The results indicated that SMP may enhance aged cabbage seed quality.</p><p class="abs-keywords"><strong>Keywords:</strong> Seed pretreatment; Electrical conductivity; Mean germination time; Germination; Emergence</p></div>
+<div class="pub-panel bib-panel" id="bib-ermis2016"><pre><code>@article{ermis2016,
+  title = {Solid {{Matrix Priming}} of {{Cabbage Seed Lots}}: {{Repair}} of {{Ageing}} and {{Increasing Seed Quality}}},
+  author = {Ermi{\c s}, S{\i}tk{\i} and Kara, Fatih and {\"O}zden, Eren and Demir, {\.I}brahim},
+  year = 2016,
+  month = sep,
+  journal = {Journal of Agricultural Sciences},
+  volume = {22},
+  number = {4},
+  pages = {588--595},
+  publisher = {Ankara \"Universitesi},
+  issn = {1300-7580},
+  doi = {10.1501/Tarimbil_0000001417},
+  copyright = {CC-BY-4.0},
+  langid = {english},
+  keywords = {Electrical conductivity,Emergence,Germination,Mean germination time,Seed pretreatment}
+}</code></pre></div>
+</div>
+</div>
+</li>
+<li>
+<div class="bib-row">
+<div class="bib-abbr"><abbr class="badge" title="American Journal of Experimental Agriculture">AJEA</abbr></div>
+<div class="bib-body">
+<div class="title">Effects of ambient storage temperature and seed moisture content on seed longevity of lettuce (<em>Lactuca sativa</em>)</div>
+<div class="author">İbrahim Demir, Eren Özden, <em>F. Kara</em>, Mehdi Hassanzadeh, and Kazim Mavi</div>
+<div class="periodical">American Journal of Experimental Agriculture, 12(3), 1–5, 2016</div>
+<div class="links"><button class="pub-btn" type="button" aria-controls="abs-ajea" aria-expanded="false" hidden>Abs</button><button class="pub-btn" type="button" aria-controls="bib-demir2016" aria-expanded="false" hidden>Bib</button><a class="pub-btn" title="DOI" href="https://doi.org/10.9734/ajea/2016/25526"><img class="pub-btn__icon" src="/assets/img/DOI_logo.svg" alt="DOI" width="130" height="130"></a><a class="pub-shield" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=56zv2gQAAAAJ&amp;citation_for_view=56zv2gQAAAAJ%3ANMxIlDl6LWMC&amp;inst=9600033855459059410"><img src="https://img.shields.io/badge/-11-4285F4?logo=googlescholar&amp;labelColor=beige" alt="11 citations on Google Scholar" height="20"></a><span class="altmetric-embed" data-badge-type="2" data-badge-popover="right" data-hide-no-mentions="true" data-doi="10.9734/ajea/2016/25526"></span><span class="__dimensions_badge_embed__" data-doi="10.9734/ajea/2016/25526" data-style="small_rectangle" data-legend="hover"></span></div>
+<div class="pub-panel abs-panel" id="abs-ajea"><p>This study was conducted to test changes in seed storage longevity of lettuce seeds at ambient monthly mean temperatures mimicked in five different regions of Turkey, for 28 months and moisture contents of 7, 9 and 11±0.1%. Hermetically stored samples were removed from storage every four months and normal seed germination was tested. Survival curves were constructed and probit analyses were conducted. Differences in longevity were compared by changes in P50, the time germination reduced to 50% and σ, the time germination reduced 1 probit value (i.e. 85% to 50%). The means of three moisture contents revealed that the highest (P50=19.5 months) and lowest (P50=5.5 months) seed longevity was obtained from Black Sea and South East regions, respectively. In all regions, shorter longevity values were recorded in seeds of high moisture content. Results indicated that high ambient moisture and temperature storage conditions can adversely affect lettuce seed longevity. Thus lower seed moisture content is necessary to maintain seed viability.</p><p class="abs-keywords"><strong>Keywords:</strong> Germination; seed storage; half viability period; survival curves</p></div>
+<div class="pub-panel bib-panel" id="bib-demir2016"><pre><code>@article{demir2016,
+  title = {Effects of {{Ambient Storage Temperature}} and {{Seed Moisture Content}} on {{Seed Longevity}} of {{Lettuce}} ({{Lactuca}} Sativa)},
+  author = {Demir, Ibrahim and Ozden, Eren and Kara, Fatih and Hassanzadeh, Mohammad and Mavi, Kaz{\i}m},
+  year = 2016,
+  month = jan,
+  journal = {American Journal of Experimental Agriculture},
+  volume = {12},
+  number = {3},
+  pages = {1--5},
+  issn = {22310606},
+  doi = {10.9734/AJEA/2016/25526},
+  copyright = {CC-BY-4.0}
+}</code></pre></div>
+</div>
+</div>
+</li>
+</ol>
 
-## 2015 {#year-2015}
+## 2015 {#year-2015 .bibliography}
 
-::: {.publication}
-Demir, I., **Kara, F.**, Ozden, E. and Hassanzadeh, M., 2015, May. The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars. In *VII International Symposium on Edible Alliaceae* 1143 (pp. 341-344). DOI: [10.17660/ActaHortic.2016.1143.48](https://doi.org/10.17660/ActaHortic.2016.1143.48)
-:::
+<ol class="bibliography">
+<li>
+<div class="bib-row">
+<div class="bib-abbr"><abbr class="badge" title="Acta Horticulturae">Acta Hortic</abbr></div>
+<div class="bib-body">
+<div class="title">The effects of seed moisture content and regional storage temperature on the longevity of two onion cultivars</div>
+<div class="author">İbrahim Demir, <em>F. Kara</em>, Eren Özden, and Mehdi Hassanzadeh</div>
+<div class="periodical">Acta Horticulturae 1143, 341–344 — VII International Symposium on Edible Alliaceae, 2015</div>
+<div class="links"><button class="pub-btn" type="button" aria-controls="abs-actahortic" aria-expanded="false" hidden>Abs</button><button class="pub-btn" type="button" aria-controls="bib-demir2016a" aria-expanded="false" hidden>Bib</button><a class="pub-btn" title="DOI" href="https://doi.org/10.17660/ActaHortic.2016.1143.48"><img class="pub-btn__icon" src="/assets/img/DOI_logo.svg" alt="DOI" width="130" height="130"></a><a class="pub-shield" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=56zv2gQAAAAJ&amp;citation_for_view=56zv2gQAAAAJ%3AhMod-77fHWUC&amp;inst=9600033855459059410"><img src="https://img.shields.io/badge/-6-4285F4?logo=googlescholar&amp;labelColor=beige" alt="6 citations on Google Scholar" height="20"></a><span class="altmetric-embed" data-badge-type="2" data-badge-popover="right" data-hide-no-mentions="true" data-doi="10.17660/ActaHortic.2016.1143.48"></span><span class="__dimensions_badge_embed__" data-doi="10.17660/ActaHortic.2016.1143.48" data-style="small_rectangle" data-legend="hover"></span></div>
+<div class="pub-panel abs-panel" id="abs-actahortic"><p>Onion seeds are short-lived species in storage. This study was designed to test two onion cultivars ('Texas Early Grano' (TEG) and 'Banka') seed storage under different temperatures derived from the monthly mean values in five different regions of Turkey over 28 months with 7, 8, 9, 10, 11, and 12% seed moisture content. Every four months, samples were removed and seed germination was tested. Longevity differences were compared by changes in P50 (the time to germination reduced to 50%). The longest longevity and highest P50 values were obtained in Central Anatolia and the Black Sea and the shortest longevity was observed in the southeastern region of Turkey. The highest P50 values were 17.5 and 17.9 months in TEG, and 23.6 and 23.8 months in the 'Banka' cultivars. P50 values declined to 11.7 months in TEG and 13.8 months in 'Banka' cultivars in the southeastern region, respectively. Overall, the best longevity was seen in seeds stored at 7% moisture content, and 'Banka' had longer P50 values than those of the TEG cultivar. In any region, the best storage can be drying seeds to 7% and storing seeds in ambient conditions no longer than 4-6 months.</p></div>
+<div class="pub-panel bib-panel" id="bib-demir2016a"><pre><code>@inproceedings{demir2016a,
+  title = {The Effects of Seed Moisture Content and Regional Storage Temperature on the Longevity of Two Onion Cultivars},
+  booktitle = {Acta {{Horticulturae}}},
+  author = {Demir, I. and Kara, F. and Ozden, E. and Hassanzadeh, M.},
+  year = 2016,
+  month = oct,
+  number = {1143},
+  pages = {341--344},
+  publisher = {International Society for Horticultural Science (ISHS), Leuven, Belgium},
+  doi = {10.17660/ActaHortic.2016.1143.48},
+  copyright = {All rights reserved},
+  isbn = {2406-6168}
+}</code></pre></div>
+</div>
+</div>
+</li>
+</ol>
+
+<!-- Badge scripts, loaded at the end of the document rather than in the head so
+     third-party requests never sit in front of the page text. One copy of each
+     renders every element its own service claims — `.altmetric-embed`
+     and `.__dimensions_badge_embed__` — wherever they appear above. -->
+<script type="text/javascript" src="https://embed.altmetric.com/assets/embed.js"></script>
+<script async src="https://badge.dimensions.ai/static/ai/badge.js" charset="utf-8"></script>
+
+<!-- Abstract and BibTeX toggles. Progressive enhancement, in both directions: the panel is
+     plain visible text and the button is `hidden` until this runs, so with no
+     JavaScript the abstract is still readable and no dead button is shown. The
+     script adds the collapsing behaviour and reveals the control that operates
+     it. A real <button> with aria-expanded rather than upstream's <a>, so the
+     control is reachable by keyboard and announced as a toggle. -->
+<script>
+(function () {
+  var panels = document.querySelectorAll('.pub-panel');
+  Array.prototype.forEach.call(panels, function (panel) {
+    var btn = document.querySelector('[aria-controls="' + panel.id + '"]');
+    if (!btn) return;
+    panel.classList.add('is-collapsible');
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      btn.setAttribute('aria-expanded', panel.classList.toggle('open') ? 'true' : 'false');
+    });
+  });
+})();
+</script>
