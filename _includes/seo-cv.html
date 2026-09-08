@@ -1,0 +1,27 @@
+<!-- CV page SEO head additions.
+
+     A self-referencing canonical, and nothing else. Unlike the other seo-*
+     includes there is no Open Graph or JSON-LD here: the page is noindex, so
+     structured data would describe a record that is never going to be shown.
+
+     The canonical is still needed, and it is the reason this file exists.
+     GitHub Pages serves this one file at two URLs — /cv/ and /cv/index.html —
+     and until now neither carried a canonical, so Google had two identical
+     documents and no instruction about which one is the real address. That is
+     precisely the "Duplicate without user-selected canonical" state Search
+     Console reports; every other page on the site avoids it because its own
+     seo-*.html include names a canonical.
+
+     Google found this page even though it is not in the navbar (that entry is
+     parked in _quarto.yml) and not in sitemap.xml: search.json is fetchable and
+     lists `cv/index.html#...` hrefs for the site search, and the navbar entry
+     was live in the past.
+
+     A self-canonical alongside `noindex` is not a contradiction — the two
+     answer different questions ("which URL is this?" and "should it be
+     listed?"). What would conflict is a canonical pointing at some OTHER page
+     while this one says noindex, because the noindex would then be attributed
+     to the target. So this must stay self-referencing, matching the URL in
+     `href` exactly, trailing slash included. -->
+
+<link rel="canonical" href="https://www.mfkara.net/cv/">

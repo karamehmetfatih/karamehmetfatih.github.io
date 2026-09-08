@@ -21,6 +21,7 @@ format:
     # navigation is a weak signal regardless of its content.
     include-in-header:
       - ../_includes/noindex.html
+      - ../_includes/seo-cv.html
 ---
 
 <!-- A PDF button, once you have one to link. Drop the file at assets/pdf/cv.pdf
