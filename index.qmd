@@ -127,7 +127,7 @@ necrotrophic fungi such as *Botrytis cinerea* and *Sclerotinia sclerotiorum*, an
 regulators of that response could be useful in breeding for resistance.
 
 **Transcriptomics.** Building transcript-level resources for lettuce, including
-[LsRTDv1](lsrtdv1/index.qmd), a reference transcript dataset that makes accurate
+[LsRTDv1](/lsrtdv1/), a reference transcript dataset that makes accurate
 transcript-specific expression analysis possible in this crop.
 
 **Genome editing.** Applying CRISPR-Cas9 approaches to functionally test candidate
@@ -143,7 +143,7 @@ dataset for accurate transcript-specific expression analysis in lettuce.
 *The Plant Journal*, 120(1), 370–386.
 DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978) PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/)
 
-[See all publications →](research/index.qmd)
+[See all publications →](/research/)
 
 ## contact
 
