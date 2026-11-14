@@ -175,6 +175,7 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
 
 /* ---------- sidebar bits ---------- */
 .gc-logo img {
+  image-rendering: -webkit-optimize-contrast;
   image-rendering: -moz-crisp-edges; image-rendering: pixelated;
   animation: gc-bounce 1s steps(2) infinite;
 }
@@ -203,7 +204,13 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
    rejects it at computed-value time drops EVERY longhand in the shorthand —
    so a badge would lose its 8px and inherit the page's 16px, with the text
    bursting out of an 88x31 box. Longhands fail one property at a time. */
-.gc-badges { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+/* Spaced with margins, not `gap`. Flex gap only reached Safari in 14.1, and
+   this column is the one piece of chrome that has already been reported as
+   looking wrong in another engine — it is worth one less thing to support.
+   The content area still uses `gap`, where losing it would only close a few
+   pixels between buttons rather than merge the badge wall into a strip. */
+.gc-badges { display: flex; flex-direction: column; align-items: center; }
+.gc-badges > * { margin: 3px 0; }
 .gc-badge {
   width: 88px; height: 31px; box-sizing: border-box; padding: 2px;
   font-family: var(--font-ui); font-size: 8px; line-height: 1.2;
@@ -235,6 +242,7 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
 }
 .gc-badge-img img {
   display: block; width: 100%; height: 100%;
+  image-rendering: -webkit-optimize-contrast;
   image-rendering: -moz-crisp-edges; image-rendering: pixelated;
 }
 
@@ -252,6 +260,7 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
      2px of border each side and 1px of padding, so 25px is the content box;
      the width follows from the artwork's own ratio. */
   height: 25px; width: auto;
+  image-rendering: -webkit-optimize-contrast;
   image-rendering: -moz-crisp-edges; image-rendering: pixelated;
 }
 /* "LETTUCE GREEN" is one character too long for 88x31 at the default size */
@@ -282,8 +291,14 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
 .gc-marquee:hover .gc-marquee-text { animation-play-state: paused; }
 .gc-construction {
   text-align: center; margin: 6px 0 14px; padding: 6px;
+  /* Written as four single-position stops rather than two double-position
+     ones (`var(--butter) 0 18px`). The short form is CSS Images Level 4, and
+     an engine that does not take it drops the whole declaration — the tape
+     would lose its stripes entirely rather than degrade. This form is as old
+     as gradients themselves and paints the same thing. */
   background: repeating-linear-gradient(45deg,
-    var(--butter) 0 18px, var(--soil-shadow) 18px 36px);
+    var(--butter) 0, var(--butter) 18px,
+    var(--soil-shadow) 18px, var(--soil-shadow) 36px);
   border: 2px solid var(--soil-shadow);
 }
 .gc-construction span {
@@ -336,7 +351,8 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
   font-weight: normal; opacity: .92;
 }
 .gc-watermark:hover { opacity: 1; color: var(--side-strong); }
-.gc-watermark img { image-rendering: -moz-crisp-edges; image-rendering: pixelated; }
+.gc-watermark img { image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated; }
 .gc-watermark b { display: block; font-size: 11px; }
 
 /* ---------- the status bar ----------

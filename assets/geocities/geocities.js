@@ -1,5 +1,20 @@
 // GeoCities-style extras: neighborhood switcher, hit counter, sparkle trail.
 (function () {
+  // Two helpers so nothing here needs a DOM or language feature newer than
+  // the browsers this page is meant to survive on. A NodeList only gained
+  // .forEach with DOM4, and String.prototype.padStart is ES2017: either one
+  // throws on an older engine, and a throw in this file takes the theme
+  // switcher and the counter down with it.
+  function each(list, fn) {
+    Array.prototype.forEach.call(list, fn);
+  }
+
+  function pad(n, width) {
+    var out = String(n);
+    while (out.length < width) { out = "0" + out; }
+    return out;
+  }
+
   function store(k, v) {
     try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); }
     catch (e) { return null; }
@@ -44,7 +59,7 @@
     if (THEMES.indexOf(t) < 0) t = DEFAULT_THEME;
     THEMES.forEach(function (x) { document.body.classList.remove("theme-" + x); });
     document.body.classList.add("theme-" + t);
-    document.querySelectorAll("[data-theme]").forEach(function (b) {
+    each(document.querySelectorAll("[data-theme]"), function (b) {
       b.classList.toggle("active", b.getAttribute("data-theme") === t);
     });
     active = t;
@@ -54,7 +69,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     setTheme(store("gc-theme") || DEFAULT_THEME);
-    document.querySelectorAll("[data-theme]").forEach(function (b) {
+    each(document.querySelectorAll("[data-theme]"), function (b) {
       b.addEventListener("click", function () { setTheme(b.getAttribute("data-theme")); });
     });
 
@@ -83,7 +98,7 @@
     // With storage blocked (a private window, or site data switched off) both
     // reads come back null, so this reads 000001 on every page: the one number
     // that is true for a visitor nothing can be remembered about.
-    if (el) el.textContent = String(n || 1).padStart(6, "0");
+    if (el) el.textContent = pad(n || 1, 6);
 
     var up = document.getElementById("gc-updated");
     if (up) up.textContent = new Date(document.lastModified).toLocaleDateString("en-GB");
