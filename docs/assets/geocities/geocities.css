@@ -174,7 +174,10 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
 .quarto-title h1.title { margin-top: .3em; }
 
 /* ---------- sidebar bits ---------- */
-.gc-logo img { image-rendering: pixelated; animation: gc-bounce 1s steps(2) infinite; }
+.gc-logo img {
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
+  animation: gc-bounce 1s steps(2) infinite;
+}
 .gc-sitename {
   font-size: 22px; font-weight: bold; color: var(--side-strong);
   text-shadow: 2px 2px 0 #000;
@@ -195,10 +198,16 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
 .gc-navbox button.active {
   border-style: inset; background: rgba(190, 211, 142, .25); color: var(--side-strong);
 }
+/* Every font here is written as longhands, never the `font:` shorthand. The
+   shorthand takes a `var()` as a pending substitution, and an engine that
+   rejects it at computed-value time drops EVERY longhand in the shorthand —
+   so a badge would lose its 8px and inherit the page's 16px, with the text
+   bursting out of an 88x31 box. Longhands fail one property at a time. */
 .gc-badges { display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .gc-badge {
   width: 88px; height: 31px; box-sizing: border-box; padding: 2px;
-  font: 8px/1.2 var(--font-ui); background: #000; color: var(--lettuce);
+  font-family: var(--font-ui); font-size: 8px; line-height: 1.2;
+  background: #000; color: var(--lettuce);
   border: 2px outset #ccc;
 }
 .gc-badge b { font-size: 10px; }
@@ -268,8 +277,13 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
   background: #000;
 }
 .gc-badge-sw img {
-  max-width: 100%; max-height: 100%; object-fit: contain;
-  image-rendering: pixelated;
+  /* Sized outright rather than fitted: `object-fit` with percentage maxima
+     asks the engine to resolve the box against a flex item's height, which is
+     the kind of corner engines disagree about. The badge is 31px tall, less
+     2px of border each side and 1px of padding, so 25px is the content box;
+     the width follows from the artwork's own ratio. */
+  height: 25px; width: auto;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
 }
 /* "LETTUCE GREEN" is one character too long for 88x31 at the default size */
 .gc-badge-p b { font-size: 9px; letter-spacing: -.4px; }
@@ -318,7 +332,8 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
 }
 .new {
   display: inline-block; background: var(--radish); color: #FFF3C4;
-  font: bold 10px var(--font-ui); padding: 0 4px; transform: rotate(-8deg);
+  font-family: var(--font-ui); font-size: 10px; font-weight: bold;
+  padding: 0 4px; transform: rotate(-8deg);
   animation: gc-blink .8s steps(1) infinite;
 }
 
@@ -339,10 +354,11 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
   display: flex; align-items: center; gap: 6px;
   padding: 4px 8px 4px 5px; background: var(--side); color: var(--side-text);
   border: 3px outset var(--leaf-mid); text-decoration: none;
-  font: 9px/1.2 var(--font-ui); opacity: .92;
+  font-family: var(--font-ui); font-size: 9px; line-height: 1.2;
+  font-weight: normal; opacity: .92;
 }
 .gc-watermark:hover { opacity: 1; color: var(--side-strong); }
-.gc-watermark img { image-rendering: pixelated; }
+.gc-watermark img { image-rendering: -moz-crisp-edges; image-rendering: pixelated; }
 .gc-watermark b { display: block; font-size: 11px; }
 
 /* ---------- the status bar ----------
@@ -353,7 +369,7 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
 .gc-statusbar {
   margin: 10px 0 0; padding: 3px 6px;
   background: var(--panel); border: 2px inset var(--leaf-mid);
-  font: 11px/1.4 var(--font-ui); color: var(--text);
+  font-family: var(--font-ui); font-size: 11px; line-height: 1.4; color: var(--text);
   overflow: hidden; white-space: nowrap;
 }
 .gc-statusbar span {
@@ -382,14 +398,16 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
 }
 .gc-portrait:hover img, .gc-portrait:focus-within img { filter: none; }
 .gc-portrait figcaption {
-  margin-top: 6px; font: 11px/1.45 var(--font-ui); color: var(--text);
+  margin-top: 6px; color: var(--text);
+  font-family: var(--font-ui); font-size: 11px; line-height: 1.45;
 }
 
 /* Pantone chip - "the official colour of this homepage" */
 .gc-swatch {
   display: inline-block; min-width: 140px; margin: 4px;
   border: 3px outset var(--panel-border); background: var(--lettuce-cream);
-  font: 11px/1.4 var(--font-ui); color: var(--soil-shadow); text-align: center;
+  font-family: var(--font-ui); font-size: 11px; line-height: 1.4;
+  color: var(--soil-shadow); text-align: center;
 }
 .gc-swatch i { display: block; height: 42px; background: var(--lettuce); }
 .gc-swatch b { display: block; padding: 3px 6px; }
@@ -479,7 +497,8 @@ ol.bibliography > li { margin: 0 0 14px; }
 .bib-abbr .badge, abbr.badge {
   display: inline-block; padding: 3px 6px; border: 2px outset var(--leaf-mid);
   background: var(--side); color: var(--side-text);
-  font: bold 10px/1.3 var(--font-ui); text-decoration: none;
+  font-family: var(--font-ui); font-size: 10px; line-height: 1.3; font-weight: bold;
+  text-decoration: none;
   letter-spacing: .5px;
 }
 .bib-body { flex: 1 1 auto; min-width: 0; }
@@ -493,7 +512,8 @@ ol.bibliography > li { margin: 0 0 14px; }
   display: inline-flex; align-items: center; gap: 4px; min-height: 22px;
   padding: 1px 8px; border: 2px outset var(--leaf-mid);
   background: var(--lettuce-cream); color: var(--link);
-  font: bold 12px/1.4 var(--font-ui); text-decoration: none; cursor: pointer;
+  font-family: var(--font-ui); font-size: 12px; line-height: 1.4; font-weight: bold;
+  text-decoration: none; cursor: pointer;
 }
 .pub-btn:hover { background: var(--hot); color: #fff; }
 .pub-btn:active { border-style: inset; }
