@@ -2,37 +2,19 @@
 title: "&#128214; Guestbook &#128214;"
 pagetitle: "Guestbook"
 description-meta: "Sign the guestbook — say hello to M. Fatih Kara, in the spirit of 1998."
-# The one page on the site with comments. Everything else sets `comments:
-# false` explicitly, and there is no site-wide default in _quarto.yml, so this
-# block turns the guestbook on without touching any other page.
+# No `comments:` block, and no Quarto giscus integration. Quarto's loader
+# ends with
 #
-# The backend is GitHub Discussions through giscus: entries are posted by
-# visitors to the "Comments" category of the site's own repository, which means
-# no database, no server and no third party holding anyone's message. It also
-# means a visitor needs a GitHub account — the other ways to reach me are in
-# the box below for everyone else.
+#     document.getElementById("quarto-content").appendChild(script);
 #
-# `mapping: pathname` ties the thread to /guestbook/ rather than to the page
-# title: the title carries decorative entities and may be reworded, and a
-# changed title under `mapping: title` would silently start an empty second
-# thread and orphan every entry in the first.
+# and `theme: none` means Quarto emits no #quarto-content wrapper, so that
+# line threw "Cannot read properties of null" and the widget never loaded at
+# all. The script below is the same thing, anchored where it is written.
 #
-# The themes are this site's own, served from assets/geocities/. They have to
-# be absolute URLs because the giscus iframe resolves them against its own
-# origin; during `quarto preview` they point at a localhost giscus.app cannot
-# reach, so the widget falls back to its default light theme until deployed.
-comments:
-  giscus:
-    repo: karamehmetfatih/karamehmetfatih.github.io
-    repo-id: "R_kgDOQ3PkWg"
-    category: Comments
-    category-id: "DIC_kwDOQ3PkWs4DD3GV"
-    mapping: pathname
-    reactions-enabled: true
-    input-position: bottom
-    language: "en"
-    loading: lazy
-    theme: "https://www.mfkara.net/assets/geocities/giscus-salinasvalley.css"
+# It also drops Quarto's light/dark switch, which keyed off a `quarto-dark`
+# body class this site does not have — it was handing giscus the same theme
+# for both cases. assets/geocities/geocities.js switches the theme instead,
+# by postMessage, when the visitor changes neighborhood.
 ---
 
 ::: gc-box
@@ -57,6 +39,25 @@ inbox directly.
 
 Anything is welcome: hello from a fellow plant pathologist, a question about
 [LsRTDv1](/lsrtdv1/), a complaint about the blinking text. I read every entry.
+
+```{=html}
+<script src="https://giscus.app/client.js"
+        data-repo="karamehmetfatih/karamehmetfatih.github.io"
+        data-repo-id="R_kgDOQ3PkWg"
+        data-category="Comments"
+        data-category-id="DIC_kwDOQ3PkWs4DD3GV"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="https://www.mfkara.net/assets/geocities/giscus-salinasvalley.css"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+```
 
 ::: gc-center
 <p class="gc-small">&#128679; House rules: be kind, stay on the right side of the

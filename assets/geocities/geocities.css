@@ -235,19 +235,23 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
    the black band and 5.5:1 on the green. */
 .gc-badge-pal {
   position: relative; color: #fff;
+  /* 40/20/40 rather than the flag's three equal thirds. At 31px tall, thirds
+     give each band about 9px, and a 9px word in a 9px band crowds its edges
+     and merges with the white stripe next to it. Widening the two bands that
+     carry text, and narrowing the one that does not, is the compromise that
+     keeps the badge readable at the size a badge actually is. */
   background: linear-gradient(to bottom,
-    #000000 0 33.33%, #FFFFFF 33.33% 66.66%, #007A3D 66.66% 100%);
+    #000000 0 40%, #FFFFFF 40% 60%, #007A3D 60% 100%);
 }
 .gc-badge-pal::before {
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 22px;
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 18px;
   background: #CE1126; clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
-/* 16px, not the triangle's full 22px: the triangle is widest at the badge's
+/* 14px, not the triangle's full 18px: the triangle is widest at the badge's
    vertical centre and tapers to nothing at top and bottom, so where the two
-   words actually sit it is only about 9px across. At 22px the legend was
-   left with 2px before the right border. */
-.gc-badge-pal > span, .gc-badge-pal > b { flex: 0 0 33.33%; padding-left: 16px; }
-.gc-badge-pal > span { font-size: 9px; }
+   words actually sit it is only about 7px across. */
+.gc-badge-pal > span, .gc-badge-pal > b { flex: 0 0 40%; padding-left: 14px; }
+.gc-badge-pal > span { font-size: 8px; }
 .gc-badge-pal > b { font-size: 10px; letter-spacing: -.2px; }
 
 .gc-badge-ua {
@@ -605,8 +609,15 @@ ol.bibliography > li { margin: 0 0 14px; }
 #gc-main img { max-width: 100%; height: auto; }
 /* The coloured bullet GIF, as an image marker. `list-style-image` rather than
    a ::marker colour because the shape is the point, and it degrades to a plain
-   disc if the file is missing. */
-#gc-main ul { list-style-image: url("/assets/geocities/bullet.svg"); }
+   disc if the file is missing.
+
+   The path is relative to this stylesheet, like the cursor and the wallpaper
+   above, and must stay that way: Quarto rewrites a site-absolute url() inside
+   CSS for the output, and on Windows it emitted `..\..assets/geocities/...`,
+   backslashes and all. The browser resolved that to
+   /assets/geocities/....assets/geocities/bullet.svg and 404'd, so every list
+   on the site fell back to a plain disc. */
+#gc-main ul { list-style-image: url("bullet.svg"); }
 /* Quarto still emits a figure caption and a footnote block; neither had a rule. */
 #gc-main figcaption { font-size: 13px; text-align: center; opacity: .85; }
 #gc-main .footnotes { font-size: 14px; border-top: 3px double var(--panel-border); }
