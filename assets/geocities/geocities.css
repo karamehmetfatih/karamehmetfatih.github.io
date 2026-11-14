@@ -309,6 +309,15 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
 .gc-box {
   border: 3px ridge var(--panel-border); background: var(--panel-inner);
   padding: 8px 14px; margin: 12px 0;
+  /* Contains the float. The portrait on the home page is `float: right`
+     inside one of these, and a float does not add to its parent's height: the
+     box only wraps it today because the bio happens to run 51px longer than
+     the picture. Three fewer lines of text and the photograph would hang out
+     through the bottom of the ridged border. `display: flow-root` is the
+     modern clearfix — it starts a block formatting context and nothing else,
+     where `overflow: hidden` would also clip and `::after { clear: both }`
+     needs an extra element's worth of rules. */
+  display: flow-root;
 }
 .gc-center { text-align: center; }
 
