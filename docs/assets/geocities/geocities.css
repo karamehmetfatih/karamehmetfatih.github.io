@@ -141,7 +141,12 @@ body {
   color: var(--text);
   font-family: var(--font);
   font-size: 16px;
-  cursor: url("sprout-cursor.svg") 4 4, auto;
+  /* The PNG is listed first because Safari does not take an SVG cursor at
+     all and would fall straight through to `auto`; every other engine is
+     happy with either, and both are the same 32x32 artwork. The hotspot is
+     `0 0`, the arrow's tip — the old one claimed `4 4`, four pixels inside a
+     20px image, so every click landed below and right of where it looked. */
+  cursor: url("sprout-cursor.png") 0 0, url("sprout-cursor.svg") 0 0, auto;
 }
 
 /* The watermark is fixed to the viewport, so at the foot of the page it would
@@ -172,6 +177,13 @@ body {
 #quarto-sidebar, .quarto-title-banner { display: none !important; }
 main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0; max-width: none; }
 .quarto-title h1.title { margin-top: .3em; }
+
+/* A custom pointer on <body> replaces the cursor everywhere, including the
+   two places where the shape is carrying information: the hand that says a
+   thing is clickable, and the I-beam that says text can be selected. Both are
+   handed back. Buttons that already declare `pointer` keep it. */
+a, button, summary, label, [role="button"] { cursor: pointer; }
+input, textarea, select { cursor: auto; }
 
 /* ---------- sidebar bits ---------- */
 .gc-logo img {
