@@ -1,38 +1,20 @@
 ---
-# The home page is the one page with a rendered title block: it opts back in
-# from the site-wide `title-block-style: none` in _quarto.yml. In exchange the
-# navbar brand is hidden here, so the name is shown once rather than twice —
-# `body-classes: home` is the hook al-folio.scss keys that rule off.
+# The h1 keeps the name in it. "Welcome to my homepage" is the authentic 1998
+# greeting, but the home page's heading is the single strongest on-page signal
+# for a search on this name, and a heading that omits the name spends it on
+# nothing.
 #
-# `description-meta` rather than `description:` keeps the
-# <meta name="description"> for search engines and link previews without
-# printing a subtitle under the title.
-#
-# `pagetitle` sets the <title> tag only, leaving the rendered H1 as the name
-# alone. Before this the two were the same string, so the single most valuable
-# piece of text on the site — the search result headline — read "M. Fatih Kara"
-# and said nothing about the subject.
-#
-# Write it as the topic alone, with no name in it. Quarto appends " – " plus the
-# site title (`website: title:`) to whatever is set here, so the full rendered
-# result is "Plant Disease Resistance in Lettuce – M. Fatih Kara": subject first,
-# name second, ~50 characters, no truncation in a result listing. Putting the
-# name here as well produces it twice.
-title: "M. Fatih Kara"
+# `pagetitle` sets the <title> tag only, leaving the rendered H1 alone. Written
+# as the topic, with no name in it: Quarto would otherwise append the site
+# title and print "M. Fatih Kara" twice in one result headline.
+title: "&#10047; M. Fatih Kara's Leafy Homepage &#10047;"
 pagetitle: "Plant Disease Resistance in Lettuce"
-title-block-style: default
-body-classes: home
-# This is the snippet a search result can show, so it must describe what is
-# actually here. The previous wording ended "Publications, research notes, and
-# blog" — the blog is parked and there are no notes, so it advertised two things
-# that do not exist. The replacement names the pathogens instead, which is what
-# the people looking for this work actually search for.
+# `description-meta` rather than `description:` keeps the
+# <meta name="description"> for search engines without printing a subtitle
+# under the title. It deliberately does not feed og:description, which is why
+# the two card descriptions below are set explicitly — without them link
+# previews for this page have a title and an image but no text.
 description-meta: "Plant scientist at the University of York researching lettuce resistance to the necrotrophic fungi Botrytis cinerea and Sclerotinia sclerotiorum."
-# `description-meta` deliberately does not feed og:description — that is why it
-# was chosen over `description:`, which would print a subtitle under the title.
-# The consequence was that link previews for the home page had a title and image
-# but no text at all. Setting the two card descriptions explicitly restores the
-# preview copy without putting a subtitle on the page.
 open-graph:
   description: "Plant scientist working on disease resistance in lettuce — how the crop responds to necrotrophic fungal pathogens such as Botrytis cinerea and Sclerotinia sclerotiorum."
 twitter-card:
@@ -45,109 +27,78 @@ format:
     include-in-header:
       - _includes/seo-home.html
 comments: false
-toc: false
-# `full` is required by the .portfolio-container grid below, not a style
-# preference: the default `article` layout pens content into a ~800px column,
-# so the grid's 1200px max-width could never be reached and the sidebar and
-# main column would have nothing to divide.
-page-layout: full
 aliases:
   - /about.html
 ---
 
-::::: {.portfolio-container}
-
-:::: {.profile-sidebar}
-
-```{=html}
-<div class="gravatar-hovercard">
-	<div class="gravatar-hovercard__inner">
-		<div class="gravatar-hovercard__header-image" aria-hidden="true"></div>
-		<div class="gravatar-hovercard__header">
-			<a class="gravatar-hovercard__avatar-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
-				<img class="gravatar-hovercard__avatar" src="https://0.gravatar.com/avatar/3fe34595cb2c2132269fb58f2cf24d23ded892468e5adce8949a6df2abe8eb8d?s=256&amp;d=initials" width="128" height="128" alt="M. Fatih Kara">
-			</a>
-			<a class="gravatar-hovercard__personal-info-link" href="https://gravatar.com/mfkara?utm_source=hovercard" target="_blank" rel="noopener">
-				<div class="gravatar-hovercard__name">M. Fatih Kara</div>
-				<p class="gravatar-hovercard__location">Ankara, Türkiye</p>
-			</a>
-		</div>
-		<div class="gravatar-hovercard__body">
-			<p class="gravatar-hovercard__description">Plant scientist 🌱 | Plant immunity &amp; MPMI | Necrotrophic fungi: Botrytis &amp; Sclerotinia | Genome editing | Lettuce omics &amp; disease resistance PhD @UoY</p>
-		</div>
-```
-
-::: {.gravatar-hovercard__social-links}
-::: {.gravatar-hovercard__social-row aria-label="Academic profiles"}
-[{{< ai orcid >}}](https://orcid.org/0000-0002-0318-228X){.gravatar-hovercard__social-link title="ORCID" aria-label="ORCID" target="_blank" rel="noopener"}
-[{{< ai google-scholar >}}](https://scholar.google.com/citations?&user=56zv2gQAAAAJ){.gravatar-hovercard__social-link title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener"}
-[{{< ai clarivate >}}](https://www.webofscience.com/wos/author/record/IUP-3471-2023){.gravatar-hovercard__social-link title="Web of Science" aria-label="Web of Science" target="_blank" rel="noopener"}
-[{{< ai scopus >}}](https://www.scopus.com/authid/detail.uri?authorId=57192592048){.gravatar-hovercard__social-link title="Scopus" aria-label="Scopus" target="_blank" rel="noopener"}
-[{{< ai researchgate >}}](https://www.researchgate.net/profile/Mehmet-Fatih-Kara){.gravatar-hovercard__social-link title="ResearchGate" aria-label="ResearchGate" target="_blank" rel="noopener"}
+::: gc-center
+<span class="rainbow" style="font-size:22px">Hello, World Wide Web!!</span>
 :::
 
-::: {.gravatar-hovercard__social-row aria-label="Social profiles"}
-[{{< fa brands github >}}](https://github.com/karamehmetfatih){.gravatar-hovercard__social-link title="GitHub" aria-label="GitHub" target="_blank" rel="noopener"}
-[{{< fa brands linkedin >}}](https://www.linkedin.com/in/m-f-kara){.gravatar-hovercard__social-link title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"}
-[{{< fa brands bluesky >}}](https://bsky.app/profile/mfkara.net){.gravatar-hovercard__social-link title="Bluesky" aria-label="Bluesky" target="_blank" rel="noopener"}
-[{{< fa brands goodreads >}}](https://www.goodreads.com/mfkara){.gravatar-hovercard__social-link title="Goodreads" aria-label="Goodreads" target="_blank" rel="noopener"}
-[{{< fa brands spotify >}}](https://open.spotify.com/user/31dtt4p7e4m3qfagatcd7kezqwji){.gravatar-hovercard__social-link title="Spotify" aria-label="Spotify" target="_blank" rel="noopener"}
-[{{< fa brands pinterest >}}](https://www.pinterest.com/karamehmetfatih/){.gravatar-hovercard__social-link title="Pinterest" aria-label="Pinterest" target="_blank" rel="noopener"}
+::: gc-box
+**I'm M. Fatih Kara** &#127793; &mdash; a plant scientist working on **disease resistance
+in lettuce**, and on how that response can be read at the level of individual
+transcripts rather than whole genes. PhD researcher at the
+**University of York**, based in **Ankara, Türkiye**.
+
+My work combines time-series transcriptomics, reference transcriptome construction
+and CRISPR-Cas9 genome editing to find and test candidate regulators of resistance to
+the necrotrophic fungi *Botrytis cinerea* and *Sclerotinia sclerotiorum*. Before moving
+into plant pathology and molecular biology, I worked in seed science on the longevity,
+storage and priming of vegetable seed.
 :::
-:::
 
-```{=html}
-		<div class="gravatar-hovercard__footer">
-			<a class="gravatar-hovercard__profile-url" title="https://gravatar.com/mfkara" href="https://gravatar.com/mfkara?utm_source=profile-card" target="_blank" rel="noopener">gravatar.com/mfkara</a>
-			<a class="gravatar-hovercard__profile-link" href="https://gravatar.com/mfkara?utm_source=profile-card" target="_blank" rel="noopener">View profile →</a>
-		</div>
-		<div class="gravatar-hovercard__profile-color" style="background: rgb(227, 234, 252);"></div>
-	</div>
-</div>
-```
+## &#11088; What's NEW?? <span class="new">NEW!</span>
 
-::::
+- **Nov 2026** &ndash; This homepage moved into the [SalinasValley neighborhood](/links/#the-official-colour-of-this-homepage) &#129388;
+- **2024** &ndash; [LsRTDv1](/lsrtdv1/) published in *The Plant Journal* &#127881;
+- **Always** &ndash; Adding more stuff to this page. Come back soon!!
 
-:::: {.main-research-content}
+## &#128300; What I work on
 
-I am a plant scientist working on **disease resistance in lettuce**, with a focus on
-how the crop responds to necrotrophic fungal pathogens at the transcriptional level.
-I am a PhD researcher at the University of York.
+| &#127807; Topic | &#128172; What it means |
+|---|---|
+| Plant&ndash;pathogen interactions | How lettuce defends itself against *Botrytis* and *Sclerotinia*, and which regulators of that response could be useful in breeding |
+| Transcriptomics | Transcript-level resources for lettuce, including [LsRTDv1](/lsrtdv1/) |
+| Genome editing | CRISPR-Cas9 to functionally test candidate resistance genes |
+| Seed science | Earlier work on seed longevity, storage and priming in lettuce, onion and cabbage |
 
-My current work combines time-series transcriptomics, reference transcriptome
-construction and CRISPR-Cas9 genome editing to identify and test candidate regulators
-of resistance — reading that response at the level of individual transcripts rather
-than whole genes. Before moving into plant pathology and molecular biology, I worked
-in seed science on the longevity, storage and priming of vegetable seed.
+: {.gc-table}
 
-## research
+## &#128220; Selected publication
 
-**Plant–pathogen interactions.** How lettuce (*Lactuca sativa*) defends itself against
-necrotrophic fungi such as *Botrytis cinerea* and *Sclerotinia sclerotiorum*, and which
-regulators of that response could be useful in breeding for resistance.
-
-**Transcriptomics.** Building transcript-level resources for lettuce, including
-[LsRTDv1](/lsrtdv1/), a reference transcript dataset that makes accurate
-transcript-specific expression analysis possible in this crop.
-
-**Genome editing.** Applying CRISPR-Cas9 approaches to functionally test candidate
-resistance genes in lettuce.
-
-**Seed science.** Earlier work on seed longevity, storage and priming in lettuce,
-onion and cabbage.
-
-## selected publication
-
+::: gc-box
 Kara, M.F., Guo, W., Zhang, R. and Denby, K. (2024). LsRTDv1, a reference transcript
 dataset for accurate transcript-specific expression analysis in lettuce.
-*The Plant Journal*, 120(1), 370–386.
-DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978) PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/)
+*The Plant Journal*, 120(1), 370&ndash;386.
+DOI: [10.1111/tpj.16978](https://doi.org/10.1111/tpj.16978) &bull;
+PMID: [39145419](https://pubmed.ncbi.nlm.nih.gov/39145419/) &bull;
+[the dataset](/lsrtdv1/)
 
-[See all publications →](/research/)
+&#128073; [See all publications](/research/)
+:::
 
-## contact
+## &#128100; Find me elsewhere on the 'Net
 
-Send me a message and it will arrive in my inbox.
+| | Where | |
+|---|---|---|
+| &#127891; | ORCID | [0000-0002-0318-228X](https://orcid.org/0000-0002-0318-228X) |
+| &#127979; | Google Scholar | [citations](https://scholar.google.com/citations?&user=56zv2gQAAAAJ) |
+| &#128202; | Web of Science | [IUP-3471-2023](https://www.webofscience.com/wos/author/record/IUP-3471-2023) |
+| &#128218; | Scopus | [57192592048](https://www.scopus.com/authid/detail.uri?authorId=57192592048) |
+| &#129516; | ResearchGate | [Mehmet-Fatih-Kara](https://www.researchgate.net/profile/Mehmet-Fatih-Kara) |
+| &#128025; | GitHub | [karamehmetfatih](https://github.com/karamehmetfatih) |
+| &#128188; | LinkedIn | [m-f-kara](https://www.linkedin.com/in/m-f-kara) |
+| &#129419; | Bluesky | [\@mfkara.net](https://bsky.app/profile/mfkara.net) |
+
+: {.gc-table}
+
+&#128073; More of them on the [Cool Links](/links/) page.
+
+## &#9993;&#65039; Contact
+
+Send me a message and it will arrive in my inbox. No email address is published
+on this page &mdash; which is the whole point of the form.
 
 ```{=html}
 <form class="contact-form" id="contact-form"
@@ -190,13 +141,12 @@ Send me a message and it will arrive in my inbox.
 	var TURNSTILE_SITEKEY = '0x4AAAAAAEW51OgynN_DlzDk';
 	var widgetId = null;
 
-	// The site has a light/dark toggle. Turnstile's own theme:'auto' follows the
-	// OS, not this site's toggle, so the theme is derived from --af-bg instead
-	// and the widget is re-rendered when the visitor flips the scheme.
+	// Turnstile's own theme:'auto' follows the OS, not this site. The site has
+	// two "neighborhoods" (assets/geocities/geocities.js) and only
+	// GrowthChamber is dark, so the widget takes its theme from the body
+	// class and is re-rendered when the visitor switches neighborhood.
 	function currentTheme() {
-		var bg = getComputedStyle(document.documentElement)
-			.getPropertyValue('--af-bg').trim().toLowerCase();
-		return bg === '#ffffff' || bg === '#fff' ? 'light' : 'dark';
+		return document.body.classList.contains('theme-growthchamber') ? 'dark' : 'light';
 	}
 
 	function renderWidget() {
@@ -216,10 +166,12 @@ Send me a message and it will arrive in my inbox.
 	// after each attempt or a retry submits a stale, already-redeemed token.
 	window.cfTurnstileOnLoad = renderWidget;
 
-	var toggle = document.querySelector('.quarto-color-scheme-toggle');
-	if (toggle) {
-		toggle.addEventListener('click', function () { setTimeout(renderWidget, 250); });
-	}
+	// Re-render on a neighborhood change: the buttons are in the sidebar
+	// (_includes/gc-header.html) and the class lands on <body> synchronously,
+	// but the small delay keeps this behind geocities.js's own handler.
+	Array.prototype.forEach.call(document.querySelectorAll('[data-theme]'), function (button) {
+		button.addEventListener('click', function () { setTimeout(renderWidget, 250); });
+	});
 
 	// Progressive enhancement: the <form> carries a real action + method="POST",
 	// so if this script fails to run the browser performs a normal Formspree
@@ -274,6 +226,6 @@ Send me a message and it will arrive in my inbox.
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=cfTurnstileOnLoad&render=explicit" async defer></script>
 ```
 
-::::
-
-:::::
+::: gc-center
+<p class="blink">&#9733; Don't forget to sign my <a href="/guestbook/">GUESTBOOK</a>! &#9733;</p>
+:::

@@ -48,12 +48,12 @@ above "Selected publication" once you have the details:
 
 ## 4. Placeholder blog post
 
-`posts/deneme/index.qmd` is still the Quarto template's demo post ("Post With Code",
+`_parked/posts/deneme/index.qmd` is still the Quarto template's demo post ("Post With Code",
 body text "Deneme 2" / "Deneme 3", dated 2021). It is the only entry on the Blog
 listing:
 
 ```bash
-git rm -r posts/deneme
+git rm -r _parked/posts/deneme
 ```
 
 If you remove it and have no other posts, consider dropping "Blog" from the navbar

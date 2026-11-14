@@ -37,6 +37,13 @@ what is meant to be a URL. Browsers paper over it (the URL parser folds `\\` to
 `/` for http(s)), but it is not a valid relative URL and nothing else is obliged
 to be so forgiving.
 
+Two of Quarto's other generated artefacts get the same treatment, for the same
+reason — both advertise `.../index.html` while every page's canonical says the
+directory form, and a crawler believes the artefact. `tidy_sitemap` rewrites
+sitemap.xml and drops noindex pages from it; `tidy_search_index` rewrites the
+hrefs in search.json, which is a crawlable list of URLs whether or not it was
+meant to be one.
+
 Stdlib only, and idempotent: a stub that already has a canonical is left alone,
 so re-running over an unchanged docs/ is a no-op.
 
@@ -221,6 +228,64 @@ def tidy_sitemap(base: str) -> None:
     report(f"finish-alias-stubs: sitemap {rewritten} rewritten, {dropped} dropped")
 
 
+def tidy_search_index() -> None:
+    """Make search.json advertise the same URLs as the canonicals.
+
+    The site search index lists every page as `index.html` / `cv/index.html` /
+    `research/index.html`, because Quarto builds those hrefs from output file
+    names. It is a plain JSON file at the site root, served 200 and not
+    disallowed in robots.txt, so it is also a crawlable list of URLs — and the
+    .html form is the one form no page on this site claims as its own address.
+    It is the likeliest way /cv/ was discovered at all: the page is in neither
+    the navbar nor the sitemap, and search.json names it.
+
+    Rewriting the hrefs to directory form costs the search UI nothing. It
+    splits the href on `#`, appends `?q=`, and hands the result to
+    `offsetURL()`, all of which treat the path as opaque; `cv/` resolves the
+    same way `cv/index.html` did.
+
+    Idempotent: a second pass finds nothing ending in index.html and does not
+    rewrite the file.
+    """
+    index = OUTPUT_DIR / "search.json"
+    if not index.is_file():
+        return
+
+    try:
+        items = json.loads(index.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        report("finish-alias-stubs: search.json is not valid JSON, left alone")
+        return
+    if not isinstance(items, list):
+        return
+
+    rewritten = 0
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        href = item.get("href")
+        if not isinstance(href, str):
+            continue
+        path, sep, fragment = href.partition("#")
+        if not path.endswith("index.html"):
+            continue
+        # `or "./"` for the home page, whose href would otherwise come out
+        # empty. The search UI does `if (item.href) { ... }`, so an empty
+        # string reads as no href at all and the result stops being a link.
+        trimmed = (path[: -len("index.html")] or "./") + sep + fragment
+        # Quarto sets objectID to the same string; keep the pair in step so the
+        # .html form is gone from the file rather than merely gone from the
+        # half of it that is used for navigation.
+        if item.get("objectID") == href:
+            item["objectID"] = trimmed
+        item["href"] = trimmed
+        rewritten += 1
+
+    if rewritten:
+        write_replacing(index, json.dumps(items, ensure_ascii=False, indent=2))
+    report(f"finish-alias-stubs: search.json {rewritten} href(s) rewritten")
+
+
 def main() -> int:
     if not OUTPUT_DIR.is_dir():
         raise SystemExit(f"finish-alias-stubs: no output directory at {OUTPUT_DIR}")
@@ -248,12 +313,26 @@ def main() -> int:
 
         # The canonical names the directory form, matching what Quarto puts in
         # the destination page's own canonical and what tidy_sitemap advertises.
-        # The refresh below keeps the literal `index.html` path, because that one
-        # has to resolve as a relative file reference from the stub.
         canonical_path = destination
         if canonical_path.endswith("index.html"):
             canonical_path = canonical_path[: -len("index.html")]
         canonical = f"{base}/{canonical_path}"
+
+        # The redirect itself has to land on that same directory URL, not on
+        # `index.html`. A crawler follows the hop and indexes whatever it
+        # arrives at, so a stub pointing at the .html twin quietly introduced
+        # the twin as a crawlable URL: Google fetched it, read its canonical,
+        # and filed it under "Alternative page with proper canonical tag" —
+        # the redirect's whole purpose, consolidating the old URL onto the new
+        # one, spent on manufacturing a duplicate instead.
+        #
+        # Relative, not site-absolute, so `quarto preview` on localhost stays
+        # on localhost. `./` and `../research/` resolve to the directory URL
+        # over http(s); the one thing they do not survive is opening docs/
+        # straight off disk over file://, which is not how this site is read.
+        hop = target
+        if hop.endswith("index.html"):
+            hop = hop[: -len("index.html")] or "./"
 
         # Borrow the destination's own description and title. A stub that
         # describes where it points is more useful to a searcher than any
@@ -273,7 +352,7 @@ def main() -> int:
             description = f"This page has moved. Continue to {canonical}."
 
         head = [
-            f'<meta http-equiv="refresh" content="0; url={html.escape(target, quote=True)}">',
+            f'<meta http-equiv="refresh" content="0; url={html.escape(hop, quote=True)}">',
             f'<link rel="canonical" href="{html.escape(canonical, quote=True)}">',
             f'<meta name="description" content="{html.escape(description, quote=True)}">',
         ]
@@ -290,7 +369,7 @@ def main() -> int:
         # so the browser path and the crawler path agree.
         match = REDIRECTS_RE.search(text)
         if match:
-            repaired = json.dumps({"": target})
+            repaired = json.dumps({"": hop})
             text = text[: match.start(1)] + repaired + text[match.end(1) :]
 
         write_replacing(path, text)
@@ -299,6 +378,7 @@ def main() -> int:
 
     report(f"finish-alias-stubs: {patched} stub(s) patched")
     tidy_sitemap(base)
+    tidy_search_index()
     return 0
 
 

@@ -1,0 +1,97 @@
+---
+title: "Curriculum Vitae — M. Fatih Kara"
+pagetitle: "CV | ~mfkara"
+description: "Curriculum vitae of M. Fatih Kara, plant scientist (plant immunity, MPMI, lettuce)."
+bibliography: []        # the CV cites nothing; stops an empty Bibliography heading
+suppress-bibliography: true
+format:
+  html: default
+  typst:
+    papersize: a4
+    margin:
+      x: 2cm
+      y: 1.8cm
+    fontsize: 10pt
+    keep-typ: false
+---
+
+::: {.content-visible when-format="html"}
+::: gc-box
+A plain, printable version of my background &mdash; no blinking text, I promise.
+
+&#128190; **[Download as PDF](cv.pdf)** &nbsp;|&nbsp; or just print this page
+(the 1998 decorations drop out automatically).
+:::
+:::
+
+Plant scientist — plant immunity & molecular plant–microbe interactions\
+Ankara, Türkiye\
+ORCID [0000-0002-0318-228X](https://orcid.org/0000-0002-0318-228X) ·
+GitHub [karamehmetfatih](https://github.com/karamehmetfatih) ·
+LinkedIn [m-f-kara](https://www.linkedin.com/in/m-f-kara) ·
+Bluesky [mfkara.net](https://bsky.app/profile/mfkara.net)
+
+---
+
+## Research interests
+
+Plant immunity and molecular plant–microbe interactions, with a focus on
+quantitative resistance to broad host-range necrotrophic fungi. Transcriptional
+regulators of defence, CRISPR-based genome editing, and omics approaches in
+lettuce (*Lactuca sativa*) and its wild relatives.
+
+## Education
+
+<!-- TODO: add start years to each entry. -->
+
+**PhD, Biology** — University of York, United Kingdom (2026)
+
+Thesis on disease resistance to the necrotrophic fungal pathogens
+*Botrytis cinerea* and *Sclerotinia sclerotiorum* in lettuce.
+Supervisor: Prof. Katherine Denby, Centre for Novel Agricultural Products (CNAP).
+<!-- TODO: confirm exact thesis title and add any second supervisor. -->
+
+**MSc** — Ankara University, Faculty of Agriculture, Türkiye
+<!-- TODO: department, thesis title, years. -->
+
+**BSc** — Ankara University, Faculty of Agriculture, Türkiye
+<!-- TODO: department, years. -->
+
+## Positions
+
+**Researcher** — General Directorate of Agricultural Research and Policies
+(TAGEM), Ministry of Agriculture and Forestry, Türkiye
+<!-- TODO: start date, host institute and unit. -->
+
+Research on lettuce pathology and resistance breeding.
+
+## Funding & awards
+
+**MEB YLSY Scholarship** — Turkish Ministry of National Education
+<!-- TODO: years. -->
+
+Full postgraduate scholarship for doctoral study abroad, awarded on behalf of TAGEM.
+
+<!-- TODO: travel grants, bursaries, poster prizes, society memberships. -->
+
+## Publications
+
+A formatted list is on the [publications page](publications.html); the canonical
+record is [ORCID 0000-0002-0318-228X](https://orcid.org/0000-0002-0318-228X).
+
+## Skills
+
+**Plant pathology** — detached-leaf and whole-plant infection assays with
+*B. cinerea* and *S. sclerotiorum*; fungal culture and inoculum preparation;
+lesion phenotyping.
+
+**Molecular biology** — CRISPR/Cas construct design and genome editing; cloning;
+plant transformation; *Arabidopsis* and lettuce transgenics; qRT-PCR.
+
+**Omics & analysis** — transcriptome analysis, differential expression, and
+data handling in R.
+<!-- TODO: name the specific tools worth advertising, e.g. DESeq2, edgeR, Linux/HPC. -->
+
+**Languages** — Turkish (native), English (fluent).
+
+<!-- TODO: teaching, supervision, outreach, peer review, committee service. -->

@@ -1,0 +1,58 @@
+---
+title: "&#128279; Cool Links &#128279;"
+pagetitle: "Cool Links"
+description-meta: "Where to find M. Fatih Kara online — ORCID, Google Scholar, GitHub, LinkedIn, Bluesky — plus plant science links and the site's colour."
+comments: false
+---
+
+## &#128100; Find me elsewhere on the 'Net
+
+| | Where | |
+|---|---|---|
+| &#127891; | ORCID | [0000-0002-0318-228X](https://orcid.org/0000-0002-0318-228X) |
+| &#127979; | Google Scholar | [citations](https://scholar.google.com/citations?&user=56zv2gQAAAAJ) |
+| &#128202; | Web of Science | [IUP-3471-2023](https://www.webofscience.com/wos/author/record/IUP-3471-2023) |
+| &#128218; | Scopus | [57192592048](https://www.scopus.com/authid/detail.uri?authorId=57192592048) |
+| &#129516; | ResearchGate | [Mehmet-Fatih-Kara](https://www.researchgate.net/profile/Mehmet-Fatih-Kara) |
+| &#128025; | GitHub | [karamehmetfatih](https://github.com/karamehmetfatih) |
+| &#128188; | LinkedIn | [m-f-kara](https://www.linkedin.com/in/m-f-kara) |
+| &#129419; | Bluesky | [\@mfkara.net](https://bsky.app/profile/mfkara.net) |
+| &#128214; | Goodreads | [mfkara](https://www.goodreads.com/mfkara) |
+| &#127925; | Spotify | [my profile](https://open.spotify.com/user/31dtt4p7e4m3qfagatcd7kezqwji) |
+| &#128204; | Pinterest | [karamehmetfatih](https://www.pinterest.com/karamehmetfatih/) |
+| &#128105;&#8205;&#127908; | Gravatar | [mfkara](https://gravatar.com/mfkara) |
+
+: {.gc-table}
+
+## &#127757; Totally Rad Plant Science Sites
+
+- [The Plant Journal](https://onlinelibrary.wiley.com/journal/1365313x)
+- [MPMI journal](https://apsjournals.apsnet.org/journal/mpmi)
+- [University of York &ndash; Biology](https://www.york.ac.uk/biology/)
+- [Centre for Novel Agricultural Products (CNAP)](https://www.york.ac.uk/biology/research/plant-biology/cnap/)
+- [TAGEM](https://arastirma.tarimorman.gov.tr/tagem)
+- [Quarto](https://quarto.org) &ndash; what this page is built with!
+
+::: gc-center
+<p class="blink">&#128165; Link to me! Copy my 88&times;31 button! &#128165;</p>
+<span class="gc-badge gc-badge-g" style="display:inline-block">VISIT<br><b>~MFKARA</b></span>
+<span class="gc-badge gc-badge-p" style="display:inline-block">PANTONE 13-0324<br><b>LETTUCE GREEN</b></span>
+:::
+
+## &#127912; The official colour of this homepage
+
+::: gc-center
+<span class="gc-swatch"><i></i><b>Lettuce Green</b><span>PANTONE 13-0324 TCX</span><span>#BED38E</span><span>rgb(190, 211, 142)</span></span>
+:::
+
+Every green on this site is that one Pantone chip, tinted for the panels and
+shaded for the sidebar, with radish red `#C8395B`, butter yellow `#F0C040` and
+ink blue `#1C4F7C` as the accents. The whole set is declared as custom
+properties at the top of `assets/geocities/geocities.css` &mdash; change
+`--lettuce` there and the site follows.
+
+Two neighborhoods ship with it: **SalinasValley**, the house theme, named for
+the Salad Bowl of the World; and **GrowthChamber**, which is what a controlled
+plant experiment looks like from the inside &mdash; a black box, artificial
+light, no daylight at all. The buttons are in the sidebar, and your choice is
+remembered in this browser.

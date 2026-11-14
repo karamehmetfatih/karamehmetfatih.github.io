@@ -1,0 +1,86 @@
+/* ==========================================================
+   giscus theme - GrowthChamber
+   ----------------------------------------------------------
+   The dark neighborhood: near-black panels, lettuce-green text,
+   the same palette as body.theme-growthchamber in geocities.css.
+   See giscus-salinasvalley.css for how a giscus custom theme
+   works and why the URL has to be absolute.
+   ========================================================== */
+
+main {
+  /* surfaces */
+  --color-canvas-default: #0A1206;
+  --color-canvas-overlay: #10200A;
+  --color-canvas-inset: #060C04;
+  --color-canvas-subtle: #10200A;
+
+  /* text */
+  --color-fg-default: #BED38E;
+  --color-fg-muted: #9DB375;
+  --color-fg-subtle: #7C8F5F;
+  --color-fg-on-emphasis: #0A1206;
+
+  /* rules and boxes */
+  --color-border-default: #5B7A3A;
+  --color-border-muted: #3A5226;
+  --color-neutral-muted: rgba(190, 211, 142, .15);
+  --color-neutral-emphasis: #BED38E;
+
+  /* links and the primary button */
+  --color-accent-fg: #8FE3D0;
+  --color-accent-emphasis: #8FE3D0;
+  --color-accent-muted: rgba(143, 227, 208, .4);
+  --color-accent-subtle: rgba(143, 227, 208, .12);
+
+  --color-success-fg: #8FE3D0;
+  --color-danger-fg: #F0809A;
+  --color-attention-fg: #F0C040;
+  --color-attention-muted: rgba(240, 192, 64, .4);
+  --color-attention-subtle: rgba(240, 192, 64, .12);
+
+  --color-btn-text: #BED38E;
+  --color-btn-bg: #10200A;
+  --color-btn-border: #5B7A3A;
+  --color-btn-hover-bg: #18300F;
+  --color-btn-hover-border: #BED38E;
+  --color-btn-active-bg: #1E3A13;
+  --color-btn-selected-bg: #1E3A13;
+
+  --color-btn-primary-text: #0A1206;
+  --color-btn-primary-bg: #BED38E;
+  --color-btn-primary-border: #BED38E;
+  --color-btn-primary-hover-bg: #CFE0A6;
+  --color-btn-primary-hover-border: #CFE0A6;
+  --color-btn-primary-disabled-text: rgba(10, 18, 6, .5);
+  --color-btn-primary-disabled-bg: rgba(190, 211, 142, .4);
+
+  --color-social-reaction-bg-hover: #18300F;
+  --color-social-reaction-bg-reacted-hover: #1E3A13;
+
+  --color-primer-shadow-inset: none;
+  --color-scale-gray-1: #10200A;
+
+  font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui,
+               -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.gsc-comment-box,
+.gsc-comment > .gsc-comment-box,
+.gsc-comment-content {
+  border-radius: 0;
+}
+
+.gsc-comment-box-tabs,
+.gsc-comment-header,
+.gsc-reactions-count {
+  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  font-size: 13px;
+}
+
+.gsc-timeline {
+  gap: 10px;
+}
+
+.gsc-homepage-bg {
+  background: transparent;
+}

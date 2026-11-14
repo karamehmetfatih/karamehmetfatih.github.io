@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - assets/
+    - references.bib
+
+website:
+  title: "~mfkara's Leafy Homepage"
+  # CHANGE ME once the site has a real home (e.g. https://mfkara.net).
+  # Open Graph / Twitter cards need an absolute URL to work.
+  site-url: "https://mfkara.net"
+  description: >-
+    M. Fatih Kara — plant scientist working on plant immunity and molecular
+    plant–microbe interactions: lettuce defence against the necrotrophic fungi
+    Botrytis cinerea and Sclerotinia sclerotiorum, genome editing and omics.
+  favicon: assets/sprout.svg
+  page-navigation: false
+  open-graph:
+    image: assets/social-card.png
+    image-alt: "~mfkara's Leafy Homepage — plant immunity, necrotrophic fungi, lettuce"
+    locale: en_GB
+  twitter-card:
+    image: assets/social-card.png
+    image-alt: "~mfkara's Leafy Homepage — plant immunity, necrotrophic fungi, lettuce"
+    card-style: summary_large_image
+
+# Citations: add your papers to references.bib and they format themselves.
+bibliography: references.bib
+csl: assets/the-plant-journal.csl
+link-citations: true
+
+format:
+  html:
+    theme: none            # no Bootstrap - pure 1998 vibes
+    css: assets/geocities.css
+    toc: false
+    anchor-sections: false
+    title-prefix: ""       # stops "Page | ~mfkara – ~mfkara's Leafy Homepage"
+    include-before-body: _includes/header.html
+    include-after-body: _includes/footer.html
+    include-in-header:
+      text: |
+        <script src="assets/geocities.js" defer></script>
+        <meta name="author" content="M. Fatih Kara">
+        <meta name="keywords" content="plant immunity, MPMI, Botrytis cinerea, Sclerotinia sclerotiorum, lettuce, Lactuca sativa, genome editing, CRISPR, plant pathology, omics">

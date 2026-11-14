@@ -1,0 +1,36 @@
+---
+title: "&#127793; My Research &#127793;"
+pagetitle: "Research | ~mfkara"
+description: "Research on plant immunity, necrotrophic fungi (Botrytis cinerea, Sclerotinia sclerotiorum), the LsERF1 transcription factor, genome editing and wild Lactuca diversity."
+---
+
+::: gc-box
+My research sits at the crossroads of **plant pathology**, **molecular biology** and **crop genetics**.
+The big question: *how can we make lettuce tougher against fungi that kill first and eat later?*
+:::
+
+## &#129440; Necrotrophic fungi
+
+*Botrytis cinerea* (grey mould) and *Sclerotinia sclerotiorum* (white mould) are broad host-range
+necrotrophs that cause huge losses in lettuce and many other crops. I study the host side of
+these interactions &mdash; which genes and pathways help the plant resist.
+
+## &#129516; Transcription factors in defence <span class="new">NEW!</span>
+
+One of my projects looks at **LsERF1**, a lettuce ERF-family transcription factor, by
+overexpressing it in *Arabidopsis* and testing what it does to disease resistance.
+*(Paper in preparation &mdash; watch this space!)*
+
+## &#9986;&#65039; Genome editing & omics
+
+CRISPR-based editing and omics approaches to find and test resistance genes in
+*Lactuca sativa* and its wild relatives.
+
+## &#127757; Wild *Lactuca* of Türkiye
+
+Türkiye is home to many wild lettuce relatives &mdash; a treasure chest of
+resistance diversity waiting to be explored.
+
+::: gc-center
+<p class="blink">&#128679; More projects coming soon! &#128679;</p>
+:::

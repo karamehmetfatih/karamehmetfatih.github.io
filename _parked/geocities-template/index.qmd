@@ -1,0 +1,41 @@
+---
+title: "✿ Welcome to Fatih's Leafy Homepage ✿"
+pagetitle: "Home | ~mfkara"
+description: "M. Fatih Kara — plant scientist working on plant immunity, molecular plant–microbe interactions, and lettuce resistance to Botrytis and Sclerotinia."
+---
+
+::: gc-center
+<span class="rainbow" style="font-size:22px">Hello, World Wide Web!!</span>
+:::
+
+::: gc-box
+**I'm M. Fatih Kara** &#127793; &mdash; a plant scientist working on **plant immunity** and
+**molecular plant&ndash;microbe interactions (MPMI)**. I study how lettuce defends itself
+against the nasty necrotrophic fungi *Botrytis cinerea* and *Sclerotinia sclerotiorum*,
+using genome editing and omics.
+
+&#127891; PhD @ University of York (UK) &bull; &#127481;&#127479; based in Ankara, Türkiye
+:::
+
+## &#11088; What's NEW?? <span class="new">NEW!</span>
+
+- **2026** &ndash; Finished my PhD on disease resistance in lettuce at York! &#127881;
+- **Coming soon** &ndash; Starting as a researcher at TAGEM (General Directorate of Agricultural Research and Policies)
+- **Nov 2026** &ndash; Repainted the whole homepage in **[PANTONE 13-0324 TCX Lettuce Green](links.html#the-official-colour-of-this-homepage)** &#129388; <span class="new">NEW!</span>
+- **Always** &ndash; Adding more stuff to this page. Come back soon!!
+
+## &#128300; I'm interested in...
+
+| &#127807; Topic | &#128172; Why it's cool |
+|---|---|
+| Plant immunity | Plants have no antibodies, but they still fight back! |
+| Necrotrophic fungi | *Botrytis* & *Sclerotinia* eat dead tissue &mdash; and kill it first |
+| Genome editing | CRISPR in lettuce = precision breeding |
+| Lettuce omics | Genomes, transcriptomes, and wild *Lactuca* relatives |
+| Plants (in general) | ...obviously |
+
+: {.gc-table}
+
+::: gc-center
+<p class="blink">&#9733; Don't forget to sign my <a href="guestbook.html">GUESTBOOK</a>! &#9733;</p>
+:::

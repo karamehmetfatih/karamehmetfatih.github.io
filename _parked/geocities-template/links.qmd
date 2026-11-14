@@ -1,0 +1,45 @@
+---
+title: "&#128279; Cool Links &#128279;"
+pagetitle: "Links | ~mfkara"
+description: "Where to find M. Fatih Kara online — ORCID, GitHub, LinkedIn, Bluesky — plus plant science links."
+---
+
+## &#128100; Find me elsewhere on the 'Net
+
+| | Where | |
+|---|---|---|
+| &#129419; | Bluesky | [\@mfkara.net](https://bsky.app/profile/mfkara.net) |
+| &#127891; | ORCID | [0000-0002-0318-228X](https://orcid.org/0000-0002-0318-228X) |
+| &#128188; | LinkedIn | [m-f-kara](https://www.linkedin.com/in/m-f-kara) |
+| &#128025; | GitHub | [karamehmetfatih](https://github.com/karamehmetfatih) |
+| &#128218; | Goodreads | [mfkara](https://www.goodreads.com/mfkara) |
+| &#128247; | Flickr | [my photos](https://www.flickr.com/people/204854543@N02) |
+| &#128105;&#8205;&#127908; | Gravatar | [mfkara](https://gravatar.com/mfkara) |
+
+: {.gc-table}
+
+## &#127757; Totally Rad Plant Science Sites
+
+- [The Plant Journal](https://onlinelibrary.wiley.com/journal/1365313x)
+- [MPMI journal](https://apsjournals.apsnet.org/journal/mpmi)
+- [University of York &ndash; Biology](https://www.york.ac.uk/biology/)
+- [TAGEM](https://arastirma.tarimorman.gov.tr/tagem)
+- [Quarto](https://quarto.org) &ndash; what this page is built with!
+
+::: gc-center
+<p class="blink">&#128165; Link to me! Copy my 88&times;31 button! &#128165;</p>
+<span class="gc-badge gc-badge-g" style="display:inline-block">VISIT<br><b>~MFKARA</b></span>
+<span class="gc-badge gc-badge-p" style="display:inline-block">PANTONE 13-0324<br><b>LETTUCE GREEN</b></span>
+:::
+
+## &#127912; The official colour of this homepage
+
+::: gc-center
+<span class="gc-swatch"><i></i><b>Lettuce Green</b><span>PANTONE 13-0324 TCX</span><span>#BED38E</span><span>rgb(190, 211, 142)</span></span>
+:::
+
+Every green on this site is that one Pantone chip, tinted for the panels and
+shaded for the sidebar, with radish red <code>#C8395B</code>, butter yellow
+<code>#F0C040</code> and ink blue <code>#1C4F7C</code> as the accents. If you
+want the whole set, they are the custom properties at the top of
+[`assets/geocities.css`](assets/geocities.css).

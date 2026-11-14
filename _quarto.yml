@@ -26,6 +26,23 @@ project:
     # absent here stops being served at the next one, whatever is left lying
     # around at the project root. Exactly one entry belongs below.
     - 944edb0f8e4b459e8b54cf5c3eb92a45.txt
+    # The Person `image` in the homepage JSON-LD (_includes/seo-home.html).
+    # Quarto copies an image to docs/ only when a page references it in a form
+    # it can see — markdown, an <img>, front matter. A full URL inside a JSON
+    # string in an include is none of those, so nothing brought this file
+    # along: it stopped being published when the on-page portrait was dropped,
+    # and the structured data has pointed at a 404 since. Listing it here
+    # publishes it at the same path, assets/img/profile.jpg.
+    #
+    # Remove this line only together with the `image` in seo-home.html.
+    - assets/img/profile.jpg
+    # The GeoCities skin. Quarto copies a stylesheet named in `css:` by itself,
+    # but not what the rest of the theme reaches for: geocities.js is pulled in
+    # by a <script src> inside a header include, sprout.svg by an <img> inside
+    # _includes/gc-header.html, sprout-cursor.svg from a url() inside the CSS,
+    # and social-card.png only from <meta> tags. None of those are forms Quarto
+    # scans for dependencies, so the directory is published wholesale.
+    - assets/geocities/
   # Repairs the redirect stubs Quarto writes for `aliases:` — /about.html and
   # /papers/. It emits them with a JS-only <head>: no description (which is what
   # an SEO audit flags them for), no canonical, the literal title "Redirect",
@@ -37,301 +54,97 @@ project:
   # shipping the unpatched stubs.
   post-render:
     - python scripts/finish-alias-stubs.py
+  # `*.qmd` only, so TODO.md and other notes at the root never become pages.
+  #
+  # Unfinished work lives in `_parked/` — the blog, the showcase, and image
+  # files nothing on the site references. The underscore is what parks it:
+  # Quarto skips underscore-prefixed directories when discovering pages, the
+  # same convention that keeps `_includes/` and `_sass/` from rendering, so no
+  # exclusion rule is needed here. Anything outside an underscore directory is
+  # live, and its path is its URL.
   render:
     - "*.qmd"
-    # Showcase is parked, not deleted. Excluding it from the render keeps its
-    # pages out of docs/ and out of search.json, while showcase/ stays on disk
-    # ready to switch back on: drop this line and uncomment the navbar entry.
-    - "!showcase/**"
 
 website:
   title: "M. Fatih Kara"
   site-url: "https://www.mfkara.net"
   repo-url: "https://github.com/karamehmetfatih/karamehmetfatih.github.io"
-  favicon: assets/img/favicon.png
+  # The pixel-art sprout, in PANTONE 13-0324 TCX Lettuce Green like everything
+  # else here. An SVG favicon scales to every tab size; assets/img/favicon.png
+  # stays in the repo as the al-folio-era fallback.
+  favicon: assets/geocities/sprout.svg
   # Fallback description for any page that does not set its own, and the text
   # used in the WebSite node of the JSON-LD (_includes/seo-home.html) — keep the
   # two in step. "and notes" was dropped: there are no notes, and the blog it
   # implied is parked.
   description: "Personal site of Mehmet Fatih Kara — plant scientist researching disease resistance in lettuce, and publications."
-  # Fallback preview image for Open Graph / Twitter cards on pages
-  # that do not set their own `image:`. Must be site-absolute, or it is
-  # resolved relative to each page (breaking the URL for posts).
-  #
-  # A purpose-built 1200x630 card rather than profile.jpg, which is 400x400.
-  # `twitter-card` below requests summary_large_image, and that asks for roughly
-  # 1.91:1 — a square was being centre-cropped into a letterbox, or the card
-  # silently downgraded to the small variant. The portrait is still in here, set
-  # into the card next to the name and subject.
-  #
-  # Any page can override this with `image:` in its own front matter; the
-  # LsRTDv1 page is the obvious candidate if it ever earns its own artwork.
-  image: /assets/img/og-image.png
-  navbar:
-    # The GitHub mark links straight to the repository. It was a dropdown of
-    # two items; with one destination left, a menu is only a click in the way.
-    # `aria-label` matters here: the control is icon-only, so without it the
-    # link has no accessible name at all.
-    tools:
-      - icon: github
-        href: https://github.com/karamehmetfatih/karamehmetfatih.github.io
-        aria-label: Source code on GitHub
-    background: light
-    search: true
-    # The navbar is fixed-top either way, but Quarto wires it to Headroom.js,
-    # which slides it out of view on scroll-down and back in on scroll-up.
-    # `pinned` disables that, so the header simply stays put.
-    pinned: true
-    # Lowercase labels are a style choice for the nav links only. The brand
-    # ("M. Fatih Kara", from `website: title:` above) keeps its capitals — it
-    # is a name, and the same string is reused in every page's <title>.
-    #
-    # The hrefs are literal site-absolute directory paths, NOT `index.qmd` /
-    # `research/index.qmd`. Quarto rewrites a .qmd href to the rendered file
-    # name, so those emitted `./index.html` and `./research/index.html` on every
-    # page — the .html twins of the very URLs the canonical tags and sitemap.xml
-    # advertise as `/` and `/research/`. Google crawled both forms of each page
-    # and discarded half of them as "Alternative page with proper canonical
-    # tag": pure crawl waste, generated by the site's own primary navigation.
-    #
-    # A literal path is passed through untouched, so the only URL ever linked is
-    # the canonical one. The cost is that Quarto no longer validates these
-    # hrefs against real inputs — a renamed page breaks the navbar silently, so
-    # the paths below have to be updated by hand alongside any directory move.
-    # Same reasoning applies to the in-content cross-links in index.qmd and
-    # cv/index.qmd, which are written as /research/ and /lsrtdv1/ for this
-    # reason and not as relative .qmd links.
-    left:
-      - href: /
-        text: about
-      # Parked. This entry emitted `href="./_posts/index.qmd"` on every page of
-      # the site — a 404 in the primary navigation, which is both a dead end for
-      # visitors and a crawl error repeated site-wide.
-      #
-      # The cause is the underscore: Quarto skips underscore-prefixed
-      # directories when discovering *pages*, so `_posts/` is copied to docs/ as
-      # a raw resource and never rendered. (The same convention is what lets
-      # `_sass/` and `_includes/` hold theme and partial files without becoming
-      # pages.) The navbar then links to a .qmd that has no .html.
-      #
-      # To switch the blog back on, both halves are needed:
-      #   1. rename `_posts/` to `posts/` so Quarto renders it (the href below
-      #      is already the directory URL that rename would serve);
-      #   2. replace `_posts/deneme/` — it is still the Quarto template's demo
-      #      post ("Deneme 2", dated 2021) and is the only entry in the
-      #      listing. Publishing it would put a placeholder page in the index
-      #      under this site's name, which is worse than having no blog.
-      # - href: /posts/
-      #   text: blog
-      - href: /research/
-        text: publications
-      # - href: /cv/
-      #   text: cv
-      # Parked — see the render exclusion at the top of this file.
-      # - href: /showcase/
-      #   text: showcase
-  search:
-    location: navbar
-    type: overlay
-    limit: 10
-    keyboard-shortcut: ["?", "H"]
-  page-footer:
-    background: dark
-    # Folded (>-) so the colophon is one markdown paragraph regardless of how
-    # it is wrapped here; the two visible rows come from the explicit <br>, not
-    # from the line breaks below. A <br> rather than two paragraphs keeps the
-    # rows on one line-height instead of a full paragraph gap.
-    #
-    # The GitHub logo is the "GitHub Pages" wordmark, so the word Pages is part
-    # of the artwork and is not repeated as text after it. It is wider per unit
-    # of height than the Quarto mark (169x34 vs 320x77), hence the larger width
-    # for the same optical size. Both logos are site-absolute (/assets/img/...) for
-    # the same reason as the OG image above: the footer is emitted on every
-    # page, including nested posts.
-    #
-    # The R and Bootstrap marks are font glyphs, not images, so they take no
-    # width: `size` is the equivalent knob. `lg` resolves to fa-lg (1.25em),
-    # which at the footer's 0.8rem is 16px tall — matching the Quarto logo's
-    # 15.6px at width=65px, so all four marks line up. Valid sizes are
-    # xs/sm/lg/xl/2xl; `fa-l` exists but is the letter-L icon, not a size.
-    # `label` overrides the shortcode's default aria-label (the raw icon name),
-    # which now has to serve as the link's accessible name.
-    center: >-
-      © Copyright 2026 M. Fatih Kara<br>
-      Made with [{{< fa brands r-project size=lg title="R" label="R" >}}](https://www.r-project.org/) and
-      [![](https://quarto.org/quarto.png){.footer-logo fig-alt="Quarto" width=65px}](https://quarto.org/).
-      [Powered by [{{< fa brands bootstrap size=lg title="Bootstrap" label="Bootstrap" >}}](https://getbootstrap.com/) with an
-      [al-folio](https://github.com/alshedivat/al-folio)-inspired theme.]{.footer-secondary}
-      Hosted by
-      [![](/assets/img/logo.svg){.footer-logo fig-alt="GitHub Pages" width=65px}](https://pages.github.com/).
+  # Fallback preview image: the 1200x630 GeoCities card, in the house colour.
+  # Site-absolute, or it is resolved relative to each page and breaks in
+  # subdirectories. Any page can override it with `image:` in its front matter.
+  image: /assets/geocities/social-card.png
+  # No navbar, no search box, no page-footer: navigation lives in the sidebar
+  # of _includes/gc-header.html, and the colophon in _includes/gc-footer.html.
+  # Quarto's own chrome would be rendered unstyled here (there is no Bootstrap
+  # to style it — see `theme: none` below), so it is switched off rather than
+  # hidden with CSS.
+  page-navigation: false
+  open-graph:
+    image: /assets/geocities/social-card.png
+    image-alt: "~mfkara's Leafy Homepage — plant immunity, necrotrophic fungi, lettuce"
+    locale: en_GB
+  twitter-card:
+    image: /assets/geocities/social-card.png
+    image-alt: "~mfkara's Leafy Homepage — plant immunity, necrotrophic fungi, lettuce"
+    card-style: summary_large_image
 
 format:
   html:
-    # _sass/ mirrors al-folio. Quarto skips underscore-prefixed directories when
-    # discovering *pages*, but theme files are resolved as paths rather than
-    # inputs, so they load fine from here.
-    # Both modes share ONE Bootswatch base. They used to differ — litera for
-    # light, darkly for dark — and a Bootswatch theme is not a palette, it is a
-    # whole design: its own type scale, control padding and chrome metrics. So
-    # the toggle silently changed the layout, not just the colours. Measured off
-    # the two compiled bundles, 19 geometry variables disagreed, among them
+    # No Bootstrap, no SCSS layer: the whole look is one hand-written
+    # stylesheet. `theme: none` is what makes that possible — with a theme set,
+    # Bootstrap's reboot would fight every rule in geocities.css, and Quarto
+    # would emit a navbar and footer the stylesheet then has to hide.
     #
-    #   --bs-body-font-size       1.1rem  ->  1rem    (all body text shrank)
-    #   --bs-navbar-padding-y     0.5rem  ->  1rem    (header grew 16px taller)
-    #   --bs-nav-link-padding-x   1.1rem  ->  2rem
-    #   --bs-btn-font-size        0.875rem -> 1rem
-    #
-    # plus badge, breadcrumb, dropdown, pagination, popover, progress and
-    # tooltip metrics. Pinning each one in al-folio.scss would be endless — the
-    # next Bootswatch or Quarto bump reopens it. Sharing the base makes the two
-    # modes identical in geometry by construction, leaving exactly one axis of
-    # difference: colour, which is al-folio-dark.scss's whole job.
-    #
-    # Dropping darkly costs nothing here. The chrome is painted from the --af-*
-    # tokens (the navbar background is `var(--af-navbar-bg) !important`), and
-    # al-folio-dark.scss already restates every Bootstrap colour it needs, so
-    # darkly's palette was reaching almost nothing. For generic components,
-    # Quarto sets `data-bs-theme="dark"` on <html>, which is Bootstrap 5.3's own
-    # dark colour mode — that, not the Bootswatch theme, is what darkens tables,
-    # inputs and dropdowns.
-    theme:
-      light: [litera, _sass/al-folio.scss]
-      dark: [litera, _sass/al-folio.scss, _sass/al-folio-dark.scss]
-    # One face for the whole site, code included.
-    mainfont: "Atkinson Hyperlegible Next"
-    monofont: "Atkinson Hyperlegible Next"
-    css: assets/css/styles.css
-    # Site-wide default: no rendered title block. These pages carry the site
-    # name in the navbar brand instead, so a heading above the content would
-    # only repeat it. index.qmd opts back in, and hides the brand in turn —
-    # see the note in its front matter.
-    title-block-style: none
-    toc: true
-    open-graph: true
-    twitter-card: true
+    # The al-folio theme this site used before is kept in _parked/al-folio/
+    # (_sass/*.scss plus assets/css/styles.css) rather than deleted: restoring
+    # it is a matter of moving those back and undoing this block.
+    theme: none
+    css: assets/geocities/geocities.css
+    # The GeoCities layout is a two-column table whose left cell IS the
+    # navigation, so a Quarto sidebar TOC would be a third column with nowhere
+    # to go. Pages that want one can still set `toc: true` for themselves.
+    toc: false
+    anchor-sections: false
+    # Quarto appends " – M. Fatih Kara" (the site title) to each page's title
+    # tag. The pages set their own `pagetitle`, which already names the person
+    # or the subject, so the suffix would say it twice.
+    title-prefix: ""
+    include-before-body: _includes/gc-header.html
+    include-after-body: _includes/gc-footer.html
+    # Project-level header includes. Page-level `include-in-header:` entries
+    # (the seo-*.html files) are appended to these rather than replacing them,
+    # so both arrive in the <head>.
     include-in-header:
       - text: |
-          <!-- Site-wide metadata. `author` is set here rather than as document
-               front matter because Quarto would also print an author byline
-               into the title block; only the <meta> tag is wanted.
-
-               The robots value carries no index/follow — those are already the
-               default, and stating them adds nothing. `max-image-preview:large`
-               does change behaviour: it opts link previews in search results
-               up from a thumbnail to a full-width image. Pages that need to
-               stay out of the index add their own `noindex` via
-               _includes/noindex.html; where two robots tags disagree the more
-               restrictive one wins, so the two compose correctly. -->
+          <!-- `author` is set here rather than as document front matter because
+               Quarto would also print an author byline into the title block;
+               only the <meta> tag is wanted. `max-image-preview:large` opts
+               link previews in search results up from a thumbnail to a
+               full-width image; pages that must stay out of the index add
+               their own `noindex` via _includes/noindex.html, and where two
+               robots tags disagree the more restrictive one wins. -->
           <meta name="author" content="Mehmet Fatih Kara">
           <meta name="robots" content="max-image-preview:large">
+          <meta name="keywords" content="plant immunity, MPMI, Botrytis cinerea, Sclerotinia sclerotiorum, lettuce, Lactuca sativa, LsRTDv1, transcriptomics, alternative splicing, genome editing, CRISPR, plant pathology">
+          <!-- Atkinson Hyperlegible Next, the body face (see `--font` in
+               geocities.css). The full variable range rather than a handful of
+               static weights: the stylesheet asks for bold headings and bold
+               chrome, and any weight not fetched would be synthesised by the
+               browser. `display=swap` so text paints in the fallback face
+               immediately and never hides behind the font request. -->
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <!-- Full variable range (200-800, upright + italic) rather than a
-               handful of static weights: the SCSS asks for 500 headings and
-               600 chrome, and any weight not fetched would be synthesised by
-               the browser or fall back to a different face. -->
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap">
-    # Back-to-top control, pinned bottom-right. This is a hand-rolled control
-    # rather than Quarto's `back-to-top-navigation`, which was switched off in
-    # the website block above: that one appends a text link at the end of the
-    # content column, not a floating button. Styling lives in al-folio.scss.
-    #
-    # role/tabindex/aria-label are added to the markup because a bare <div> is
-    # neither focusable nor announced; the keydown handler completes it, so the
-    # control works by keyboard as well as by mouse.
-    include-after-body:
-      - text: |
-          <div id="back-to-top" class="" role="button" tabindex="0" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></div>
-          <script>
-          (function () {
-            var btn = document.getElementById('back-to-top');
-            if (!btn) return;
-            var SHOW_AFTER = 300; // px scrolled before it fades in
-
-            function toggle() {
-              btn.classList.toggle('show', window.scrollY > SHOW_AFTER);
-            }
-
-            function toTop() {
-              var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-              window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
-            }
-
-            // Passive: this fires on every scroll frame and never calls preventDefault.
-            window.addEventListener('scroll', toggle, { passive: true });
-            toggle(); // a reload can restore a scrolled position
-
-            btn.addEventListener('click', toTop);
-            btn.addEventListener('keydown', function (event) {
-              // Buttons activate on both keys; a <div> has to be told.
-              if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
-                event.preventDefault();
-                toTop();
-              }
-            });
-          })();
-
-          // The footer is pinned (position: fixed in al-folio.scss), so it no
-          // longer takes up space in flow. Publish its height as a custom
-          // property; the SCSS uses it to pad the body and to lift the
-          // back-to-top button clear. Measured rather than hard-coded because
-          // the colophon rewraps to more lines as the window narrows.
-          (function () {
-            var footer = document.querySelector('footer.footer');
-            if (!footer) return;
-
-            function sync() {
-              document.documentElement.style.setProperty(
-                '--af-footer-height', footer.offsetHeight + 'px');
-            }
-
-            sync();
-            if (window.ResizeObserver) {
-              new ResizeObserver(sync).observe(footer);
-            } else {
-              window.addEventListener('resize', sync);
-            }
-          })();
-
-          // Ctrl+K (Cmd+K on macOS) opens search.
-          //
-          // Not done through Quarto's own `search: keyboard-shortcut:`, which
-          // takes single characters only and matches them with no modifier
-          // check — registering "k" there would fire on every bare k typed on
-          // the page. Quarto's own f / / / s defaults still work.
-          //
-          // keydown rather than keyup, because Ctrl+K is the browser's own
-          // shortcut (address bar in Chrome, quick search in Firefox) and only
-          // keydown can preventDefault it.
-          (function () {
-            var isMac = /Mac|iPod|iPhone|iPad/.test(
-              navigator.platform || navigator.userAgent);
-
-            // Quoted, because this lands in a CSS `content` value.
-            document.documentElement.style.setProperty(
-              '--af-search-kbd', isMac ? '"⌘ K"' : '"Ctrl K"');
-
-            var search = document.getElementById('quarto-search');
-            if (search) {
-              search.setAttribute('aria-keyshortcuts', isMac ? 'Meta+K' : 'Control+K');
-            }
-
-            document.addEventListener('keydown', function (event) {
-              if (event.key !== 'k' && event.key !== 'K') return;
-              if (event.altKey) return;
-              if (!(isMac ? event.metaKey : event.ctrlKey)) return;
-
-              event.preventDefault();
-              if (typeof window.quartoOpenSearch === 'function') {
-                window.quartoOpenSearch();
-              } else {
-                // Search JS not ready yet: focus the field directly.
-                var input = document.querySelector('#quarto-search .aa-Input');
-                if (input) input.focus();
-              }
-            });
-          })();
-          </script>
-
-
-
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&amp;display=swap">
+          <!-- Theme switcher, hit counter and sparkle trail. Deferred, so none
+               of it blocks the first paint; everything it does is decoration
+               that the page reads correctly without. -->
+          <script src="/assets/geocities/geocities.js" defer></script>

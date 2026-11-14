@@ -1,0 +1,26 @@
+---
+title: "&#128214; Guestbook &#128214;"
+pagetitle: "Guestbook | ~mfkara"
+description: "Say hello to M. Fatih Kara — a guestbook in the spirit of 1998."
+---
+
+::: gc-box
+**Thanks for stopping by!!** &#128075;
+
+Real guestbooks went extinct with dial-up, so the next best thing:
+say hi to me on **[Bluesky](https://bsky.app/profile/mfkara.net)** or
+**[LinkedIn](https://www.linkedin.com/in/m-f-kara)**!
+:::
+
+## &#128221; Recent entries
+
+<!-- Paste real messages here as people send them, e.g.
+> **Name** &mdash; *14 Nov 2026*
+> Cool page! Love the sprout!!
+-->
+
+> *Be the first to sign!* &#127793;
+
+::: gc-center
+<p class="blink">&#9993;&#65039; I read every message! &#9993;&#65039;</p>
+:::

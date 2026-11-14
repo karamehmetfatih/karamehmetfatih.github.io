@@ -1,0 +1,65 @@
+---
+title: "&#128214; Guestbook &#128214;"
+pagetitle: "Guestbook"
+description-meta: "Sign the guestbook — say hello to M. Fatih Kara, in the spirit of 1998."
+# The one page on the site with comments. Everything else sets `comments:
+# false` explicitly, and there is no site-wide default in _quarto.yml, so this
+# block turns the guestbook on without touching any other page.
+#
+# The backend is GitHub Discussions through giscus: entries are posted by
+# visitors to the "Comments" category of the site's own repository, which means
+# no database, no server and no third party holding anyone's message. It also
+# means a visitor needs a GitHub account — the other ways to reach me are in
+# the box below for everyone else.
+#
+# `mapping: pathname` ties the thread to /guestbook/ rather than to the page
+# title: the title carries decorative entities and may be reworded, and a
+# changed title under `mapping: title` would silently start an empty second
+# thread and orphan every entry in the first.
+#
+# The themes are this site's own, served from assets/geocities/. They have to
+# be absolute URLs because the giscus iframe resolves them against its own
+# origin; during `quarto preview` they point at a localhost giscus.app cannot
+# reach, so the widget falls back to its default light theme until deployed.
+comments:
+  giscus:
+    repo: karamehmetfatih/karamehmetfatih.github.io
+    repo-id: "R_kgDOQ3PkWg"
+    category: Comments
+    category-id: "DIC_kwDOQ3PkWs4DD3GV"
+    mapping: pathname
+    reactions-enabled: true
+    input-position: bottom
+    language: "en"
+    loading: lazy
+    theme: "https://www.mfkara.net/assets/geocities/giscus-salinasvalley.css"
+---
+
+::: gc-box
+**Thanks for stopping by!!** &#128075;
+
+The book is open &#8212; scroll down, write something, and it appears on this
+page straight away. Entries are kept as
+[discussions in this site's own repository](https://github.com/karamehmetfatih/karamehmetfatih.github.io/discussions),
+so signing needs a GitHub account; you can react to other people's entries with
+one click.
+
+**No GitHub?** Say hi on
+**[Bluesky](https://bsky.app/profile/mfkara.net)** or
+**[LinkedIn](https://www.linkedin.com/in/m-f-kara)**, or use the
+**[contact form on the home page](/#contact)** &mdash; that one reaches my
+inbox directly.
+:::
+
+## &#9997;&#65039; Sign the book
+
+<p class="blink gc-center">&#9733; Scroll down to the box and leave your mark! &#9733;</p>
+
+Anything is welcome: hello from a fellow plant pathologist, a question about
+[LsRTDv1](/lsrtdv1/), a complaint about the blinking text. I read every entry.
+
+::: gc-center
+<p class="gc-small">&#128679; House rules: be kind, stay on the right side of the
+[GitHub community guidelines](https://docs.github.com/site-policy/github-terms/github-community-guidelines),
+and remember this is a 1998 guestbook, not a comment section. &#128679;</p>
+:::

@@ -1,0 +1,35 @@
+---
+title: "&#128220; Publications &#128220;"
+pagetitle: "Publications | ~mfkara"
+description: "Papers, preprints, thesis and conference contributions by M. Fatih Kara."
+nocite: |
+  @*
+---
+
+::: gc-box
+Everything below is generated from `references.bib` in The Plant Journal style.
+To add a paper, paste one BibTeX entry into that file &mdash; the formatting
+takes care of itself.
+
+&#128073; The canonical, always-current list lives on my
+**[ORCID record](https://orcid.org/0000-0002-0318-228X)**.
+:::
+
+## &#128218; Papers, preprints & thesis
+
+::: {#refs}
+:::
+
+## &#127908; Talks & posters
+
+<!-- TODO: add conference contributions. Either list them by hand here,
+     or add @inproceedings entries to references.bib (template included
+     at the bottom of that file) and they will appear above instead. -->
+
+- *Coming soon* <span class="new">SOON!</span>
+
+## &#128229; Get the files
+
+- [BibTeX for everything on this page](references.bib)
+- [ORCID record](https://orcid.org/0000-0002-0318-228X)
+- [Full CV (PDF)](cv.pdf)

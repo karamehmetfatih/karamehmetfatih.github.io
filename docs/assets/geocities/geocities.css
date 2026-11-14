@@ -1,0 +1,522 @@
+/* ==========================================================
+   GeoCities-style theme for Quarto
+   ----------------------------------------------------------
+   HOUSE COLOUR
+     PANTONE 13-0324 TCX "Lettuce Green"
+     HEX #BED38E  .  RGB 190, 211, 142
+   Everything else is derived from it: tints for panels, shades
+   for the sidebar and page background, and three accents chosen
+   to sit against a yellow-green without turning muddy.
+
+     --lettuce        #BED38E   the Pantone itself
+     --lettuce-pale   #EDF5DC   panel (a wash of the same hue)
+     --lettuce-cream  #FAFCF2   boxes inside panels
+     --leaf-mid       #8FAE62   borders, ridges
+     --leaf-deep      #5B7A3A   headings
+     --stem-dark      #38512A   sidebar
+     --soil-shadow    #22331A   page background, body text
+     --radish         #C8395B   the "hot" 1998 accent (hover, NEW!)
+     --butter         #F0C040   construction tape, marquee text
+     --ink            #1C4F7C   links
+     --plum           #6B4E9B   visited links
+
+   TWO "NEIGHBORHOODS" (buttons in the sidebar)
+     body.theme-salinasvalley (default) | theme-growthchamber
+   ========================================================== */
+
+:root {
+  /* the house palette, available in every theme */
+  --lettuce: #BED38E;
+  --lettuce-pale: #EDF5DC;
+  --lettuce-cream: #FAFCF2;
+  --leaf-mid: #8FAE62;
+  --leaf-deep: #5B7A3A;
+  --stem-dark: #38512A;
+  --soil-shadow: #22331A;
+  --radish: #C8395B;
+  --butter: #F0C040;
+  --ink: #1C4F7C;
+  --plum: #6B4E9B;
+
+  /* theme slots (overridden per neighborhood below) */
+  --bg: var(--soil-shadow);
+  --bg-img: none;
+  --panel: var(--lettuce-pale);
+  --panel-inner: rgba(255, 255, 255, .55);
+  --panel-border: var(--leaf-mid);
+  --text: var(--soil-shadow);
+  --link: var(--ink);
+  --visited: var(--plum);
+  --hot: var(--radish);
+  --accent: var(--butter);
+  --title: var(--leaf-deep);
+  --side: var(--stem-dark);
+  --side-text: var(--lettuce);
+  --side-strong: var(--lettuce-cream);
+  /* Atkinson Hyperlegible Next, the face this site used before the GeoCities
+     rebuild: designed by the Braille Institute for legibility, with letterforms
+     that stay distinct from one another (I/l/1, O/0) at small sizes. Loaded
+     from Google Fonts in _quarto.yml; the fallbacks are the system UI stack, so
+     a blocked or slow font request degrades to something readable rather than
+     to a default serif. */
+  --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui,
+          -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* The chrome runs in Verdana, which is both the period-correct choice and
+     the practical one: Microsoft commissioned it in 1996 for screens, it
+     shipped with Internet Explorer, and most of the 1998 web that was not
+     Comic Sans or Times was set in it. It is a system font, so the sidebar
+     paints in its final face with no network request and no reflow while
+     Atkinson loads, and its large x-height survives the 10-13px sizes the
+     nav, the marquee and the 88x31 badges are drawn at. */
+  --font-ui: Verdana, Geneva, "DejaVu Sans", sans-serif;
+}
+
+/* ---------- SalinasValley (the house theme) ----------
+   The Salad Bowl of the World, where most of the lettuce comes from, and a
+   GeoCities district name in the shape of the one it parodies. ------------- */
+body.theme-salinasvalley {
+  --bg: #22331A;
+  --bg-img:
+    radial-gradient(circle at 20% 30%, #BED38E 0 6px, transparent 7px),
+    radial-gradient(circle at 70% 80%, #8FAE62 0 4px, transparent 5px),
+    radial-gradient(circle at 50% 50%, #5B7A3A 0 10px, transparent 11px),
+    radial-gradient(circle at 85% 25%, #EDF5DC 0 2px, transparent 3px);
+  --panel: #EDF5DC;
+  --panel-inner: rgba(255, 255, 255, .6);
+  --panel-border: #8FAE62;
+  --text: #22331A;
+  --link: #1C4F7C;
+  --visited: #6B4E9B;
+  --hot: #C8395B;
+  --accent: #F0C040;
+  --title: #5B7A3A;
+  --side: #38512A;
+  --side-text: #BED38E;
+  --side-strong: #FAFCF2;
+}
+
+
+
+/* ---------- GrowthChamber (night in the cabinet) ----------
+   A black box with artificial light, which is where a controlled plant
+   experiment actually happens: the starfield reads as the lamp array. ------ */
+body.theme-growthchamber {
+  --bg: #000;
+  --bg-img:
+    radial-gradient(1px 1px at 10% 20%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 60% 70%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 80% 10%, #BED38E 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 90%, #9cf 50%, transparent 51%);
+  --panel: #0A1206;
+  --panel-inner: rgba(190, 211, 142, .07);
+  --panel-border: #BED38E;
+  --text: #BED38E;
+  --link: #8FE3D0;
+  --visited: #D7A8F0;
+  --hot: #F0C040;
+  --accent: #BED38E;
+  --title: #DCEBBE;
+  --side: #0E0820;
+  --side-text: #BED38E;
+  --side-strong: #FAFCF2;
+}
+
+
+
+/* ---------- layout ---------- */
+html, body { margin: 0; padding: 0; }
+body {
+  background-color: var(--bg);
+  background-image: var(--bg-img);
+  background-size: 120px 120px, 90px 90px, 160px 160px, 70px 70px;
+  background-position: 0 0, 45px 45px, 20px 60px, 10px 30px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  cursor: url("sprout-cursor.svg") 4 4, auto;
+}
+
+#gc-wrap { max-width: 980px; margin: 18px auto; padding: 0 8px; }
+/* `table-layout: fixed` is load-bearing, not cosmetic: with the default auto
+   layout a cell is at least as wide as its widest unbreakable content, and the
+   marquee is one long `white-space: nowrap` line. Its 2800px of text dragged
+   the whole table — and the page — into a horizontal scroll at any window
+   wider than the stacked breakpoint. Fixed layout takes the column widths from
+   the first row instead (the 190px sidebar, the rest to #gc-main), so the
+   marquee simply clips against its own `overflow: hidden`. */
+#gc-layout {
+  width: 100%; table-layout: fixed;
+  border: 4px ridge var(--panel-border); background: var(--panel);
+}
+#gc-sidebar {
+  width: 190px; background: var(--side); color: var(--side-text);
+  padding: 10px; text-align: center; border-right: 4px ridge var(--panel-border);
+  /* Set once here rather than per element: everything in this column is
+     chrome. The badges below opt in again because `font:` is a shorthand. */
+  font-family: var(--font-ui);
+}
+#gc-main { padding: 14px 22px; overflow-wrap: break-word; }
+
+/* hide Quarto chrome we don't want */
+#quarto-header, .quarto-title-meta, #quarto-margin-sidebar, .nav-footer,
+#quarto-sidebar, .quarto-title-banner { display: none !important; }
+main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0; max-width: none; }
+.quarto-title h1.title { margin-top: .3em; }
+
+/* ---------- sidebar bits ---------- */
+.gc-logo img { image-rendering: pixelated; animation: gc-bounce 1s steps(2) infinite; }
+.gc-sitename {
+  font-size: 22px; font-weight: bold; color: var(--side-strong);
+  text-shadow: 2px 2px 0 #000;
+}
+.gc-small { font-size: 11px; opacity: .85; }
+.gc-navbox {
+  margin: 12px 0; padding: 6px; border: 3px outset var(--panel-border);
+  background: rgba(0, 0, 0, .25);
+}
+.gc-navtitle { font-weight: bold; margin-bottom: 4px; color: var(--accent); }
+.gc-navbox a, .gc-navbox button {
+  display: block; width: 100%; margin: 3px 0; padding: 3px 0;
+  color: var(--side-text); font-family: inherit; font-size: 13px;
+  background: transparent; border: 2px outset var(--leaf-mid); cursor: pointer;
+  text-decoration: none;
+}
+.gc-navbox a:hover, .gc-navbox button:hover { background: var(--hot); color: #fff; }
+.gc-navbox button.active {
+  border-style: inset; background: rgba(190, 211, 142, .25); color: var(--side-strong);
+}
+.gc-badges { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.gc-badge {
+  width: 88px; height: 31px; box-sizing: border-box; padding: 2px;
+  font: 8px/1.2 var(--font-ui); background: #000; color: var(--lettuce);
+  border: 2px outset #ccc;
+}
+.gc-badge b { font-size: 10px; }
+.gc-badge-q { background: #447099; color: #fff; }
+.gc-badge-g { background: #BED38E; color: #22331A; border-color: #FAFCF2; }
+.gc-badge-p { background: #38512A; color: #BED38E; }
+/* "LETTUCE GREEN" is one character too long for 88x31 at the default size */
+.gc-badge-p b { font-size: 9px; letter-spacing: -.4px; }
+
+/* ---------- main content ---------- */
+h1, h2, h3, .title {
+  color: var(--title); font-family: var(--font);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
+}
+h1.title, h1 { text-align: center; font-size: 34px; }
+h2 { border-bottom: 3px double var(--panel-border); padding-bottom: 2px; }
+a { color: var(--link); font-weight: bold; }
+a:visited { color: var(--visited); }
+a:hover { color: var(--hot); text-decoration: underline wavy; }
+
+/* CSS marquee: unlike <marquee>, this one obeys prefers-reduced-motion */
+.gc-marquee {
+  background: var(--soil-shadow); color: var(--lettuce); font-weight: bold;
+  font-family: var(--font-ui); font-size: 14px;
+  padding: 4px 0; border: 2px inset var(--leaf-mid); margin-bottom: 8px;
+  overflow: hidden; white-space: nowrap;
+}
+.gc-marquee-text {
+  display: inline-block; padding-left: 100%;
+  animation: gc-scroll 18s linear infinite;
+}
+.gc-marquee:hover .gc-marquee-text { animation-play-state: paused; }
+.gc-construction {
+  text-align: center; margin: 6px 0 14px; padding: 6px;
+  background: repeating-linear-gradient(45deg,
+    var(--butter) 0 18px, var(--soil-shadow) 18px 36px);
+  border: 2px solid var(--soil-shadow);
+}
+.gc-construction span {
+  background: var(--butter); color: var(--soil-shadow); padding: 2px 10px;
+  font-weight: bold; font-family: Impact, "Arial Black", sans-serif; letter-spacing: 2px;
+}
+
+.blink { animation: gc-blink 1s steps(1) infinite; }
+.rainbow {
+  font-weight: bold;
+  background: linear-gradient(90deg,
+    #5B7A3A, #8FAE62, #BED38E, #F0C040, #C8395B, #6B4E9B, #1C4F7C, #5B7A3A);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gc-hue 6s linear infinite;
+}
+.new {
+  display: inline-block; background: var(--radish); color: #FFF3C4;
+  font: bold 10px var(--font-ui); padding: 0 4px; transform: rotate(-8deg);
+  animation: gc-blink .8s steps(1) infinite;
+}
+
+.gc-box {
+  border: 3px ridge var(--panel-border); background: var(--panel-inner);
+  padding: 8px 14px; margin: 12px 0;
+}
+.gc-center { text-align: center; }
+
+/* Pantone chip - "the official colour of this homepage" */
+.gc-swatch {
+  display: inline-block; min-width: 140px; margin: 4px;
+  border: 3px outset var(--panel-border); background: var(--lettuce-cream);
+  font: 11px/1.4 var(--font-ui); color: var(--soil-shadow); text-align: center;
+}
+.gc-swatch i { display: block; height: 42px; background: var(--lettuce); }
+.gc-swatch b { display: block; padding: 3px 6px; }
+.gc-swatch span { display: block; padding: 0 6px 4px; letter-spacing: .5px; }
+
+table.gc-table { border-collapse: collapse; margin: 8px auto; }
+table.gc-table td, table.gc-table th { border: 2px solid var(--panel-border); padding: 4px 10px; }
+table.gc-table th { background: var(--side); color: var(--side-text); }
+table.gc-table tr:nth-child(even) td { background: rgba(190, 211, 142, .25); }
+
+hr.gc-hr {
+  border: 0; height: 8px; margin: 22px 0 10px;
+  background: linear-gradient(90deg,
+    #5B7A3A, #8FAE62, #BED38E, #EDF5DC, #F0C040, #C8395B, #6B4E9B, #1C4F7C, #5B7A3A);
+}
+
+/* ---------- footer ---------- */
+.gc-footer { text-align: center; }
+.gc-digits {
+  display: inline-block; font: bold 20px "Courier New", monospace; letter-spacing: 3px;
+  background: var(--soil-shadow); color: var(--lettuce); padding: 2px 6px;
+  border: 2px inset var(--leaf-mid);
+}
+.gc-webring {
+  display: inline-block; margin: 10px 0; padding: 6px 12px;
+  border: 3px outset var(--panel-border); background: rgba(190, 211, 142, .25);
+}
+
+/* Colophon. A dark strip because the GitHub Pages wordmark is white artwork —
+   on the pale panel it would be an invisible rectangle — and because the
+   footer it came from was `background: dark` too. */
+.gc-colophon {
+  display: inline-block; max-width: 44em; margin: 12px auto 6px; padding: 8px 16px;
+  border: 3px ridge var(--panel-border); background: var(--soil-shadow);
+  color: var(--lettuce); font-size: 13px; line-height: 1.7;
+}
+.gc-colophon a { color: var(--lettuce); text-decoration: underline; }
+.gc-colophon a:visited { color: var(--lettuce-pale); }
+.gc-colophon a:hover { color: var(--accent); }
+/* The secondary line is the one about how it is built, not who built it. */
+.gc-colophon-secondary { opacity: .8; }
+/* #id specificity, to beat `#gc-main img { height: auto }`: the wordmark is
+   169x34, and the footer sits inside #gc-main. */
+#gc-main .gc-colophon-logo { height: 15px; width: auto; vertical-align: -.25em; margin: 0 .15em; }
+
+/* ---------- sparkle cursor trail ---------- */
+.gc-sparkle {
+  position: fixed; pointer-events: none; z-index: 9999; font-size: 14px;
+  animation: gc-fade .8s linear forwards;
+}
+
+/* ---------- keyframes ---------- */
+@keyframes gc-scroll { to { transform: translateX(-100%); } }
+@keyframes gc-blink { 50% { visibility: hidden; } }
+@keyframes gc-bounce { 50% { transform: translateY(-4px) rotate(-6deg); } }
+@keyframes gc-hue { to { filter: hue-rotate(360deg); } }
+@keyframes gc-fade { to { opacity: 0; transform: translateY(18px) scale(.4); } }
+
+/* ==========================================================
+   CONTENT COMPONENTS
+   ----------------------------------------------------------
+   The pages carried over from the previous (al-folio) build of
+   this site keep their markup: the bibliography rows on
+   /research/, the timeline entries on /cv/, the dataset blocks
+   on /lsrtdv1/ and the contact form on the home page. Bootstrap
+   and the SCSS that used to style them are gone (see `theme:
+   none` in _quarto.yml), so the same class names are re-styled
+   here, in the house palette, with 1998 borders instead of
+   shadows. Changing the markup was the alternative; keeping it
+   means no content had to be retyped to change the paint.
+   ========================================================== */
+
+/* ---------- bibliography (/research/) ---------- */
+h2.bibliography {
+  color: var(--leaf-mid); font-size: 30px; text-align: left;
+  border-bottom: 3px double var(--panel-border);
+}
+ol.bibliography { list-style: none; margin: 0; padding: 0; }
+ol.bibliography > li { margin: 0 0 14px; }
+
+.bib-row {
+  display: flex; gap: 12px; align-items: flex-start;
+  border: 3px ridge var(--panel-border); background: var(--panel-inner);
+  padding: 8px 12px;
+}
+.bib-abbr { flex: 0 0 92px; text-align: center; padding-top: 2px; }
+.bib-abbr .badge, abbr.badge {
+  display: inline-block; padding: 3px 6px; border: 2px outset var(--leaf-mid);
+  background: var(--side); color: var(--side-text);
+  font: bold 10px/1.3 var(--font-ui); text-decoration: none;
+  letter-spacing: .5px;
+}
+.bib-body { flex: 1 1 auto; min-width: 0; }
+.bib-body .title { font-weight: bold; color: var(--title); font-size: 17px; }
+.bib-body .author { margin: 2px 0; }
+.bib-body .author em { font-style: normal; text-decoration: underline; }
+.bib-body .periodical { font-style: italic; font-size: 14px; }
+
+.links { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pub-btn {
+  display: inline-flex; align-items: center; gap: 4px; min-height: 22px;
+  padding: 1px 8px; border: 2px outset var(--leaf-mid);
+  background: var(--lettuce-cream); color: var(--link);
+  font: bold 12px/1.4 var(--font-ui); text-decoration: none; cursor: pointer;
+}
+.pub-btn:hover { background: var(--hot); color: #fff; }
+.pub-btn:active { border-style: inset; }
+/* #id specificity, to beat the `#gc-main img { height: auto }` reset below:
+   these logos ship with width/height attributes of 130x130 and 54x69. */
+#gc-main .pub-btn__icon { height: 16px; width: auto; }
+#gc-main .pub-shield img { vertical-align: middle; height: 20px; width: auto; }
+
+/* The panel is plain visible text until geocities-era progressive enhancement
+   (the inline script on /research/) marks it collapsible, so a visitor with no
+   JavaScript reads the abstract rather than meeting a button that does nothing. */
+.pub-panel {
+  margin: 6px 0 0; border: 2px inset var(--leaf-mid);
+  background: var(--lettuce-cream); font-size: 14px;
+}
+.pub-panel p { margin: 8px 10px; line-height: 1.45; }
+.pub-panel pre {
+  margin: 0; padding: 8px 10px; overflow-x: auto;
+  background: var(--soil-shadow); color: var(--lettuce);
+  font: 12px/1.45 "Courier New", monospace;
+}
+.pub-panel.is-collapsible { display: none; }
+.pub-panel.is-collapsible.open { display: block; }
+.abs-keywords { opacity: .8; }
+
+/* ---------- dataset blocks (/lsrtdv1/) ---------- */
+.publication {
+  border: 3px ridge var(--panel-border); background: var(--panel-inner);
+  padding: 8px 14px; margin: 12px 0;
+}
+.shields { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 10px 0; }
+.shields p { margin: 0; }
+#gc-main .shields img { vertical-align: middle; width: auto; }
+
+/* ---------- CV timeline (/cv/) ---------- */
+.cv-section { margin-bottom: 18px; }
+.cv-entry {
+  display: grid; grid-template-columns: 1fr; gap: .15rem 1.2rem;
+  padding: 10px 0; border-top: 2px dotted var(--panel-border);
+}
+.cv-entry:first-of-type { border-top: 0; }
+.cv-entry__when { font-weight: bold; color: var(--leaf-deep); font-size: 14px; }
+.cv-entry__what p:first-child { margin-top: 0; }
+@media (min-width: 768px) {
+  .cv-entry { grid-template-columns: 10rem 1fr; }
+}
+.cv-download {
+  display: inline-block; padding: 3px 10px; border: 3px outset var(--leaf-mid);
+  background: var(--lettuce); color: var(--soil-shadow); text-decoration: none;
+}
+
+/* ---------- contact form (home page) ---------- */
+.contact-form {
+  border: 3px ridge var(--panel-border); background: var(--panel-inner);
+  padding: 10px 14px; margin: 12px 0;
+}
+.contact-form__row { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact-form__row .contact-form__field { flex: 1 1 220px; }
+.contact-form__field { display: block; margin: 8px 0; }
+.contact-form__label { display: block; font-weight: bold; color: var(--title); }
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%; box-sizing: border-box; padding: 4px 6px;
+  border: 2px inset var(--leaf-mid); background: var(--lettuce-cream);
+  color: var(--text); font-family: var(--font); font-size: 15px;
+}
+.contact-form textarea { resize: vertical; }
+.contact-form__submit {
+  margin-top: 8px; padding: 4px 18px; border: 3px outset var(--leaf-mid);
+  background: var(--lettuce); color: var(--soil-shadow);
+  font-family: var(--font); font-size: 16px; font-weight: bold; cursor: pointer;
+}
+.contact-form__submit:hover { background: var(--hot); color: #fff; }
+.contact-form__submit:active { border-style: inset; }
+.contact-form__submit[disabled] { opacity: .6; cursor: progress; }
+/* Honeypot: off-screen rather than display:none, which some bots skip. */
+.contact-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-form__captcha { margin: 10px 0; }
+.contact-form__status { margin: 8px 0 0; font-weight: bold; }
+.contact-form__status.is-ok { color: var(--leaf-deep); }
+.contact-form__status.is-error { color: var(--hot); }
+
+/* ---------- guestbook (giscus) ---------- */
+/* Quarto has named the wrapper differently across versions, so both the id it
+   writes and the class giscus itself adds are matched. */
+#giscus-container, .giscus {
+  margin: 16px 0 4px; padding: 8px 12px;
+  border: 3px ridge var(--panel-border); background: var(--panel-inner);
+}
+.giscus-frame { width: 100%; border: 0; color-scheme: normal; }
+
+/* ---------- plain markdown furniture ---------- */
+#gc-main table:not(.gc-table) { border-collapse: collapse; margin: 10px 0; }
+#gc-main table:not(.gc-table) th,
+#gc-main table:not(.gc-table) td {
+  border: 2px solid var(--panel-border); padding: 4px 10px; text-align: left;
+}
+#gc-main table:not(.gc-table) th { background: var(--side); color: var(--side-text); }
+#gc-main blockquote {
+  margin: 10px 0; padding: 4px 14px; background: var(--panel-inner);
+  border-left: 6px ridge var(--panel-border);
+}
+#gc-main code {
+  background: var(--lettuce-cream); border: 1px solid var(--leaf-mid);
+  padding: 0 3px; font: 14px/1.4 "Courier New", monospace;
+}
+#gc-main pre {
+  overflow-x: auto; padding: 8px 10px; border: 2px inset var(--leaf-mid);
+  background: var(--soil-shadow); color: var(--lettuce);
+}
+#gc-main pre code { background: none; border: 0; color: inherit; padding: 0; }
+#gc-main img { max-width: 100%; height: auto; }
+/* Quarto still emits a figure caption and a footnote block; neither had a rule. */
+#gc-main figcaption { font-size: 13px; text-align: center; opacity: .85; }
+#gc-main .footnotes { font-size: 14px; border-top: 3px double var(--panel-border); }
+
+/* ---------- print (mostly for the CV page) ---------- */
+@media print {
+  body { background: #fff !important; color: #000 !important;
+         font-family: Georgia, "Times New Roman", serif; cursor: auto; }
+  #gc-sidebar, .gc-marquee, .gc-construction, .gc-counter, .gc-webring,
+  .gc-badges, .gc-swatch, hr.gc-hr, .gc-sparkle, .gc-noprint,
+  .gc-colophon,
+  .contact-form, .pub-shield, .shields,
+  #giscus-container, .giscus { display: none !important; }
+  .bib-row, .publication, .pub-panel, .contact-form { border: 0 !important; background: #fff !important; }
+  .pub-panel.is-collapsible { display: block !important; }
+  .pub-panel pre, #gc-main pre { background: #fff !important; color: #000 !important; border: 1px solid #999 !important; }
+  #gc-layout, .gc-box { border: 0 !important; background: #fff !important; }
+  #gc-main { padding: 0 !important; }
+  h1, h2, h3 { color: #000 !important; text-shadow: none !important; }
+  a { color: #000 !important; text-decoration: none; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+  .blink, .new, .rainbow { animation: none !important; -webkit-text-fill-color: #000; color: #000; }
+  table.gc-table tr:nth-child(even) td { background: #fff !important; }
+}
+
+/* ---------- small screens (it is not 1998 everywhere) ---------- */
+@media (max-width: 700px) {
+  #gc-layout, #gc-layout tbody, #gc-layout tr, #gc-layout td { display: block; width: auto; }
+  #gc-sidebar { border-right: 0; border-bottom: 4px ridge var(--panel-border); }
+  .gc-badges { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+}
+
+/* ---------- respect reduced motion (the whole 90s toybox goes quiet) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  /* the marquee stops scrolling, so let its text wrap and sit still */
+  .gc-marquee { white-space: normal; text-align: center; padding: 6px 10px; }
+  .gc-marquee-text { padding-left: 0; display: block; }
+  /* blinking text must stay readable once it stops blinking */
+  .blink, .new { visibility: visible !important; }
+  .rainbow { filter: none !important; }
+  .gc-sparkle { display: none !important; }
+}

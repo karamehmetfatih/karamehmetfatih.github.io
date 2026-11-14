@@ -5,8 +5,9 @@ title: "cv"
 # title, giving "CV – M. Fatih Kara"; the name does not belong in this string.
 pagetitle: "CV"
 description-meta: "Curriculum vitae of Mehmet Fatih Kara — plant pathology, transcriptomics and seed science."
-toc: true
-toc-location: left
+# The GeoCities layout is a two-column table whose left cell is the site
+# navigation, so a left-hand TOC would be a third column with nowhere to go.
+toc: false
 comments: false
 format:
   html:

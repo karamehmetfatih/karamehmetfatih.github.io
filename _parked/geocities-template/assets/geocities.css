@@ -1,0 +1,352 @@
+/* ==========================================================
+   GeoCities-style theme for Quarto
+   ----------------------------------------------------------
+   HOUSE COLOUR
+     PANTONE 13-0324 TCX "Lettuce Green"
+     HEX #BED38E  .  RGB 190, 211, 142
+   Everything else is derived from it: tints for panels, shades
+   for the sidebar and page background, and three accents chosen
+   to sit against a yellow-green without turning muddy.
+
+     --lettuce        #BED38E   the Pantone itself
+     --lettuce-pale   #EDF5DC   panel (a wash of the same hue)
+     --lettuce-cream  #FAFCF2   boxes inside panels
+     --leaf-mid       #8FAE62   borders, ridges
+     --leaf-deep      #5B7A3A   headings
+     --stem-dark      #38512A   sidebar
+     --soil-shadow    #22331A   page background, body text
+     --radish         #C8395B   the "hot" 1998 accent (hover, NEW!)
+     --butter         #F0C040   construction tape, marquee text
+     --ink            #1C4F7C   links
+     --plum           #6B4E9B   visited links
+
+   FOUR "NEIGHBORHOODS" (buttons in the sidebar)
+     body.theme-lettuce (default) | theme-rainforest
+     | theme-area51 | theme-siliconvalley
+   ========================================================== */
+
+:root {
+  /* the house palette, available in every theme */
+  --lettuce: #BED38E;
+  --lettuce-pale: #EDF5DC;
+  --lettuce-cream: #FAFCF2;
+  --leaf-mid: #8FAE62;
+  --leaf-deep: #5B7A3A;
+  --stem-dark: #38512A;
+  --soil-shadow: #22331A;
+  --radish: #C8395B;
+  --butter: #F0C040;
+  --ink: #1C4F7C;
+  --plum: #6B4E9B;
+
+  /* theme slots (overridden per neighborhood below) */
+  --bg: var(--soil-shadow);
+  --bg-img: none;
+  --panel: var(--lettuce-pale);
+  --panel-inner: rgba(255, 255, 255, .55);
+  --panel-border: var(--leaf-mid);
+  --text: var(--soil-shadow);
+  --link: var(--ink);
+  --visited: var(--plum);
+  --hot: var(--radish);
+  --accent: var(--butter);
+  --title: var(--leaf-deep);
+  --side: var(--stem-dark);
+  --side-text: var(--lettuce);
+  --side-strong: var(--lettuce-cream);
+  --font: "Comic Sans MS", "Comic Neue", "Chalkboard SE", cursive;
+}
+
+/* ---------- LettucePatch (the house theme) ---------- */
+body.theme-lettuce {
+  --bg: #22331A;
+  --bg-img:
+    radial-gradient(circle at 20% 30%, #BED38E 0 6px, transparent 7px),
+    radial-gradient(circle at 70% 80%, #8FAE62 0 4px, transparent 5px),
+    radial-gradient(circle at 50% 50%, #5B7A3A 0 10px, transparent 11px),
+    radial-gradient(circle at 85% 25%, #EDF5DC 0 2px, transparent 3px);
+  --panel: #EDF5DC;
+  --panel-inner: rgba(255, 255, 255, .6);
+  --panel-border: #8FAE62;
+  --text: #22331A;
+  --link: #1C4F7C;
+  --visited: #6B4E9B;
+  --hot: #C8395B;
+  --accent: #F0C040;
+  --title: #5B7A3A;
+  --side: #38512A;
+  --side-text: #BED38E;
+  --side-strong: #FAFCF2;
+}
+
+/* ---------- RainForest (darker, wetter lettuce) ---------- */
+body.theme-rainforest {
+  --bg: #0E2E12;
+  --bg-img:
+    radial-gradient(circle at 20% 30%, #7FA05A 0 6px, transparent 7px),
+    radial-gradient(circle at 70% 80%, #BED38E 0 4px, transparent 5px),
+    radial-gradient(circle at 50% 50%, #1F5A24 0 10px, transparent 11px);
+  --panel: #E3F0CC;
+  --panel-inner: rgba(255, 255, 255, .5);
+  --panel-border: #2E8B57;
+  --text: #12240F;
+  --link: #10456B;
+  --visited: #5E3F8F;
+  --hot: #D1495B;
+  --accent: #F0C040;
+  --title: #1F6B2A;
+  --side: #163F1A;
+  --side-text: #BED38E;
+  --side-strong: #FFFFE0;
+}
+
+/* ---------- Area51 (starfield + neon lettuce) ---------- */
+body.theme-area51 {
+  --bg: #000;
+  --bg-img:
+    radial-gradient(1px 1px at 10% 20%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 60% 70%, #fff 50%, transparent 51%),
+    radial-gradient(2px 2px at 80% 10%, #BED38E 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 90%, #9cf 50%, transparent 51%);
+  --panel: #0A1206;
+  --panel-inner: rgba(190, 211, 142, .07);
+  --panel-border: #BED38E;
+  --text: #BED38E;
+  --link: #8FE3D0;
+  --visited: #D7A8F0;
+  --hot: #F0C040;
+  --accent: #BED38E;
+  --title: #DCEBBE;
+  --side: #0E0820;
+  --side-text: #BED38E;
+  --side-strong: #FAFCF2;
+}
+
+/* ---------- SiliconValley (Win95 gray, Times) ---------- */
+body.theme-siliconvalley {
+  --bg: #4E6B3A;
+  --bg-img:
+    linear-gradient(45deg, #41592F 25%, transparent 25%, transparent 75%, #41592F 75%),
+    linear-gradient(45deg, #41592F 25%, transparent 25%, transparent 75%, #41592F 75%);
+  --panel: #D6DCC8;
+  --panel-inner: rgba(255, 255, 255, .45);
+  --panel-border: #8A9478;
+  --text: #11170C;
+  --link: #1C4F7C;
+  --visited: #6B4E9B;
+  --hot: #A32638;
+  --accent: #BED38E;
+  --title: #2A3C1C;
+  --side: #38512A;
+  --side-text: #BED38E;
+  --side-strong: #fff;
+  --font: "Times New Roman", Times, serif;
+}
+
+/* ---------- layout ---------- */
+html, body { margin: 0; padding: 0; }
+body {
+  background-color: var(--bg);
+  background-image: var(--bg-img);
+  background-size: 120px 120px, 90px 90px, 160px 160px, 70px 70px;
+  background-position: 0 0, 45px 45px, 20px 60px, 10px 30px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  cursor: url("sprout-cursor.svg") 4 4, auto;
+}
+
+#gc-wrap { max-width: 980px; margin: 18px auto; padding: 0 8px; }
+/* `table-layout: fixed` is load-bearing, not cosmetic: with the default auto
+   layout a cell is at least as wide as its widest unbreakable content, and the
+   marquee is one long `white-space: nowrap` line. Its 2800px of text dragged
+   the whole table — and the page — into a horizontal scroll at any window
+   wider than the stacked breakpoint. Fixed layout takes the column widths from
+   the first row instead (the 190px sidebar, the rest to #gc-main), so the
+   marquee simply clips against its own `overflow: hidden`. */
+#gc-layout {
+  width: 100%; table-layout: fixed;
+  border: 4px ridge var(--panel-border); background: var(--panel);
+}
+#gc-sidebar {
+  width: 190px; background: var(--side); color: var(--side-text);
+  padding: 10px; text-align: center; border-right: 4px ridge var(--panel-border);
+}
+#gc-main { padding: 14px 22px; overflow-wrap: break-word; }
+
+/* hide Quarto chrome we don't want */
+#quarto-header, .quarto-title-meta, #quarto-margin-sidebar, .nav-footer,
+#quarto-sidebar, .quarto-title-banner { display: none !important; }
+main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0; max-width: none; }
+.quarto-title h1.title { margin-top: .3em; }
+
+/* ---------- sidebar bits ---------- */
+.gc-logo img { image-rendering: pixelated; animation: gc-bounce 1s steps(2) infinite; }
+.gc-sitename {
+  font-size: 22px; font-weight: bold; color: var(--side-strong);
+  text-shadow: 2px 2px 0 #000;
+}
+.gc-small { font-size: 11px; opacity: .85; }
+.gc-navbox {
+  margin: 12px 0; padding: 6px; border: 3px outset var(--panel-border);
+  background: rgba(0, 0, 0, .25);
+}
+.gc-navtitle { font-weight: bold; margin-bottom: 4px; color: var(--accent); }
+.gc-navbox a, .gc-navbox button {
+  display: block; width: 100%; margin: 3px 0; padding: 3px 0;
+  color: var(--side-text); font-family: var(--font); font-size: 14px;
+  background: transparent; border: 2px outset var(--leaf-mid); cursor: pointer;
+  text-decoration: none;
+}
+.gc-navbox a:hover, .gc-navbox button:hover { background: var(--hot); color: #fff; }
+.gc-navbox button.active {
+  border-style: inset; background: rgba(190, 211, 142, .25); color: var(--side-strong);
+}
+.gc-badges { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.gc-badge {
+  width: 88px; height: 31px; box-sizing: border-box; padding: 2px;
+  font: 8px/1.2 Verdana, sans-serif; background: #000; color: var(--lettuce);
+  border: 2px outset #ccc;
+}
+.gc-badge b { font-size: 10px; }
+.gc-badge-q { background: #447099; color: #fff; }
+.gc-badge-g { background: #BED38E; color: #22331A; border-color: #FAFCF2; }
+.gc-badge-p { background: #38512A; color: #BED38E; }
+/* "LETTUCE GREEN" is one character too long for 88x31 at the default size */
+.gc-badge-p b { font-size: 9px; letter-spacing: -.4px; }
+
+/* ---------- main content ---------- */
+h1, h2, h3, .title {
+  color: var(--title); font-family: var(--font);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, .15);
+}
+h1.title, h1 { text-align: center; font-size: 34px; }
+h2 { border-bottom: 3px double var(--panel-border); padding-bottom: 2px; }
+a { color: var(--link); font-weight: bold; }
+a:visited { color: var(--visited); }
+a:hover { color: var(--hot); text-decoration: underline wavy; }
+
+/* CSS marquee: unlike <marquee>, this one obeys prefers-reduced-motion */
+.gc-marquee {
+  background: var(--soil-shadow); color: var(--lettuce); font-weight: bold;
+  padding: 4px 0; border: 2px inset var(--leaf-mid); margin-bottom: 8px;
+  overflow: hidden; white-space: nowrap;
+}
+.gc-marquee-text {
+  display: inline-block; padding-left: 100%;
+  animation: gc-scroll 18s linear infinite;
+}
+.gc-marquee:hover .gc-marquee-text { animation-play-state: paused; }
+.gc-construction {
+  text-align: center; margin: 6px 0 14px; padding: 6px;
+  background: repeating-linear-gradient(45deg,
+    var(--butter) 0 18px, var(--soil-shadow) 18px 36px);
+  border: 2px solid var(--soil-shadow);
+}
+.gc-construction span {
+  background: var(--butter); color: var(--soil-shadow); padding: 2px 10px;
+  font-weight: bold; font-family: Impact, "Arial Black", sans-serif; letter-spacing: 2px;
+}
+
+.blink { animation: gc-blink 1s steps(1) infinite; }
+.rainbow {
+  font-weight: bold;
+  background: linear-gradient(90deg,
+    #5B7A3A, #8FAE62, #BED38E, #F0C040, #C8395B, #6B4E9B, #1C4F7C, #5B7A3A);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: gc-hue 6s linear infinite;
+}
+.new {
+  display: inline-block; background: var(--radish); color: #FFF3C4;
+  font: bold 10px Verdana, sans-serif; padding: 0 4px; transform: rotate(-8deg);
+  animation: gc-blink .8s steps(1) infinite;
+}
+
+.gc-box {
+  border: 3px ridge var(--panel-border); background: var(--panel-inner);
+  padding: 8px 14px; margin: 12px 0;
+}
+.gc-center { text-align: center; }
+
+/* Pantone chip - "the official colour of this homepage" */
+.gc-swatch {
+  display: inline-block; min-width: 140px; margin: 4px;
+  border: 3px outset var(--panel-border); background: var(--lettuce-cream);
+  font: 11px/1.4 Verdana, sans-serif; color: var(--soil-shadow); text-align: center;
+}
+.gc-swatch i { display: block; height: 42px; background: var(--lettuce); }
+.gc-swatch b { display: block; padding: 3px 6px; }
+.gc-swatch span { display: block; padding: 0 6px 4px; letter-spacing: .5px; }
+
+table.gc-table { border-collapse: collapse; margin: 8px auto; }
+table.gc-table td, table.gc-table th { border: 2px solid var(--panel-border); padding: 4px 10px; }
+table.gc-table th { background: var(--side); color: var(--side-text); }
+table.gc-table tr:nth-child(even) td { background: rgba(190, 211, 142, .25); }
+
+hr.gc-hr {
+  border: 0; height: 8px; margin: 22px 0 10px;
+  background: linear-gradient(90deg,
+    #5B7A3A, #8FAE62, #BED38E, #EDF5DC, #F0C040, #C8395B, #6B4E9B, #1C4F7C, #5B7A3A);
+}
+
+/* ---------- footer ---------- */
+.gc-footer { text-align: center; }
+.gc-digits {
+  display: inline-block; font: bold 20px "Courier New", monospace; letter-spacing: 3px;
+  background: var(--soil-shadow); color: var(--lettuce); padding: 2px 6px;
+  border: 2px inset var(--leaf-mid);
+}
+.gc-webring {
+  display: inline-block; margin: 10px 0; padding: 6px 12px;
+  border: 3px outset var(--panel-border); background: rgba(190, 211, 142, .25);
+}
+
+/* ---------- sparkle cursor trail ---------- */
+.gc-sparkle {
+  position: fixed; pointer-events: none; z-index: 9999; font-size: 14px;
+  animation: gc-fade .8s linear forwards;
+}
+
+/* ---------- keyframes ---------- */
+@keyframes gc-scroll { to { transform: translateX(-100%); } }
+@keyframes gc-blink { 50% { visibility: hidden; } }
+@keyframes gc-bounce { 50% { transform: translateY(-4px) rotate(-6deg); } }
+@keyframes gc-hue { to { filter: hue-rotate(360deg); } }
+@keyframes gc-fade { to { opacity: 0; transform: translateY(18px) scale(.4); } }
+
+/* ---------- print (mostly for the CV page) ---------- */
+@media print {
+  body { background: #fff !important; color: #000 !important;
+         font-family: Georgia, "Times New Roman", serif; cursor: auto; }
+  #gc-sidebar, .gc-marquee, .gc-construction, .gc-counter, .gc-webring,
+  .gc-badges, .gc-swatch, hr.gc-hr, .gc-sparkle, .gc-noprint { display: none !important; }
+  #gc-layout, .gc-box { border: 0 !important; background: #fff !important; }
+  #gc-main { padding: 0 !important; }
+  h1, h2, h3 { color: #000 !important; text-shadow: none !important; }
+  a { color: #000 !important; text-decoration: none; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
+  .blink, .new, .rainbow { animation: none !important; -webkit-text-fill-color: #000; color: #000; }
+  table.gc-table tr:nth-child(even) td { background: #fff !important; }
+}
+
+/* ---------- small screens (it is not 1998 everywhere) ---------- */
+@media (max-width: 700px) {
+  #gc-layout, #gc-layout tbody, #gc-layout tr, #gc-layout td { display: block; width: auto; }
+  #gc-sidebar { border-right: 0; border-bottom: 4px ridge var(--panel-border); }
+  .gc-badges { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+}
+
+/* ---------- respect reduced motion (the whole 90s toybox goes quiet) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  /* the marquee stops scrolling, so let its text wrap and sit still */
+  .gc-marquee { white-space: normal; text-align: center; padding: 6px 10px; }
+  .gc-marquee-text { padding-left: 0; display: block; }
+  /* blinking text must stay readable once it stops blinking */
+  .blink, .new { visibility: visible !important; }
+  .rainbow { filter: none !important; }
+  .gc-sparkle { display: none !important; }
+}

@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis.">
 
-<title>LsRTDv1: lettuce reference transcript dataset – M. Fatih Kara</title>
+<title>LsRTDv1: lettuce reference transcript dataset</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,57 +27,19 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../assets/geocities/sprout.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/img/favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-21d39760f8ebcd9c52bbda4b5a95f9df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-fe527aaaf83204ab98734231c0671b49.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-21d39760f8ebcd9c52bbda4b5a95f9df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 10,
-  "keyboard-shortcut": [
-    "?",
-    "H"
-  ],
-  "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
-  }
-}</script>
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html-640605f58ae58ee79329c070719e555b.min.css" rel="stylesheet" append-hash="true" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <!-- LsRTDv1 page SEO head additions.
 
      The `Dataset` node is the point of this file. Google Dataset Search indexes
@@ -196,273 +158,99 @@ ul.task-list li input[type="checkbox"] {
   ]
 }
 </script>
-<!-- Site-wide metadata. `author` is set here rather than as document
-     front matter because Quarto would also print an author byline
-     into the title block; only the <meta> tag is wanted.
-
-     The robots value carries no index/follow — those are already the
-     default, and stating them adds nothing. `max-image-preview:large`
-     does change behaviour: it opts link previews in search results
-     up from a thumbnail to a full-width image. Pages that need to
-     stay out of the index add their own `noindex` via
-     _includes/noindex.html; where two robots tags disagree the more
-     restrictive one wins, so the two compose correctly. -->
+<!-- `author` is set here rather than as document front matter because
+     Quarto would also print an author byline into the title block;
+     only the <meta> tag is wanted. `max-image-preview:large` opts
+     link previews in search results up from a thumbnail to a
+     full-width image; pages that must stay out of the index add
+     their own `noindex` via _includes/noindex.html, and where two
+     robots tags disagree the more restrictive one wins. -->
 <meta name="author" content="Mehmet Fatih Kara">
 <meta name="robots" content="max-image-preview:large">
+<meta name="keywords" content="plant immunity, MPMI, Botrytis cinerea, Sclerotinia sclerotiorum, lettuce, Lactuca sativa, LsRTDv1, transcriptomics, alternative splicing, genome editing, CRISPR, plant pathology">
+<!-- Atkinson Hyperlegible Next, the body face (see `--font` in
+     geocities.css). The full variable range rather than a handful of
+     static weights: the stylesheet asks for bold headings and bold
+     chrome, and any weight not fetched would be synthesised by the
+     browser. `display=swap` so text paints in the fallback face
+     immediately and never hides behind the font request. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<!-- Full variable range (200-800, upright + italic) rather than a
-     handful of static weights: the SCSS asks for 500 headings and
-     600 chrome, and any weight not fetched would be synthesised by
-     the browser or fall back to a different face. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&amp;display=swap">
+<!-- Theme switcher, hit counter and sparkle trail. Deferred, so none
+     of it blocks the first paint; everything it does is decoration
+     that the page reads correctly without. -->
+<script src="../assets/geocities/geocities.js" defer=""></script>
 
 
-<link rel="stylesheet" href="../assets/css/styles.css">
+<link rel="stylesheet" href="../assets/geocities/geocities.css">
 <meta property="og:title" content="LsRTDv1: lettuce reference transcript dataset">
 <meta property="og:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis.">
-<meta property="og:image" content="https://www.mfkara.net/assets/img/og-image.png">
+<meta property="og:image" content="https://www.mfkara.net/assets/geocities/social-card.png">
 <meta property="og:site_name" content="M. Fatih Kara">
+<meta property="og:image:alt" content="~mfkara's Leafy Homepage — plant immunity, necrotrophic fungi, lettuce">
+<meta property="og:locale" content="en_GB">
 <meta property="og:image:height" content="630">
 <meta property="og:image:width" content="1200">
 <meta name="twitter:title" content="LsRTDv1: lettuce reference transcript dataset">
 <meta name="twitter:description" content="LsRTDv1 is a reference transcript dataset for lettuce (Lactuca sativa cv. Saladin), for transcript-specific expression and alternative splicing analysis.">
-<meta name="twitter:image" content="https://www.mfkara.net/assets/img/og-image.png">
-<meta name="twitter:image-height" content="630">
-<meta name="twitter:image-width" content="1200">
+<meta name="twitter:image" content="https://www.mfkara.net/assets/geocities/social-card.png">
+<meta name="twitter:image:alt" content="~mfkara's Leafy Homepage — plant immunity, necrotrophic fungi, lettuce">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body>
 
-<div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">M. Fatih Kara</span>
-    </a>
+<!-- GeoCities shell, opening half: the layout table, the sidebar (logo, nav,
+     neighborhood switcher, badges) and the marquee. _includes/gc-footer.html
+     closes the three elements left open here (#gc-main, #gc-layout, #gc-wrap).
+
+     Links are site-rooted ("/research/", not "research.html") because pages
+     live in subdirectories; a relative href would resolve against the page's
+     own directory and break on every page but the home page. -->
+<div id="gc-wrap">
+<table id="gc-layout" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td id="gc-sidebar" valign="top">
+  <div class="gc-logo">
+    <img src="../assets/geocities/sprout.svg" width="96" height="96" alt="dancing lettuce sprout">
+    <div class="gc-sitename">~mfkara</div>
+    <div class="gc-small">est. 2026</div>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../"> 
-<span class="menu-text">about</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../research/"> 
-<span class="menu-text">publications</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-    <a href="https://github.com/karamehmetfatih/karamehmetfatih.github.io" title="" class="quarto-navigation-tool px-1" aria-label="Source code on GitHub"><i class="bi bi-github"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#what-is-in-it" id="toc-what-is-in-it" class="nav-link active" data-scroll-target="#what-is-in-it">What is in it</a></li>
-  <li><a href="#what-it-makes-possible" id="toc-what-it-makes-possible" class="nav-link" data-scroll-target="#what-it-makes-possible">What it makes possible</a></li>
-  <li><a href="#download" id="toc-download" class="nav-link" data-scroll-target="#download">Download</a>
-  <ul class="collapse">
-  <li><a href="#related-data-and-code" id="toc-related-data-and-code" class="nav-link" data-scroll-target="#related-data-and-code">Related data and code</a></li>
-  </ul></li>
-  <li><a href="#how-to-cite" id="toc-how-to-cite" class="nav-link" data-scroll-target="#how-to-cite">How to cite</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">LsRTDv1</h1></header>
-
+  <div class="gc-navbox">
+    <div class="gc-navtitle">★ NAVIGATE ★</div>
+    <a href="../">🏠 Home</a>
+    <a href="../research/">📜 Publications</a>
+    <a href="../lsrtdv1/">🧬 LsRTDv1</a>
+    <a href="../cv/">💼 My CV</a>
+    <a href="../links/">🔗 Cool Links</a>
+    <a href="../guestbook/">📖 Guestbook</a>
+  </div>
+  <div class="gc-navbox">
+    <div class="gc-navtitle">NEIGHBORHOOD</div>
+    <button data-theme="salinasvalley">🥬 SalinasValley</button>
+    <button data-theme="growthchamber">💡 GrowthChamber</button>
+  </div>
+  <div class="gc-badges">
+    <span class="gc-badge">BEST VIEWED IN<br><b>800×600</b></span>
+    <span class="gc-badge gc-badge-q">MADE WITH<br><b>QUARTO</b></span>
+    <span class="gc-badge gc-badge-g">100%<br><b>CHLOROPHYLL</b></span>
+    <span class="gc-badge gc-badge-p">PANTONE 13-0324<br><b>LETTUCE GREEN</b></span>
+  </div>
+</td>
+<td id="gc-main" valign="top">
+  <div class="gc-marquee"><span class="gc-marquee-text">🌿 Welcome to my homepage on the Information Superhighway! 🌿 Plant immunity • Necrotrophic fungi • Lettuce • Transcriptomics • Genome editing 🌿 Sign my guestbook!! 🌿</span></div>
+  <div class="gc-construction"><span>🚧 UNDER CONSTRUCTION 🚧</span></div>
 
 <header id="title-block-header">
-
+<h1 class="title">LsRTDv1</h1>
 
 </header>
 
 
 <p><strong>LsRTDv1</strong> is a reference transcript dataset (RTD) for lettuce, <em>Lactuca sativa</em> cv. Saladin. It gives the lettuce community a transcript-level reference to quantify against, so that RNA-seq analysis in this crop can resolve individual transcript isoforms rather than collapsing them into whole-gene counts.</p>
 <p>Alignment-free quantification is fast and precise, but it cannot be run without a reference transcriptome — and the isoform-level annotation lettuce had before this was thin. LsRTDv1 exists to remove that as a blocker.</p>
-<section id="what-is-in-it" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-in-it">What is in it</h2>
+<h2 id="what-is-in-it">What is in it</h2>
 <p>LsRTDv1 combines long- and short-read sequencing with publicly available transcriptome annotations, then filters the result to keep only transcripts with high-confidence splice junctions and high-confidence transcriptional start and end sites. The filtering is the part that matters: an RTD that keeps everything it assembles inflates the isoform count with artefacts, and quantification against a noisy reference is worse than not having one.</p>
 <p>The dataset:</p>
 <ul>
@@ -470,23 +258,19 @@ ul.task-list li input[type="checkbox"] {
 <li>identifies <strong>novel genes</strong>, most of them long non-coding RNAs;</li>
 <li>significantly increases the <strong>mapping rate</strong> of lettuce RNA-seq data.</li>
 </ul>
-</section>
-<section id="what-it-makes-possible" class="level2">
-<h2 class="anchored" data-anchor-id="what-it-makes-possible">What it makes possible</h2>
+<h2 id="what-it-makes-possible">What it makes possible</h2>
 <p>Validated on a lettuce time-series experiment — mock-inoculated and inoculated with the necrotrophic fungus <em>Botrytis cinerea</em> — LsRTDv1 enables:</p>
 <ul>
 <li>detection of genes that are <strong>differentially alternatively spliced</strong> in response to infection;</li>
 <li><strong>transcript-specific expression changes</strong>, rather than a single number per gene.</li>
 </ul>
 <p>Alternative splicing and post-transcriptional regulation during infection are largely unresolved in this crop, and a transcript-level reference is the precondition for studying them at all.</p>
-</section>
-<section id="download" class="level2">
-<h2 class="anchored" data-anchor-id="download">Download</h2>
+<h2 id="download">Download</h2>
 <p>The dataset is deposited in <strong>Dryad</strong>:</p>
 <div class="publication">
 <p><a href="https://doi.org/10.5061/dryad.xwdbrv1m8">10.5061/dryad.xwdbrv1m8</a></p>
 </div>
-<table class="caption-top table">
+<table class="caption-top">
 <caption>Files in the current Dryad version. Read the <code>README.md</code> first — it documents what each file contains.</caption>
 <colgroup>
 <col style="width: 32%">
@@ -524,8 +308,7 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>Released under <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a> — you do not need permission to use, modify or redistribute it. Cite it anyway: that is the scholarly norm, and citation is how a resource like this stays fundable.</p>
-<section id="related-data-and-code" class="level3">
-<h3 class="anchored" data-anchor-id="related-data-and-code">Related data and code</h3>
+<h3 id="related-data-and-code">Related data and code</h3>
 <ul>
 <li><strong>Raw RNA sequencing data</strong> — NCBI Sequence Read Archive, BioProject <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1018253">PRJNA1018253</a></li>
 <li><strong>Analysis code</strong> — <a href="https://github.com/ZhangOmicsDataLab/LettuceRTD">ZhangOmicsDataLab/LettuceRTD</a> on GitHub, archived at Zenodo as <a href="https://doi.org/10.5281/zenodo.11658411">10.5281/zenodo.11658411</a></li>
@@ -538,10 +321,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="shields">
 <p><a href="https://doi.org/10.5281/zenodo.11658411"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.11658411.svg" class="img-fluid" alt="Analysis code archived at Zenodo, DOI 10.5281/zenodo.11658411"></a> <a href="https://github.com/ZhangOmicsDataLab/LettuceRTD"><img src="https://img.shields.io/github/stars/ZhangOmicsDataLab/LettuceRTD?logo=github&amp;label=stars.png" class="img-fluid" alt="Stars on the LettuceRTD GitHub repository"></a> <a href="https://github.com/ZhangOmicsDataLab/LettuceRTD/commits/"><img src="https://img.shields.io/github/last-commit/ZhangOmicsDataLab/LettuceRTD?logo=github&amp;label=last%20commit.png" class="img-fluid" alt="Date of the last commit to the LettuceRTD repository"></a></p>
 </div>
-</section>
-</section>
-<section id="how-to-cite" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-cite">How to cite</h2>
+<h2 id="how-to-cite">How to cite</h2>
 <p>Cite <strong>the paper</strong> if you are describing or building on the work:</p>
 <div class="publication">
 <p>Kara, M.F., Guo, W., Zhang, R. and Denby, K., 2024. LsRTDv1, a reference transcript dataset for accurate transcript-specific expression analysis in lettuce. <em>The Plant Journal</em>, 120(1), pp.370-386. DOI: <a href="https://doi.org/10.1111/tpj.16978">10.1111/tpj.16978</a>. PMID: <a href="https://pubmed.ncbi.nlm.nih.gov/39145419/">39145419</a>.</p>
@@ -551,38 +331,59 @@ ul.task-list li input[type="checkbox"] {
 <p>Denby, Katherine; Kara, Mehmet Fatih; Guo, Wenbin; Zhang, Runxuan (2024). LsRTDv1: A reference transcript dataset for accurate transcript-specific expression analysis in lettuce [Dataset]. <em>Dryad</em>. DOI: <a href="https://doi.org/10.5061/dryad.xwdbrv1m8">10.5061/dryad.xwdbrv1m8</a>.</p>
 </div>
 <p>Citing both is the safer habit — the paper explains how the resource was built and what it is good for, the dataset DOI pins the exact version your numbers came from.</p>
-</section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<h2 id="questions">Questions</h2>
 <p>If something in the RTD does not behave as you expect, or you want to compare notes on using it, <a href="../#contact">get in touch</a> — I would rather hear about it than not.</p>
 <p><a href="../research/">← All publications</a></p>
 
 
-</section>
+  <hr class="gc-hr">
+  <div class="gc-footer">
+    <div class="gc-counter">You are visitor number
+      <span id="gc-hits" class="gc-digits">000000</span>
+      <div class="gc-small">(counted on <i>this</i> computer only)</div>
+    </div>
+    <div class="gc-webring">
+      « <a href="https://bsky.app/profile/mfkara.net">prev</a> |
+      <b>🌱 Plant Science WebRing 🌱</b> |
+      <a href="https://orcid.org/0000-0002-0318-228X">next</a> »
+    </div>
+    <!-- Colophon, carried over from the al-folio footer this site used before.
+         Two changes of substance: it is no longer Bootstrap underneath (see
+         `theme: none` in _quarto.yml), and the theme it names is this one.
 
-</main> <!-- /main -->
+         R and Quarto are text links rather than the brand icons they were
+         upstream: those came from a Font Awesome shortcode, and shortcodes are
+         not expanded inside a raw HTML include. The sidebar's MADE WITH QUARTO
+         badge says the same thing in the idiom of the period.
+
+         The GitHub artwork is the "GitHub Pages" wordmark, so the word Pages
+         is part of the image and is not repeated as text after it. It is white,
+         drawn for the dark footer it used to sit in — hence the dark strip,
+         which is also what `page-footer: background: dark` gave before. The
+         path is site-absolute because this include is emitted on every page,
+         including the ones in subdirectories. -->
+    <div class="gc-colophon">
+      © Copyright 2026 M. Fatih Kara<br>
+      Made with <a href="https://www.r-project.org/">R</a> and
+      <a href="https://quarto.org/">Quarto</a>.
+      <span class="gc-colophon-secondary">Powered by 100% hand-written CSS with a
+      <a href="https://en.wikipedia.org/wiki/GeoCities">GeoCities</a>-inspired theme.</span>
+      Hosted by <a href="https://pages.github.com/"><img class="gc-colophon-logo" src="../assets/img/logo.svg" alt="GitHub Pages" width="65" height="13"></a>.
+    </div>
+    <p class="gc-small">Last updated: <span id="gc-updated"></span> •
+      <a href="https://github.com/karamehmetfatih/karamehmetfatih.github.io">Source on GitHub</a> •
+      No <i>Botrytis</i> was harmed in the making of this page.</p>
+  </div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
+    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+    tabsets.forEach(function(tabset) {
+      const tabby = new Tabby('#' + tabset.id);
+    });
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -652,7 +453,8 @@ ul.task-list li input[type="checkbox"] {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -661,8 +463,69 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -674,8 +537,9 @@ ul.task-list li input[type="checkbox"] {
         },
         interactive: true,
         interactiveBorder: 10,
-        theme: 'quarto',
+        theme: 'light-border',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -838,44 +702,54 @@ ul.task-list li input[type="checkbox"] {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -974,111 +848,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>© Copyright 2026 M. Fatih Kara<br> Made with <a href="https://www.r-project.org/"><i class="fa-brands fa-r-project fa-lg" title="R" aria-label="R"></i></a> and <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" class="footer-logo img-fluid" alt="Quarto" width="65"></a>. <span class="footer-secondary">Powered by <a href="https://getbootstrap.com/"><i class="fa-brands fa-bootstrap fa-lg" title="Bootstrap" aria-label="Bootstrap"></i></a> with an <a href="https://github.com/alshedivat/al-folio">al-folio</a>-inspired theme.</span> Hosted by <a href="https://pages.github.com/"><img src="../assets/img/logo.svg" class="footer-logo img-fluid" alt="GitHub Pages" width="65"></a>.</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
-<div id="back-to-top" class="" role="button" tabindex="0" aria-label="Back to top" title="Back to top"><svg viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg></div>
-<script>
-(function () {
-  var btn = document.getElementById('back-to-top');
-  if (!btn) return;
-  var SHOW_AFTER = 300; // px scrolled before it fades in
-
-  function toggle() {
-    btn.classList.toggle('show', window.scrollY > SHOW_AFTER);
-  }
-
-  function toTop() {
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
-  }
-
-  // Passive: this fires on every scroll frame and never calls preventDefault.
-  window.addEventListener('scroll', toggle, { passive: true });
-  toggle(); // a reload can restore a scrolled position
-
-  btn.addEventListener('click', toTop);
-  btn.addEventListener('keydown', function (event) {
-    // Buttons activate on both keys; a <div> has to be told.
-    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
-      event.preventDefault();
-      toTop();
-    }
-  });
-})();
-
-// The footer is pinned (position: fixed in al-folio.scss), so it no
-// longer takes up space in flow. Publish its height as a custom
-// property; the SCSS uses it to pad the body and to lift the
-// back-to-top button clear. Measured rather than hard-coded because
-// the colophon rewraps to more lines as the window narrows.
-(function () {
-  var footer = document.querySelector('footer.footer');
-  if (!footer) return;
-
-  function sync() {
-    document.documentElement.style.setProperty(
-      '--af-footer-height', footer.offsetHeight + 'px');
-  }
-
-  sync();
-  if (window.ResizeObserver) {
-    new ResizeObserver(sync).observe(footer);
-  } else {
-    window.addEventListener('resize', sync);
-  }
-})();
-
-// Ctrl+K (Cmd+K on macOS) opens search.
-//
-// Not done through Quarto's own `search: keyboard-shortcut:`, which
-// takes single characters only and matches them with no modifier
-// check — registering "k" there would fire on every bare k typed on
-// the page. Quarto's own f / / / s defaults still work.
-//
-// keydown rather than keyup, because Ctrl+K is the browser's own
-// shortcut (address bar in Chrome, quick search in Firefox) and only
-// keydown can preventDefault it.
-(function () {
-  var isMac = /Mac|iPod|iPhone|iPad/.test(
-    navigator.platform || navigator.userAgent);
-
-  // Quoted, because this lands in a CSS `content` value.
-  document.documentElement.style.setProperty(
-    '--af-search-kbd', isMac ? '"⌘ K"' : '"Ctrl K"');
-
-  var search = document.getElementById('quarto-search');
-  if (search) {
-    search.setAttribute('aria-keyshortcuts', isMac ? 'Meta+K' : 'Control+K');
-  }
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key !== 'k' && event.key !== 'K') return;
-    if (event.altKey) return;
-    if (!(isMac ? event.metaKey : event.ctrlKey)) return;
-
-    event.preventDefault();
-    if (typeof window.quartoOpenSearch === 'function') {
-      window.quartoOpenSearch();
-    } else {
-      // Search JS not ready yet: focus the field directly.
-      var input = document.querySelector('#quarto-search .aa-Input');
-      if (input) input.focus();
-    }
-  });
-})();
-</script>
 
 
 

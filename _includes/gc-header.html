@@ -1,0 +1,40 @@
+<!-- GeoCities shell, opening half: the layout table, the sidebar (logo, nav,
+     neighborhood switcher, badges) and the marquee. _includes/gc-footer.html
+     closes the three elements left open here (#gc-main, #gc-layout, #gc-wrap).
+
+     Links are site-rooted ("/research/", not "research.html") because pages
+     live in subdirectories; a relative href would resolve against the page's
+     own directory and break on every page but the home page. -->
+<div id="gc-wrap">
+<table id="gc-layout" cellpadding="0" cellspacing="0">
+<tr>
+<td id="gc-sidebar" valign="top">
+  <div class="gc-logo">
+    <img src="/assets/geocities/sprout.svg" width="96" height="96" alt="dancing lettuce sprout">
+    <div class="gc-sitename">~mfkara</div>
+    <div class="gc-small">est. 2026</div>
+  </div>
+  <div class="gc-navbox">
+    <div class="gc-navtitle">&#9733; NAVIGATE &#9733;</div>
+    <a href="/">&#127968; Home</a>
+    <a href="/research/">&#128220; Publications</a>
+    <a href="/lsrtdv1/">&#129516; LsRTDv1</a>
+    <a href="/cv/">&#128188; My CV</a>
+    <a href="/links/">&#128279; Cool Links</a>
+    <a href="/guestbook/">&#128214; Guestbook</a>
+  </div>
+  <div class="gc-navbox">
+    <div class="gc-navtitle">NEIGHBORHOOD</div>
+    <button data-theme="salinasvalley">&#129388; SalinasValley</button>
+    <button data-theme="growthchamber">&#128161; GrowthChamber</button>
+  </div>
+  <div class="gc-badges">
+    <span class="gc-badge">BEST VIEWED IN<br><b>800&times;600</b></span>
+    <span class="gc-badge gc-badge-q">MADE WITH<br><b>QUARTO</b></span>
+    <span class="gc-badge gc-badge-g">100%<br><b>CHLOROPHYLL</b></span>
+    <span class="gc-badge gc-badge-p">PANTONE 13-0324<br><b>LETTUCE GREEN</b></span>
+  </div>
+</td>
+<td id="gc-main" valign="top">
+  <div class="gc-marquee"><span class="gc-marquee-text">&#127807; Welcome to my homepage on the Information Superhighway! &#127807; Plant immunity &bull; Necrotrophic fungi &bull; Lettuce &bull; Transcriptomics &bull; Genome editing &#127807; Sign my guestbook!! &#127807;</span></div>
+  <div class="gc-construction"><span>&#128679; UNDER CONSTRUCTION &#128679;</span></div>

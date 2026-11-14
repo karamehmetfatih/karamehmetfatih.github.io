@@ -1,0 +1,104 @@
+/* ==========================================================
+   giscus theme - SalinasValley
+   ----------------------------------------------------------
+   The guestbook widget runs in an iframe on giscus.app, so it
+   inherits nothing from geocities.css. A giscus custom theme is
+   a stylesheet fetched BY that iframe, which redefines GitHub's
+   Primer custom properties; this one restates the house palette
+   so the comment box belongs to the page it sits in.
+
+   The URL is absolute (https://www.mfkara.net/...) because the
+   iframe resolves it against its own origin, not against the
+   site. GitHub Pages serves assets with
+   `access-control-allow-origin: *`, which is what lets the
+   iframe read it at all.
+
+   Consequence worth knowing: during `quarto preview` this file
+   is at localhost, which giscus.app cannot reach, so the widget
+   falls back to its default light theme. It only looks right on
+   the deployed site.
+   ========================================================== */
+
+main {
+  /* surfaces */
+  --color-canvas-default: #F5FAE8;
+  --color-canvas-overlay: #FAFCF2;
+  --color-canvas-inset: #EDF5DC;
+  --color-canvas-subtle: #EDF5DC;
+
+  /* text */
+  --color-fg-default: #22331A;
+  --color-fg-muted: #4A5F3C;
+  --color-fg-subtle: #6B7F5C;
+  --color-fg-on-emphasis: #FAFCF2;
+
+  /* rules and boxes */
+  --color-border-default: #8FAE62;
+  --color-border-muted: #BED38E;
+  --color-neutral-muted: rgba(190, 211, 142, .35);
+  --color-neutral-emphasis: #5B7A3A;
+
+  /* links and the primary button */
+  --color-accent-fg: #1C4F7C;
+  --color-accent-emphasis: #1C4F7C;
+  --color-accent-muted: rgba(28, 79, 124, .4);
+  --color-accent-subtle: #E3EDF5;
+
+  --color-success-fg: #2E7D32;
+  --color-danger-fg: #C8395B;
+  --color-attention-fg: #8A6100;
+  --color-attention-muted: rgba(240, 192, 64, .4);
+  --color-attention-subtle: #FDF4DC;
+
+  /* buttons: the ridged 1998 look does not survive an iframe, so
+     they just take the palette */
+  --color-btn-text: #22331A;
+  --color-btn-bg: #FAFCF2;
+  --color-btn-border: #8FAE62;
+  --color-btn-hover-bg: #EDF5DC;
+  --color-btn-hover-border: #5B7A3A;
+  --color-btn-active-bg: #E2EDC8;
+  --color-btn-selected-bg: #E2EDC8;
+
+  --color-btn-primary-text: #22331A;
+  --color-btn-primary-bg: #BED38E;
+  --color-btn-primary-border: #5B7A3A;
+  --color-btn-primary-hover-bg: #AEC97A;
+  --color-btn-primary-hover-border: #5B7A3A;
+  --color-btn-primary-disabled-text: rgba(34, 51, 26, .5);
+  --color-btn-primary-disabled-bg: rgba(190, 211, 142, .5);
+
+  /* reactions */
+  --color-social-reaction-bg-hover: #EDF5DC;
+  --color-social-reaction-bg-reacted-hover: #D7E7B4;
+
+  --color-primer-shadow-inset: none;
+  --color-scale-gray-1: #EDF5DC;
+
+  font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui,
+               -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* giscus's own classes, for the few places Primer variables do not reach */
+.gsc-comment-box,
+.gsc-comment > .gsc-comment-box,
+.gsc-comment-content {
+  border-radius: 0;          /* nothing on this site has rounded corners */
+}
+
+.gsc-comment-box-tabs,
+.gsc-comment-header,
+.gsc-reactions-count {
+  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  font-size: 13px;
+}
+
+.gsc-timeline {
+  gap: 10px;
+}
+
+/* The promotional footer giscus adds under the box. Kept, but quietened: it
+   is the price of a free backend, not part of the guestbook. */
+.gsc-homepage-bg {
+  background: transparent;
+}

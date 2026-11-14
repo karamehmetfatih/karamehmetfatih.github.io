@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <!-- pixel-art lettuce sprout, painted in PANTONE 13-0324 TCX Lettuce Green (#BED38E) -->
+  <rect x="7" y="8" width="2" height="5" fill="#5B7A3A"/>
+  <g fill="#BED38E">
+    <rect x="2" y="5" width="2" height="1"/><rect x="3" y="4" width="3" height="1"/>
+    <rect x="2" y="6" width="5" height="1"/><rect x="4" y="7" width="3" height="1"/>
+    <rect x="10" y="3" width="3" height="1"/><rect x="9" y="4" width="5" height="1"/>
+    <rect x="9" y="5" width="4" height="1"/><rect x="9" y="6" width="3" height="1"/>
+  </g>
+  <g fill="#8FAE62">
+    <rect x="3" y="5" width="3" height="1"/><rect x="10" y="4" width="3" height="1"/>
+    <rect x="7" y="7" width="2" height="1"/><rect x="8" y="6" width="1" height="1"/>
+  </g>
+  <rect x="3" y="13" width="10" height="2" fill="#7A5230"/>
+  <rect x="4" y="13" width="8" height="1" fill="#9C6B3F"/>
+  <rect x="5" y="5" width="1" height="1" fill="#22331A"/><rect x="11" y="4" width="1" height="1" fill="#22331A"/>
+</svg>
