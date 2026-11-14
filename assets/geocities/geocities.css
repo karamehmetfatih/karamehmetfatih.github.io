@@ -219,56 +219,25 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
    sits in the wall like any other button; the legend takes the same tightened
    tracking as the Pantone badge, since PALESTINE is as long as LETTUCE GREEN
    and would otherwise wrap out of a 31px-tall button. */
-/* The two cause badges are the flags themselves: the bands are the badge's
-   background and each word sits on the band it belongs to, so there is no
-   artwork to load and nothing to fall out of alignment with the text.
+/* A badge whose artwork is the whole button: one image at the content box's
+   exact size, 84x27 inside the 88x31 border box, so its pixels land on the
+   display's without resampling.
 
-   Both use `justify-content: space-between` with two children sized to the
-   band they sit on, which leaves the middle of the flag empty without needing
-   a spacer element in the markup. */
-.gc-badge-pal, .gc-badge-ua {
-  display: flex; flex-direction: column; justify-content: space-between;
-  padding: 0; text-align: center;
-}
-.gc-badge-pal > span, .gc-badge-pal > b,
-.gc-badge-ua > span, .gc-badge-ua > b {
+   The two flags used to be painted here instead — gradient bands with the
+   words laid over them — and Firefox rendered neither the bands nor the text
+   colours, while the wordmark badge below, an <img> from the start, was
+   correct in that same browser. Whatever the engine disagreed about, an image
+   is the thing both agree on, so the flags became images. It costs the text
+   being selectable; the alt text carries it instead. */
+.gc-badge-img {
   display: flex; align-items: center; justify-content: center;
-  line-height: 1; white-space: nowrap; position: relative; z-index: 1;
+  padding: 0; background: #000;
+}
+.gc-badge-img img {
+  display: block; width: 100%; height: 100%;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
 }
 
-/* Black, white and green in thirds, with the red triangle at the hoist.
-   `clip-path` draws the triangle because a border trick cannot be given a
-   height independent of its width. The legend is pushed clear of it rather
-   than centred on the whole badge: centred, PALESTINE would start at x=15 and
-   run straight through the widest part of the triangle. White carries 21:1 on
-   the black band and 5.5:1 on the green. */
-.gc-badge-pal {
-  position: relative; color: #fff;
-  /* 40/20/40 rather than the flag's three equal thirds. At 31px tall, thirds
-     give each band about 9px, and a 9px word in a 9px band crowds its edges
-     and merges with the white stripe next to it. Widening the two bands that
-     carry text, and narrowing the one that does not, is the compromise that
-     keeps the badge readable at the size a badge actually is. */
-  background: linear-gradient(to bottom,
-    #000000 0 40%, #FFFFFF 40% 60%, #007A3D 60% 100%);
-}
-.gc-badge-pal::before {
-  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 18px;
-  background: #CE1126; clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-/* 14px, not the triangle's full 18px: the triangle is widest at the badge's
-   vertical centre and tapers to nothing at top and bottom, so where the two
-   words actually sit it is only about 7px across. */
-.gc-badge-pal > span, .gc-badge-pal > b { flex: 0 0 40%; padding-left: 14px; }
-.gc-badge-pal > span { font-size: 8px; }
-.gc-badge-pal > b { font-size: 10px; letter-spacing: -.2px; }
-
-.gc-badge-ua {
-  background: linear-gradient(to bottom, #0057B7 0 50%, #FFD700 50% 100%);
-}
-.gc-badge-ua > span, .gc-badge-ua > b { flex: 0 0 50%; }
-.gc-badge-ua > span { color: #FFD700; font-size: 9px; }
-.gc-badge-ua > b { color: #0057B7; font-size: 12px; letter-spacing: .5px; }
 /* The wordmark badge carries no text of its own, so it centres its artwork
    instead of laying it out beside a legend. `contain` keeps the pixels square
    whatever the box does; `pixelated` stops the browser smoothing them. */
