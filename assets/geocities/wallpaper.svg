@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
+     shape-rendering="crispEdges">
+  <!-- Tiling wallpaper, the way a GeoCities page actually got its background:
+       a small image repeated, not a gradient. Drawn on a 4px grid to match the
+       pixel sprout, and transparent so the theme's own background-color shows
+       through underneath.
+
+       Every shape sits inside the 64x64 box rather than crossing an edge, so
+       the tile repeats without seams at any position. -->
+
+  <!-- leaf, top left -->
+  <g fill="#BED38E">
+    <rect x="10" y="6" width="8" height="4"/>
+    <rect x="6" y="10" width="16" height="4"/>
+    <rect x="6" y="14" width="12" height="4"/>
+    <rect x="10" y="18" width="4" height="4"/>
+  </g>
+  <rect x="10" y="10" width="4" height="4" fill="#8FAE62"/>
+
+  <!-- leaf, lower right, mirrored and a shade deeper -->
+  <g fill="#8FAE62">
+    <rect x="42" y="36" width="8" height="4"/>
+    <rect x="38" y="40" width="16" height="4"/>
+    <rect x="42" y="44" width="12" height="4"/>
+    <rect x="46" y="48" width="4" height="4"/>
+  </g>
+  <rect x="46" y="40" width="4" height="4" fill="#5B7A3A"/>
+
+  <!-- seed scatter, to break up the diagonal the two leaves would otherwise
+       draw across a wide page -->
+  <g fill="#5B7A3A">
+    <rect x="48" y="12" width="4" height="4"/>
+    <rect x="26" y="52" width="4" height="4"/>
+    <rect x="2" y="38" width="4" height="4"/>
+    <rect x="56" y="24" width="4" height="4"/>
+    <rect x="30" y="26" width="4" height="4"/>
+  </g>
+</svg>

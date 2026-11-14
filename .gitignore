@@ -5,3 +5,9 @@
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Zipped copy of the GeoCities template. The template itself is versioned at
+# _parked/geocities-template/, so the archive is a second copy of files the
+# repository already has. Anchored with a leading slash: it is this one file at
+# the project root, not every zip of that name anywhere in the tree.
+/geocities-portfolio.zip

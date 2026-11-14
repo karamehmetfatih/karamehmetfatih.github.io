@@ -36,6 +36,20 @@ aliases:
 :::
 
 ::: gc-box
+<!-- The portrait is already published (assets/img/profile.jpg is listed under
+     `resources:` in _quarto.yml, because the Person JSON-LD in
+     _includes/seo-home.html points at it). Writing it into the page as well
+     means the structured data and the page now show the same face.
+
+     Raw HTML rather than markdown so it can be a real <figure> with a caption,
+     and so the width/height attributes are there to reserve the space before
+     the image loads. -->
+<figure class="gc-portrait">
+<img src="/assets/img/profile.jpg" width="400" height="400"
+     alt="M. Fatih Kara, smiling, in a denim shirt">
+<figcaption>&#127793; <b>M. Fatih Kara</b><br>Ankara, Türkiye</figcaption>
+</figure>
+
 **I'm M. Fatih Kara** &#127793; &mdash; a plant scientist working on **disease resistance
 in lettuce**, and on how that response can be read at the level of individual
 transcripts rather than whole genes. PhD researcher at the

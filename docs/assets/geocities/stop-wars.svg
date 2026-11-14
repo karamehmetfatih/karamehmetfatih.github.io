@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="-1 -1 33 18"
+     shape-rendering="crispEdges" role="img" aria-label="Stop wars">
+  <title>Stop wars</title>
+  <!-- A unit of margin on every side (the negative viewBox origin), so the
+       outermost pixels of the P and the S do not sit flush against the edge
+       and read as clipped.
+
+       The wordmark as pixel art: STOP over WARS, with a peace symbol in place
+       of the O, drawn on a 7x7 grid per letter. Gold on the badge's black,
+       and the peace sign in the house green so the badge belongs to this site
+       rather than looking pasted on. -->
+  <g>
+    <rect x="0" y="0" width="7" height="1" fill="#F0C040"/>
+    <rect x="0" y="1" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="2" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="3" width="7" height="1" fill="#F0C040"/>
+    <rect x="5" y="4" width="2" height="1" fill="#F0C040"/>
+    <rect x="5" y="5" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="6" width="7" height="1" fill="#F0C040"/>
+    <rect x="8" y="0" width="7" height="1" fill="#F0C040"/>
+    <rect x="11" y="1" width="2" height="1" fill="#F0C040"/>
+    <rect x="11" y="2" width="2" height="1" fill="#F0C040"/>
+    <rect x="11" y="3" width="2" height="1" fill="#F0C040"/>
+    <rect x="11" y="4" width="2" height="1" fill="#F0C040"/>
+    <rect x="11" y="5" width="2" height="1" fill="#F0C040"/>
+    <rect x="11" y="6" width="2" height="1" fill="#F0C040"/>
+    <rect x="17" y="0" width="5" height="1" fill="#BED38E"/>
+    <rect x="16" y="1" width="2" height="1" fill="#BED38E"/>
+    <rect x="19" y="1" width="1" height="1" fill="#BED38E"/>
+    <rect x="21" y="1" width="2" height="1" fill="#BED38E"/>
+    <rect x="16" y="2" width="1" height="1" fill="#BED38E"/>
+    <rect x="19" y="2" width="1" height="1" fill="#BED38E"/>
+    <rect x="22" y="2" width="1" height="1" fill="#BED38E"/>
+    <rect x="16" y="3" width="1" height="1" fill="#BED38E"/>
+    <rect x="19" y="3" width="1" height="1" fill="#BED38E"/>
+    <rect x="22" y="3" width="1" height="1" fill="#BED38E"/>
+    <rect x="16" y="4" width="1" height="1" fill="#BED38E"/>
+    <rect x="18" y="4" width="3" height="1" fill="#BED38E"/>
+    <rect x="22" y="4" width="1" height="1" fill="#BED38E"/>
+    <rect x="16" y="5" width="2" height="1" fill="#BED38E"/>
+    <rect x="19" y="5" width="1" height="1" fill="#BED38E"/>
+    <rect x="21" y="5" width="2" height="1" fill="#BED38E"/>
+    <rect x="17" y="6" width="5" height="1" fill="#BED38E"/>
+    <rect x="24" y="0" width="6" height="1" fill="#F0C040"/>
+    <rect x="24" y="1" width="2" height="1" fill="#F0C040"/>
+    <rect x="29" y="1" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="2" width="2" height="1" fill="#F0C040"/>
+    <rect x="29" y="2" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="3" width="6" height="1" fill="#F0C040"/>
+    <rect x="24" y="4" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="5" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="6" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="9" width="2" height="1" fill="#F0C040"/>
+    <rect x="5" y="9" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="5" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="5" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="12" width="2" height="1" fill="#F0C040"/>
+    <rect x="3" y="12" width="1" height="1" fill="#F0C040"/>
+    <rect x="5" y="12" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="3" y="13" width="1" height="1" fill="#F0C040"/>
+    <rect x="5" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="0" y="14" width="7" height="1" fill="#F0C040"/>
+    <rect x="2" y="15" width="1" height="1" fill="#F0C040"/>
+    <rect x="4" y="15" width="1" height="1" fill="#F0C040"/>
+    <rect x="9" y="9" width="5" height="1" fill="#F0C040"/>
+    <rect x="8" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="13" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="8" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="13" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="8" y="12" width="7" height="1" fill="#F0C040"/>
+    <rect x="8" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="13" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="8" y="14" width="2" height="1" fill="#F0C040"/>
+    <rect x="13" y="14" width="2" height="1" fill="#F0C040"/>
+    <rect x="8" y="15" width="2" height="1" fill="#F0C040"/>
+    <rect x="13" y="15" width="2" height="1" fill="#F0C040"/>
+    <rect x="16" y="9" width="6" height="1" fill="#F0C040"/>
+    <rect x="16" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="21" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="16" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="21" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="16" y="12" width="6" height="1" fill="#F0C040"/>
+    <rect x="16" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="19" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="16" y="14" width="2" height="1" fill="#F0C040"/>
+    <rect x="20" y="14" width="2" height="1" fill="#F0C040"/>
+    <rect x="16" y="15" width="2" height="1" fill="#F0C040"/>
+    <rect x="21" y="15" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="9" width="7" height="1" fill="#F0C040"/>
+    <rect x="24" y="10" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="11" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="12" width="7" height="1" fill="#F0C040"/>
+    <rect x="29" y="13" width="2" height="1" fill="#F0C040"/>
+    <rect x="29" y="14" width="2" height="1" fill="#F0C040"/>
+    <rect x="24" y="15" width="7" height="1" fill="#F0C040"/>
+  </g>
+</svg>

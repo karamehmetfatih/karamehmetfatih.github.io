@@ -41,6 +41,8 @@
   /* theme slots (overridden per neighborhood below) */
   --bg: var(--soil-shadow);
   --bg-img: none;
+  --bg-size: auto;
+  --bg-pos: 0 0;
   --panel: var(--lettuce-pale);
   --panel-inner: rgba(255, 255, 255, .55);
   --panel-border: var(--leaf-mid);
@@ -76,11 +78,12 @@
    GeoCities district name in the shape of the one it parodies. ------------- */
 body.theme-salinasvalley {
   --bg: #22331A;
-  --bg-img:
-    radial-gradient(circle at 20% 30%, #BED38E 0 6px, transparent 7px),
-    radial-gradient(circle at 70% 80%, #8FAE62 0 4px, transparent 5px),
-    radial-gradient(circle at 50% 50%, #5B7A3A 0 10px, transparent 11px),
-    radial-gradient(circle at 85% 25%, #EDF5DC 0 2px, transparent 3px);
+  /* A tiled image, which is how a 1998 page got its wallpaper: the gradients
+     this replaces were a modern impression of the effect rather than the
+     effect itself. 96px keeps the 64px tile's pixels visibly square. */
+  --bg-img: url("wallpaper.svg");
+  --bg-size: 96px 96px;
+  --bg-pos: 0 0;
   --panel: #EDF5DC;
   --panel-inner: rgba(255, 255, 255, .6);
   --panel-border: #8FAE62;
@@ -107,6 +110,8 @@ body.theme-growthchamber {
     radial-gradient(1px 1px at 60% 70%, #fff 50%, transparent 51%),
     radial-gradient(2px 2px at 80% 10%, #BED38E 50%, transparent 51%),
     radial-gradient(1px 1px at 30% 90%, #9cf 50%, transparent 51%);
+  --bg-size: 120px 120px, 90px 90px, 160px 160px, 70px 70px;
+  --bg-pos: 0 0, 45px 45px, 20px 60px, 10px 30px;
   --panel: #0A1206;
   --panel-inner: rgba(190, 211, 142, .07);
   --panel-border: #BED38E;
@@ -128,15 +133,20 @@ html, body { margin: 0; padding: 0; }
 body {
   background-color: var(--bg);
   background-image: var(--bg-img);
-  background-size: 120px 120px, 90px 90px, 160px 160px, 70px 70px;
-  background-position: 0 0, 45px 45px, 20px 60px, 10px 30px;
+  /* Slots, because the two neighborhoods disagree about what the background
+     IS: one tiles a single wallpaper image, the other stacks four gradients
+     into a starfield, and a shared `background-size` cannot serve both. */
+  background-size: var(--bg-size);
+  background-position: var(--bg-pos);
   color: var(--text);
   font-family: var(--font);
   font-size: 16px;
   cursor: url("sprout-cursor.svg") 4 4, auto;
 }
 
-#gc-wrap { max-width: 980px; margin: 18px auto; padding: 0 8px; }
+/* The watermark is fixed to the viewport, so at the foot of the page it would
+   otherwise come to rest on top of the last line of the colophon. */
+#gc-wrap { max-width: 980px; margin: 18px auto; padding: 0 8px 54px; }
 /* `table-layout: fixed` is load-bearing, not cosmetic: with the default auto
    layout a cell is at least as wide as its widest unbreakable content, and the
    marquee is one long `white-space: nowrap` line. Its 2800px of text dragged
@@ -195,6 +205,68 @@ main.content, #quarto-content, #quarto-document-content { margin: 0; padding: 0;
 .gc-badge-q { background: #447099; color: #fff; }
 .gc-badge-g { background: #BED38E; color: #22331A; border-color: #FAFCF2; }
 .gc-badge-p { background: #38512A; color: #BED38E; }
+.gc-badge-b { background: #000; color: #4169E1; }      /* the blue ribbon */
+/* Flag on the left, legend on the right. The 88x31 box is unchanged, so this
+   sits in the wall like any other button; the legend takes the same tightened
+   tracking as the Pantone badge, since PALESTINE is as long as LETTUCE GREEN
+   and would otherwise wrap out of a 31px-tall button. */
+/* The two cause badges are the flags themselves: the bands are the badge's
+   background and each word sits on the band it belongs to, so there is no
+   artwork to load and nothing to fall out of alignment with the text.
+
+   Both use `justify-content: space-between` with two children sized to the
+   band they sit on, which leaves the middle of the flag empty without needing
+   a spacer element in the markup. */
+.gc-badge-pal, .gc-badge-ua {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 0; text-align: center;
+}
+.gc-badge-pal > span, .gc-badge-pal > b,
+.gc-badge-ua > span, .gc-badge-ua > b {
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1; white-space: nowrap; position: relative; z-index: 1;
+}
+
+/* Black, white and green in thirds, with the red triangle at the hoist.
+   `clip-path` draws the triangle because a border trick cannot be given a
+   height independent of its width. The legend is pushed clear of it rather
+   than centred on the whole badge: centred, PALESTINE would start at x=15 and
+   run straight through the widest part of the triangle. White carries 21:1 on
+   the black band and 5.5:1 on the green. */
+.gc-badge-pal {
+  position: relative; color: #fff;
+  background: linear-gradient(to bottom,
+    #000000 0 33.33%, #FFFFFF 33.33% 66.66%, #007A3D 66.66% 100%);
+}
+.gc-badge-pal::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 22px;
+  background: #CE1126; clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+/* 16px, not the triangle's full 22px: the triangle is widest at the badge's
+   vertical centre and tapers to nothing at top and bottom, so where the two
+   words actually sit it is only about 9px across. At 22px the legend was
+   left with 2px before the right border. */
+.gc-badge-pal > span, .gc-badge-pal > b { flex: 0 0 33.33%; padding-left: 16px; }
+.gc-badge-pal > span { font-size: 9px; }
+.gc-badge-pal > b { font-size: 10px; letter-spacing: -.2px; }
+
+.gc-badge-ua {
+  background: linear-gradient(to bottom, #0057B7 0 50%, #FFD700 50% 100%);
+}
+.gc-badge-ua > span, .gc-badge-ua > b { flex: 0 0 50%; }
+.gc-badge-ua > span { color: #FFD700; font-size: 9px; }
+.gc-badge-ua > b { color: #0057B7; font-size: 12px; letter-spacing: .5px; }
+/* The wordmark badge carries no text of its own, so it centres its artwork
+   instead of laying it out beside a legend. `contain` keeps the pixels square
+   whatever the box does; `pixelated` stops the browser smoothing them. */
+.gc-badge-sw {
+  display: flex; align-items: center; justify-content: center; padding: 1px;
+  background: #000;
+}
+.gc-badge-sw img {
+  max-width: 100%; max-height: 100%; object-fit: contain;
+  image-rendering: pixelated;
+}
 /* "LETTUCE GREEN" is one character too long for 88x31 at the default size */
 .gc-badge-p b { font-size: 9px; letter-spacing: -.4px; }
 
@@ -251,6 +323,63 @@ a:hover { color: var(--hot); text-decoration: underline wavy; }
   padding: 8px 14px; margin: 12px 0;
 }
 .gc-center { text-align: center; }
+
+/* ---------- the corner watermark ----------
+   GeoCities stamped a small neighborhood logo into the bottom right of every
+   page it hosted; it floated above the content and followed you as you
+   scrolled. This is that, pointing at the page which explains the joke.
+   Hidden when printing, and below the stacking breakpoint, where a fixed
+   overlay would sit on top of the text instead of beside it. */
+.gc-watermark {
+  position: fixed; right: 10px; bottom: 10px; z-index: 50;
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px 8px 4px 5px; background: var(--side); color: var(--side-text);
+  border: 3px outset var(--leaf-mid); text-decoration: none;
+  font: 9px/1.2 var(--font-ui); opacity: .92;
+}
+.gc-watermark:hover { opacity: 1; color: var(--side-strong); }
+.gc-watermark img { image-rendering: pixelated; }
+.gc-watermark b { display: block; font-size: 11px; }
+
+/* ---------- the status bar ----------
+   Pages of the period scrolled a message along the browser's own status bar
+   with `window.status`, which browsers stopped honouring around 2010 because
+   it was mostly used to lie about where a link went. This is the effect,
+   drawn in the page where it cannot pretend to be the browser. */
+.gc-statusbar {
+  margin: 10px 0 0; padding: 3px 6px;
+  background: var(--panel); border: 2px inset var(--leaf-mid);
+  font: 11px/1.4 var(--font-ui); color: var(--text);
+  overflow: hidden; white-space: nowrap;
+}
+.gc-statusbar span {
+  display: inline-block; padding-left: 100%;
+  animation: gc-scroll 26s linear infinite;
+}
+
+/* ---------- portrait ----------
+   A photograph in a lettuce mount: pale panel, ridged frame, the caption in
+   the chrome face. The green stops at the frame — the picture itself only
+   gets a wash, because a hue rotation strong enough to read as "lettuce" on a
+   denim shirt also turns a face a colour no face has ever been. Hovering
+   lifts even the wash, which is as close as this site gets to a 1998 image
+   rollover. */
+.gc-portrait {
+  float: right; width: 190px; margin: 2px 0 10px 18px; padding: 8px 8px 5px;
+  background: var(--lettuce-pale); border: 4px ridge var(--panel-border);
+  text-align: center;
+}
+.gc-portrait img {
+  display: block; width: 100%; height: auto;
+  border: 2px inset var(--leaf-mid);
+  /* a light wash towards the house hue, not a duotone */
+  filter: saturate(.9) sepia(.16) hue-rotate(28deg);
+  transition: filter .25s ease;
+}
+.gc-portrait:hover img, .gc-portrait:focus-within img { filter: none; }
+.gc-portrait figcaption {
+  margin-top: 6px; font: 11px/1.45 var(--font-ui); color: var(--text);
+}
 
 /* Pantone chip - "the official colour of this homepage" */
 .gc-swatch {
@@ -474,6 +603,10 @@ ol.bibliography > li { margin: 0 0 14px; }
 }
 #gc-main pre code { background: none; border: 0; color: inherit; padding: 0; }
 #gc-main img { max-width: 100%; height: auto; }
+/* The coloured bullet GIF, as an image marker. `list-style-image` rather than
+   a ::marker colour because the shape is the point, and it degrades to a plain
+   disc if the file is missing. */
+#gc-main ul { list-style-image: url("..\..assets/geocities/bullet.svg"); }
 /* Quarto still emits a figure caption and a footnote block; neither had a rule. */
 #gc-main figcaption { font-size: 13px; text-align: center; opacity: .85; }
 #gc-main .footnotes { font-size: 14px; border-top: 3px double var(--panel-border); }
@@ -485,7 +618,7 @@ ol.bibliography > li { margin: 0 0 14px; }
   #gc-sidebar, .gc-marquee, .gc-construction, .gc-counter, .gc-webring,
   .gc-badges, .gc-swatch, hr.gc-hr, .gc-sparkle, .gc-noprint,
   .gc-colophon,
-  .contact-form, .pub-shield, .shields,
+  .contact-form, .pub-shield, .shields, .gc-watermark, .gc-statusbar,
   #giscus-container, .giscus { display: none !important; }
   .bib-row, .publication, .pub-panel, .contact-form { border: 0 !important; background: #fff !important; }
   .pub-panel.is-collapsible { display: block !important; }
@@ -497,6 +630,8 @@ ol.bibliography > li { margin: 0 0 14px; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
   .blink, .new, .rainbow { animation: none !important; -webkit-text-fill-color: #000; color: #000; }
   table.gc-table tr:nth-child(even) td { background: #fff !important; }
+  .gc-portrait { float: none; border: 1px solid #999 !important; background: #fff !important; }
+  .gc-portrait img { filter: none !important; }
 }
 
 /* ---------- small screens (it is not 1998 everywhere) ---------- */
@@ -504,6 +639,9 @@ ol.bibliography > li { margin: 0 0 14px; }
   #gc-layout, #gc-layout tbody, #gc-layout tr, #gc-layout td { display: block; width: auto; }
   #gc-sidebar { border-right: 0; border-bottom: 4px ridge var(--panel-border); }
   .gc-badges { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+  /* 190px of float against a ~300px column leaves a two-word-wide gutter */
+  .gc-portrait { float: none; margin: 10px auto; }
+  .gc-watermark { display: none; }
 }
 
 /* ---------- respect reduced motion (the whole 90s toybox goes quiet) ---------- */
@@ -513,8 +651,8 @@ ol.bibliography > li { margin: 0 0 14px; }
     transition: none !important;
   }
   /* the marquee stops scrolling, so let its text wrap and sit still */
-  .gc-marquee { white-space: normal; text-align: center; padding: 6px 10px; }
-  .gc-marquee-text { padding-left: 0; display: block; }
+  .gc-marquee, .gc-statusbar { white-space: normal; text-align: center; padding: 6px 10px; }
+  .gc-marquee-text, .gc-statusbar span { padding-left: 0; display: block; }
   /* blinking text must stay readable once it stops blinking */
   .blink, .new { visibility: visible !important; }
   .rainbow { filter: none !important; }

@@ -58,11 +58,32 @@
       b.addEventListener("click", function () { setTheme(b.getAttribute("data-theme")); });
     });
 
-    // --- per-browser hit counter (honest: counts your own visits) ---
-    var n = parseInt(store("gc-hits") || "0", 10) + 1;
+    // --- per-browser visit counter (honest: it counts YOUR visits) ---
+    //
+    // Counts visits, not page views. Incrementing on every load made the
+    // number a page counter wearing a visitor counter's label: clicking
+    // Home -> Publications -> CV -> Guestbook announced four visitors, all of
+    // them the same person.
+    //
+    // A visit is a run of activity with no gap longer than VISIT_WINDOW, the
+    // 30 minutes analytics tools conventionally use. The timestamp is written
+    // on every page, so moving around the site extends the current visit
+    // rather than starting a new one, and coming back tomorrow counts once.
+    //
+    // The window is kept in localStorage rather than sessionStorage, which is
+    // per tab: opening a second tab would otherwise be a second visitor.
+    var VISIT_WINDOW = 30 * 60 * 1000;
+    var now = Date.now();
+    var seen = parseInt(store("gc-seen") || "0", 10);
+    var n = parseInt(store("gc-hits") || "0", 10);
+    if (!seen || now - seen > VISIT_WINDOW) n += 1;
     store("gc-hits", String(n));
+    store("gc-seen", String(now));
     var el = document.getElementById("gc-hits");
-    if (el) el.textContent = String(n).padStart(6, "0");
+    // With storage blocked (a private window, or site data switched off) both
+    // reads come back null, so this reads 000001 on every page: the one number
+    // that is true for a visitor nothing can be remembered about.
+    if (el) el.textContent = String(n || 1).padStart(6, "0");
 
     var up = document.getElementById("gc-updated");
     if (up) up.textContent = new Date(document.lastModified).toLocaleDateString("en-GB");
